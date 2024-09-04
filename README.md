@@ -1,3 +1,8 @@
+# Projeto base
+- https://github.com/inducer/pudb
+
+---
+
 # Tutorial - cal (1  e 2)
 ## Etapa 1 - Configurando ambiente
 1. Baixar e acessar o repositório
@@ -32,13 +37,13 @@
 	- `mutmut run paths-to-mutate=cal.py`
 2. Analisando mutantes que sobreviveram
 	- Gerando relatório em html
-		- `mutmut html` 
+		- `mutmut html`
 	- Selecionando mutante que sobreviveu, com base no relatório.
 		- Mutante 27 selecionado
-  
+
        ![Pasted image 20240903215542](https://github.com/user-attachments/assets/e19b1369-1d42-441d-a30f-88d863bad076)
 
-			
+
 3. Adicionando o caso de teste `test_first_of_month_mutant`
 # Tutorial - pudb (3 e 4)
 ## Etapa 1 - Configurando ambiente
@@ -76,12 +81,12 @@
 	- `cd pudb`
 2. Executando teste de mutação
 	- `mutmut run --paths-to-mutate=.`
-		
+
     ![Pasted image 20240903175757](https://github.com/user-attachments/assets/cdfe470f-e051-448c-96e2-b1412713d45f)
 
 	- Observação:
 		- Como o projeto não tem uma ampla cobertura de testes, boa parte dos módulos mutados nem serão executados. Por isso a quantidade de mutantes que sobreviveram é elevada.
-3. Analisando e gerando relatório de mutação 
+3. Analisando e gerando relatório de mutação
 	1. Gerando relatório
 		- `mutmut html`
 	2. Analisando o relatório
@@ -91,7 +96,7 @@
   - Com isso, podemos perceber que boa parte dos mutantes que foram mortos fazem parte do código de teste ou possuem uma quantidade de testes maior comparada aos outros módulos.
 ## Etapa 4 - Melhorando testes
 - Nesta etapa iremos adicionar alguns testes para aumentar a cobertura de código e matar possíveis mutantes.
-1. Escolhendo módulo 
+1. Escolhendo módulo
 	- O `pubd/debugger.py` foi escolhido por ter uma baixa cobertura de código (8%) e alta quantidade de mutantes vivos (1823).
 	- O foco principal será na classe `Debugger`.
 2. Melhorando testes
