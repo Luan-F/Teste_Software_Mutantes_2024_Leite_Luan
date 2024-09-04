@@ -1,0 +1,1454 @@
+<html><body><h1>./themes/vim.py</h1>Killed 0 out of 127 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 5326</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -1,7 +1,7 @@
+ from pudb.themes.utils import add_setting, link
+ 
+ 
+-link("current breakpoint", "current frame name")
++link("XXcurrent breakpointXX", "current frame name")
+ link("focused current breakpoint", "focused current frame name")
+ 
+ palette_dict = {
+</pre><h3>Mutant 5327</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -1,7 +1,7 @@
+ from pudb.themes.utils import add_setting, link
+ 
+ 
+-link("current breakpoint", "current frame name")
++link("current breakpoint", "XXcurrent frame nameXX")
+ link("focused current breakpoint", "focused current frame name")
+ 
+ palette_dict = {
+</pre><h3>Mutant 5328</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -2,7 +2,7 @@
+ 
+ 
+ link("current breakpoint", "current frame name")
+-link("focused current breakpoint", "focused current frame name")
++link("XXfocused current breakpointXX", "focused current frame name")
+ 
+ palette_dict = {
+     # {{{ base styles
+</pre><h3>Mutant 5329</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -2,7 +2,7 @@
+ 
+ 
+ link("current breakpoint", "current frame name")
+-link("focused current breakpoint", "focused current frame name")
++link("focused current breakpoint", "XXfocused current frame nameXX")
+ 
+ palette_dict = {
+     # {{{ base styles
+</pre><h3>Mutant 5330</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "XXbackgroundXX": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+</pre><h3>Mutant 5331</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "background": ("XXblackXX", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+</pre><h3>Mutant 5332</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "background": ("black", "XXlight grayXX"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+</pre><h3>Mutant 5333</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "XXselectableXX": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+</pre><h3>Mutant 5334</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "selectable": ("XXblackXX", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+</pre><h3>Mutant 5335</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "selectable": ("black", "XXdark cyanXX"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+</pre><h3>Mutant 5336</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "XXfocused selectableXX": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+</pre><h3>Mutant 5337</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "focused selectable": ("XXblackXX", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+</pre><h3>Mutant 5338</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "focused selectable": ("black", "XXlight cyanXX"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+</pre><h3>Mutant 5339</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "hotkey": (add_setting("black", "bold, underline"), "light gray"),
++    "XXhotkeyXX": (add_setting("black", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5340</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "hotkey": (add_setting("black", "bold, underline"), "light gray"),
++    "hotkey": (add_setting("XXblackXX", "bold, underline"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5341</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "hotkey": (add_setting("black", "bold, underline"), "light gray"),
++    "hotkey": (add_setting("black", "XXbold, underlineXX"), "light gray"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5342</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "hotkey": (add_setting("black", "bold, underline"), "light gray"),
++    "hotkey": (add_setting("black", "bold, underline"), "XXlight grayXX"),
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5343</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+-    "highlighted": ("black", "yellow"),
++    "XXhighlightedXX": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+</pre><h3>Mutant 5344</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+-    "highlighted": ("black", "yellow"),
++    "highlighted": ("XXblackXX", "yellow"),
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+</pre><h3>Mutant 5345</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+-    "highlighted": ("black", "yellow"),
++    "highlighted": ("black", "XXyellowXX"),
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+</pre><h3>Mutant 5346</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -13,7 +13,7 @@
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+-    "header": (add_setting("black", "bold"), "light gray"),
++    "XXheaderXX": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+</pre><h3>Mutant 5347</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -13,7 +13,7 @@
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+-    "header": (add_setting("black", "bold"), "light gray"),
++    "header": (add_setting("XXblackXX", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+</pre><h3>Mutant 5348</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -13,7 +13,7 @@
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+-    "header": (add_setting("black", "bold"), "light gray"),
++    "header": (add_setting("black", "XXboldXX"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+</pre><h3>Mutant 5349</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -13,7 +13,7 @@
+     "highlighted": ("black", "yellow"),
+     # }}}
+     # {{{ general ui
+-    "header": (add_setting("black", "bold"), "light gray"),
++    "header": (add_setting("black", "bold"), "XXlight grayXX"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+</pre><h3>Mutant 5350</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+-    "group head": ("dark blue", "light gray"),
++    "XXgroup headXX": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+</pre><h3>Mutant 5351</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+-    "group head": ("dark blue", "light gray"),
++    "group head": ("XXdark blueXX", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+</pre><h3>Mutant 5352</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+-    "group head": ("dark blue", "light gray"),
++    "group head": ("dark blue", "XXlight grayXX"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+</pre><h3>Mutant 5353</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "XXdialog titleXX": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+</pre><h3>Mutant 5354</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("XXwhiteXX", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+</pre><h3>Mutant 5355</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("white", "XXboldXX"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+</pre><h3>Mutant 5356</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("white", "bold"), "XXdark blueXX"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+</pre><h3>Mutant 5357</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -16,7 +16,7 @@
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "input": ("black", "dark cyan"),
++    "XXinputXX": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+</pre><h3>Mutant 5358</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -16,7 +16,7 @@
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "input": ("black", "dark cyan"),
++    "input": ("XXblackXX", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+</pre><h3>Mutant 5359</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -16,7 +16,7 @@
+     "header": (add_setting("black", "bold"), "light gray"),
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "input": ("black", "dark cyan"),
++    "input": ("black", "XXdark cyanXX"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+</pre><h3>Mutant 5360</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -17,7 +17,7 @@
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+-    "focused input": ("black", "light cyan"),
++    "XXfocused inputXX": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5361</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -17,7 +17,7 @@
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+-    "focused input": ("black", "light cyan"),
++    "focused input": ("XXblackXX", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5362</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -17,7 +17,7 @@
+     "group head": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+-    "focused input": ("black", "light cyan"),
++    "focused input": ("black", "XXlight cyanXX"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5363</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -18,7 +18,7 @@
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+-    "warning": (add_setting("dark red", "bold"), "white"),
++    "XXwarningXX": (add_setting("dark red", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5364</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -18,7 +18,7 @@
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+-    "warning": (add_setting("dark red", "bold"), "white"),
++    "warning": (add_setting("XXdark redXX", "bold"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5365</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -18,7 +18,7 @@
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+-    "warning": (add_setting("dark red", "bold"), "white"),
++    "warning": (add_setting("dark red", "XXboldXX"), "white"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5366</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -18,7 +18,7 @@
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+-    "warning": (add_setting("dark red", "bold"), "white"),
++    "warning": (add_setting("dark red", "bold"), "XXwhiteXX"),
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5367</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -19,7 +19,7 @@
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+-    "header warning": (add_setting("dark red", "bold"), "light gray"),
++    "XXheader warningXX": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+</pre><h3>Mutant 5368</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -19,7 +19,7 @@
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+-    "header warning": (add_setting("dark red", "bold"), "light gray"),
++    "header warning": (add_setting("XXdark redXX", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+</pre><h3>Mutant 5369</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -19,7 +19,7 @@
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+-    "header warning": (add_setting("dark red", "bold"), "light gray"),
++    "header warning": (add_setting("dark red", "XXboldXX"), "light gray"),
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+</pre><h3>Mutant 5370</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -19,7 +19,7 @@
+     "input": ("black", "dark cyan"),
+     "focused input": ("black", "light cyan"),
+     "warning": (add_setting("dark red", "bold"), "white"),
+-    "header warning": (add_setting("dark red", "bold"), "light gray"),
++    "header warning": (add_setting("dark red", "bold"), "XXlight grayXX"),
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+</pre><h3>Mutant 5371</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -22,7 +22,7 @@
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+-    "source": ("black", "white"),
++    "XXsourceXX": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+</pre><h3>Mutant 5372</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -22,7 +22,7 @@
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+-    "source": ("black", "white"),
++    "source": ("XXblackXX", "white"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+</pre><h3>Mutant 5373</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -22,7 +22,7 @@
+     "header warning": (add_setting("dark red", "bold"), "light gray"),
+     # }}}
+     # {{{ source view
+-    "source": ("black", "white"),
++    "source": ("black", "XXwhiteXX"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+</pre><h3>Mutant 5374</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -23,7 +23,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+-    "current source": ("black", "dark cyan"),
++    "XXcurrent sourceXX": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+</pre><h3>Mutant 5375</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -23,7 +23,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+-    "current source": ("black", "dark cyan"),
++    "current source": ("XXblackXX", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+</pre><h3>Mutant 5376</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -23,7 +23,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("black", "white"),
+-    "current source": ("black", "dark cyan"),
++    "current source": ("black", "XXdark cyanXX"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+</pre><h3>Mutant 5377</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -24,7 +24,7 @@
+     # {{{ source view
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+-    "breakpoint source": ("dark red", "light gray"),
++    "XXbreakpoint sourceXX": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+</pre><h3>Mutant 5378</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -24,7 +24,7 @@
+     # {{{ source view
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+-    "breakpoint source": ("dark red", "light gray"),
++    "breakpoint source": ("XXdark redXX", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+</pre><h3>Mutant 5379</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -24,7 +24,7 @@
+     # {{{ source view
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+-    "breakpoint source": ("dark red", "light gray"),
++    "breakpoint source": ("dark red", "XXlight grayXX"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+</pre><h3>Mutant 5380</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -25,7 +25,7 @@
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+-    "line number": ("dark gray", "white"),
++    "XXline numberXX": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+</pre><h3>Mutant 5381</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -25,7 +25,7 @@
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+-    "line number": ("dark gray", "white"),
++    "line number": ("XXdark grayXX", "white"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+</pre><h3>Mutant 5382</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -25,7 +25,7 @@
+     "source": ("black", "white"),
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+-    "line number": ("dark gray", "white"),
++    "line number": ("dark gray", "XXwhiteXX"),
+     "current line marker": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+</pre><h3>Mutant 5383</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -26,7 +26,7 @@
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+-    "current line marker": ("dark red", "white"),
++    "XXcurrent line markerXX": ("dark red", "white"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5384</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -26,7 +26,7 @@
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+-    "current line marker": ("dark red", "white"),
++    "current line marker": ("XXdark redXX", "white"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5385</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -26,7 +26,7 @@
+     "current source": ("black", "dark cyan"),
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+-    "current line marker": ("dark red", "white"),
++    "current line marker": ("dark red", "XXwhiteXX"),
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5386</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -27,7 +27,7 @@
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+-    "breakpoint marker": ("dark red", "white"),
++    "XXbreakpoint markerXX": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+</pre><h3>Mutant 5387</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -27,7 +27,7 @@
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+-    "breakpoint marker": ("dark red", "white"),
++    "breakpoint marker": ("XXdark redXX", "white"),
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+</pre><h3>Mutant 5388</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -27,7 +27,7 @@
+     "breakpoint source": ("dark red", "light gray"),
+     "line number": ("dark gray", "white"),
+     "current line marker": ("dark red", "white"),
+-    "breakpoint marker": ("dark red", "white"),
++    "breakpoint marker": ("dark red", "XXwhiteXX"),
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+</pre><h3>Mutant 5389</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -30,7 +30,7 @@
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar one": ("black", "dark cyan"),
++    "XXsidebar oneXX": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+</pre><h3>Mutant 5390</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -30,7 +30,7 @@
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar one": ("black", "dark cyan"),
++    "sidebar one": ("XXblackXX", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+</pre><h3>Mutant 5391</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -30,7 +30,7 @@
+     "breakpoint marker": ("dark red", "white"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar one": ("black", "dark cyan"),
++    "sidebar one": ("black", "XXdark cyanXX"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+</pre><h3>Mutant 5392</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -31,7 +31,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "XXsidebar twoXX": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+</pre><h3>Mutant 5393</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -31,7 +31,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "sidebar two": ("XXdark blueXX", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+</pre><h3>Mutant 5394</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -31,7 +31,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "sidebar two": ("dark blue", "XXdark cyanXX"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+</pre><h3>Mutant 5395</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -32,7 +32,7 @@
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "XXsidebar threeXX": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5396</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -32,7 +32,7 @@
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "sidebar three": ("XXdark grayXX", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5397</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -32,7 +32,7 @@
+     # {{{ sidebar
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "sidebar three": ("dark gray", "XXdark cyanXX"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5398</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -33,7 +33,7 @@
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar one": ("black", "light cyan"),
++    "XXfocused sidebar oneXX": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5399</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -33,7 +33,7 @@
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar one": ("black", "light cyan"),
++    "focused sidebar one": ("XXblackXX", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5400</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -33,7 +33,7 @@
+     "sidebar one": ("black", "dark cyan"),
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar one": ("black", "light cyan"),
++    "focused sidebar one": ("black", "XXlight cyanXX"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5401</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -34,7 +34,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "XXfocused sidebar twoXX": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5402</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -34,7 +34,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "focused sidebar two": ("XXdark blueXX", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5403</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -34,7 +34,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "focused sidebar two": ("dark blue", "XXlight cyanXX"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5404</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -35,7 +35,7 @@
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "XXfocused sidebar threeXX": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+</pre><h3>Mutant 5405</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -35,7 +35,7 @@
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "focused sidebar three": ("XXdark grayXX", "light cyan"),
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+</pre><h3>Mutant 5406</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -35,7 +35,7 @@
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar one": ("black", "light cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "focused sidebar three": ("dark gray", "XXlight cyanXX"),
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+</pre><h3>Mutant 5407</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -38,7 +38,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "highlighted var label": ("dark blue", "yellow"),
++    "XXhighlighted var labelXX": ("dark blue", "yellow"),
+     "return label": ("white", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5408</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -38,7 +38,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "highlighted var label": ("dark blue", "yellow"),
++    "highlighted var label": ("XXdark blueXX", "yellow"),
+     "return label": ("white", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5409</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -38,7 +38,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "highlighted var label": ("dark blue", "yellow"),
++    "highlighted var label": ("dark blue", "XXyellowXX"),
+     "return label": ("white", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5410</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -39,7 +39,7 @@
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+-    "return label": ("white", "dark blue"),
++    "XXreturn labelXX": ("white", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5411</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -39,7 +39,7 @@
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+-    "return label": ("white", "dark blue"),
++    "return label": ("XXwhiteXX", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5412</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -39,7 +39,7 @@
+     # }}}
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+-    "return label": ("white", "dark blue"),
++    "return label": ("white", "XXdark blueXX"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5413</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -40,7 +40,7 @@
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "XXfocused return labelXX": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5414</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -40,7 +40,7 @@
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "focused return label": ("XXlight grayXX", "dark blue"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5415</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -40,7 +40,7 @@
+     # {{{ variables view
+     "highlighted var label": ("dark blue", "yellow"),
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "focused return label": ("light gray", "XXdark blueXX"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5416</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -43,7 +43,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "XXcurrent frame nameXX": (add_setting("white", "bold"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5417</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -43,7 +43,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("XXwhiteXX", "bold"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5418</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -43,7 +43,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("white", "XXboldXX"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5419</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -43,7 +43,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("white", "bold"), "XXdark cyanXX"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5420</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -44,7 +44,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "XXfocused current frame nameXX": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": (
+</pre><h3>Mutant 5421</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -44,7 +44,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("XXblackXX", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": (
+</pre><h3>Mutant 5422</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -44,7 +44,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("black", "XXboldXX"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": (
+</pre><h3>Mutant 5423</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -44,7 +44,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("black", "bold"), "XXlight cyanXX"),
+     # }}}
+     # {{{ shell
+     "command line output": (
+</pre><h3>Mutant 5424</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -47,7 +47,7 @@
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+-    "command line output": (
++    "XXcommand line outputXX": (
+         add_setting("dark gray", "bold"), "white"),
+     # }}}
+     # {{{ Code syntax
+</pre><h3>Mutant 5425</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -48,7 +48,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": (
+-        add_setting("dark gray", "bold"), "white"),
++        add_setting("XXdark grayXX", "bold"), "white"),
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+</pre><h3>Mutant 5426</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -48,7 +48,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": (
+-        add_setting("dark gray", "bold"), "white"),
++        add_setting("dark gray", "XXboldXX"), "white"),
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+</pre><h3>Mutant 5427</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -48,7 +48,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": (
+-        add_setting("dark gray", "bold"), "white"),
++        add_setting("dark gray", "bold"), "XXwhiteXX"),
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+</pre><h3>Mutant 5428</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -51,7 +51,7 @@
+         add_setting("dark gray", "bold"), "white"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword2": ("dark magenta", "white"),
++    "XXkeyword2XX": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+</pre><h3>Mutant 5429</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -51,7 +51,7 @@
+         add_setting("dark gray", "bold"), "white"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword2": ("dark magenta", "white"),
++    "keyword2": ("XXdark magentaXX", "white"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+</pre><h3>Mutant 5430</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -51,7 +51,7 @@
+         add_setting("dark gray", "bold"), "white"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword2": ("dark magenta", "white"),
++    "keyword2": ("dark magenta", "XXwhiteXX"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+</pre><h3>Mutant 5431</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -52,7 +52,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+-    "namespace": ("dark magenta", "white"),
++    "XXnamespaceXX": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+</pre><h3>Mutant 5432</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -52,7 +52,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+-    "namespace": ("dark magenta", "white"),
++    "namespace": ("XXdark magentaXX", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+</pre><h3>Mutant 5433</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -52,7 +52,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+-    "namespace": ("dark magenta", "white"),
++    "namespace": ("dark magenta", "XXwhiteXX"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+</pre><h3>Mutant 5434</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -53,7 +53,7 @@
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+-    "literal": ("dark red", "white"),
++    "XXliteralXX": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+</pre><h3>Mutant 5435</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -53,7 +53,7 @@
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+-    "literal": ("dark red", "white"),
++    "literal": ("XXdark redXX", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+</pre><h3>Mutant 5436</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -53,7 +53,7 @@
+     # {{{ Code syntax
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+-    "literal": ("dark red", "white"),
++    "literal": ("dark red", "XXwhiteXX"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+</pre><h3>Mutant 5437</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -54,7 +54,7 @@
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+-    "exception": ("dark red", "white"),
++    "XXexceptionXX": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+</pre><h3>Mutant 5438</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -54,7 +54,7 @@
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+-    "exception": ("dark red", "white"),
++    "exception": ("XXdark redXX", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+</pre><h3>Mutant 5439</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -54,7 +54,7 @@
+     "keyword2": ("dark magenta", "white"),
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+-    "exception": ("dark red", "white"),
++    "exception": ("dark red", "XXwhiteXX"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+</pre><h3>Mutant 5440</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -55,7 +55,7 @@
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+-    "comment": ("dark gray", "white"),
++    "XXcommentXX": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+</pre><h3>Mutant 5441</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -55,7 +55,7 @@
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+-    "comment": ("dark gray", "white"),
++    "comment": ("XXdark grayXX", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+</pre><h3>Mutant 5442</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -55,7 +55,7 @@
+     "namespace": ("dark magenta", "white"),
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+-    "comment": ("dark gray", "white"),
++    "comment": ("dark gray", "XXwhiteXX"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+</pre><h3>Mutant 5443</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -56,7 +56,7 @@
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+-    "function": ("dark blue", "white"),
++    "XXfunctionXX": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+     # }}}
+</pre><h3>Mutant 5444</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -56,7 +56,7 @@
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+-    "function": ("dark blue", "white"),
++    "function": ("XXdark blueXX", "white"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+     # }}}
+</pre><h3>Mutant 5445</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -56,7 +56,7 @@
+     "literal": ("dark red", "white"),
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+-    "function": ("dark blue", "white"),
++    "function": ("dark blue", "XXwhiteXX"),
+     "pseudo": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+     # }}}
+</pre><h3>Mutant 5446</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -57,7 +57,7 @@
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+-    "pseudo": ("dark gray", "white"),
++    "XXpseudoXX": ("dark gray", "white"),
+     "builtin": ("light blue", "white"),
+     # }}}
+ }
+</pre><h3>Mutant 5447</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -57,7 +57,7 @@
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+-    "pseudo": ("dark gray", "white"),
++    "pseudo": ("XXdark grayXX", "white"),
+     "builtin": ("light blue", "white"),
+     # }}}
+ }
+</pre><h3>Mutant 5448</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -57,7 +57,7 @@
+     "exception": ("dark red", "white"),
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+-    "pseudo": ("dark gray", "white"),
++    "pseudo": ("dark gray", "XXwhiteXX"),
+     "builtin": ("light blue", "white"),
+     # }}}
+ }
+</pre><h3>Mutant 5449</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -58,7 +58,7 @@
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+-    "builtin": ("light blue", "white"),
++    "XXbuiltinXX": ("light blue", "white"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5450</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -58,7 +58,7 @@
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+-    "builtin": ("light blue", "white"),
++    "builtin": ("XXlight blueXX", "white"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5451</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -58,7 +58,7 @@
+     "comment": ("dark gray", "white"),
+     "function": ("dark blue", "white"),
+     "pseudo": ("dark gray", "white"),
+-    "builtin": ("light blue", "white"),
++    "builtin": ("light blue", "XXwhiteXX"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5452</h3><pre>--- ./themes/vim.py
++++ ./themes/vim.py
+@@ -4,63 +4,7 @@
+ link("current breakpoint", "current frame name")
+ link("focused current breakpoint", "focused current frame name")
+ 
+-palette_dict = {
+-    # {{{ base styles
+-    "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
+-    "hotkey": (add_setting("black", "bold, underline"), "light gray"),
+-    "highlighted": ("black", "yellow"),
+-    # }}}
+-    # {{{ general ui
+-    "header": (add_setting("black", "bold"), "light gray"),
+-    "group head": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "input": ("black", "dark cyan"),
+-    "focused input": ("black", "light cyan"),
+-    "warning": (add_setting("dark red", "bold"), "white"),
+-    "header warning": (add_setting("dark red", "bold"), "light gray"),
+-    # }}}
+-    # {{{ source view
+-    "source": ("black", "white"),
+-    "current source": ("black", "dark cyan"),
+-    "breakpoint source": ("dark red", "light gray"),
+-    "line number": ("dark gray", "white"),
+-    "current line marker": ("dark red", "white"),
+-    "breakpoint marker": ("dark red", "white"),
+-    # }}}
+-    # {{{ sidebar
+-    "sidebar one": ("black", "dark cyan"),
+-    "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar one": ("black", "light cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
+-    # }}}
+-    # {{{ variables view
+-    "highlighted var label": ("dark blue", "yellow"),
+-    "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
+-    # }}}
+-    # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+-    # }}}
+-    # {{{ shell
+-    "command line output": (
+-        add_setting("dark gray", "bold"), "white"),
+-    # }}}
+-    # {{{ Code syntax
+-    "keyword2": ("dark magenta", "white"),
+-    "namespace": ("dark magenta", "white"),
+-    "literal": ("dark red", "white"),
+-    "exception": ("dark red", "white"),
+-    "comment": ("dark gray", "white"),
+-    "function": ("dark blue", "white"),
+-    "pseudo": ("dark gray", "white"),
+-    "builtin": ("light blue", "white"),
+-    # }}}
+-}
++palette_dict = None
+ 
+ # vim: foldmethod=marker
+ 
+</pre></body></html>

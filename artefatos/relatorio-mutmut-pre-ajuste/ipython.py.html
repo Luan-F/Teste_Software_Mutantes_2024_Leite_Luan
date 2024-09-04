@@ -1,0 +1,196 @@
+<html><body><h1>./ipython.py</h1>Killed 0 out of 18 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3324</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -17,7 +17,7 @@
+ 
+     # Get the running instance
+ 
+-    if not line.strip():
++    if  line.strip():
+         print(pudb.__doc__)
+         return
+ 
+</pre><h3>Mutant 3325</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -22,7 +22,7 @@
+         return
+ 
+     from IPython.utils.process import arg_split
+-    args = arg_split(line)
++    args = None
+ 
+     path = os.path.abspath(args[0])
+     args = args[1:]
+</pre><h3>Mutant 3326</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -24,7 +24,7 @@
+     from IPython.utils.process import arg_split
+     args = arg_split(line)
+ 
+-    path = os.path.abspath(args[0])
++    path = os.path.abspath(args[1])
+     args = args[1:]
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+</pre><h3>Mutant 3327</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -24,7 +24,7 @@
+     from IPython.utils.process import arg_split
+     args = arg_split(line)
+ 
+-    path = os.path.abspath(args[0])
++    path = None
+     args = args[1:]
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+</pre><h3>Mutant 3328</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -25,7 +25,7 @@
+     args = arg_split(line)
+ 
+     path = os.path.abspath(args[0])
+-    args = args[1:]
++    args = args[2:]
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+         raise UsageError("%%pudb: file %s does not exist" % path)
+</pre><h3>Mutant 3329</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -25,7 +25,7 @@
+     args = arg_split(line)
+ 
+     path = os.path.abspath(args[0])
+-    args = args[1:]
++    args = None
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+         raise UsageError("%%pudb: file %s does not exist" % path)
+</pre><h3>Mutant 3330</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -26,7 +26,7 @@
+ 
+     path = os.path.abspath(args[0])
+     args = args[1:]
+-    if not os.path.isfile(path):
++    if  os.path.isfile(path):
+         from IPython.core.error import UsageError
+         raise UsageError("%%pudb: file %s does not exist" % path)
+ 
+</pre><h3>Mutant 3331</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -28,7 +28,7 @@
+     args = args[1:]
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+-        raise UsageError("%%pudb: file %s does not exist" % path)
++        raise UsageError("XX%%pudb: file %s does not existXX" % path)
+ 
+     from pudb import runscript
+     runscript(path, args)
+</pre><h3>Mutant 3332</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -28,7 +28,7 @@
+     args = args[1:]
+     if not os.path.isfile(path):
+         from IPython.core.error import UsageError
+-        raise UsageError("%%pudb: file %s does not exist" % path)
++        raise UsageError("%%pudb: file %s does not exist" / path)
+ 
+     from pudb import runscript
+     runscript(path, args)
+</pre><h3>Mutant 3333</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -34,7 +34,7 @@
+     runscript(path, args)
+ 
+ 
+-register_line_magic(pudb)
++register_line_magic(None)
+ 
+ 
+ def debugger(self, force=False):
+</pre><h3>Mutant 3334</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -37,7 +37,7 @@
+ register_line_magic(pudb)
+ 
+ 
+-def debugger(self, force=False):
++def debugger(self, force=True):
+     """Call the PuDB debugger."""
+     from logging import error
+     if not (force or self.call_pdb):
+</pre><h3>Mutant 3335</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -40,7 +40,7 @@
+ def debugger(self, force=False):
+     """Call the PuDB debugger."""
+     from logging import error
+-    if not (force or self.call_pdb):
++    if  (force or self.call_pdb):
+         return
+ 
+     if not hasattr(sys, "last_traceback"):
+</pre><h3>Mutant 3336</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -40,7 +40,7 @@
+ def debugger(self, force=False):
+     """Call the PuDB debugger."""
+     from logging import error
+-    if not (force or self.call_pdb):
++    if not (force and self.call_pdb):
+         return
+ 
+     if not hasattr(sys, "last_traceback"):
+</pre><h3>Mutant 3337</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -43,7 +43,7 @@
+     if not (force or self.call_pdb):
+         return
+ 
+-    if not hasattr(sys, "last_traceback"):
++    if  hasattr(sys, "last_traceback"):
+         error("No traceback has been produced, nothing to debug.")
+         return
+ 
+</pre><h3>Mutant 3338</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -43,7 +43,7 @@
+     if not (force or self.call_pdb):
+         return
+ 
+-    if not hasattr(sys, "last_traceback"):
++    if not hasattr(sys, "XXlast_tracebackXX"):
+         error("No traceback has been produced, nothing to debug.")
+         return
+ 
+</pre><h3>Mutant 3339</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -44,7 +44,7 @@
+         return
+ 
+     if not hasattr(sys, "last_traceback"):
+-        error("No traceback has been produced, nothing to debug.")
++        error("XXNo traceback has been produced, nothing to debug.XX")
+         return
+ 
+     from pudb import pm
+</pre><h3>Mutant 3340</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -53,6 +53,6 @@
+         pm()
+ 
+ 
+-ip = get_ipython()
++ip = None
+ ip.__class__.debugger = debugger
+ 
+</pre><h3>Mutant 3341</h3><pre>--- ./ipython.py
++++ ./ipython.py
+@@ -54,5 +54,5 @@
+ 
+ 
+ ip = get_ipython()
+-ip.__class__.debugger = debugger
++ip.__class__.debugger = None
+ 
+</pre></body></html>

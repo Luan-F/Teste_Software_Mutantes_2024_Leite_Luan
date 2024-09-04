@@ -1,0 +1,100 @@
+<html><body><h1>./test/test_run.py</h1>Killed 19 out of 28 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4442</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -8,7 +8,7 @@
+ 
+ 
+ def csv(x):
+-    return "('" + "', '".join(x) + "',)"
++    return "XX('XX" + "', '".join(x) + "',)"
+ 
+ 
+ main_version_scenarios = [
+</pre><h3>Mutant 4444</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -8,7 +8,7 @@
+ 
+ 
+ def csv(x):
+-    return "('" + "', '".join(x) + "',)"
++    return "('" + "XX', 'XX".join(x) + "',)"
+ 
+ 
+ main_version_scenarios = [
+</pre><h3>Mutant 4446</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -8,7 +8,7 @@
+ 
+ 
+ def csv(x):
+-    return "('" + "', '".join(x) + "',)"
++    return "('" + "', '".join(x) + "XX',)XX"
+ 
+ 
+ main_version_scenarios = [
+</pre><h3>Mutant 4450</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -14,7 +14,7 @@
+ main_version_scenarios = [
+     ("-v",),
+     ("--version",),
+-    ("--version", "dont_look_at_me.py"),
++    ("--version", "XXdont_look_at_me.pyXX"),
+ ]
+ 
+ 
+</pre><h3>Mutant 4456</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -27,7 +27,7 @@
+ 
+     with pytest.raises(SystemExit) as ex:
+         main()
+-        assert ex.value == 0
++        assert ex.value != 0
+ 
+     captured = capsys.readouterr()
+ 
+</pre><h3>Mutant 4457</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -27,7 +27,7 @@
+ 
+     with pytest.raises(SystemExit) as ex:
+         main()
+-        assert ex.value == 0
++        assert ex.value == 1
+ 
+     captured = capsys.readouterr()
+ 
+</pre><h3>Mutant 4463</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -42,7 +42,7 @@
+     mocker.patch("sys.argv", [
+         os.path.basename(main.__code__.co_filename),
+         "-v",
+-        "dont_look_at_me.py"
++        "XXdont_look_at_me.pyXX"
+     ])
+ 
+     with pytest.raises(SystemExit) as ex:
+</pre><h3>Mutant 4464</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -47,7 +47,7 @@
+ 
+     with pytest.raises(SystemExit) as ex:
+         main()
+-        assert ex.value == 2
++        assert ex.value != 2
+ 
+     captured = capsys.readouterr()
+ 
+</pre><h3>Mutant 4465</h3><pre>--- ./test/test_run.py
++++ ./test/test_run.py
+@@ -47,7 +47,7 @@
+ 
+     with pytest.raises(SystemExit) as ex:
+         main()
+-        assert ex.value == 2
++        assert ex.value == 3
+ 
+     captured = capsys.readouterr()
+ 
+</pre></body></html>

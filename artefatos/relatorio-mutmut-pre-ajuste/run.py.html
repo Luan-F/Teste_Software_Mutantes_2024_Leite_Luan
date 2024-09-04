@@ -1,0 +1,479 @@
+<html><body><h1>./run.py</h1>Killed 25 out of 68 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 775</h3><pre>--- ./run.py
++++ ./run.py
+@@ -1,4 +1,4 @@
+-COMMAND = {"zsh": "{_command_names -e}"}
++COMMAND = {"XXzshXX": "{_command_names -e}"}
+ PREAMBLE = {
+     "zsh": """\
+ _script_args() {
+</pre><h3>Mutant 776</h3><pre>--- ./run.py
++++ ./run.py
+@@ -1,4 +1,4 @@
+-COMMAND = {"zsh": "{_command_names -e}"}
++COMMAND = {"zsh": "XX{_command_names -e}XX"}
+ PREAMBLE = {
+     "zsh": """\
+ _script_args() {
+</pre><h3>Mutant 777</h3><pre>--- ./run.py
++++ ./run.py
+@@ -1,4 +1,4 @@
+-COMMAND = {"zsh": "{_command_names -e}"}
++COMMAND = None
+ PREAMBLE = {
+     "zsh": """\
+ _script_args() {
+</pre><h3>Mutant 778</h3><pre>--- ./run.py
++++ ./run.py
+@@ -1,6 +1,6 @@
+ COMMAND = {"zsh": "{_command_names -e}"}
+ PREAMBLE = {
+-    "zsh": """\
++    "XXzshXX": """\
+ _script_args() {
+   # pudb -m <TAB>
+   if (($words[(I)-m] == $#words - 1)); then
+</pre><h3>Mutant 779</h3><pre>--- ./run.py
++++ ./run.py
+@@ -1,20 +1,5 @@
+ COMMAND = {"zsh": "{_command_names -e}"}
+-PREAMBLE = {
+-    "zsh": """\
+-_script_args() {
+-  # pudb -m <TAB>
+-  if (($words[(I)-m] == $#words - 1)); then
+-    _python_modules
+-  # pudb -m XXX <TAB>
+-  elif (($words[(I)-m])); then
+-    _files
+-  # pudb <TAB>
+-  else
+-    _arguments -S -s '(-)1:script_args:_files -g "*.py"' '*: :_files'
+-  fi
+-}
+-""",
+-}
++PREAMBLE = None
+ SCRIPT_ARGS = {"zsh": "_script_args"}
+ 
+ 
+</pre><h3>Mutant 780</h3><pre>--- ./run.py
++++ ./run.py
+@@ -15,7 +15,7 @@
+ }
+ """,
+ }
+-SCRIPT_ARGS = {"zsh": "_script_args"}
++SCRIPT_ARGS = {"XXzshXX": "_script_args"}
+ 
+ 
+ def get_argparse_parser():
+</pre><h3>Mutant 781</h3><pre>--- ./run.py
++++ ./run.py
+@@ -15,7 +15,7 @@
+ }
+ """,
+ }
+-SCRIPT_ARGS = {"zsh": "_script_args"}
++SCRIPT_ARGS = {"zsh": "XX_script_argsXX"}
+ 
+ 
+ def get_argparse_parser():
+</pre><h3>Mutant 782</h3><pre>--- ./run.py
++++ ./run.py
+@@ -15,7 +15,7 @@
+ }
+ """,
+ }
+-SCRIPT_ARGS = {"zsh": "_script_args"}
++SCRIPT_ARGS = None
+ 
+ 
+ def get_argparse_parser():
+</pre><h3>Mutant 783</h3><pre>--- ./run.py
++++ ./run.py
+@@ -29,7 +29,7 @@
+ 
+     from pudb import VERSION
+ 
+-    version_info = "%(prog)s v" + VERSION
++    version_info = "XX%(prog)s vXX" + VERSION
+ 
+     if sys.argv[1:] == ["-v"]:
+         print(version_info % {"prog": "pudb"})
+</pre><h3>Mutant 793</h3><pre>--- ./run.py
++++ ./run.py
+@@ -37,7 +37,7 @@
+ 
+     parser = argparse.ArgumentParser(
+         "pudb",
+-        usage="%(prog)s [options] [-m] SCRIPT-OR-MODULE-TO-RUN [SCRIPT_ARGS]",
++        usage="XX%(prog)s [options] [-m] SCRIPT-OR-MODULE-TO-RUN [SCRIPT_ARGS]XX",
+         epilog=version_info
+     )
+     shtab.add_argument_to(parser, preamble=PREAMBLE)
+</pre><h3>Mutant 798</h3><pre>--- ./run.py
++++ ./run.py
+@@ -45,7 +45,7 @@
+     parser.add_argument(
+         "-c", "--continue",
+         action="store_true",
+-        dest="_continue_at_start",
++        dest="XX_continue_at_startXX",
+         help="Let the script run until an exception occurs or a breakpoint is hit",
+     )
+     parser.add_argument("-s", "--steal-output", action="store_true")
+</pre><h3>Mutant 799</h3><pre>--- ./run.py
++++ ./run.py
+@@ -46,7 +46,7 @@
+         "-c", "--continue",
+         action="store_true",
+         dest="_continue_at_start",
+-        help="Let the script run until an exception occurs or a breakpoint is hit",
++        help="XXLet the script run until an exception occurs or a breakpoint is hitXX",
+     )
+     parser.add_argument("-s", "--steal-output", action="store_true")
+ 
+</pre><h3>Mutant 806</h3><pre>--- ./run.py
++++ ./run.py
+@@ -55,7 +55,7 @@
+     #    python -m pudb -m http.server -h
+     # where the -h will be passed to the http.server module
+     parser.add_argument("-m", "--module", action="store_true",
+-                        help="Debug as module or package instead of as a script")
++                        help="XXDebug as module or package instead of as a scriptXX")
+ 
+     parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
+                         help="Log internal errors to the given file"
+</pre><h3>Mutant 809</h3><pre>--- ./run.py
++++ ./run.py
+@@ -57,7 +57,7 @@
+     parser.add_argument("-m", "--module", action="store_true",
+                         help="Debug as module or package instead of as a script")
+ 
+-    parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
++    parser.add_argument("-le", "--log-errors", nargs=2, metavar="FILE",
+                         help="Log internal errors to the given file"
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+</pre><h3>Mutant 810</h3><pre>--- ./run.py
++++ ./run.py
+@@ -57,7 +57,7 @@
+     parser.add_argument("-m", "--module", action="store_true",
+                         help="Debug as module or package instead of as a script")
+ 
+-    parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
++    parser.add_argument("-le", "--log-errors", nargs=1, metavar="XXFILEXX",
+                         help="Log internal errors to the given file"
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+</pre><h3>Mutant 811</h3><pre>--- ./run.py
++++ ./run.py
+@@ -58,7 +58,7 @@
+                         help="Debug as module or package instead of as a script")
+ 
+     parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
+-                        help="Log internal errors to the given file"
++                        help="XXLog internal errors to the given fileXX"
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+                         help="Run command before each program run",
+</pre><h3>Mutant 812</h3><pre>--- ./run.py
++++ ./run.py
+@@ -59,7 +59,7 @@
+ 
+     parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
+                         help="Log internal errors to the given file"
+-                        ).complete = shtab.FILE
++                        ).complete = None
+     parser.add_argument("--pre-run", metavar="COMMAND",
+                         help="Run command before each program run",
+                         default="").complete = COMMAND
+</pre><h3>Mutant 813</h3><pre>--- ./run.py
++++ ./run.py
+@@ -60,7 +60,7 @@
+     parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
+                         help="Log internal errors to the given file"
+                         ).complete = shtab.FILE
+-    parser.add_argument("--pre-run", metavar="COMMAND",
++    parser.add_argument("XX--pre-runXX", metavar="COMMAND",
+                         help="Run command before each program run",
+                         default="").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+</pre><h3>Mutant 814</h3><pre>--- ./run.py
++++ ./run.py
+@@ -60,7 +60,7 @@
+     parser.add_argument("-le", "--log-errors", nargs=1, metavar="FILE",
+                         help="Log internal errors to the given file"
+                         ).complete = shtab.FILE
+-    parser.add_argument("--pre-run", metavar="COMMAND",
++    parser.add_argument("--pre-run", metavar="XXCOMMANDXX",
+                         help="Run command before each program run",
+                         default="").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+</pre><h3>Mutant 815</h3><pre>--- ./run.py
++++ ./run.py
+@@ -61,7 +61,7 @@
+                         help="Log internal errors to the given file"
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+-                        help="Run command before each program run",
++                        help="XXRun command before each program runXX",
+                         default="").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+     parser.add_argument("script_args", nargs=argparse.REMAINDER,
+</pre><h3>Mutant 816</h3><pre>--- ./run.py
++++ ./run.py
+@@ -62,7 +62,7 @@
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+                         help="Run command before each program run",
+-                        default="").complete = COMMAND
++                        default="XXXX").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+     parser.add_argument("script_args", nargs=argparse.REMAINDER,
+                         help="Arguments to pass to script or module"
+</pre><h3>Mutant 817</h3><pre>--- ./run.py
++++ ./run.py
+@@ -62,7 +62,7 @@
+                         ).complete = shtab.FILE
+     parser.add_argument("--pre-run", metavar="COMMAND",
+                         help="Run command before each program run",
+-                        default="").complete = COMMAND
++                        default="").complete = None
+     parser.add_argument("--version", action="version", version=version_info)
+     parser.add_argument("script_args", nargs=argparse.REMAINDER,
+                         help="Arguments to pass to script or module"
+</pre><h3>Mutant 820</h3><pre>--- ./run.py
++++ ./run.py
+@@ -64,7 +64,7 @@
+                         help="Run command before each program run",
+                         default="").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+-    parser.add_argument("script_args", nargs=argparse.REMAINDER,
++    parser.add_argument("XXscript_argsXX", nargs=argparse.REMAINDER,
+                         help="Arguments to pass to script or module"
+                         ).complete = SCRIPT_ARGS
+     return parser
+</pre><h3>Mutant 821</h3><pre>--- ./run.py
++++ ./run.py
+@@ -65,7 +65,7 @@
+                         default="").complete = COMMAND
+     parser.add_argument("--version", action="version", version=version_info)
+     parser.add_argument("script_args", nargs=argparse.REMAINDER,
+-                        help="Arguments to pass to script or module"
++                        help="XXArguments to pass to script or moduleXX"
+                         ).complete = SCRIPT_ARGS
+     return parser
+ 
+</pre><h3>Mutant 822</h3><pre>--- ./run.py
++++ ./run.py
+@@ -66,7 +66,7 @@
+     parser.add_argument("--version", action="version", version=version_info)
+     parser.add_argument("script_args", nargs=argparse.REMAINDER,
+                         help="Arguments to pass to script or module"
+-                        ).complete = SCRIPT_ARGS
++                        ).complete = None
+     return parser
+ 
+ 
+</pre><h3>Mutant 825</h3><pre>--- ./run.py
++++ ./run.py
+@@ -76,7 +76,7 @@
+     parser = get_argparse_parser()
+ 
+     options = parser.parse_args()
+-    args = options.script_args
++    args = None
+ 
+     if options.log_errors:
+         from pudb.lowlevel import setlogfile
+</pre><h3>Mutant 826</h3><pre>--- ./run.py
++++ ./run.py
+@@ -80,7 +80,7 @@
+ 
+     if options.log_errors:
+         from pudb.lowlevel import setlogfile
+-        setlogfile(options.log_errors[0])
++        setlogfile(options.log_errors[1])
+ 
+     options_kwargs = {
+         "pre_run": options.pre_run,
+</pre><h3>Mutant 827</h3><pre>--- ./run.py
++++ ./run.py
+@@ -83,7 +83,7 @@
+         setlogfile(options.log_errors[0])
+ 
+     options_kwargs = {
+-        "pre_run": options.pre_run,
++        "XXpre_runXX": options.pre_run,
+         "steal_output": options.steal_output,
+         "_continue_at_start": options._continue_at_start,
+     }
+</pre><h3>Mutant 828</h3><pre>--- ./run.py
++++ ./run.py
+@@ -84,7 +84,7 @@
+ 
+     options_kwargs = {
+         "pre_run": options.pre_run,
+-        "steal_output": options.steal_output,
++        "XXsteal_outputXX": options.steal_output,
+         "_continue_at_start": options._continue_at_start,
+     }
+ 
+</pre><h3>Mutant 829</h3><pre>--- ./run.py
++++ ./run.py
+@@ -85,7 +85,7 @@
+     options_kwargs = {
+         "pre_run": options.pre_run,
+         "steal_output": options.steal_output,
+-        "_continue_at_start": options._continue_at_start,
++        "XX_continue_at_startXX": options._continue_at_start,
+     }
+ 
+     if len(args) < 1:
+</pre><h3>Mutant 830</h3><pre>--- ./run.py
++++ ./run.py
+@@ -82,11 +82,7 @@
+         from pudb.lowlevel import setlogfile
+         setlogfile(options.log_errors[0])
+ 
+-    options_kwargs = {
+-        "pre_run": options.pre_run,
+-        "steal_output": options.steal_output,
+-        "_continue_at_start": options._continue_at_start,
+-    }
++    options_kwargs = None
+ 
+     if len(args) < 1:
+         parser.print_help()
+</pre><h3>Mutant 831</h3><pre>--- ./run.py
++++ ./run.py
+@@ -88,7 +88,7 @@
+         "_continue_at_start": options._continue_at_start,
+     }
+ 
+-    if len(args) < 1:
++    if len(args) <= 1:
+         parser.print_help()
+         sys.exit(2)
+ 
+</pre><h3>Mutant 832</h3><pre>--- ./run.py
++++ ./run.py
+@@ -88,7 +88,7 @@
+         "_continue_at_start": options._continue_at_start,
+     }
+ 
+-    if len(args) < 1:
++    if len(args) < 2:
+         parser.print_help()
+         sys.exit(2)
+ 
+</pre><h3>Mutant 833</h3><pre>--- ./run.py
++++ ./run.py
+@@ -90,7 +90,7 @@
+ 
+     if len(args) < 1:
+         parser.print_help()
+-        sys.exit(2)
++        sys.exit(3)
+ 
+     mainpyfile = args[0]
+     sys.argv = args
+</pre><h3>Mutant 834</h3><pre>--- ./run.py
++++ ./run.py
+@@ -92,7 +92,7 @@
+         parser.print_help()
+         sys.exit(2)
+ 
+-    mainpyfile = args[0]
++    mainpyfile = args[1]
+     sys.argv = args
+ 
+     if options.module:
+</pre><h3>Mutant 835</h3><pre>--- ./run.py
++++ ./run.py
+@@ -92,7 +92,7 @@
+         parser.print_help()
+         sys.exit(2)
+ 
+-    mainpyfile = args[0]
++    mainpyfile = None
+     sys.argv = args
+ 
+     if options.module:
+</pre><h3>Mutant 836</h3><pre>--- ./run.py
++++ ./run.py
+@@ -93,7 +93,7 @@
+         sys.exit(2)
+ 
+     mainpyfile = args[0]
+-    sys.argv = args
++    sys.argv = None
+ 
+     if options.module:
+         from pudb import runmodule
+</pre><h3>Mutant 837</h3><pre>--- ./run.py
++++ ./run.py
+@@ -100,7 +100,7 @@
+         runmodule(mainpyfile, **options_kwargs)
+     else:
+         from os.path import exists
+-        if not exists(mainpyfile):
++        if  exists(mainpyfile):
+             print("Error: %s does not exist" % mainpyfile, file=sys.stderr)
+             sys.exit(1)
+ 
+</pre><h3>Mutant 838</h3><pre>--- ./run.py
++++ ./run.py
+@@ -101,7 +101,7 @@
+     else:
+         from os.path import exists
+         if not exists(mainpyfile):
+-            print("Error: %s does not exist" % mainpyfile, file=sys.stderr)
++            print("XXError: %s does not existXX" % mainpyfile, file=sys.stderr)
+             sys.exit(1)
+ 
+         from pudb import runscript
+</pre><h3>Mutant 839</h3><pre>--- ./run.py
++++ ./run.py
+@@ -101,7 +101,7 @@
+     else:
+         from os.path import exists
+         if not exists(mainpyfile):
+-            print("Error: %s does not exist" % mainpyfile, file=sys.stderr)
++            print("Error: %s does not exist" / mainpyfile, file=sys.stderr)
+             sys.exit(1)
+ 
+         from pudb import runscript
+</pre><h3>Mutant 840</h3><pre>--- ./run.py
++++ ./run.py
+@@ -102,7 +102,7 @@
+         from os.path import exists
+         if not exists(mainpyfile):
+             print("Error: %s does not exist" % mainpyfile, file=sys.stderr)
+-            sys.exit(1)
++            sys.exit(2)
+ 
+         from pudb import runscript
+         runscript(mainpyfile, **options_kwargs)
+</pre><h3>Mutant 841</h3><pre>--- ./run.py
++++ ./run.py
+@@ -108,6 +108,6 @@
+         runscript(mainpyfile, **options_kwargs)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     main()
+ 
+</pre><h3>Mutant 842</h3><pre>--- ./run.py
++++ ./run.py
+@@ -108,6 +108,6 @@
+         runscript(mainpyfile, **options_kwargs)
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     main()
+ 
+</pre></body></html>

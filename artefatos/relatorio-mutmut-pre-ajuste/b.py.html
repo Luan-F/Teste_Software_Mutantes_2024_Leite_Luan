@@ -1,0 +1,78 @@
+<html><body><h1>./b.py</h1>Killed 0 out of 7 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1019</h3><pre>--- ./b.py
++++ ./b.py
+@@ -4,7 +4,7 @@
+ 
+ 
+ def __myimport__(name, *args, **kwargs):  # noqa: N807
+-    if name == "pudb.b":
++    if name != "pudb.b":
+         set_trace()
+     return __origimport__(name, *args, **kwargs)  # noqa: F821, E501 # pylint: disable=undefined-variable
+ 
+</pre><h3>Mutant 1020</h3><pre>--- ./b.py
++++ ./b.py
+@@ -4,7 +4,7 @@
+ 
+ 
+ def __myimport__(name, *args, **kwargs):  # noqa: N807
+-    if name == "pudb.b":
++    if name == "XXpudb.bXX":
+         set_trace()
+     return __origimport__(name, *args, **kwargs)  # noqa: F821, E501 # pylint: disable=undefined-variable
+ 
+</pre><h3>Mutant 1021</h3><pre>--- ./b.py
++++ ./b.py
+@@ -10,7 +10,7 @@
+ 
+ 
+ # Will only be run on first import
+-__builtins__["__origimport__"] = __import__
++__builtins__["XX__origimport__XX"] = __import__
+ __builtins__["__import__"] = __myimport__
+ 
+ 
+</pre><h3>Mutant 1022</h3><pre>--- ./b.py
++++ ./b.py
+@@ -10,7 +10,7 @@
+ 
+ 
+ # Will only be run on first import
+-__builtins__["__origimport__"] = __import__
++__builtins__["__origimport__"] = None
+ __builtins__["__import__"] = __myimport__
+ 
+ 
+</pre><h3>Mutant 1023</h3><pre>--- ./b.py
++++ ./b.py
+@@ -11,7 +11,7 @@
+ 
+ # Will only be run on first import
+ __builtins__["__origimport__"] = __import__
+-__builtins__["__import__"] = __myimport__
++__builtins__["XX__import__XX"] = __myimport__
+ 
+ 
+ def set_trace():
+</pre><h3>Mutant 1024</h3><pre>--- ./b.py
++++ ./b.py
+@@ -11,7 +11,7 @@
+ 
+ # Will only be run on first import
+ __builtins__["__origimport__"] = __import__
+-__builtins__["__import__"] = __myimport__
++__builtins__["__import__"] = None
+ 
+ 
+ def set_trace():
+</pre><h3>Mutant 1025</h3><pre>--- ./b.py
++++ ./b.py
+@@ -15,7 +15,7 @@
+ 
+ 
+ def set_trace():
+-    dbg = _get_debugger()
++    dbg = None
+     set_interrupt_handler()
+     dbg.set_trace(sys._getframe().f_back.f_back)
+ 
+</pre></body></html>

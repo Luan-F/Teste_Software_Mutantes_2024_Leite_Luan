@@ -1,0 +1,342 @@
+<html><body><h1>./test/test_lowlevel.py</h1>Killed 67 out of 98 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 4298</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -49,7 +49,7 @@
+     if lines:
+         base_indent = 0
+         while lines[0][base_indent] in " \t":
+-            base_indent += 1
++            base_indent = 1
+ 
+         for line in lines[1:]:
+             if line[:base_indent].strip():
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4252</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -4,7 +4,7 @@
+ 
+ 
+ def test_detect_encoding_nocookie():
+-    lines = ["Test Проверка"]
++    lines = ["XXTest ПроверкаXX"]
+     lines = [line.encode("utf-8") for line in lines]
+     encoding, _ = detect_encoding(iter(lines))
+     assert encoding == "utf-8"
+</pre><h3>Mutant 4259</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -12,7 +12,7 @@
+ 
+ def test_detect_encoding_cookie():
+     lines = [
+-        "# coding=utf-8",
++        "XX# coding=utf-8XX",
+         "Test",
+         "Проверка"
+     ]
+</pre><h3>Mutant 4260</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -13,7 +13,7 @@
+ def test_detect_encoding_cookie():
+     lines = [
+         "# coding=utf-8",
+-        "Test",
++        "XXTestXX",
+         "Проверка"
+     ]
+     lines = [line.encode("utf-8") for line in lines]
+</pre><h3>Mutant 4261</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -14,7 +14,7 @@
+     lines = [
+         "# coding=utf-8",
+         "Test",
+-        "Проверка"
++        "XXПроверкаXX"
+     ]
+     lines = [line.encode("utf-8") for line in lines]
+     encoding, _ = detect_encoding(iter(lines))
+</pre><h3>Mutant 4268</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -23,7 +23,7 @@
+ 
+ def test_decode_lines():
+     unicode_lines = [
+-        "# coding=utf-8",
++        "XX# coding=utf-8XX",
+         "Test",
+         "Проверка",
+     ]
+</pre><h3>Mutant 4269</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -24,7 +24,7 @@
+ def test_decode_lines():
+     unicode_lines = [
+         "# coding=utf-8",
+-        "Test",
++        "XXTestXX",
+         "Проверка",
+     ]
+     lines = [line.encode("utf-8") for line in unicode_lines]
+</pre><h3>Mutant 4270</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -25,7 +25,7 @@
+     unicode_lines = [
+         "# coding=utf-8",
+         "Test",
+-        "Проверка",
++        "XXПроверкаXX",
+     ]
+     lines = [line.encode("utf-8") for line in unicode_lines]
+     assert unicode_lines == list(decode_lines(iter(lines)))
+</pre><h3>Mutant 4275</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -33,7 +33,7 @@
+ 
+ # {{{ remove common indentation
+ 
+-def _remove_common_indentation(code, require_leading_newline=True):
++def _remove_common_indentation(code, require_leading_newline=False):
+     if "\n" not in code:
+         return code
+ 
+</pre><h3>Mutant 4287</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -43,7 +43,7 @@
+     lines = code.split("\n")
+     while lines[0].strip() == "":
+         lines.pop(0)
+-    while lines[-1].strip() == "":
++    while lines[+1].strip() == "":
+         lines.pop(-1)
+ 
+     if lines:
+</pre><h3>Mutant 4288</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -43,7 +43,7 @@
+     lines = code.split("\n")
+     while lines[0].strip() == "":
+         lines.pop(0)
+-    while lines[-1].strip() == "":
++    while lines[-2].strip() == "":
+         lines.pop(-1)
+ 
+     if lines:
+</pre><h3>Mutant 4289</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -43,7 +43,7 @@
+     lines = code.split("\n")
+     while lines[0].strip() == "":
+         lines.pop(0)
+-    while lines[-1].strip() == "":
++    while lines[-1].strip() != "":
+         lines.pop(-1)
+ 
+     if lines:
+</pre><h3>Mutant 4290</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -43,7 +43,7 @@
+     lines = code.split("\n")
+     while lines[0].strip() == "":
+         lines.pop(0)
+-    while lines[-1].strip() == "":
++    while lines[-1].strip() == "XXXX":
+         lines.pop(-1)
+ 
+     if lines:
+</pre><h3>Mutant 4293</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -47,7 +47,7 @@
+         lines.pop(-1)
+ 
+     if lines:
+-        base_indent = 0
++        base_indent = 1
+         while lines[0][base_indent] in " \t":
+             base_indent += 1
+ 
+</pre><h3>Mutant 4297</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -48,7 +48,7 @@
+ 
+     if lines:
+         base_indent = 0
+-        while lines[0][base_indent] in " \t":
++        while lines[0][base_indent] in "XX \tXX":
+             base_indent += 1
+ 
+         for line in lines[1:]:
+</pre><h3>Mutant 4300</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -49,7 +49,7 @@
+     if lines:
+         base_indent = 0
+         while lines[0][base_indent] in " \t":
+-            base_indent += 1
++            base_indent += 2
+ 
+         for line in lines[1:]:
+             if line[:base_indent].strip():
+</pre><h3>Mutant 4301</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -51,7 +51,7 @@
+         while lines[0][base_indent] in " \t":
+             base_indent += 1
+ 
+-        for line in lines[1:]:
++        for line in lines[2:]:
+             if line[:base_indent].strip():
+                 raise ValueError("inconsistent indentation")
+ 
+</pre><h3>Mutant 4302</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -53,7 +53,7 @@
+ 
+         for line in lines[1:]:
+             if line[:base_indent].strip():
+-                raise ValueError("inconsistent indentation")
++                raise ValueError("XXinconsistent indentationXX")
+ 
+     return "\n".join(line[base_indent:] for line in lines)
+ 
+</pre><h3>Mutant 4304</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -64,7 +64,7 @@
+     def get_exec_lines(src):
+         code = compile(
+                     _remove_common_indentation(test_code),
+-                    "<tmp>", "exec")
++                    "XX<tmp>XX", "exec")
+         from pudb.lowlevel import get_executable_lines_for_codes_recursive
+         return get_executable_lines_for_codes_recursive([code])
+ 
+</pre><h3>Mutant 4315</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -79,7 +79,7 @@
+         main()
+         """
+     expected = {1, 2, 3, 4, 6, 8}
+-    if sys.version_info >= (3, 11):
++    if sys.version_info > (3, 11):
+         # See https://github.com/python/cpython/pull/94562 and
+         # https://peps.python.org/pep-0626/
+         expected |= {0}
+</pre><h3>Mutant 4317</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -79,7 +79,7 @@
+         main()
+         """
+     expected = {1, 2, 3, 4, 6, 8}
+-    if sys.version_info >= (3, 11):
++    if sys.version_info >= (3, 12):
+         # See https://github.com/python/cpython/pull/94562 and
+         # https://peps.python.org/pep-0626/
+         expected |= {0}
+</pre><h3>Mutant 4333</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -91,7 +91,7 @@
+         1,
+         335
+     }
+-    if sys.version_info < (3, 10):
++    if sys.version_info <= (3, 10):
+         # if co_lines is unavailable, we appear to see these
+         expected.update([
+             128,  # bogus,
+</pre><h3>Mutant 4335</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -91,7 +91,7 @@
+         1,
+         335
+     }
+-    if sys.version_info < (3, 10):
++    if sys.version_info < (3, 11):
+         # if co_lines is unavailable, we appear to see these
+         expected.update([
+             128,  # bogus,
+</pre><h3>Mutant 4336</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -94,7 +94,7 @@
+     if sys.version_info < (3, 10):
+         # if co_lines is unavailable, we appear to see these
+         expected.update([
+-            128,  # bogus,
++            129,  # bogus,
+             255,  # bogus,
+         ])
+     if sys.version_info >= (3, 11):
+</pre><h3>Mutant 4337</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -95,7 +95,7 @@
+         # if co_lines is unavailable, we appear to see these
+         expected.update([
+             128,  # bogus,
+-            255,  # bogus,
++            256,  # bogus,
+         ])
+     if sys.version_info >= (3, 11):
+         # See https://github.com/python/cpython/pull/94562 and
+</pre><h3>Mutant 4338</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -97,7 +97,7 @@
+             128,  # bogus,
+             255,  # bogus,
+         ])
+-    if sys.version_info >= (3, 11):
++    if sys.version_info > (3, 11):
+         # See https://github.com/python/cpython/pull/94562 and
+         # https://peps.python.org/pep-0626/
+         expected |= {0}
+</pre><h3>Mutant 4340</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -97,7 +97,7 @@
+             128,  # bogus,
+             255,  # bogus,
+         ])
+-    if sys.version_info >= (3, 11):
++    if sys.version_info >= (3, 12):
+         # See https://github.com/python/cpython/pull/94562 and
+         # https://peps.python.org/pep-0626/
+         expected |= {0}
+</pre><h3>Mutant 4346</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -105,7 +105,7 @@
+     assert get_exec_lines(test_code) == expected
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     if len(sys.argv) > 1:
+         exec(sys.argv[1])
+     else:
+</pre><h3>Mutant 4347</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -106,7 +106,7 @@
+ 
+ 
+ if __name__ == "__main__":
+-    if len(sys.argv) > 1:
++    if len(sys.argv) >= 1:
+         exec(sys.argv[1])
+     else:
+         from pytest import main
+</pre><h3>Mutant 4348</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -106,7 +106,7 @@
+ 
+ 
+ if __name__ == "__main__":
+-    if len(sys.argv) > 1:
++    if len(sys.argv) > 2:
+         exec(sys.argv[1])
+     else:
+         from pytest import main
+</pre><h3>Mutant 4349</h3><pre>--- ./test/test_lowlevel.py
++++ ./test/test_lowlevel.py
+@@ -107,7 +107,7 @@
+ 
+ if __name__ == "__main__":
+     if len(sys.argv) > 1:
+-        exec(sys.argv[1])
++        exec(sys.argv[2])
+     else:
+         from pytest import main
+         main([__file__])
+</pre></body></html>

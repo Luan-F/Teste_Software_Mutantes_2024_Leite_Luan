@@ -1,0 +1,1165 @@
+<html><body><h1>./test/test_var_view.py</h1>Killed 130 out of 236 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4016</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -29,7 +29,7 @@
+     try:
+         import numpy as np
+     except ImportError:
+-        numpy_values = []
++        numpy_values = None
+     else:
+         numpy_values = [np.float32(5), np.zeros(5)]
+ 
+</pre><h3>Mutant 4017</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -31,7 +31,7 @@
+     except ImportError:
+         numpy_values = []
+     else:
+-        numpy_values = [np.float32(5), np.zeros(5)]
++        numpy_values = [np.float32(6), np.zeros(5)]
+ 
+     for value in [
+             A, A2, A(), A2(), "lól".encode(), "lól",
+</pre><h3>Mutant 4018</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -31,7 +31,7 @@
+     except ImportError:
+         numpy_values = []
+     else:
+-        numpy_values = [np.float32(5), np.zeros(5)]
++        numpy_values = [np.float32(5), np.zeros(6)]
+ 
+     for value in [
+             A, A2, A(), A2(), "lól".encode(), "lól",
+</pre><h3>Mutant 4020</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -34,7 +34,7 @@
+         numpy_values = [np.float32(5), np.zeros(5)]
+ 
+     for value in [
+-            A, A2, A(), A2(), "lól".encode(), "lól",
++            A, A2, A(), A2(), "XXlólXX".encode(), "lól",
+             1233123, ["lól".encode(), "lól"],
+             ] + numpy_values:
+         for display_type in STRINGIFIERS:
+</pre><h3>Mutant 4021</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -34,7 +34,7 @@
+         numpy_values = [np.float32(5), np.zeros(5)]
+ 
+     for value in [
+-            A, A2, A(), A2(), "lól".encode(), "lól",
++            A, A2, A(), A2(), "lól".encode(), "XXlólXX",
+             1233123, ["lól".encode(), "lól"],
+             ] + numpy_values:
+         for display_type in STRINGIFIERS:
+</pre><h3>Mutant 4022</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -35,7 +35,7 @@
+ 
+     for value in [
+             A, A2, A(), A2(), "lól".encode(), "lól",
+-            1233123, ["lól".encode(), "lól"],
++            1233124, ["lól".encode(), "lól"],
+             ] + numpy_values:
+         for display_type in STRINGIFIERS:
+             iinfo = InspectInfo()
+</pre><h3>Mutant 4023</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -35,7 +35,7 @@
+ 
+     for value in [
+             A, A2, A(), A2(), "lól".encode(), "lól",
+-            1233123, ["lól".encode(), "lól"],
++            1233123, ["XXlólXX".encode(), "lól"],
+             ] + numpy_values:
+         for display_type in STRINGIFIERS:
+             iinfo = InspectInfo()
+</pre><h3>Mutant 4024</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -35,7 +35,7 @@
+ 
+     for value in [
+             A, A2, A(), A2(), "lól".encode(), "lól",
+-            1233123, ["lól".encode(), "lól"],
++            1233123, ["lól".encode(), "XXlólXX"],
+             ] + numpy_values:
+         for display_type in STRINGIFIERS:
+             iinfo = InspectInfo()
+</pre><h3>Mutant 4043</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -68,7 +68,7 @@
+ 
+ class Reasonable:
+     def __init__(self):
+-        self.x = 42
++        self.x = 43
+ 
+     def bar(self):
+         return True
+</pre><h3>Mutant 4044</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -68,7 +68,7 @@
+ 
+ class Reasonable:
+     def __init__(self):
+-        self.x = 42
++        self.x = None
+ 
+     def bar(self):
+         return True
+</pre><h3>Mutant 4045</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -71,7 +71,7 @@
+         self.x = 42
+ 
+     def bar(self):
+-        return True
++        return False
+ 
+     @property
+     def red(self):
+</pre><h3>Mutant 4046</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -73,7 +73,6 @@
+     def bar(self):
+         return True
+ 
+-    @property
+     def red(self):
+         return "red"
+ 
+</pre><h3>Mutant 4047</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -75,7 +75,7 @@
+ 
+     @property
+     def red(self):
+-        return "red"
++        return "XXredXX"
+ 
+     @classmethod
+     def blue(cls):
+</pre><h3>Mutant 4048</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -77,7 +77,6 @@
+     def red(self):
+         return "red"
+ 
+-    @classmethod
+     def blue(cls):
+         return "blue"
+ 
+</pre><h3>Mutant 4049</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -79,7 +79,7 @@
+ 
+     @classmethod
+     def blue(cls):
+-        return "blue"
++        return "XXblueXX"
+ 
+     @staticmethod
+     def green():
+</pre><h3>Mutant 4050</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -81,7 +81,6 @@
+     def blue(cls):
+         return "blue"
+ 
+-    @staticmethod
+     def green():
+         return "green"
+ 
+</pre><h3>Mutant 4051</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -83,7 +83,7 @@
+ 
+     @staticmethod
+     def green():
+-        return "green"
++        return "XXgreenXX"
+ 
+     def _private(self):
+         return "shh"
+</pre><h3>Mutant 4052</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -86,7 +86,7 @@
+         return "green"
+ 
+     def _private(self):
+-        return "shh"
++        return "XXshhXX"
+ 
+     def __magicsomething__(self):
+         return "amazing"
+</pre><h3>Mutant 4053</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -89,7 +89,7 @@
+         return "shh"
+ 
+     def __magicsomething__(self):
+-        return "amazing"
++        return "XXamazingXX"
+ 
+ 
+ def method_factory(method_name):
+</pre><h3>Mutant 4055</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -100,7 +100,7 @@
+         except KeyError:
+             # Classes without __iter__ are expected to raise IndexError in this
+             # sort of case. Frustrating, I know.
+-            if (method_name == "__getitem__"
++            if (method_name != "__getitem__"
+                     and args and isinstance(args[0], int)):
+                 raise IndexError from None
+             raise
+</pre><h3>Mutant 4056</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -100,7 +100,7 @@
+         except KeyError:
+             # Classes without __iter__ are expected to raise IndexError in this
+             # sort of case. Frustrating, I know.
+-            if (method_name == "__getitem__"
++            if (method_name == "XX__getitem__XX"
+                     and args and isinstance(args[0], int)):
+                 raise IndexError from None
+             raise
+</pre><h3>Mutant 4057</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -101,7 +101,7 @@
+             # Classes without __iter__ are expected to raise IndexError in this
+             # sort of case. Frustrating, I know.
+             if (method_name == "__getitem__"
+-                    and args and isinstance(args[0], int)):
++                    and args and isinstance(args[1], int)):
+                 raise IndexError from None
+             raise
+     return method
+</pre><h3>Mutant 4058</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -100,8 +100,7 @@
+         except KeyError:
+             # Classes without __iter__ are expected to raise IndexError in this
+             # sort of case. Frustrating, I know.
+-            if (method_name == "__getitem__"
+-                    and args and isinstance(args[0], int)):
++            if (method_name == "__getitem__" or args and isinstance(args[0], int)):
+                 raise IndexError from None
+             raise
+     return method
+</pre><h3>Mutant 4062</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -112,7 +112,7 @@
+         "__contains__",
+         "__getitem__",
+         "__iter__",
+-        "__len__",
++        "XX__len__XX",
+         "__reversed__",
+         "count",
+         "get",
+</pre><h3>Mutant 4063</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -113,7 +113,7 @@
+         "__getitem__",
+         "__iter__",
+         "__len__",
+-        "__reversed__",
++        "XX__reversed__XX",
+         "count",
+         "get",
+         "index",
+</pre><h3>Mutant 4064</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -114,7 +114,7 @@
+         "__iter__",
+         "__len__",
+         "__reversed__",
+-        "count",
++        "XXcountXX",
+         "get",
+         "index",
+         "items",
+</pre><h3>Mutant 4065</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -115,7 +115,7 @@
+         "__len__",
+         "__reversed__",
+         "count",
+-        "get",
++        "XXgetXX",
+         "index",
+         "items",
+         "keys",
+</pre><h3>Mutant 4066</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -116,7 +116,7 @@
+         "__reversed__",
+         "count",
+         "get",
+-        "index",
++        "XXindexXX",
+         "items",
+         "keys",
+         "values",
+</pre><h3>Mutant 4067</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -117,7 +117,7 @@
+         "count",
+         "get",
+         "index",
+-        "items",
++        "XXitemsXX",
+         "keys",
+         "values",
+     }
+</pre><h3>Mutant 4069</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -119,7 +119,7 @@
+         "index",
+         "items",
+         "keys",
+-        "values",
++        "XXvaluesXX",
+     }
+ 
+     # Deliberately starting from 0
+</pre><h3>Mutant 4073</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -123,7 +123,7 @@
+     }
+ 
+     # Deliberately starting from 0
+-    for r in range(0, len(methods) + 1):
++    for r in range(0, len(methods) + 2):
+         for selected_methods in sorted(
+                 map(sorted, itertools.combinations(methods, r))):
+ 
+</pre><h3>Mutant 4076</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -133,7 +133,7 @@
+ 
+                 @classmethod
+                 def name(cls):
+-                    return "ContainerlikeClass:{}".format(
++                    return "XXContainerlikeClass:{}XX".format(
+                             ":".join(selected_methods))  # noqa: B023
+ 
+             for method in selected_methods:
+</pre><h3>Mutant 4077</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -134,7 +134,7 @@
+                 @classmethod
+                 def name(cls):
+                     return "ContainerlikeClass:{}".format(
+-                            ":".join(selected_methods))  # noqa: B023
++                            "XX:XX".join(selected_methods))  # noqa: B023
+ 
+             for method in selected_methods:
+                 func = method_factory(method)
+</pre><h3>Mutant 4082</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -152,7 +152,7 @@
+     MOD_STR = " [all+()]"
+ 
+     def setUp(self):
+-        self.values_to_expand = []
++        self.values_to_expand = None
+         self.class_counts = {
+             "mappings": 0,
+             "sequences": 0,
+</pre><h3>Mutant 4100</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -186,7 +186,7 @@
+         fail if it is called.
+         """
+         def fake_exception_log(*args, **kwargs):
+-            self.fail("ui_log.exception was unexpectedly called")
++            self.fail("XXui_log.exception was unexpectedly calledXX")
+ 
+         old_logger = ui_log.exception
+         ui_log.exception = fake_exception_log
+</pre><h3>Mutant 4101</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -188,7 +188,7 @@
+         def fake_exception_log(*args, **kwargs):
+             self.fail("ui_log.exception was unexpectedly called")
+ 
+-        old_logger = ui_log.exception
++        old_logger = None
+         ui_log.exception = fake_exception_log
+         try:
+             yield
+</pre><h3>Mutant 4102</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -189,7 +189,7 @@
+             self.fail("ui_log.exception was unexpectedly called")
+ 
+         old_logger = ui_log.exception
+-        ui_log.exception = fake_exception_log
++        ui_log.exception = None
+         try:
+             yield
+         finally:
+</pre><h3>Mutant 4103</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -193,7 +193,7 @@
+         try:
+             yield
+         finally:
+-            ui_log.exception = old_logger
++            ui_log.exception = None
+ 
+     def assert_walks_contents(self, container, label="xs"):
+         expand_paths = {label}
+</pre><h3>Mutant 4104</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -195,7 +195,7 @@
+         finally:
+             ui_log.exception = old_logger
+ 
+-    def assert_walks_contents(self, container, label="xs"):
++    def assert_walks_contents(self, container, label="XXxsXX"):
+         expand_paths = {label}
+         self.values_to_expand = [container]
+         self.walker = BasicValueWalker(FrameVarInfoForTesting(expand_paths))
+</pre><h3>Mutant 4143</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -249,7 +249,7 @@
+         self.walker = BasicValueWalker(FrameVarInfoForTesting())
+         values = [
+             # numbers
+-            0,
++            1,
+             1,
+             -1234567890412345243,
+             float(4.2),
+</pre><h3>Mutant 4144</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -250,7 +250,7 @@
+         values = [
+             # numbers
+             0,
+-            1,
++            2,
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+</pre><h3>Mutant 4145</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -251,7 +251,7 @@
+             # numbers
+             0,
+             1,
+-            -1234567890412345243,
++            +1234567890412345243,
+             float(4.2),
+             float("inf"),
+             complex(1.3, -1),
+</pre><h3>Mutant 4146</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -251,7 +251,7 @@
+             # numbers
+             0,
+             1,
+-            -1234567890412345243,
++            -1234567890412345244,
+             float(4.2),
+             float("inf"),
+             complex(1.3, -1),
+</pre><h3>Mutant 4147</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -252,7 +252,7 @@
+             0,
+             1,
+             -1234567890412345243,
+-            float(4.2),
++            float(5.2),
+             float("inf"),
+             complex(1.3, -1),
+ 
+</pre><h3>Mutant 4149</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -254,7 +254,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(2.3, -1),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4150</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -254,7 +254,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(1.3, +1),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4151</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -254,7 +254,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(1.3, -2),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4152</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -257,7 +257,7 @@
+             complex(1.3, -1),
+ 
+             # strings
+-            "",
++            "XXXX",
+             "a",
+             "foo bar",
+             "  lots\tof\nspaces\r ",
+</pre><h3>Mutant 4153</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -258,7 +258,7 @@
+ 
+             # strings
+             "",
+-            "a",
++            "XXaXX",
+             "foo bar",
+             "  lots\tof\nspaces\r ",
+             "♫",
+</pre><h3>Mutant 4154</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -259,7 +259,7 @@
+             # strings
+             "",
+             "a",
+-            "foo bar",
++            "XXfoo barXX",
+             "  lots\tof\nspaces\r ",
+             "♫",
+ 
+</pre><h3>Mutant 4155</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -260,7 +260,7 @@
+             "",
+             "a",
+             "foo bar",
+-            "  lots\tof\nspaces\r ",
++            "XX  lots\tof\nspaces\r XX",
+             "♫",
+ 
+             # other
+</pre><h3>Mutant 4156</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -261,7 +261,7 @@
+             "a",
+             "foo bar",
+             "  lots\tof\nspaces\r ",
+-            "♫",
++            "XX♫XX",
+ 
+             # other
+             False,
+</pre><h3>Mutant 4157</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -264,7 +264,7 @@
+             "♫",
+ 
+             # other
+-            False,
++            True,
+             True,
+             None,
+         ]
+</pre><h3>Mutant 4158</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -265,7 +265,7 @@
+ 
+             # other
+             False,
+-            True,
++            False,
+             None,
+         ]
+         for label, value in enumerate(values):
+</pre><h3>Mutant 4162</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -286,7 +286,7 @@
+         """
+         values = [
+             # numbers
+-            0,
++            1,
+             1,
+             -1234567890412345243,
+             float(4.2),
+</pre><h3>Mutant 4163</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -287,7 +287,7 @@
+         values = [
+             # numbers
+             0,
+-            1,
++            2,
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+</pre><h3>Mutant 4164</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -288,7 +288,7 @@
+             # numbers
+             0,
+             1,
+-            -1234567890412345243,
++            +1234567890412345243,
+             float(4.2),
+             float("inf"),
+             complex(1.3, -1),
+</pre><h3>Mutant 4165</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -288,7 +288,7 @@
+             # numbers
+             0,
+             1,
+-            -1234567890412345243,
++            -1234567890412345244,
+             float(4.2),
+             float("inf"),
+             complex(1.3, -1),
+</pre><h3>Mutant 4166</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -289,7 +289,7 @@
+             0,
+             1,
+             -1234567890412345243,
+-            float(4.2),
++            float(5.2),
+             float("inf"),
+             complex(1.3, -1),
+ 
+</pre><h3>Mutant 4168</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -291,7 +291,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(2.3, -1),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4169</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -291,7 +291,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(1.3, +1),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4170</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -291,7 +291,7 @@
+             -1234567890412345243,
+             float(4.2),
+             float("inf"),
+-            complex(1.3, -1),
++            complex(1.3, -2),
+ 
+             # strings
+             "",
+</pre><h3>Mutant 4171</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -294,7 +294,7 @@
+             complex(1.3, -1),
+ 
+             # strings
+-            "",
++            "XXXX",
+             "a",
+             "foo bar",
+             # "  lots\tof\nspaces\r ",  # long, hits continuation item
+</pre><h3>Mutant 4172</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -295,7 +295,7 @@
+ 
+             # strings
+             "",
+-            "a",
++            "XXaXX",
+             "foo bar",
+             # "  lots\tof\nspaces\r ",  # long, hits continuation item
+             "♫",
+</pre><h3>Mutant 4174</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -298,7 +298,7 @@
+             "a",
+             "foo bar",
+             # "  lots\tof\nspaces\r ",  # long, hits continuation item
+-            "♫",
++            "XX♫XX",
+ 
+             # other
+             False,
+</pre><h3>Mutant 4175</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -301,7 +301,7 @@
+             "♫",
+ 
+             # other
+-            False,
++            True,
+             True,
+             None,
+         ]
+</pre><h3>Mutant 4176</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -302,7 +302,7 @@
+ 
+             # other
+             False,
+-            True,
++            False,
+             None,
+         ]
+         for value in values:
+</pre><h3>Mutant 4178</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -310,7 +310,7 @@
+ 
+     def test_set(self):
+         self.assert_walks_contents({
+-            42, "foo", None, False, (), ("a", "tuple")
++            43, "foo", None, False, (), ("a", "tuple")
+         })
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4179</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -310,7 +310,7 @@
+ 
+     def test_set(self):
+         self.assert_walks_contents({
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "XXfooXX", None, False, (), ("a", "tuple")
+         })
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4180</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -310,7 +310,7 @@
+ 
+     def test_set(self):
+         self.assert_walks_contents({
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, True, (), ("a", "tuple")
+         })
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4181</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -310,7 +310,7 @@
+ 
+     def test_set(self):
+         self.assert_walks_contents({
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("XXaXX", "tuple")
+         })
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4182</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -310,7 +310,7 @@
+ 
+     def test_set(self):
+         self.assert_walks_contents({
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("a", "XXtupleXX")
+         })
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4185</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -316,7 +316,7 @@
+ 
+     def test_frozenset(self):
+         self.assert_walks_contents(frozenset([
+-            42, "foo", None, False, (), ("a", "tuple")
++            43, "foo", None, False, (), ("a", "tuple")
+         ]))
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4186</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -316,7 +316,7 @@
+ 
+     def test_frozenset(self):
+         self.assert_walks_contents(frozenset([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "XXfooXX", None, False, (), ("a", "tuple")
+         ]))
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4187</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -316,7 +316,7 @@
+ 
+     def test_frozenset(self):
+         self.assert_walks_contents(frozenset([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, True, (), ("a", "tuple")
+         ]))
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4188</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -316,7 +316,7 @@
+ 
+     def test_frozenset(self):
+         self.assert_walks_contents(frozenset([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("XXaXX", "tuple")
+         ]))
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4189</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -316,7 +316,7 @@
+ 
+     def test_frozenset(self):
+         self.assert_walks_contents(frozenset([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("a", "XXtupleXX")
+         ]))
+         self.assert_class_counts_equal({"collections": 1})
+ 
+</pre><h3>Mutant 4192</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -322,7 +322,7 @@
+ 
+     def test_dict(self):
+         self.assert_walks_contents({
+-            0:                   42,
++            1:                   42,
+             "a":                 "foo",
+             "": None,
+             True: False,
+</pre><h3>Mutant 4193</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -322,7 +322,7 @@
+ 
+     def test_dict(self):
+         self.assert_walks_contents({
+-            0:                   42,
++            0:                   43,
+             "a":                 "foo",
+             "": None,
+             True: False,
+</pre><h3>Mutant 4194</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -323,7 +323,7 @@
+     def test_dict(self):
+         self.assert_walks_contents({
+             0:                   42,
+-            "a":                 "foo",
++            "XXaXX":                 "foo",
+             "": None,
+             True: False,
+             frozenset(range(3)): "abc",
+</pre><h3>Mutant 4195</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -323,7 +323,7 @@
+     def test_dict(self):
+         self.assert_walks_contents({
+             0:                   42,
+-            "a":                 "foo",
++            "a":                 "XXfooXX",
+             "": None,
+             True: False,
+             frozenset(range(3)): "abc",
+</pre><h3>Mutant 4196</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -324,7 +324,7 @@
+         self.assert_walks_contents({
+             0:                   42,
+             "a":                 "foo",
+-            "": None,
++            "XXXX": None,
+             True: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+</pre><h3>Mutant 4197</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -325,7 +325,7 @@
+             0:                   42,
+             "a":                 "foo",
+             "": None,
+-            True: False,
++            False: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+             (1, 2, "c", ()):     "tuple",
+</pre><h3>Mutant 4198</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -325,7 +325,7 @@
+             0:                   42,
+             "a":                 "foo",
+             "": None,
+-            True: False,
++            True: True,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+             (1, 2, "c", ()):     "tuple",
+</pre><h3>Mutant 4199</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -326,7 +326,7 @@
+             "a":                 "foo",
+             "": None,
+             True: False,
+-            frozenset(range(3)): "abc",
++            frozenset(range(4)): "abc",
+             ():                  "empty tuple",
+             (1, 2, "c", ()):     "tuple",
+         })
+</pre><h3>Mutant 4200</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -326,7 +326,7 @@
+             "a":                 "foo",
+             "": None,
+             True: False,
+-            frozenset(range(3)): "abc",
++            frozenset(range(3)): "XXabcXX",
+             ():                  "empty tuple",
+             (1, 2, "c", ()):     "tuple",
+         })
+</pre><h3>Mutant 4201</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -327,7 +327,7 @@
+             "": None,
+             True: False,
+             frozenset(range(3)): "abc",
+-            ():                  "empty tuple",
++            ():                  "XXempty tupleXX",
+             (1, 2, "c", ()):     "tuple",
+         })
+         self.assert_class_counts_equal({"mappings": 1})
+</pre><h3>Mutant 4202</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -328,7 +328,7 @@
+             True: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+-            (1, 2, "c", ()):     "tuple",
++            (2, 2, "c", ()):     "tuple",
+         })
+         self.assert_class_counts_equal({"mappings": 1})
+ 
+</pre><h3>Mutant 4203</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -328,7 +328,7 @@
+             True: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+-            (1, 2, "c", ()):     "tuple",
++            (1, 3, "c", ()):     "tuple",
+         })
+         self.assert_class_counts_equal({"mappings": 1})
+ 
+</pre><h3>Mutant 4204</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -328,7 +328,7 @@
+             True: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+-            (1, 2, "c", ()):     "tuple",
++            (1, 2, "XXcXX", ()):     "tuple",
+         })
+         self.assert_class_counts_equal({"mappings": 1})
+ 
+</pre><h3>Mutant 4205</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -328,7 +328,7 @@
+             True: False,
+             frozenset(range(3)): "abc",
+             ():                  "empty tuple",
+-            (1, 2, "c", ()):     "tuple",
++            (1, 2, "c", ()):     "XXtupleXX",
+         })
+         self.assert_class_counts_equal({"mappings": 1})
+ 
+</pre><h3>Mutant 4208</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -334,7 +334,7 @@
+ 
+     def test_list(self):
+         self.assert_walks_contents([
+-            42, "foo", None, False, (), ("a", "tuple")
++            43, "foo", None, False, (), ("a", "tuple")
+         ])
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4209</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -334,7 +334,7 @@
+ 
+     def test_list(self):
+         self.assert_walks_contents([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "XXfooXX", None, False, (), ("a", "tuple")
+         ])
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4210</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -334,7 +334,7 @@
+ 
+     def test_list(self):
+         self.assert_walks_contents([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, True, (), ("a", "tuple")
+         ])
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4211</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -334,7 +334,7 @@
+ 
+     def test_list(self):
+         self.assert_walks_contents([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("XXaXX", "tuple")
+         ])
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4212</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -334,7 +334,7 @@
+ 
+     def test_list(self):
+         self.assert_walks_contents([
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("a", "XXtupleXX")
+         ])
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4215</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -340,7 +340,7 @@
+ 
+     def test_tuple(self):
+         self.assert_walks_contents((
+-            42, "foo", None, False, (), ("a", "tuple")
++            43, "foo", None, False, (), ("a", "tuple")
+         ))
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4216</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -340,7 +340,7 @@
+ 
+     def test_tuple(self):
+         self.assert_walks_contents((
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "XXfooXX", None, False, (), ("a", "tuple")
+         ))
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4217</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -340,7 +340,7 @@
+ 
+     def test_tuple(self):
+         self.assert_walks_contents((
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, True, (), ("a", "tuple")
+         ))
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4218</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -340,7 +340,7 @@
+ 
+     def test_tuple(self):
+         self.assert_walks_contents((
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("XXaXX", "tuple")
+         ))
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4219</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -340,7 +340,7 @@
+ 
+     def test_tuple(self):
+         self.assert_walks_contents((
+-            42, "foo", None, False, (), ("a", "tuple")
++            42, "foo", None, False, (), ("a", "XXtupleXX")
+         ))
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+</pre><h3>Mutant 4222</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -345,7 +345,7 @@
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+     def test_containerlike_classes(self):
+-        class_count = 0
++        class_count = 1
+         for cls_idx, containerlike_class in enumerate(
+                 generate_containerlike_class()):
+             label = containerlike_class.name()
+</pre><h3>Mutant 4223</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -345,7 +345,7 @@
+         self.assert_class_counts_equal({"sequences": 1})
+ 
+     def test_containerlike_classes(self):
+-        class_count = 0
++        class_count = None
+         for cls_idx, containerlike_class in enumerate(
+                 generate_containerlike_class()):
+             label = containerlike_class.name()
+</pre><h3>Mutant 4225</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -350,7 +350,7 @@
+                 generate_containerlike_class()):
+             label = containerlike_class.name()
+             value = containerlike_class(zip(string.ascii_lowercase,
+-                                            range(3, 10)))
++                                            range(4, 10)))
+             self.assert_walks_contents(container=value, label=label)
+             class_count = cls_idx + 1
+ 
+</pre><h3>Mutant 4226</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -350,7 +350,7 @@
+                 generate_containerlike_class()):
+             label = containerlike_class.name()
+             value = containerlike_class(zip(string.ascii_lowercase,
+-                                            range(3, 10)))
++                                            range(3, 11)))
+             self.assert_walks_contents(container=value, label=label)
+             class_count = cls_idx + 1
+ 
+</pre><h3>Mutant 4247</h3><pre>--- ./test/test_var_view.py
++++ ./test/test_var_view.py
+@@ -385,7 +385,7 @@
+         """
+         Are the class objects themselves expandable?
+         """
+-        self.assert_walks_contents(Reasonable, label="Reasonable")
++        self.assert_walks_contents(Reasonable, label="XXReasonableXX")
+         self.assert_class_counts_equal({"other": 1})
+ 
+     def test_maybe_unreasonable_classes(self):
+</pre></body></html>

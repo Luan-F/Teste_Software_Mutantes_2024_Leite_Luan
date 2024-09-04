@@ -1,0 +1,45 @@
+<html><body><h1>./test/test_make_canvas.py</h1>Killed 62 out of 66 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4412</h3><pre>--- ./test/test_make_canvas.py
++++ ./test/test_make_canvas.py
+@@ -62,7 +62,7 @@
+         ]]
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     import sys
+     if len(sys.argv) > 1:
+         exec(sys.argv[1])
+</pre><h3>Mutant 4413</h3><pre>--- ./test/test_make_canvas.py
++++ ./test/test_make_canvas.py
+@@ -64,7 +64,7 @@
+ 
+ if __name__ == "__main__":
+     import sys
+-    if len(sys.argv) > 1:
++    if len(sys.argv) >= 1:
+         exec(sys.argv[1])
+     else:
+         from pytest import main
+</pre><h3>Mutant 4414</h3><pre>--- ./test/test_make_canvas.py
++++ ./test/test_make_canvas.py
+@@ -64,7 +64,7 @@
+ 
+ if __name__ == "__main__":
+     import sys
+-    if len(sys.argv) > 1:
++    if len(sys.argv) > 2:
+         exec(sys.argv[1])
+     else:
+         from pytest import main
+</pre><h3>Mutant 4415</h3><pre>--- ./test/test_make_canvas.py
++++ ./test/test_make_canvas.py
+@@ -65,7 +65,7 @@
+ if __name__ == "__main__":
+     import sys
+     if len(sys.argv) > 1:
+-        exec(sys.argv[1])
++        exec(sys.argv[2])
+     else:
+         from pytest import main
+         main([__file__])
+</pre></body></html>

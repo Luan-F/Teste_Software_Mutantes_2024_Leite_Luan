@@ -1,0 +1,841 @@
+<html><body><h1>./lowlevel.py</h1>Killed 26 out of 102 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 843</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -29,7 +29,7 @@
+ from datetime import datetime
+ 
+ 
+-logfile = [None]
++logfile = None
+ 
+ 
+ def getlogfile():
+</pre><h3>Mutant 844</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -33,7 +33,7 @@
+ 
+ 
+ def getlogfile():
+-    return logfile[0]
++    return logfile[1]
+ 
+ 
+ def setlogfile(destfile):
+</pre><h3>Mutant 845</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -37,7 +37,7 @@
+ 
+ 
+ def setlogfile(destfile):
+-    logfile[0] = destfile
++    logfile[1] = destfile
+     with open(destfile, "a") as openfile:
+         openfile.write(
+             "\n*** Pudb session error log started at {date} ***\n".format(
+</pre><h3>Mutant 846</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -37,7 +37,7 @@
+ 
+ 
+ def setlogfile(destfile):
+-    logfile[0] = destfile
++    logfile[0] = None
+     with open(destfile, "a") as openfile:
+         openfile.write(
+             "\n*** Pudb session error log started at {date} ***\n".format(
+</pre><h3>Mutant 847</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -38,7 +38,7 @@
+ 
+ def setlogfile(destfile):
+     logfile[0] = destfile
+-    with open(destfile, "a") as openfile:
++    with open(destfile, "XXaXX") as openfile:
+         openfile.write(
+             "\n*** Pudb session error log started at {date} ***\n".format(
+                 date=datetime.now()
+</pre><h3>Mutant 848</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -40,7 +40,7 @@
+     logfile[0] = destfile
+     with open(destfile, "a") as openfile:
+         openfile.write(
+-            "\n*** Pudb session error log started at {date} ***\n".format(
++            "XX\n*** Pudb session error log started at {date} ***\nXX".format(
+                 date=datetime.now()
+             ))
+ 
+</pre><h3>Mutant 849</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -52,7 +52,7 @@
+     """
+     def emit(self, record):
+         from pudb import _get_debugger, _have_debugger
+-        logfile = getlogfile()
++        logfile = None
+ 
+         self.acquire()
+         try:
+</pre><h3>Mutant 850</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -56,7 +56,7 @@
+ 
+         self.acquire()
+         try:
+-            if logfile is not None:
++            if logfile is  None:
+                 message = self.format(record)
+                 with open(logfile, "a") as openfile:
+                     openfile.write("\n%s\n" % message)
+</pre><h3>Mutant 851</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -57,7 +57,7 @@
+         self.acquire()
+         try:
+             if logfile is not None:
+-                message = self.format(record)
++                message = None
+                 with open(logfile, "a") as openfile:
+                     openfile.write("\n%s\n" % message)
+             elif _have_debugger():
+</pre><h3>Mutant 852</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -58,7 +58,7 @@
+         try:
+             if logfile is not None:
+                 message = self.format(record)
+-                with open(logfile, "a") as openfile:
++                with open(logfile, "XXaXX") as openfile:
+                     openfile.write("\n%s\n" % message)
+             elif _have_debugger():
+                 dbg = _get_debugger()
+</pre><h3>Mutant 853</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -59,7 +59,7 @@
+             if logfile is not None:
+                 message = self.format(record)
+                 with open(logfile, "a") as openfile:
+-                    openfile.write("\n%s\n" % message)
++                    openfile.write("XX\n%s\nXX" % message)
+             elif _have_debugger():
+                 dbg = _get_debugger()
+                 message = self.format(record)
+</pre><h3>Mutant 854</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -59,7 +59,7 @@
+             if logfile is not None:
+                 message = self.format(record)
+                 with open(logfile, "a") as openfile:
+-                    openfile.write("\n%s\n" % message)
++                    openfile.write("\n%s\n" / message)
+             elif _have_debugger():
+                 dbg = _get_debugger()
+                 message = self.format(record)
+</pre><h3>Mutant 855</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -61,7 +61,7 @@
+                 with open(logfile, "a") as openfile:
+                     openfile.write("\n%s\n" % message)
+             elif _have_debugger():
+-                dbg = _get_debugger()
++                dbg = None
+                 message = self.format(record)
+                 dbg.ui.add_cmdline_content(message, "command line error")
+             else:
+</pre><h3>Mutant 856</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -62,7 +62,7 @@
+                     openfile.write("\n%s\n" % message)
+             elif _have_debugger():
+                 dbg = _get_debugger()
+-                message = self.format(record)
++                message = None
+                 dbg.ui.add_cmdline_content(message, "command line error")
+             else:
+                 super().emit(record)
+</pre><h3>Mutant 857</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -63,7 +63,7 @@
+             elif _have_debugger():
+                 dbg = _get_debugger()
+                 message = self.format(record)
+-                dbg.ui.add_cmdline_content(message, "command line error")
++                dbg.ui.add_cmdline_content(message, "XXcommand line errorXX")
+             else:
+                 super().emit(record)
+         finally:
+</pre><h3>Mutant 859</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -73,7 +73,7 @@
+ def _init_loggers():
+     ui_handler = TerminalOrStreamHandler()
+     ui_formatter = logging.Formatter(
+-        fmt="*** Pudb UI Exception Encountered: %(message)s ***\n"
++        fmt="XX*** Pudb UI Exception Encountered: %(message)s ***\nXX"
+     )
+     ui_handler.setFormatter(ui_formatter)
+     ui_log = logging.getLogger("ui")
+</pre><h3>Mutant 860</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -72,9 +72,7 @@
+ 
+ def _init_loggers():
+     ui_handler = TerminalOrStreamHandler()
+-    ui_formatter = logging.Formatter(
+-        fmt="*** Pudb UI Exception Encountered: %(message)s ***\n"
+-    )
++    ui_formatter = None
+     ui_handler.setFormatter(ui_formatter)
+     ui_log = logging.getLogger("ui")
+     ui_log.addHandler(ui_handler)
+</pre><h3>Mutant 861</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -76,7 +76,7 @@
+         fmt="*** Pudb UI Exception Encountered: %(message)s ***\n"
+     )
+     ui_handler.setFormatter(ui_formatter)
+-    ui_log = logging.getLogger("ui")
++    ui_log = logging.getLogger("XXuiXX")
+     ui_log.addHandler(ui_handler)
+ 
+     settings_handler = TerminalOrStreamHandler()
+</pre><h3>Mutant 864</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -81,7 +81,7 @@
+ 
+     settings_handler = TerminalOrStreamHandler()
+     settings_formatter = logging.Formatter(
+-        fmt="*** Pudb Settings Exception Encountered: %(message)s ***\n"
++        fmt="XX*** Pudb Settings Exception Encountered: %(message)s ***\nXX"
+     )
+     settings_handler.setFormatter(settings_formatter)
+     settings_log = logging.getLogger("settings")
+</pre><h3>Mutant 865</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -80,9 +80,7 @@
+     ui_log.addHandler(ui_handler)
+ 
+     settings_handler = TerminalOrStreamHandler()
+-    settings_formatter = logging.Formatter(
+-        fmt="*** Pudb Settings Exception Encountered: %(message)s ***\n"
+-    )
++    settings_formatter = None
+     settings_handler.setFormatter(settings_formatter)
+     settings_log = logging.getLogger("settings")
+     settings_log.addHandler(settings_handler)
+</pre><h3>Mutant 866</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -84,7 +84,7 @@
+         fmt="*** Pudb Settings Exception Encountered: %(message)s ***\n"
+     )
+     settings_handler.setFormatter(settings_formatter)
+-    settings_log = logging.getLogger("settings")
++    settings_log = logging.getLogger("XXsettingsXX")
+     settings_log.addHandler(settings_handler)
+ 
+     return ui_log, settings_log
+</pre><h3>Mutant 869</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -96,7 +96,7 @@
+ # {{{ breakpoint validity
+ 
+ def generate_executable_lines_for_code(code):
+-    if sys.version_info >= (3, 10):
++    if sys.version_info > (3, 10):
+         for _start, _end, lineno in code.co_lines():
+             if lineno is not None:
+                 yield lineno
+</pre><h3>Mutant 871</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -96,7 +96,7 @@
+ # {{{ breakpoint validity
+ 
+ def generate_executable_lines_for_code(code):
+-    if sys.version_info >= (3, 10):
++    if sys.version_info >= (3, 11):
+         for _start, _end, lineno in code.co_lines():
+             if lineno is not None:
+                 yield lineno
+</pre><h3>Mutant 873</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -101,7 +101,7 @@
+             if lineno is not None:
+                 yield lineno
+     else:
+-        lineno = code.co_firstlineno
++        lineno = None
+         yield lineno
+         # See https://github.com/python/cpython/blob/master/Objects/lnotab_notes.txt
+ 
+</pre><h3>Mutant 874</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -105,7 +105,7 @@
+         yield lineno
+         # See https://github.com/python/cpython/blob/master/Objects/lnotab_notes.txt
+ 
+-        for line_incr in code.co_lnotab[1::2]:
++        for line_incr in code.co_lnotab[2::2]:
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+</pre><h3>Mutant 875</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -105,7 +105,7 @@
+         yield lineno
+         # See https://github.com/python/cpython/blob/master/Objects/lnotab_notes.txt
+ 
+-        for line_incr in code.co_lnotab[1::2]:
++        for line_incr in code.co_lnotab[1::3]:
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+</pre><h3>Mutant 876</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -108,7 +108,7 @@
+         for line_incr in code.co_lnotab[1::2]:
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+-            if line_incr >= 0x80:
++            if line_incr > 0x80:
+                 line_incr -= 0x100
+             lineno += line_incr
+             yield lineno
+</pre><h3>Mutant 877</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -108,7 +108,7 @@
+         for line_incr in code.co_lnotab[1::2]:
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+-            if line_incr >= 0x80:
++            if line_incr >= 129:
+                 line_incr -= 0x100
+             lineno += line_incr
+             yield lineno
+</pre><h3>Mutant 878</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -109,7 +109,7 @@
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+-                line_incr -= 0x100
++                line_incr = 0x100
+             lineno += line_incr
+             yield lineno
+ 
+</pre><h3>Mutant 879</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -109,7 +109,7 @@
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+-                line_incr -= 0x100
++                line_incr += 0x100
+             lineno += line_incr
+             yield lineno
+ 
+</pre><h3>Mutant 880</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -109,7 +109,7 @@
+             # NB: This code is specific to Python 3.6 and higher
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+-                line_incr -= 0x100
++                line_incr -= 257
+             lineno += line_incr
+             yield lineno
+ 
+</pre><h3>Mutant 881</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -110,7 +110,7 @@
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+                 line_incr -= 0x100
+-            lineno += line_incr
++            lineno = line_incr
+             yield lineno
+ 
+ 
+</pre><h3>Mutant 882</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -110,7 +110,7 @@
+             # https://github.com/python/cpython/blob/v3.6.0/Objects/lnotab_notes.txt
+             if line_incr >= 0x80:
+                 line_incr -= 0x100
+-            lineno += line_incr
++            lineno -= line_incr
+             yield lineno
+ 
+ 
+</pre><h3>Mutant 888</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -135,7 +135,7 @@
+     # inspired by rpdb2
+ 
+     from linecache import getlines
+-    codes = [compile("".join(getlines(filename)), filename, "exec", dont_inherit=1)]
++    codes = [compile("XXXX".join(getlines(filename)), filename, "exec", dont_inherit=1)]
+ 
+     return get_executable_lines_for_codes_recursive(codes)
+ 
+</pre><h3>Mutant 889</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -135,7 +135,7 @@
+     # inspired by rpdb2
+ 
+     from linecache import getlines
+-    codes = [compile("".join(getlines(filename)), filename, "exec", dont_inherit=1)]
++    codes = [compile("".join(getlines(filename)), filename, "XXexecXX", dont_inherit=1)]
+ 
+     return get_executable_lines_for_codes_recursive(codes)
+ 
+</pre><h3>Mutant 890</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -135,7 +135,7 @@
+     # inspired by rpdb2
+ 
+     from linecache import getlines
+-    codes = [compile("".join(getlines(filename)), filename, "exec", dont_inherit=1)]
++    codes = [compile("".join(getlines(filename)), filename, "exec", dont_inherit=2)]
+ 
+     return get_executable_lines_for_codes_recursive(codes)
+ 
+</pre><h3>Mutant 891</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -135,7 +135,7 @@
+     # inspired by rpdb2
+ 
+     from linecache import getlines
+-    codes = [compile("".join(getlines(filename)), filename, "exec", dont_inherit=1)]
++    codes = None
+ 
+     return get_executable_lines_for_codes_recursive(codes)
+ 
+</pre><h3>Mutant 892</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -143,7 +143,7 @@
+ def get_breakpoint_invalid_reason(filename, lineno):
+     # simple logic stolen from pdb
+     import linecache
+-    line = linecache.getline(filename, lineno)
++    line = None
+     if not line:
+         return "Line is beyond end of file."
+ 
+</pre><h3>Mutant 893</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -144,7 +144,7 @@
+     # simple logic stolen from pdb
+     import linecache
+     line = linecache.getline(filename, lineno)
+-    if not line:
++    if  line:
+         return "Line is beyond end of file."
+ 
+     try:
+</pre><h3>Mutant 894</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -145,7 +145,7 @@
+     import linecache
+     line = linecache.getline(filename, lineno)
+     if not line:
+-        return "Line is beyond end of file."
++        return "XXLine is beyond end of file.XX"
+ 
+     try:
+         executable_lines = get_executable_lines_for_file(filename)
+</pre><h3>Mutant 895</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -148,7 +148,7 @@
+         return "Line is beyond end of file."
+ 
+     try:
+-        executable_lines = get_executable_lines_for_file(filename)
++        executable_lines = None
+     except SyntaxError:
+         return "File failed to compile."
+ 
+</pre><h3>Mutant 896</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -150,7 +150,7 @@
+     try:
+         executable_lines = get_executable_lines_for_file(filename)
+     except SyntaxError:
+-        return "File failed to compile."
++        return "XXFile failed to compile.XX"
+ 
+     if lineno not in executable_lines:
+         return "No executable statement found in line."
+</pre><h3>Mutant 897</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -152,7 +152,7 @@
+     except SyntaxError:
+         return "File failed to compile."
+ 
+-    if lineno not in executable_lines:
++    if lineno  in executable_lines:
+         return "No executable statement found in line."
+ 
+ 
+</pre><h3>Mutant 898</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -153,7 +153,7 @@
+         return "File failed to compile."
+ 
+     if lineno not in executable_lines:
+-        return "No executable statement found in line."
++        return "XXNo executable statement found in line.XX"
+ 
+ 
+ def lookup_module(filename):
+</pre><h3>Mutant 899</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -167,7 +167,7 @@
+     import os
+     import sys
+ 
+-    if os.path.isabs(filename) and os.path.exists(filename):
++    if os.path.isabs(filename) or os.path.exists(filename):
+         return filename
+     f = os.path.join(sys.path[0], filename)
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+</pre><h3>Mutant 900</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -169,7 +169,7 @@
+ 
+     if os.path.isabs(filename) and os.path.exists(filename):
+         return filename
+-    f = os.path.join(sys.path[0], filename)
++    f = os.path.join(sys.path[1], filename)
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+         return f
+     _root, ext = os.path.splitext(filename)
+</pre><h3>Mutant 901</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -169,7 +169,7 @@
+ 
+     if os.path.isabs(filename) and os.path.exists(filename):
+         return filename
+-    f = os.path.join(sys.path[0], filename)
++    f = None
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+         return f
+     _root, ext = os.path.splitext(filename)
+</pre><h3>Mutant 902</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -172,7 +172,7 @@
+     f = os.path.join(sys.path[0], filename)
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+         return f
+-    _root, ext = os.path.splitext(filename)
++    _root, ext = None
+     if ext == "":
+         filename = filename + ".py"
+     if os.path.isabs(filename):
+</pre><h3>Mutant 903</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -173,7 +173,7 @@
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+         return f
+     _root, ext = os.path.splitext(filename)
+-    if ext == "":
++    if ext != "":
+         filename = filename + ".py"
+     if os.path.isabs(filename):
+         return filename
+</pre><h3>Mutant 904</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -173,7 +173,7 @@
+     if os.path.exists(f):  # and self.canonic(f) == self.mainpyfile:
+         return f
+     _root, ext = os.path.splitext(filename)
+-    if ext == "":
++    if ext == "XXXX":
+         filename = filename + ".py"
+     if os.path.isabs(filename):
+         return filename
+</pre><h3>Mutant 905</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -174,7 +174,7 @@
+         return f
+     _root, ext = os.path.splitext(filename)
+     if ext == "":
+-        filename = filename + ".py"
++        filename = filename - ".py"
+     if os.path.isabs(filename):
+         return filename
+     for dirname in sys.path:
+</pre><h3>Mutant 906</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -174,7 +174,7 @@
+         return f
+     _root, ext = os.path.splitext(filename)
+     if ext == "":
+-        filename = filename + ".py"
++        filename = filename + "XX.pyXX"
+     if os.path.isabs(filename):
+         return filename
+     for dirname in sys.path:
+</pre><h3>Mutant 907</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -174,7 +174,7 @@
+         return f
+     _root, ext = os.path.splitext(filename)
+     if ext == "":
+-        filename = filename + ".py"
++        filename = None
+     if os.path.isabs(filename):
+         return filename
+     for dirname in sys.path:
+</pre><h3>Mutant 908</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -179,7 +179,7 @@
+         return filename
+     for dirname in sys.path:
+         while os.path.islink(dirname):
+-            dirname = os.readlink(dirname)
++            dirname = None
+         fullname = os.path.join(dirname, filename)
+         if os.path.exists(fullname):
+             return fullname
+</pre><h3>Mutant 909</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -180,7 +180,7 @@
+     for dirname in sys.path:
+         while os.path.islink(dirname):
+             dirname = os.readlink(dirname)
+-        fullname = os.path.join(dirname, filename)
++        fullname = None
+         if os.path.exists(fullname):
+             return fullname
+     return None
+</pre><h3>Mutant 910</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -194,7 +194,7 @@
+ import re
+ 
+ 
+-cookie_re = re.compile(br"^\s*#.*coding[:=]\s*([-\w.]+)")
++cookie_re = re.compile(br"XX^\s*#.*coding[:=]\s*([-\w.]+)XX")
+ from codecs import BOM_UTF8, lookup
+ 
+ 
+</pre><h3>Mutant 912</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -215,7 +215,7 @@
+ 
+     If no encoding is specified, then the default of 'utf-8' will be returned.
+     """
+-    bom_found = False
++    bom_found = True
+ 
+     def read_or_stop():
+         try:
+</pre><h3>Mutant 913</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -215,7 +215,7 @@
+ 
+     If no encoding is specified, then the default of 'utf-8' will be returned.
+     """
+-    bom_found = False
++    bom_found = None
+ 
+     def read_or_stop():
+         try:
+</pre><h3>Mutant 916</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -229,7 +229,7 @@
+         except UnicodeDecodeError:
+             return None
+ 
+-        matches = cookie_re.findall(line_string)
++        matches = None
+         if not matches:
+             return None
+         encoding = matches[0].decode()
+</pre><h3>Mutant 920</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -234,7 +234,7 @@
+             return None
+         encoding = matches[0].decode()
+         try:
+-            codec = lookup(encoding)
++            codec = None
+         except LookupError as err:
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("unknown encoding: " + encoding) from err
+</pre><h3>Mutant 921</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -237,7 +237,7 @@
+             codec = lookup(encoding)
+         except LookupError as err:
+             # This behaviour mimics the Python interpreter
+-            raise SyntaxError("unknown encoding: " + encoding) from err
++            raise SyntaxError("XXunknown encoding: XX" + encoding) from err
+ 
+         if bom_found and codec.name != "utf-8":
+             # This behaviour mimics the Python interpreter
+</pre><h3>Mutant 922</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -237,7 +237,7 @@
+             codec = lookup(encoding)
+         except LookupError as err:
+             # This behaviour mimics the Python interpreter
+-            raise SyntaxError("unknown encoding: " + encoding) from err
++            raise SyntaxError("unknown encoding: " - encoding) from err
+ 
+         if bom_found and codec.name != "utf-8":
+             # This behaviour mimics the Python interpreter
+</pre><h3>Mutant 923</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -239,7 +239,7 @@
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("unknown encoding: " + encoding) from err
+ 
+-        if bom_found and codec.name != "utf-8":
++        if bom_found and codec.name == "utf-8":
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("encoding problem: utf-8")
+         return encoding
+</pre><h3>Mutant 924</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -239,7 +239,7 @@
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("unknown encoding: " + encoding) from err
+ 
+-        if bom_found and codec.name != "utf-8":
++        if bom_found and codec.name != "XXutf-8XX":
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("encoding problem: utf-8")
+         return encoding
+</pre><h3>Mutant 925</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -239,7 +239,7 @@
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("unknown encoding: " + encoding) from err
+ 
+-        if bom_found and codec.name != "utf-8":
++        if bom_found or codec.name != "utf-8":
+             # This behaviour mimics the Python interpreter
+             raise SyntaxError("encoding problem: utf-8")
+         return encoding
+</pre><h3>Mutant 926</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -241,7 +241,7 @@
+ 
+         if bom_found and codec.name != "utf-8":
+             # This behaviour mimics the Python interpreter
+-            raise SyntaxError("encoding problem: utf-8")
++            raise SyntaxError("XXencoding problem: utf-8XX")
+         return encoding
+ 
+     first = read_or_stop()
+</pre><h3>Mutant 928</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -249,7 +249,7 @@
+         return None, [first]
+ 
+     if first.startswith(BOM_UTF8):
+-        bom_found = True
++        bom_found = False
+         first = first[3:]
+     if not first:
+         return "utf-8", []
+</pre><h3>Mutant 929</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -249,7 +249,7 @@
+         return None, [first]
+ 
+     if first.startswith(BOM_UTF8):
+-        bom_found = True
++        bom_found = None
+         first = first[3:]
+     if not first:
+         return "utf-8", []
+</pre><h3>Mutant 930</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -250,7 +250,7 @@
+ 
+     if first.startswith(BOM_UTF8):
+         bom_found = True
+-        first = first[3:]
++        first = first[4:]
+     if not first:
+         return "utf-8", []
+ 
+</pre><h3>Mutant 931</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -250,7 +250,7 @@
+ 
+     if first.startswith(BOM_UTF8):
+         bom_found = True
+-        first = first[3:]
++        first = None
+     if not first:
+         return "utf-8", []
+ 
+</pre><h3>Mutant 933</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -252,7 +252,7 @@
+         bom_found = True
+         first = first[3:]
+     if not first:
+-        return "utf-8", []
++        return "XXutf-8XX", []
+ 
+     encoding = find_cookie(first)
+     if encoding:
+</pre><h3>Mutant 934</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -254,7 +254,7 @@
+     if not first:
+         return "utf-8", []
+ 
+-    encoding = find_cookie(first)
++    encoding = None
+     if encoding:
+         return encoding, [first]
+ 
+</pre><h3>Mutant 935</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -258,7 +258,7 @@
+     if encoding:
+         return encoding, [first]
+ 
+-    second = read_or_stop()
++    second = None
+     if not second:
+         return "utf-8", [first]
+ 
+</pre><h3>Mutant 938</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -262,7 +262,7 @@
+     if not second:
+         return "utf-8", [first]
+ 
+-    encoding = find_cookie(second)
++    encoding = None
+     if encoding:
+         return encoding, [first, second]
+ 
+</pre><h3>Mutant 939</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -266,7 +266,7 @@
+     if encoding:
+         return encoding, [first, second]
+ 
+-    return "utf-8", [first, second]
++    return "XXutf-8XX", [first, second]
+ 
+ 
+ def decode_lines(lines):
+</pre><h3>Mutant 944</h3><pre>--- ./lowlevel.py
++++ ./lowlevel.py
+@@ -276,7 +276,7 @@
+     from itertools import chain
+ 
+     for line in chain(detection_read_lines, line_iter):
+-        if hasattr(line, "decode") and source_enc is not None:
++        if hasattr(line, "decode") or source_enc is not None:
+             yield line.decode(source_enc)
+         else:
+             yield line
+</pre></body></html>

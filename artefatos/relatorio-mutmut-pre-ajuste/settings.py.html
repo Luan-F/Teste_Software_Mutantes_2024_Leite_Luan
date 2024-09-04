@@ -1,0 +1,4242 @@
+<html><body><h1>./settings.py</h1>Killed 45 out of 418 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -31,7 +31,7 @@
+ 
+ 
+ # see https://github.com/inducer/pudb/pull/453 for context
+-_home = os.environ.get("HOME", os.path.expanduser("~"))
++_home = os.environ.get("XXHOMEXX", os.path.expanduser("~"))
+ XDG_CONF_RESOURCE = "pudb"
+ XDG_CONFIG_HOME = os.environ.get(
+     "XDG_CONFIG_HOME",
+</pre><h3>Mutant 2</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -31,7 +31,7 @@
+ 
+ 
+ # see https://github.com/inducer/pudb/pull/453 for context
+-_home = os.environ.get("HOME", os.path.expanduser("~"))
++_home = os.environ.get("HOME", os.path.expanduser("XX~XX"))
+ XDG_CONF_RESOURCE = "pudb"
+ XDG_CONFIG_HOME = os.environ.get(
+     "XDG_CONFIG_HOME",
+</pre><h3>Mutant 3</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -31,7 +31,7 @@
+ 
+ 
+ # see https://github.com/inducer/pudb/pull/453 for context
+-_home = os.environ.get("HOME", os.path.expanduser("~"))
++_home = None
+ XDG_CONF_RESOURCE = "pudb"
+ XDG_CONFIG_HOME = os.environ.get(
+     "XDG_CONFIG_HOME",
+</pre><h3>Mutant 4</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -32,7 +32,7 @@
+ 
+ # see https://github.com/inducer/pudb/pull/453 for context
+ _home = os.environ.get("HOME", os.path.expanduser("~"))
+-XDG_CONF_RESOURCE = "pudb"
++XDG_CONF_RESOURCE = "XXpudbXX"
+ XDG_CONFIG_HOME = os.environ.get(
+     "XDG_CONFIG_HOME",
+     os.path.join(_home, ".config") if _home else None)
+</pre><h3>Mutant 6</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -34,7 +34,7 @@
+ _home = os.environ.get("HOME", os.path.expanduser("~"))
+ XDG_CONF_RESOURCE = "pudb"
+ XDG_CONFIG_HOME = os.environ.get(
+-    "XDG_CONFIG_HOME",
++    "XXXDG_CONFIG_HOMEXX",
+     os.path.join(_home, ".config") if _home else None)
+ 
+ if XDG_CONFIG_HOME:
+</pre><h3>Mutant 7</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -35,7 +35,7 @@
+ XDG_CONF_RESOURCE = "pudb"
+ XDG_CONFIG_HOME = os.environ.get(
+     "XDG_CONFIG_HOME",
+-    os.path.join(_home, ".config") if _home else None)
++    os.path.join(_home, "XX.configXX") if _home else None)
+ 
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+</pre><h3>Mutant 8</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -33,9 +33,7 @@
+ # see https://github.com/inducer/pudb/pull/453 for context
+ _home = os.environ.get("HOME", os.path.expanduser("~"))
+ XDG_CONF_RESOURCE = "pudb"
+-XDG_CONFIG_HOME = os.environ.get(
+-    "XDG_CONFIG_HOME",
+-    os.path.join(_home, ".config") if _home else None)
++XDG_CONFIG_HOME = None
+ 
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+</pre><h3>Mutant 10</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -40,7 +40,7 @@
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+ else:
+-    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "/etc/xdg").split(":")
++    XDG_CONFIG_DIRS = os.environ.get("XXXDG_CONFIG_DIRSXX", "/etc/xdg").split(":")
+ 
+ 
+ def get_save_config_path():
+</pre><h3>Mutant 11</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -40,7 +40,7 @@
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+ else:
+-    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "/etc/xdg").split(":")
++    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "XX/etc/xdgXX").split(":")
+ 
+ 
+ def get_save_config_path():
+</pre><h3>Mutant 12</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -40,7 +40,7 @@
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+ else:
+-    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "/etc/xdg").split(":")
++    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "/etc/xdg").split("XX:XX")
+ 
+ 
+ def get_save_config_path():
+</pre><h3>Mutant 13</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -40,7 +40,7 @@
+ if XDG_CONFIG_HOME:
+     XDG_CONFIG_DIRS = [XDG_CONFIG_HOME]
+ else:
+-    XDG_CONFIG_DIRS = os.environ.get("XDG_CONFIG_DIRS", "/etc/xdg").split(":")
++    XDG_CONFIG_DIRS = None
+ 
+ 
+ def get_save_config_path():
+</pre><h3>Mutant 14</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -45,7 +45,7 @@
+ 
+ def get_save_config_path():
+     # This may not raise, as it is called during import.
+-    if not XDG_CONFIG_HOME:
++    if  XDG_CONFIG_HOME:
+         return None
+ 
+     path = os.path.join(XDG_CONFIG_HOME, XDG_CONF_RESOURCE)
+</pre><h3>Mutant 15</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -48,7 +48,7 @@
+     if not XDG_CONFIG_HOME:
+         return None
+ 
+-    path = os.path.join(XDG_CONFIG_HOME, XDG_CONF_RESOURCE)
++    path = None
+     try:
+         os.makedirs(path, mode=0o700, exist_ok=True)
+     except Exception:
+</pre><h3>Mutant 16</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -50,7 +50,7 @@
+ 
+     path = os.path.join(XDG_CONFIG_HOME, XDG_CONF_RESOURCE)
+     try:
+-        os.makedirs(path, mode=0o700, exist_ok=True)
++        os.makedirs(path, mode=449, exist_ok=True)
+     except Exception:
+         settings_log.exception("Failed to make config dir")
+ 
+</pre><h3>Mutant 17</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -50,7 +50,7 @@
+ 
+     path = os.path.join(XDG_CONFIG_HOME, XDG_CONF_RESOURCE)
+     try:
+-        os.makedirs(path, mode=0o700, exist_ok=True)
++        os.makedirs(path, mode=0o700, exist_ok=False)
+     except Exception:
+         settings_log.exception("Failed to make config dir")
+ 
+</pre><h3>Mutant 18</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -52,7 +52,7 @@
+     try:
+         os.makedirs(path, mode=0o700, exist_ok=True)
+     except Exception:
+-        settings_log.exception("Failed to make config dir")
++        settings_log.exception("XXFailed to make config dirXX")
+ 
+     return path
+ 
+</pre><h3>Mutant 19</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -57,7 +57,7 @@
+     return path
+ 
+ 
+-CONF_SECTION = "pudb"
++CONF_SECTION = "XXpudbXX"
+ CONF_FILE_NAME = "pudb.cfg"
+ 
+ SAVED_BREAKPOINTS_FILE_NAME = "saved-breakpoints-%d.%d" % sys.version_info[:2]
+</pre><h3>Mutant 21</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -58,7 +58,7 @@
+ 
+ 
+ CONF_SECTION = "pudb"
+-CONF_FILE_NAME = "pudb.cfg"
++CONF_FILE_NAME = "XXpudb.cfgXX"
+ 
+ SAVED_BREAKPOINTS_FILE_NAME = "saved-breakpoints-%d.%d" % sys.version_info[:2]
+ BREAKPOINTS_FILE_NAME = "breakpoints-%d.%d" % sys.version_info[:2]
+</pre><h3>Mutant 22</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -58,7 +58,7 @@
+ 
+ 
+ CONF_SECTION = "pudb"
+-CONF_FILE_NAME = "pudb.cfg"
++CONF_FILE_NAME = None
+ 
+ SAVED_BREAKPOINTS_FILE_NAME = "saved-breakpoints-%d.%d" % sys.version_info[:2]
+ BREAKPOINTS_FILE_NAME = "breakpoints-%d.%d" % sys.version_info[:2]
+</pre><h3>Mutant 23</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -60,7 +60,7 @@
+ CONF_SECTION = "pudb"
+ CONF_FILE_NAME = "pudb.cfg"
+ 
+-SAVED_BREAKPOINTS_FILE_NAME = "saved-breakpoints-%d.%d" % sys.version_info[:2]
++SAVED_BREAKPOINTS_FILE_NAME = "XXsaved-breakpoints-%d.%dXX" % sys.version_info[:2]
+ BREAKPOINTS_FILE_NAME = "breakpoints-%d.%d" % sys.version_info[:2]
+ 
+ 
+</pre><h3>Mutant 27</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -61,7 +61,7 @@
+ CONF_FILE_NAME = "pudb.cfg"
+ 
+ SAVED_BREAKPOINTS_FILE_NAME = "saved-breakpoints-%d.%d" % sys.version_info[:2]
+-BREAKPOINTS_FILE_NAME = "breakpoints-%d.%d" % sys.version_info[:2]
++BREAKPOINTS_FILE_NAME = "XXbreakpoints-%d.%dXX" % sys.version_info[:2]
+ 
+ 
+ _config_ = [None]
+</pre><h3>Mutant 34</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -72,7 +72,7 @@
+ 
+     # Only ever do this once
+     if _config_[0] is not None:
+-        return _config_[0]
++        return _config_[1]
+ 
+     from os.path import isdir, join
+ 
+</pre><h3>Mutant 35</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -76,7 +76,7 @@
+ 
+     from os.path import isdir, join
+ 
+-    cparser = ConfigParser()
++    cparser = None
+ 
+     conf_dict = {}
+     try:
+</pre><h3>Mutant 37</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -87,7 +87,7 @@
+         if cparser.has_section(CONF_SECTION):
+             conf_dict.update(dict(cparser.items(CONF_SECTION)))
+     except Exception:
+-        settings_log.exception("Failed to load config")
++        settings_log.exception("XXFailed to load configXX")
+ 
+     conf_dict.setdefault("shell", "internal")
+     conf_dict.setdefault("theme", "classic")
+</pre><h3>Mutant 38</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -89,7 +89,7 @@
+     except Exception:
+         settings_log.exception("Failed to load config")
+ 
+-    conf_dict.setdefault("shell", "internal")
++    conf_dict.setdefault("XXshellXX", "internal")
+     conf_dict.setdefault("theme", "classic")
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+</pre><h3>Mutant 39</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -89,7 +89,7 @@
+     except Exception:
+         settings_log.exception("Failed to load config")
+ 
+-    conf_dict.setdefault("shell", "internal")
++    conf_dict.setdefault("shell", "XXinternalXX")
+     conf_dict.setdefault("theme", "classic")
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+</pre><h3>Mutant 40</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -90,7 +90,7 @@
+         settings_log.exception("Failed to load config")
+ 
+     conf_dict.setdefault("shell", "internal")
+-    conf_dict.setdefault("theme", "classic")
++    conf_dict.setdefault("XXthemeXX", "classic")
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+</pre><h3>Mutant 41</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -90,7 +90,7 @@
+         settings_log.exception("Failed to load config")
+ 
+     conf_dict.setdefault("shell", "internal")
+-    conf_dict.setdefault("theme", "classic")
++    conf_dict.setdefault("theme", "XXclassicXX")
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+</pre><h3>Mutant 42</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -91,7 +91,7 @@
+ 
+     conf_dict.setdefault("shell", "internal")
+     conf_dict.setdefault("theme", "classic")
+-    conf_dict.setdefault("line_numbers", "False")
++    conf_dict.setdefault("XXline_numbersXX", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+</pre><h3>Mutant 43</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -91,7 +91,7 @@
+ 
+     conf_dict.setdefault("shell", "internal")
+     conf_dict.setdefault("theme", "classic")
+-    conf_dict.setdefault("line_numbers", "False")
++    conf_dict.setdefault("line_numbers", "XXFalseXX")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+</pre><h3>Mutant 44</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -92,7 +92,7 @@
+     conf_dict.setdefault("shell", "internal")
+     conf_dict.setdefault("theme", "classic")
+     conf_dict.setdefault("line_numbers", "False")
+-    conf_dict.setdefault("seen_welcome", "a")
++    conf_dict.setdefault("XXseen_welcomeXX", "a")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+</pre><h3>Mutant 45</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -92,7 +92,7 @@
+     conf_dict.setdefault("shell", "internal")
+     conf_dict.setdefault("theme", "classic")
+     conf_dict.setdefault("line_numbers", "False")
+-    conf_dict.setdefault("seen_welcome", "a")
++    conf_dict.setdefault("seen_welcome", "XXaXX")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+</pre><h3>Mutant 46</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -94,7 +94,7 @@
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+-    conf_dict.setdefault("sidebar_width", 0.5)
++    conf_dict.setdefault("XXsidebar_widthXX", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+</pre><h3>Mutant 47</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -94,7 +94,7 @@
+     conf_dict.setdefault("line_numbers", "False")
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+-    conf_dict.setdefault("sidebar_width", 0.5)
++    conf_dict.setdefault("sidebar_width", 1.5)
+     conf_dict.setdefault("variables_weight", 1)
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+</pre><h3>Mutant 48</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -95,7 +95,7 @@
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+-    conf_dict.setdefault("variables_weight", 1)
++    conf_dict.setdefault("XXvariables_weightXX", 1)
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+</pre><h3>Mutant 49</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -95,7 +95,7 @@
+     conf_dict.setdefault("seen_welcome", "a")
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+-    conf_dict.setdefault("variables_weight", 1)
++    conf_dict.setdefault("variables_weight", 2)
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+</pre><h3>Mutant 50</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -96,7 +96,7 @@
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+-    conf_dict.setdefault("stack_weight", 1)
++    conf_dict.setdefault("XXstack_weightXX", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+</pre><h3>Mutant 51</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -96,7 +96,7 @@
+ 
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+-    conf_dict.setdefault("stack_weight", 1)
++    conf_dict.setdefault("stack_weight", 2)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+</pre><h3>Mutant 52</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -97,7 +97,7 @@
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+     conf_dict.setdefault("stack_weight", 1)
+-    conf_dict.setdefault("breakpoints_weight", 1)
++    conf_dict.setdefault("XXbreakpoints_weightXX", 1)
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+ 
+</pre><h3>Mutant 53</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -97,7 +97,7 @@
+     conf_dict.setdefault("sidebar_width", 0.5)
+     conf_dict.setdefault("variables_weight", 1)
+     conf_dict.setdefault("stack_weight", 1)
+-    conf_dict.setdefault("breakpoints_weight", 1)
++    conf_dict.setdefault("breakpoints_weight", 2)
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+ 
+</pre><h3>Mutant 54</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -99,7 +99,7 @@
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+-    conf_dict.setdefault("current_stack_frame", "top")
++    conf_dict.setdefault("XXcurrent_stack_frameXX", "top")
+ 
+     conf_dict.setdefault("stringifier", "default")
+ 
+</pre><h3>Mutant 55</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -99,7 +99,7 @@
+     conf_dict.setdefault("stack_weight", 1)
+     conf_dict.setdefault("breakpoints_weight", 1)
+ 
+-    conf_dict.setdefault("current_stack_frame", "top")
++    conf_dict.setdefault("current_stack_frame", "XXtopXX")
+ 
+     conf_dict.setdefault("stringifier", "default")
+ 
+</pre><h3>Mutant 56</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -101,7 +101,7 @@
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+ 
+-    conf_dict.setdefault("stringifier", "default")
++    conf_dict.setdefault("XXstringifierXX", "default")
+ 
+     conf_dict.setdefault("custom_theme", "")
+     conf_dict.setdefault("custom_stringifier", "")
+</pre><h3>Mutant 57</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -101,7 +101,7 @@
+ 
+     conf_dict.setdefault("current_stack_frame", "top")
+ 
+-    conf_dict.setdefault("stringifier", "default")
++    conf_dict.setdefault("stringifier", "XXdefaultXX")
+ 
+     conf_dict.setdefault("custom_theme", "")
+     conf_dict.setdefault("custom_stringifier", "")
+</pre><h3>Mutant 58</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -103,7 +103,7 @@
+ 
+     conf_dict.setdefault("stringifier", "default")
+ 
+-    conf_dict.setdefault("custom_theme", "")
++    conf_dict.setdefault("XXcustom_themeXX", "")
+     conf_dict.setdefault("custom_stringifier", "")
+     conf_dict.setdefault("custom_shell", "")
+ 
+</pre><h3>Mutant 59</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -103,7 +103,7 @@
+ 
+     conf_dict.setdefault("stringifier", "default")
+ 
+-    conf_dict.setdefault("custom_theme", "")
++    conf_dict.setdefault("custom_theme", "XXXX")
+     conf_dict.setdefault("custom_stringifier", "")
+     conf_dict.setdefault("custom_shell", "")
+ 
+</pre><h3>Mutant 60</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -104,7 +104,7 @@
+     conf_dict.setdefault("stringifier", "default")
+ 
+     conf_dict.setdefault("custom_theme", "")
+-    conf_dict.setdefault("custom_stringifier", "")
++    conf_dict.setdefault("XXcustom_stringifierXX", "")
+     conf_dict.setdefault("custom_shell", "")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+</pre><h3>Mutant 61</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -104,7 +104,7 @@
+     conf_dict.setdefault("stringifier", "default")
+ 
+     conf_dict.setdefault("custom_theme", "")
+-    conf_dict.setdefault("custom_stringifier", "")
++    conf_dict.setdefault("custom_stringifier", "XXXX")
+     conf_dict.setdefault("custom_shell", "")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+</pre><h3>Mutant 62</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -105,7 +105,7 @@
+ 
+     conf_dict.setdefault("custom_theme", "")
+     conf_dict.setdefault("custom_stringifier", "")
+-    conf_dict.setdefault("custom_shell", "")
++    conf_dict.setdefault("XXcustom_shellXX", "")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+     conf_dict.setdefault("default_variables_access_level", "public")
+</pre><h3>Mutant 63</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -105,7 +105,7 @@
+ 
+     conf_dict.setdefault("custom_theme", "")
+     conf_dict.setdefault("custom_stringifier", "")
+-    conf_dict.setdefault("custom_shell", "")
++    conf_dict.setdefault("custom_shell", "XXXX")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+     conf_dict.setdefault("default_variables_access_level", "public")
+</pre><h3>Mutant 64</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -107,7 +107,7 @@
+     conf_dict.setdefault("custom_stringifier", "")
+     conf_dict.setdefault("custom_shell", "")
+ 
+-    conf_dict.setdefault("wrap_variables", "True")
++    conf_dict.setdefault("XXwrap_variablesXX", "True")
+     conf_dict.setdefault("default_variables_access_level", "public")
+ 
+     conf_dict.setdefault("display", "auto")
+</pre><h3>Mutant 65</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -107,7 +107,7 @@
+     conf_dict.setdefault("custom_stringifier", "")
+     conf_dict.setdefault("custom_shell", "")
+ 
+-    conf_dict.setdefault("wrap_variables", "True")
++    conf_dict.setdefault("wrap_variables", "XXTrueXX")
+     conf_dict.setdefault("default_variables_access_level", "public")
+ 
+     conf_dict.setdefault("display", "auto")
+</pre><h3>Mutant 66</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -108,7 +108,7 @@
+     conf_dict.setdefault("custom_shell", "")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+-    conf_dict.setdefault("default_variables_access_level", "public")
++    conf_dict.setdefault("XXdefault_variables_access_levelXX", "public")
+ 
+     conf_dict.setdefault("display", "auto")
+ 
+</pre><h3>Mutant 67</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -108,7 +108,7 @@
+     conf_dict.setdefault("custom_shell", "")
+ 
+     conf_dict.setdefault("wrap_variables", "True")
+-    conf_dict.setdefault("default_variables_access_level", "public")
++    conf_dict.setdefault("default_variables_access_level", "XXpublicXX")
+ 
+     conf_dict.setdefault("display", "auto")
+ 
+</pre><h3>Mutant 68</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -110,7 +110,7 @@
+     conf_dict.setdefault("wrap_variables", "True")
+     conf_dict.setdefault("default_variables_access_level", "public")
+ 
+-    conf_dict.setdefault("display", "auto")
++    conf_dict.setdefault("XXdisplayXX", "auto")
+ 
+     conf_dict.setdefault("prompt_on_quit", "True")
+ 
+</pre><h3>Mutant 69</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -110,7 +110,7 @@
+     conf_dict.setdefault("wrap_variables", "True")
+     conf_dict.setdefault("default_variables_access_level", "public")
+ 
+-    conf_dict.setdefault("display", "auto")
++    conf_dict.setdefault("display", "XXautoXX")
+ 
+     conf_dict.setdefault("prompt_on_quit", "True")
+ 
+</pre><h3>Mutant 70</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -112,7 +112,7 @@
+ 
+     conf_dict.setdefault("display", "auto")
+ 
+-    conf_dict.setdefault("prompt_on_quit", "True")
++    conf_dict.setdefault("XXprompt_on_quitXX", "True")
+ 
+     conf_dict.setdefault("hide_cmdline_win", "False")
+ 
+</pre><h3>Mutant 71</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -112,7 +112,7 @@
+ 
+     conf_dict.setdefault("display", "auto")
+ 
+-    conf_dict.setdefault("prompt_on_quit", "True")
++    conf_dict.setdefault("prompt_on_quit", "XXTrueXX")
+ 
+     conf_dict.setdefault("hide_cmdline_win", "False")
+ 
+</pre><h3>Mutant 72</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -114,7 +114,7 @@
+ 
+     conf_dict.setdefault("prompt_on_quit", "True")
+ 
+-    conf_dict.setdefault("hide_cmdline_win", "False")
++    conf_dict.setdefault("XXhide_cmdline_winXX", "False")
+ 
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+</pre><h3>Mutant 73</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -114,7 +114,7 @@
+ 
+     conf_dict.setdefault("prompt_on_quit", "True")
+ 
+-    conf_dict.setdefault("hide_cmdline_win", "False")
++    conf_dict.setdefault("hide_cmdline_win", "XXFalseXX")
+ 
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+</pre><h3>Mutant 74</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -117,7 +117,7 @@
+     conf_dict.setdefault("hide_cmdline_win", "False")
+ 
+     # hotkeys
+-    conf_dict.setdefault("hotkeys_code", "C")
++    conf_dict.setdefault("XXhotkeys_codeXX", "C")
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+</pre><h3>Mutant 75</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -117,7 +117,7 @@
+     conf_dict.setdefault("hide_cmdline_win", "False")
+ 
+     # hotkeys
+-    conf_dict.setdefault("hotkeys_code", "C")
++    conf_dict.setdefault("hotkeys_code", "XXCXX")
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+</pre><h3>Mutant 76</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -118,7 +118,7 @@
+ 
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+-    conf_dict.setdefault("hotkeys_variables", "V")
++    conf_dict.setdefault("XXhotkeys_variablesXX", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+</pre><h3>Mutant 77</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -118,7 +118,7 @@
+ 
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+-    conf_dict.setdefault("hotkeys_variables", "V")
++    conf_dict.setdefault("hotkeys_variables", "XXVXX")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+</pre><h3>Mutant 78</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -119,7 +119,7 @@
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+     conf_dict.setdefault("hotkeys_variables", "V")
+-    conf_dict.setdefault("hotkeys_stack", "S")
++    conf_dict.setdefault("XXhotkeys_stackXX", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+ 
+</pre><h3>Mutant 79</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -119,7 +119,7 @@
+     # hotkeys
+     conf_dict.setdefault("hotkeys_code", "C")
+     conf_dict.setdefault("hotkeys_variables", "V")
+-    conf_dict.setdefault("hotkeys_stack", "S")
++    conf_dict.setdefault("hotkeys_stack", "XXSXX")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+ 
+</pre><h3>Mutant 80</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -120,7 +120,7 @@
+     conf_dict.setdefault("hotkeys_code", "C")
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+-    conf_dict.setdefault("hotkeys_breakpoints", "B")
++    conf_dict.setdefault("XXhotkeys_breakpointsXX", "B")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+ 
+     def normalize_bool_inplace(name):
+</pre><h3>Mutant 81</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -120,7 +120,7 @@
+     conf_dict.setdefault("hotkeys_code", "C")
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+-    conf_dict.setdefault("hotkeys_breakpoints", "B")
++    conf_dict.setdefault("hotkeys_breakpoints", "XXBXX")
+     conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
+ 
+     def normalize_bool_inplace(name):
+</pre><h3>Mutant 82</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -121,7 +121,7 @@
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+-    conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
++    conf_dict.setdefault("XXhotkeys_toggle_cmdline_focusXX", "ctrl x")
+ 
+     def normalize_bool_inplace(name):
+         try:
+</pre><h3>Mutant 83</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -121,7 +121,7 @@
+     conf_dict.setdefault("hotkeys_variables", "V")
+     conf_dict.setdefault("hotkeys_stack", "S")
+     conf_dict.setdefault("hotkeys_breakpoints", "B")
+-    conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "ctrl x")
++    conf_dict.setdefault("hotkeys_toggle_cmdline_focus", "XXctrl xXX")
+ 
+     def normalize_bool_inplace(name):
+         try:
+</pre><h3>Mutant 84</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -125,7 +125,7 @@
+ 
+     def normalize_bool_inplace(name):
+         try:
+-            if conf_dict[name].lower() in ["0", "false", "off"]:
++            if conf_dict[name].lower() not in ["0", "false", "off"]:
+                 conf_dict[name] = False
+             else:
+                 conf_dict[name] = True
+</pre><h3>Mutant 85</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -125,7 +125,7 @@
+ 
+     def normalize_bool_inplace(name):
+         try:
+-            if conf_dict[name].lower() in ["0", "false", "off"]:
++            if conf_dict[name].lower() in ["XX0XX", "false", "off"]:
+                 conf_dict[name] = False
+             else:
+                 conf_dict[name] = True
+</pre><h3>Mutant 86</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -125,7 +125,7 @@
+ 
+     def normalize_bool_inplace(name):
+         try:
+-            if conf_dict[name].lower() in ["0", "false", "off"]:
++            if conf_dict[name].lower() in ["0", "XXfalseXX", "off"]:
+                 conf_dict[name] = False
+             else:
+                 conf_dict[name] = True
+</pre><h3>Mutant 87</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -125,7 +125,7 @@
+ 
+     def normalize_bool_inplace(name):
+         try:
+-            if conf_dict[name].lower() in ["0", "false", "off"]:
++            if conf_dict[name].lower() in ["0", "false", "XXoffXX"]:
+                 conf_dict[name] = False
+             else:
+                 conf_dict[name] = True
+</pre><h3>Mutant 88</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -126,7 +126,7 @@
+     def normalize_bool_inplace(name):
+         try:
+             if conf_dict[name].lower() in ["0", "false", "off"]:
+-                conf_dict[name] = False
++                conf_dict[name] = True
+             else:
+                 conf_dict[name] = True
+         except Exception:
+</pre><h3>Mutant 89</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -126,7 +126,7 @@
+     def normalize_bool_inplace(name):
+         try:
+             if conf_dict[name].lower() in ["0", "false", "off"]:
+-                conf_dict[name] = False
++                conf_dict[name] = None
+             else:
+                 conf_dict[name] = True
+         except Exception:
+</pre><h3>Mutant 90</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -128,7 +128,7 @@
+             if conf_dict[name].lower() in ["0", "false", "off"]:
+                 conf_dict[name] = False
+             else:
+-                conf_dict[name] = True
++                conf_dict[name] = False
+         except Exception:
+             settings_log.exception("Failed to process config")
+ 
+</pre><h3>Mutant 91</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -128,7 +128,7 @@
+             if conf_dict[name].lower() in ["0", "false", "off"]:
+                 conf_dict[name] = False
+             else:
+-                conf_dict[name] = True
++                conf_dict[name] = None
+         except Exception:
+             settings_log.exception("Failed to process config")
+ 
+</pre><h3>Mutant 92</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -130,7 +130,7 @@
+             else:
+                 conf_dict[name] = True
+         except Exception:
+-            settings_log.exception("Failed to process config")
++            settings_log.exception("XXFailed to process configXX")
+ 
+     normalize_bool_inplace("line_numbers")
+     normalize_bool_inplace("wrap_variables")
+</pre><h3>Mutant 93</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -132,7 +132,7 @@
+         except Exception:
+             settings_log.exception("Failed to process config")
+ 
+-    normalize_bool_inplace("line_numbers")
++    normalize_bool_inplace("XXline_numbersXX")
+     normalize_bool_inplace("wrap_variables")
+     normalize_bool_inplace("prompt_on_quit")
+     normalize_bool_inplace("hide_cmdline_win")
+</pre><h3>Mutant 94</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -133,7 +133,7 @@
+             settings_log.exception("Failed to process config")
+ 
+     normalize_bool_inplace("line_numbers")
+-    normalize_bool_inplace("wrap_variables")
++    normalize_bool_inplace("XXwrap_variablesXX")
+     normalize_bool_inplace("prompt_on_quit")
+     normalize_bool_inplace("hide_cmdline_win")
+ 
+</pre><h3>Mutant 95</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -134,7 +134,7 @@
+ 
+     normalize_bool_inplace("line_numbers")
+     normalize_bool_inplace("wrap_variables")
+-    normalize_bool_inplace("prompt_on_quit")
++    normalize_bool_inplace("XXprompt_on_quitXX")
+     normalize_bool_inplace("hide_cmdline_win")
+ 
+     _config_[0] = conf_dict
+</pre><h3>Mutant 96</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -135,7 +135,7 @@
+     normalize_bool_inplace("line_numbers")
+     normalize_bool_inplace("wrap_variables")
+     normalize_bool_inplace("prompt_on_quit")
+-    normalize_bool_inplace("hide_cmdline_win")
++    normalize_bool_inplace("XXhide_cmdline_winXX")
+ 
+     _config_[0] = conf_dict
+     return conf_dict
+</pre><h3>Mutant 98</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -137,7 +137,7 @@
+     normalize_bool_inplace("prompt_on_quit")
+     normalize_bool_inplace("hide_cmdline_win")
+ 
+-    _config_[0] = conf_dict
++    _config_[0] = None
+     return conf_dict
+ 
+ 
+</pre><h3>Mutant 100</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -153,7 +153,7 @@
+         cparser.set(CONF_SECTION, key, str(conf_dict[key]))
+ 
+     try:
+-        save_path = get_save_config_path()
++        save_path = None
+         if not save_path:
+             return
+         outf = open(join(save_path, CONF_FILE_NAME), "w")
+</pre><h3>Mutant 101</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -154,7 +154,7 @@
+ 
+     try:
+         save_path = get_save_config_path()
+-        if not save_path:
++        if  save_path:
+             return
+         outf = open(join(save_path, CONF_FILE_NAME), "w")
+         cparser.write(outf)
+</pre><h3>Mutant 102</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -156,7 +156,7 @@
+         save_path = get_save_config_path()
+         if not save_path:
+             return
+-        outf = open(join(save_path, CONF_FILE_NAME), "w")
++        outf = open(join(save_path, CONF_FILE_NAME), "XXwXX")
+         cparser.write(outf)
+         outf.close()
+     except Exception:
+</pre><h3>Mutant 103</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -156,7 +156,7 @@
+         save_path = get_save_config_path()
+         if not save_path:
+             return
+-        outf = open(join(save_path, CONF_FILE_NAME), "w")
++        outf = None
+         cparser.write(outf)
+         outf.close()
+     except Exception:
+</pre><h3>Mutant 104</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -160,7 +160,7 @@
+         cparser.write(outf)
+         outf.close()
+     except Exception:
+-        settings_log.exception("Failed to save config")
++        settings_log.exception("XXFailed to save configXX")
+ 
+ 
+ def edit_config(ui, conf_dict):
+</pre><h3>Mutant 105</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -166,7 +166,7 @@
+ def edit_config(ui, conf_dict):
+     import urwid
+ 
+-    old_conf_dict = conf_dict.copy()
++    old_conf_dict = None
+ 
+     def _update_theme():
+         ui.setup_palette(ui.screen)
+</pre><h3>Mutant 106</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -187,7 +187,7 @@
+ 
+     def _update_stringifier():
+         import pudb.var_view
+-        pudb.var_view.custom_stringifier_dict = {}
++        pudb.var_view.custom_stringifier_dict = None
+         ui.update_var_view()
+ 
+     def _update_default_variables_access_level():
+</pre><h3>Mutant 107</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -197,7 +197,7 @@
+         ui.update_var_view()
+ 
+     def _update_config(check_box, new_state, option_newvalue):
+-        option, newvalue = option_newvalue
++        option, newvalue = None
+         new_conf_dict = {option: newvalue}
+         if option == "theme":
+             # only activate if the new state of the radio button is 'on'
+</pre><h3>Mutant 108</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -198,7 +198,7 @@
+ 
+     def _update_config(check_box, new_state, option_newvalue):
+         option, newvalue = option_newvalue
+-        new_conf_dict = {option: newvalue}
++        new_conf_dict = None
+         if option == "theme":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+</pre><h3>Mutant 109</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -199,7 +199,7 @@
+     def _update_config(check_box, new_state, option_newvalue):
+         option, newvalue = option_newvalue
+         new_conf_dict = {option: newvalue}
+-        if option == "theme":
++        if option != "theme":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 if newvalue is None:
+</pre><h3>Mutant 110</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -199,7 +199,7 @@
+     def _update_config(check_box, new_state, option_newvalue):
+         option, newvalue = option_newvalue
+         new_conf_dict = {option: newvalue}
+-        if option == "theme":
++        if option == "XXthemeXX":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 if newvalue is None:
+</pre><h3>Mutant 111</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -202,7 +202,7 @@
+         if option == "theme":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+-                if newvalue is None:
++                if newvalue is not None:
+                     # Select the custom theme entry dialog
+                     lb.set_focus(lb_contents.index(theme_edit_list_item))
+                     return
+</pre><h3>Mutant 112</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -210,7 +210,7 @@
+                 conf_dict.update(theme=newvalue)
+                 _update_theme()
+ 
+-        elif option == "line_numbers":
++        elif option != "line_numbers":
+             new_conf_dict["line_numbers"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+</pre><h3>Mutant 113</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -210,7 +210,7 @@
+                 conf_dict.update(theme=newvalue)
+                 _update_theme()
+ 
+-        elif option == "line_numbers":
++        elif option == "XXline_numbersXX":
+             new_conf_dict["line_numbers"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+</pre><h3>Mutant 114</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -211,7 +211,7 @@
+                 _update_theme()
+ 
+         elif option == "line_numbers":
+-            new_conf_dict["line_numbers"] = not check_box.get_state()
++            new_conf_dict["XXline_numbersXX"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+ 
+</pre><h3>Mutant 115</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -211,7 +211,7 @@
+                 _update_theme()
+ 
+         elif option == "line_numbers":
+-            new_conf_dict["line_numbers"] = not check_box.get_state()
++            new_conf_dict["line_numbers"] =  check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+ 
+</pre><h3>Mutant 116</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -211,7 +211,7 @@
+                 _update_theme()
+ 
+         elif option == "line_numbers":
+-            new_conf_dict["line_numbers"] = not check_box.get_state()
++            new_conf_dict["line_numbers"] = None
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+ 
+</pre><h3>Mutant 117</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -215,7 +215,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+ 
+-        elif option == "prompt_on_quit":
++        elif option != "prompt_on_quit":
+             new_conf_dict["prompt_on_quit"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+</pre><h3>Mutant 118</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -215,7 +215,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_line_numbers()
+ 
+-        elif option == "prompt_on_quit":
++        elif option == "XXprompt_on_quitXX":
+             new_conf_dict["prompt_on_quit"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+</pre><h3>Mutant 119</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -216,7 +216,7 @@
+             _update_line_numbers()
+ 
+         elif option == "prompt_on_quit":
+-            new_conf_dict["prompt_on_quit"] = not check_box.get_state()
++            new_conf_dict["XXprompt_on_quitXX"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+ 
+</pre><h3>Mutant 120</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -216,7 +216,7 @@
+             _update_line_numbers()
+ 
+         elif option == "prompt_on_quit":
+-            new_conf_dict["prompt_on_quit"] = not check_box.get_state()
++            new_conf_dict["prompt_on_quit"] =  check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+ 
+</pre><h3>Mutant 121</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -216,7 +216,7 @@
+             _update_line_numbers()
+ 
+         elif option == "prompt_on_quit":
+-            new_conf_dict["prompt_on_quit"] = not check_box.get_state()
++            new_conf_dict["prompt_on_quit"] = None
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+ 
+</pre><h3>Mutant 122</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -220,7 +220,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+ 
+-        elif option == "hide_cmdline_win":
++        elif option != "hide_cmdline_win":
+             new_conf_dict["hide_cmdline_win"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+</pre><h3>Mutant 123</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -220,7 +220,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_prompt_on_quit()
+ 
+-        elif option == "hide_cmdline_win":
++        elif option == "XXhide_cmdline_winXX":
+             new_conf_dict["hide_cmdline_win"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+</pre><h3>Mutant 124</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -221,7 +221,7 @@
+             _update_prompt_on_quit()
+ 
+         elif option == "hide_cmdline_win":
+-            new_conf_dict["hide_cmdline_win"] = not check_box.get_state()
++            new_conf_dict["XXhide_cmdline_winXX"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+ 
+</pre><h3>Mutant 125</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -221,7 +221,7 @@
+             _update_prompt_on_quit()
+ 
+         elif option == "hide_cmdline_win":
+-            new_conf_dict["hide_cmdline_win"] = not check_box.get_state()
++            new_conf_dict["hide_cmdline_win"] =  check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+ 
+</pre><h3>Mutant 126</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -221,7 +221,7 @@
+             _update_prompt_on_quit()
+ 
+         elif option == "hide_cmdline_win":
+-            new_conf_dict["hide_cmdline_win"] = not check_box.get_state()
++            new_conf_dict["hide_cmdline_win"] = None
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+ 
+</pre><h3>Mutant 127</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -225,7 +225,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+ 
+-        elif option == "current_stack_frame":
++        elif option != "current_stack_frame":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 conf_dict.update(new_conf_dict)
+</pre><h3>Mutant 128</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -225,7 +225,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_hide_cmdline_win()
+ 
+-        elif option == "current_stack_frame":
++        elif option == "XXcurrent_stack_frameXX":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 conf_dict.update(new_conf_dict)
+</pre><h3>Mutant 129</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -231,7 +231,7 @@
+                 conf_dict.update(new_conf_dict)
+                 _update_current_stack_frame()
+ 
+-        elif option == "stringifier":
++        elif option != "stringifier":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 if newvalue is None:
+</pre><h3>Mutant 130</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -231,7 +231,7 @@
+                 conf_dict.update(new_conf_dict)
+                 _update_current_stack_frame()
+ 
+-        elif option == "stringifier":
++        elif option == "XXstringifierXX":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 if newvalue is None:
+</pre><h3>Mutant 131</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -234,7 +234,7 @@
+         elif option == "stringifier":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+-                if newvalue is None:
++                if newvalue is not None:
+                     lb.set_focus(lb_contents.index(stringifier_edit_list_item))
+                     return
+ 
+</pre><h3>Mutant 132</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -241,7 +241,7 @@
+                 conf_dict.update(stringifier=newvalue)
+                 _update_stringifier()
+ 
+-        elif option == "default_variables_access_level":
++        elif option != "default_variables_access_level":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 conf_dict.update(default_variables_access_level=newvalue)
+</pre><h3>Mutant 133</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -241,7 +241,7 @@
+                 conf_dict.update(stringifier=newvalue)
+                 _update_stringifier()
+ 
+-        elif option == "default_variables_access_level":
++        elif option == "XXdefault_variables_access_levelXX":
+             # only activate if the new state of the radio button is 'on'
+             if new_state:
+                 conf_dict.update(default_variables_access_level=newvalue)
+</pre><h3>Mutant 134</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -247,7 +247,7 @@
+                 conf_dict.update(default_variables_access_level=newvalue)
+                 _update_default_variables_access_level()
+ 
+-        elif option == "wrap_variables":
++        elif option != "wrap_variables":
+             new_conf_dict["wrap_variables"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+</pre><h3>Mutant 135</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -247,7 +247,7 @@
+                 conf_dict.update(default_variables_access_level=newvalue)
+                 _update_default_variables_access_level()
+ 
+-        elif option == "wrap_variables":
++        elif option == "XXwrap_variablesXX":
+             new_conf_dict["wrap_variables"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+</pre><h3>Mutant 136</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -248,7 +248,7 @@
+                 _update_default_variables_access_level()
+ 
+         elif option == "wrap_variables":
+-            new_conf_dict["wrap_variables"] = not check_box.get_state()
++            new_conf_dict["XXwrap_variablesXX"] = not check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+ 
+</pre><h3>Mutant 137</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -248,7 +248,7 @@
+                 _update_default_variables_access_level()
+ 
+         elif option == "wrap_variables":
+-            new_conf_dict["wrap_variables"] = not check_box.get_state()
++            new_conf_dict["wrap_variables"] =  check_box.get_state()
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+ 
+</pre><h3>Mutant 138</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -248,7 +248,7 @@
+                 _update_default_variables_access_level()
+ 
+         elif option == "wrap_variables":
+-            new_conf_dict["wrap_variables"] = not check_box.get_state()
++            new_conf_dict["wrap_variables"] = None
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+ 
+</pre><h3>Mutant 139</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -252,7 +252,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+ 
+-    heading = urwid.Text("This is the preferences screen for PuDB. "
++    heading = urwid.Text("XXThis is the preferences screen for PuDB. XX"
+         "Hit Ctrl-P at any time to get back to it.\n\n"
+         "Configuration settings are saved in "
+         "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+</pre><h3>Mutant 140</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -253,7 +253,7 @@
+             _update_wrap_variables()
+ 
+     heading = urwid.Text("This is the preferences screen for PuDB. "
+-        "Hit Ctrl-P at any time to get back to it.\n\n"
++        "XXHit Ctrl-P at any time to get back to it.\n\nXX"
+         "Configuration settings are saved in "
+         "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+         "environment variable. If both variables are not set "
+</pre><h3>Mutant 141</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -254,7 +254,7 @@
+ 
+     heading = urwid.Text("This is the preferences screen for PuDB. "
+         "Hit Ctrl-P at any time to get back to it.\n\n"
+-        "Configuration settings are saved in "
++        "XXConfiguration settings are saved in XX"
+         "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+         "environment variable. If both variables are not set "
+         "configurations settings will not be saved.\n")
+</pre><h3>Mutant 142</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -255,7 +255,7 @@
+     heading = urwid.Text("This is the preferences screen for PuDB. "
+         "Hit Ctrl-P at any time to get back to it.\n\n"
+         "Configuration settings are saved in "
+-        "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
++        "XX$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb XX"
+         "environment variable. If both variables are not set "
+         "configurations settings will not be saved.\n")
+ 
+</pre><h3>Mutant 143</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -256,7 +256,7 @@
+         "Hit Ctrl-P at any time to get back to it.\n\n"
+         "Configuration settings are saved in "
+         "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+-        "environment variable. If both variables are not set "
++        "XXenvironment variable. If both variables are not set XX"
+         "configurations settings will not be saved.\n")
+ 
+     cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+</pre><h3>Mutant 144</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -257,7 +257,7 @@
+         "Configuration settings are saved in "
+         "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+         "environment variable. If both variables are not set "
+-        "configurations settings will not be saved.\n")
++        "XXconfigurations settings will not be saved.\nXX")
+ 
+     cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+</pre><h3>Mutant 145</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -252,12 +252,7 @@
+             conf_dict.update(new_conf_dict)
+             _update_wrap_variables()
+ 
+-    heading = urwid.Text("This is the preferences screen for PuDB. "
+-        "Hit Ctrl-P at any time to get back to it.\n\n"
+-        "Configuration settings are saved in "
+-        "$HOME/.config/pudb or $XDG_CONFIG_HOME/pudb "
+-        "environment variable. If both variables are not set "
+-        "configurations settings will not be saved.\n")
++    heading = None
+ 
+     cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+</pre><h3>Mutant 146</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -259,7 +259,7 @@
+         "environment variable. If both variables are not set "
+         "configurations settings will not be saved.\n")
+ 
+-    cb_line_numbers = urwid.CheckBox("Show Line Numbers",
++    cb_line_numbers = urwid.CheckBox("XXShow Line NumbersXX",
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+                 user_data=("line_numbers", None))
+ 
+</pre><h3>Mutant 147</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -260,7 +260,7 @@
+         "configurations settings will not be saved.\n")
+ 
+     cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+-            bool(conf_dict["line_numbers"]), on_state_change=_update_config,
++            bool(conf_dict["XXline_numbersXX"]), on_state_change=_update_config,
+                 user_data=("line_numbers", None))
+ 
+     cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+</pre><h3>Mutant 148</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -261,7 +261,7 @@
+ 
+     cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+-                user_data=("line_numbers", None))
++                user_data=("XXline_numbersXX", None))
+ 
+     cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+</pre><h3>Mutant 149</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -259,9 +259,7 @@
+         "environment variable. If both variables are not set "
+         "configurations settings will not be saved.\n")
+ 
+-    cb_line_numbers = urwid.CheckBox("Show Line Numbers",
+-            bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+-                user_data=("line_numbers", None))
++    cb_line_numbers = None
+ 
+     cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+</pre><h3>Mutant 150</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -263,7 +263,7 @@
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+                 user_data=("line_numbers", None))
+ 
+-    cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
++    cb_prompt_on_quit = urwid.CheckBox("XXPrompt before quittingXX",
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+                 user_data=("prompt_on_quit", None))
+ 
+</pre><h3>Mutant 151</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -264,7 +264,7 @@
+                 user_data=("line_numbers", None))
+ 
+     cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+-            bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
++            bool(conf_dict["XXprompt_on_quitXX"]), on_state_change=_update_config,
+                 user_data=("prompt_on_quit", None))
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+</pre><h3>Mutant 152</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -265,7 +265,7 @@
+ 
+     cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+-                user_data=("prompt_on_quit", None))
++                user_data=("XXprompt_on_quitXX", None))
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+</pre><h3>Mutant 153</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -263,9 +263,7 @@
+             bool(conf_dict["line_numbers"]), on_state_change=_update_config,
+                 user_data=("line_numbers", None))
+ 
+-    cb_prompt_on_quit = urwid.CheckBox("Prompt before quitting",
+-            bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+-                user_data=("prompt_on_quit", None))
++    cb_prompt_on_quit = None
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+</pre><h3>Mutant 154</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -267,7 +267,7 @@
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+                 user_data=("prompt_on_quit", None))
+ 
+-    hide_cmdline_win = urwid.CheckBox("Hide command line"
++    hide_cmdline_win = urwid.CheckBox("XXHide command lineXX"
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+                                       "when not in use",
+             bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+</pre><h3>Mutant 155</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -268,7 +268,7 @@
+                 user_data=("prompt_on_quit", None))
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+-            f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
++            f"({conf_dict['XXhotkeys_toggle_cmdline_focusXX']}) window "
+                                       "when not in use",
+             bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+                 user_data=("hide_cmdline_win", None))
+</pre><h3>Mutant 156</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -268,7 +268,7 @@
+                 user_data=("prompt_on_quit", None))
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+-            f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
++            f"XX({conf_dict['hotkeys_toggle_cmdline_focus']}) window XX"
+                                       "when not in use",
+             bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+                 user_data=("hide_cmdline_win", None))
+</pre><h3>Mutant 157</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -269,7 +269,7 @@
+ 
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+-                                      "when not in use",
++                                      "XXwhen not in useXX",
+             bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+                 user_data=("hide_cmdline_win", None))
+ 
+</pre><h3>Mutant 158</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -270,7 +270,7 @@
+     hide_cmdline_win = urwid.CheckBox("Hide command line"
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+                                       "when not in use",
+-            bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
++            bool(conf_dict["XXhide_cmdline_winXX"]), on_state_change=_update_config,
+                 user_data=("hide_cmdline_win", None))
+ 
+     # {{{ shells
+</pre><h3>Mutant 159</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -271,7 +271,7 @@
+             f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+                                       "when not in use",
+             bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+-                user_data=("hide_cmdline_win", None))
++                user_data=("XXhide_cmdline_winXX", None))
+ 
+     # {{{ shells
+ 
+</pre><h3>Mutant 160</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -267,11 +267,7 @@
+             bool(conf_dict["prompt_on_quit"]), on_state_change=_update_config,
+                 user_data=("prompt_on_quit", None))
+ 
+-    hide_cmdline_win = urwid.CheckBox("Hide command line"
+-            f"({conf_dict['hotkeys_toggle_cmdline_focus']}) window "
+-                                      "when not in use",
+-            bool(conf_dict["hide_cmdline_win"]), on_state_change=_update_config,
+-                user_data=("hide_cmdline_win", None))
++    hide_cmdline_win = None
+ 
+     # {{{ shells
+ 
+</pre><h3>Mutant 161</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -275,7 +275,7 @@
+ 
+     # {{{ shells
+ 
+-    shell_info = urwid.Text("This is the shell that will be "
++    shell_info = urwid.Text("XXThis is the shell that will be XX"
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+</pre><h3>Mutant 162</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -276,7 +276,7 @@
+     # {{{ shells
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+-            "used when you hit '!'.\n")
++            "XXused when you hit '!'.\nXX")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+</pre><h3>Mutant 163</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -275,8 +275,7 @@
+ 
+     # {{{ shells
+ 
+-    shell_info = urwid.Text("This is the shell that will be "
+-            "used when you hit '!'.\n")
++    shell_info = None
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+</pre><h3>Mutant 164</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,7 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
++    shells = ["XXinternalXX", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+</pre><h3>Mutant 165</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,7 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
++    shells = ["internal", "XXclassicXX", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+</pre><h3>Mutant 166</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,7 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
++    shells = ["internal", "classic", "XXipythonXX", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+</pre><h3>Mutant 167</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,7 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
++    shells = ["internal", "classic", "ipython", "XXipython_kernelXX", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+</pre><h3>Mutant 168</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,7 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
++    shells = ["internal", "classic", "ipython", "ipython_kernel", "XXbpythonXX",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+</pre><h3>Mutant 169</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -278,7 +278,7 @@
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+-              "ptpython", "ptipython"]
++              "XXptpythonXX", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+</pre><h3>Mutant 170</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -278,7 +278,7 @@
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+-              "ptpython", "ptipython"]
++              "ptpython", "XXptipythonXX"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+</pre><h3>Mutant 171</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -277,8 +277,7 @@
+ 
+     shell_info = urwid.Text("This is the shell that will be "
+             "used when you hit '!'.\n")
+-    shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+-              "ptpython", "ptipython"]
++    shells = None
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+</pre><h3>Mutant 172</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -279,7 +279,7 @@
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+-    known_shell = conf_dict["shell"] in shells
++    known_shell = conf_dict["XXshellXX"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+</pre><h3>Mutant 173</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -279,7 +279,7 @@
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+-    known_shell = conf_dict["shell"] in shells
++    known_shell = conf_dict["shell"] not in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+</pre><h3>Mutant 174</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -279,7 +279,7 @@
+             "used when you hit '!'.\n")
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+-    known_shell = conf_dict["shell"] in shells
++    known_shell = None
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+</pre><h3>Mutant 175</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -280,7 +280,7 @@
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+-    shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
++    shell_edit = urwid.Edit(edit_text=conf_dict["XXcustom_shellXX"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+     shell_rb_group = []
+</pre><h3>Mutant 176</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -280,7 +280,7 @@
+     shells = ["internal", "classic", "ipython", "ipython_kernel", "bpython",
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+-    shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
++    shell_edit = None
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+     shell_rb_group = []
+</pre><h3>Mutant 177</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -281,7 +281,7 @@
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+-    shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
++    shell_edit_list_item = urwid.AttrMap(shell_edit, "XXinputXX", "focused input")
+ 
+     shell_rb_group = []
+     shell_rbs = [
+</pre><h3>Mutant 178</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -281,7 +281,7 @@
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+-    shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
++    shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "XXfocused inputXX")
+ 
+     shell_rb_group = []
+     shell_rbs = [
+</pre><h3>Mutant 179</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -281,7 +281,7 @@
+               "ptpython", "ptipython"]
+     known_shell = conf_dict["shell"] in shells
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+-    shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
++    shell_edit_list_item = None
+ 
+     shell_rb_group = []
+     shell_rbs = [
+</pre><h3>Mutant 180</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -283,7 +283,7 @@
+     shell_edit = urwid.Edit(edit_text=conf_dict["custom_shell"])
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+-    shell_rb_group = []
++    shell_rb_group = None
+     shell_rbs = [
+             urwid.RadioButton(shell_rb_group, name,
+                 conf_dict["shell"] == name)
+</pre><h3>Mutant 181</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -286,7 +286,7 @@
+     shell_rb_group = []
+     shell_rbs = [
+             urwid.RadioButton(shell_rb_group, name,
+-                conf_dict["shell"] == name)
++                conf_dict["XXshellXX"] == name)
+             for name in shells]+[
+                 urwid.RadioButton(shell_rb_group, "Custom:",
+                 not known_shell, on_state_change=_update_config,
+</pre><h3>Mutant 182</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -286,7 +286,7 @@
+     shell_rb_group = []
+     shell_rbs = [
+             urwid.RadioButton(shell_rb_group, name,
+-                conf_dict["shell"] == name)
++                conf_dict["shell"] != name)
+             for name in shells]+[
+                 urwid.RadioButton(shell_rb_group, "Custom:",
+                 not known_shell, on_state_change=_update_config,
+</pre><h3>Mutant 183</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -287,7 +287,7 @@
+     shell_rbs = [
+             urwid.RadioButton(shell_rb_group, name,
+                 conf_dict["shell"] == name)
+-            for name in shells]+[
++            for name in shells]-[
+                 urwid.RadioButton(shell_rb_group, "Custom:",
+                 not known_shell, on_state_change=_update_config,
+                 user_data=("shell", None)),
+</pre><h3>Mutant 184</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -288,7 +288,7 @@
+             urwid.RadioButton(shell_rb_group, name,
+                 conf_dict["shell"] == name)
+             for name in shells]+[
+-                urwid.RadioButton(shell_rb_group, "Custom:",
++                urwid.RadioButton(shell_rb_group, "XXCustom:XX",
+                 not known_shell, on_state_change=_update_config,
+                 user_data=("shell", None)),
+                 shell_edit_list_item,
+</pre><h3>Mutant 185</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -289,7 +289,7 @@
+                 conf_dict["shell"] == name)
+             for name in shells]+[
+                 urwid.RadioButton(shell_rb_group, "Custom:",
+-                not known_shell, on_state_change=_update_config,
++                 known_shell, on_state_change=_update_config,
+                 user_data=("shell", None)),
+                 shell_edit_list_item,
+                 urwid.Text("\nTo use a custom shell, see examples/shell.py "
+</pre><h3>Mutant 186</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -290,7 +290,7 @@
+             for name in shells]+[
+                 urwid.RadioButton(shell_rb_group, "Custom:",
+                 not known_shell, on_state_change=_update_config,
+-                user_data=("shell", None)),
++                user_data=("XXshellXX", None)),
+                 shell_edit_list_item,
+                 urwid.Text("\nTo use a custom shell, see examples/shell.py "
+                     "in the pudb distribution. Enter the full path to a "
+</pre><h3>Mutant 187</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -292,7 +292,7 @@
+                 not known_shell, on_state_change=_update_config,
+                 user_data=("shell", None)),
+                 shell_edit_list_item,
+-                urwid.Text("\nTo use a custom shell, see examples/shell.py "
++                urwid.Text("XX\nTo use a custom shell, see examples/shell.py XX"
+                     "in the pudb distribution. Enter the full path to a "
+                     "file like it in the box above. '~' will be expanded "
+                     "to your home directory. The file should contain a "
+</pre><h3>Mutant 188</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -293,7 +293,7 @@
+                 user_data=("shell", None)),
+                 shell_edit_list_item,
+                 urwid.Text("\nTo use a custom shell, see examples/shell.py "
+-                    "in the pudb distribution. Enter the full path to a "
++                    "XXin the pudb distribution. Enter the full path to a XX"
+                     "file like it in the box above. '~' will be expanded "
+                     "to your home directory. The file should contain a "
+                     "function called pudb_shell(_globals, _locals) "
+</pre><h3>Mutant 189</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -294,7 +294,7 @@
+                 shell_edit_list_item,
+                 urwid.Text("\nTo use a custom shell, see examples/shell.py "
+                     "in the pudb distribution. Enter the full path to a "
+-                    "file like it in the box above. '~' will be expanded "
++                    "XXfile like it in the box above. '~' will be expanded XX"
+                     "to your home directory. The file should contain a "
+                     "function called pudb_shell(_globals, _locals) "
+                     "at the module level. See the PuDB documentation for "
+</pre><h3>Mutant 190</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -295,7 +295,7 @@
+                 urwid.Text("\nTo use a custom shell, see examples/shell.py "
+                     "in the pudb distribution. Enter the full path to a "
+                     "file like it in the box above. '~' will be expanded "
+-                    "to your home directory. The file should contain a "
++                    "XXto your home directory. The file should contain a XX"
+                     "function called pudb_shell(_globals, _locals) "
+                     "at the module level. See the PuDB documentation for "
+                     "more information."),
+</pre><h3>Mutant 191</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -296,7 +296,7 @@
+                     "in the pudb distribution. Enter the full path to a "
+                     "file like it in the box above. '~' will be expanded "
+                     "to your home directory. The file should contain a "
+-                    "function called pudb_shell(_globals, _locals) "
++                    "XXfunction called pudb_shell(_globals, _locals) XX"
+                     "at the module level. See the PuDB documentation for "
+                     "more information."),
+             ]
+</pre><h3>Mutant 192</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -297,7 +297,7 @@
+                     "file like it in the box above. '~' will be expanded "
+                     "to your home directory. The file should contain a "
+                     "function called pudb_shell(_globals, _locals) "
+-                    "at the module level. See the PuDB documentation for "
++                    "XXat the module level. See the PuDB documentation for XX"
+                     "more information."),
+             ]
+ 
+</pre><h3>Mutant 193</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -298,7 +298,7 @@
+                     "to your home directory. The file should contain a "
+                     "function called pudb_shell(_globals, _locals) "
+                     "at the module level. See the PuDB documentation for "
+-                    "more information."),
++                    "XXmore information.XX"),
+             ]
+ 
+     # }}}
+</pre><h3>Mutant 194</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -284,22 +284,7 @@
+     shell_edit_list_item = urwid.AttrMap(shell_edit, "input", "focused input")
+ 
+     shell_rb_group = []
+-    shell_rbs = [
+-            urwid.RadioButton(shell_rb_group, name,
+-                conf_dict["shell"] == name)
+-            for name in shells]+[
+-                urwid.RadioButton(shell_rb_group, "Custom:",
+-                not known_shell, on_state_change=_update_config,
+-                user_data=("shell", None)),
+-                shell_edit_list_item,
+-                urwid.Text("\nTo use a custom shell, see examples/shell.py "
+-                    "in the pudb distribution. Enter the full path to a "
+-                    "file like it in the box above. '~' will be expanded "
+-                    "to your home directory. The file should contain a "
+-                    "function called pudb_shell(_globals, _locals) "
+-                    "at the module level. See the PuDB documentation for "
+-                    "more information."),
+-            ]
++    shell_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 195</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -307,7 +307,7 @@
+ 
+     from pudb.themes import THEMES
+ 
+-    known_theme = conf_dict["theme"] in THEMES
++    known_theme = conf_dict["XXthemeXX"] in THEMES
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+</pre><h3>Mutant 196</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -307,7 +307,7 @@
+ 
+     from pudb.themes import THEMES
+ 
+-    known_theme = conf_dict["theme"] in THEMES
++    known_theme = conf_dict["theme"] not in THEMES
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+</pre><h3>Mutant 197</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -307,7 +307,7 @@
+ 
+     from pudb.themes import THEMES
+ 
+-    known_theme = conf_dict["theme"] in THEMES
++    known_theme = None
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+</pre><h3>Mutant 198</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -309,7 +309,7 @@
+ 
+     known_theme = conf_dict["theme"] in THEMES
+ 
+-    theme_rb_group = []
++    theme_rb_group = None
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+     theme_rbs = [
+</pre><h3>Mutant 199</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -310,7 +310,7 @@
+     known_theme = conf_dict["theme"] in THEMES
+ 
+     theme_rb_group = []
+-    theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
++    theme_edit = urwid.Edit(edit_text=conf_dict["XXcustom_themeXX"])
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+</pre><h3>Mutant 200</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -310,7 +310,7 @@
+     known_theme = conf_dict["theme"] in THEMES
+ 
+     theme_rb_group = []
+-    theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
++    theme_edit = None
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+</pre><h3>Mutant 201</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -311,7 +311,7 @@
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+-    theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
++    theme_edit_list_item = urwid.AttrMap(theme_edit, "XXinputXX", "focused input")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+</pre><h3>Mutant 202</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -311,7 +311,7 @@
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+-    theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
++    theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "XXfocused inputXX")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+</pre><h3>Mutant 203</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -311,7 +311,7 @@
+ 
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+-    theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
++    theme_edit_list_item = None
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+</pre><h3>Mutant 204</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -314,7 +314,7 @@
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+-                conf_dict["theme"] == name, on_state_change=_update_config,
++                conf_dict["XXthemeXX"] == name, on_state_change=_update_config,
+                 user_data=("theme", name))
+             for name in THEMES]+[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+</pre><h3>Mutant 205</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -314,7 +314,7 @@
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+-                conf_dict["theme"] == name, on_state_change=_update_config,
++                conf_dict["theme"] != name, on_state_change=_update_config,
+                 user_data=("theme", name))
+             for name in THEMES]+[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+</pre><h3>Mutant 206</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -315,7 +315,7 @@
+     theme_rbs = [
+             urwid.RadioButton(theme_rb_group, name,
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+-                user_data=("theme", name))
++                user_data=("XXthemeXX", name))
+             for name in THEMES]+[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+                     not known_theme, on_state_change=_update_config,
+</pre><h3>Mutant 207</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -316,7 +316,7 @@
+             urwid.RadioButton(theme_rb_group, name,
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+                 user_data=("theme", name))
+-            for name in THEMES]+[
++            for name in THEMES]-[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+                     not known_theme, on_state_change=_update_config,
+                     user_data=("theme", None)),
+</pre><h3>Mutant 208</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -317,7 +317,7 @@
+                 conf_dict["theme"] == name, on_state_change=_update_config,
+                 user_data=("theme", name))
+             for name in THEMES]+[
+-                urwid.RadioButton(theme_rb_group, "Custom:",
++                urwid.RadioButton(theme_rb_group, "XXCustom:XX",
+                     not known_theme, on_state_change=_update_config,
+                     user_data=("theme", None)),
+                 theme_edit_list_item,
+</pre><h3>Mutant 209</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -318,7 +318,7 @@
+                 user_data=("theme", name))
+             for name in THEMES]+[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+-                    not known_theme, on_state_change=_update_config,
++                     known_theme, on_state_change=_update_config,
+                     user_data=("theme", None)),
+                 theme_edit_list_item,
+                 urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+</pre><h3>Mutant 210</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -319,7 +319,7 @@
+             for name in THEMES]+[
+                 urwid.RadioButton(theme_rb_group, "Custom:",
+                     not known_theme, on_state_change=_update_config,
+-                    user_data=("theme", None)),
++                    user_data=("XXthemeXX", None)),
+                 theme_edit_list_item,
+                 urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+                     "pudb distribution. Enter the full path to a file like it in "
+</pre><h3>Mutant 211</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -321,7 +321,7 @@
+                     not known_theme, on_state_change=_update_config,
+                     user_data=("theme", None)),
+                 theme_edit_list_item,
+-                urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
++                urwid.Text("XX\nTo use a custom theme, see examples/theme.py in the XX"
+                     "pudb distribution. Enter the full path to a file like it in "
+                     "the box above. '~' will be expanded to your home directory. "
+                     "Note that a custom theme will not be applied until you close "
+</pre><h3>Mutant 212</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -322,7 +322,7 @@
+                     user_data=("theme", None)),
+                 theme_edit_list_item,
+                 urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+-                    "pudb distribution. Enter the full path to a file like it in "
++                    "XXpudb distribution. Enter the full path to a file like it in XX"
+                     "the box above. '~' will be expanded to your home directory. "
+                     "Note that a custom theme will not be applied until you close "
+                     "this dialog."),
+</pre><h3>Mutant 213</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -323,7 +323,7 @@
+                 theme_edit_list_item,
+                 urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+                     "pudb distribution. Enter the full path to a file like it in "
+-                    "the box above. '~' will be expanded to your home directory. "
++                    "XXthe box above. '~' will be expanded to your home directory. XX"
+                     "Note that a custom theme will not be applied until you close "
+                     "this dialog."),
+             ]
+</pre><h3>Mutant 214</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -324,7 +324,7 @@
+                 urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+                     "pudb distribution. Enter the full path to a file like it in "
+                     "the box above. '~' will be expanded to your home directory. "
+-                    "Note that a custom theme will not be applied until you close "
++                    "XXNote that a custom theme will not be applied until you close XX"
+                     "this dialog."),
+             ]
+ 
+</pre><h3>Mutant 215</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -325,7 +325,7 @@
+                     "pudb distribution. Enter the full path to a file like it in "
+                     "the box above. '~' will be expanded to your home directory. "
+                     "Note that a custom theme will not be applied until you close "
+-                    "this dialog."),
++                    "XXthis dialog.XX"),
+             ]
+ 
+     # }}}
+</pre><h3>Mutant 216</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -312,21 +312,7 @@
+     theme_rb_group = []
+     theme_edit = urwid.Edit(edit_text=conf_dict["custom_theme"])
+     theme_edit_list_item = urwid.AttrMap(theme_edit, "input", "focused input")
+-    theme_rbs = [
+-            urwid.RadioButton(theme_rb_group, name,
+-                conf_dict["theme"] == name, on_state_change=_update_config,
+-                user_data=("theme", name))
+-            for name in THEMES]+[
+-                urwid.RadioButton(theme_rb_group, "Custom:",
+-                    not known_theme, on_state_change=_update_config,
+-                    user_data=("theme", None)),
+-                theme_edit_list_item,
+-                urwid.Text("\nTo use a custom theme, see examples/theme.py in the "
+-                    "pudb distribution. Enter the full path to a file like it in "
+-                    "the box above. '~' will be expanded to your home directory. "
+-                    "Note that a custom theme will not be applied until you close "
+-                    "this dialog."),
+-            ]
++    theme_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 217</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -332,7 +332,7 @@
+ 
+     # {{{ stack
+ 
+-    stack_rb_group = []
++    stack_rb_group = None
+     stack_opts = ["top", "bottom"]
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+</pre><h3>Mutant 218</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -333,7 +333,7 @@
+     # {{{ stack
+ 
+     stack_rb_group = []
+-    stack_opts = ["top", "bottom"]
++    stack_opts = ["XXtopXX", "bottom"]
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+</pre><h3>Mutant 219</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -333,7 +333,7 @@
+     # {{{ stack
+ 
+     stack_rb_group = []
+-    stack_opts = ["top", "bottom"]
++    stack_opts = ["top", "XXbottomXX"]
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+</pre><h3>Mutant 220</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -333,7 +333,7 @@
+     # {{{ stack
+ 
+     stack_rb_group = []
+-    stack_opts = ["top", "bottom"]
++    stack_opts = None
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+</pre><h3>Mutant 221</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -334,7 +334,7 @@
+ 
+     stack_rb_group = []
+     stack_opts = ["top", "bottom"]
+-    stack_info = urwid.Text("Show the current stack frame at the\n")
++    stack_info = urwid.Text("XXShow the current stack frame at the\nXX")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+                 conf_dict["current_stack_frame"] == name,
+</pre><h3>Mutant 222</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -334,7 +334,7 @@
+ 
+     stack_rb_group = []
+     stack_opts = ["top", "bottom"]
+-    stack_info = urwid.Text("Show the current stack frame at the\n")
++    stack_info = None
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+                 conf_dict["current_stack_frame"] == name,
+</pre><h3>Mutant 223</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -337,7 +337,7 @@
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+-                conf_dict["current_stack_frame"] == name,
++                conf_dict["XXcurrent_stack_frameXX"] == name,
+                 on_state_change=_update_config,
+                 user_data=("current_stack_frame", name))
+             for name in stack_opts
+</pre><h3>Mutant 224</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -337,7 +337,7 @@
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+     stack_rbs = [
+             urwid.RadioButton(stack_rb_group, name,
+-                conf_dict["current_stack_frame"] == name,
++                conf_dict["current_stack_frame"] != name,
+                 on_state_change=_update_config,
+                 user_data=("current_stack_frame", name))
+             for name in stack_opts
+</pre><h3>Mutant 225</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -339,7 +339,7 @@
+             urwid.RadioButton(stack_rb_group, name,
+                 conf_dict["current_stack_frame"] == name,
+                 on_state_change=_update_config,
+-                user_data=("current_stack_frame", name))
++                user_data=("XXcurrent_stack_frameXX", name))
+             for name in stack_opts
+             ]
+ 
+</pre><h3>Mutant 226</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -335,13 +335,7 @@
+     stack_rb_group = []
+     stack_opts = ["top", "bottom"]
+     stack_info = urwid.Text("Show the current stack frame at the\n")
+-    stack_rbs = [
+-            urwid.RadioButton(stack_rb_group, name,
+-                conf_dict["current_stack_frame"] == name,
+-                on_state_change=_update_config,
+-                user_data=("current_stack_frame", name))
+-            for name in stack_opts
+-            ]
++    stack_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 227</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -348,7 +348,7 @@
+     # {{{ stringifier
+ 
+     from pudb.var_view import STRINGIFIERS
+-    stringifier_opts = list(STRINGIFIERS.keys())
++    stringifier_opts = None
+     known_stringifier = conf_dict["stringifier"] in stringifier_opts
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+</pre><h3>Mutant 228</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -349,7 +349,7 @@
+ 
+     from pudb.var_view import STRINGIFIERS
+     stringifier_opts = list(STRINGIFIERS.keys())
+-    known_stringifier = conf_dict["stringifier"] in stringifier_opts
++    known_stringifier = conf_dict["XXstringifierXX"] in stringifier_opts
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+</pre><h3>Mutant 229</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -349,7 +349,7 @@
+ 
+     from pudb.var_view import STRINGIFIERS
+     stringifier_opts = list(STRINGIFIERS.keys())
+-    known_stringifier = conf_dict["stringifier"] in stringifier_opts
++    known_stringifier = conf_dict["stringifier"] not in stringifier_opts
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+</pre><h3>Mutant 230</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -349,7 +349,7 @@
+ 
+     from pudb.var_view import STRINGIFIERS
+     stringifier_opts = list(STRINGIFIERS.keys())
+-    known_stringifier = conf_dict["stringifier"] in stringifier_opts
++    known_stringifier = None
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+</pre><h3>Mutant 231</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -350,7 +350,7 @@
+     from pudb.var_view import STRINGIFIERS
+     stringifier_opts = list(STRINGIFIERS.keys())
+     known_stringifier = conf_dict["stringifier"] in stringifier_opts
+-    stringifier_rb_group = []
++    stringifier_rb_group = None
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+         "This is the default function that will be called on variables in the "
+</pre><h3>Mutant 232</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -351,7 +351,7 @@
+     stringifier_opts = list(STRINGIFIERS.keys())
+     known_stringifier = conf_dict["stringifier"] in stringifier_opts
+     stringifier_rb_group = []
+-    stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
++    stringifier_edit = urwid.Edit(edit_text=conf_dict["XXcustom_stringifierXX"])
+     stringifier_info = urwid.Text(
+         "This is the default function that will be called on variables in the "
+         "variables list. You can also change this on a per-variable basis by "
+</pre><h3>Mutant 233</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -351,7 +351,7 @@
+     stringifier_opts = list(STRINGIFIERS.keys())
+     known_stringifier = conf_dict["stringifier"] in stringifier_opts
+     stringifier_rb_group = []
+-    stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
++    stringifier_edit = None
+     stringifier_info = urwid.Text(
+         "This is the default function that will be called on variables in the "
+         "variables list. You can also change this on a per-variable basis by "
+</pre><h3>Mutant 234</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -353,7 +353,7 @@
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+-        "This is the default function that will be called on variables in the "
++        "XXThis is the default function that will be called on variables in the XX"
+         "variables list. You can also change this on a per-variable basis by "
+         "selecting a variable and typing 'e' to edit the variable's display "
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+</pre><h3>Mutant 235</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -354,7 +354,7 @@
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+     stringifier_info = urwid.Text(
+         "This is the default function that will be called on variables in the "
+-        "variables list. You can also change this on a per-variable basis by "
++        "XXvariables list. You can also change this on a per-variable basis by XX"
+         "selecting a variable and typing 'e' to edit the variable's display "
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+         "be slower than the default, type, or id stringifiers.\n")
+</pre><h3>Mutant 236</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -355,7 +355,7 @@
+     stringifier_info = urwid.Text(
+         "This is the default function that will be called on variables in the "
+         "variables list. You can also change this on a per-variable basis by "
+-        "selecting a variable and typing 'e' to edit the variable's display "
++        "XXselecting a variable and typing 'e' to edit the variable's display XX"
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+         "be slower than the default, type, or id stringifiers.\n")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+</pre><h3>Mutant 237</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -356,7 +356,7 @@
+         "This is the default function that will be called on variables in the "
+         "variables list. You can also change this on a per-variable basis by "
+         "selecting a variable and typing 'e' to edit the variable's display "
+-        "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
++        "XXsettings, or by typing one of d/t/r/s/i/c. Note that str and repr will XX"
+         "be slower than the default, type, or id stringifiers.\n")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+                                                "input", "focused input")
+</pre><h3>Mutant 238</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -357,7 +357,7 @@
+         "variables list. You can also change this on a per-variable basis by "
+         "selecting a variable and typing 'e' to edit the variable's display "
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+-        "be slower than the default, type, or id stringifiers.\n")
++        "XXbe slower than the default, type, or id stringifiers.\nXX")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+                                                "input", "focused input")
+     stringifier_rbs = [
+</pre><h3>Mutant 239</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -352,12 +352,7 @@
+     known_stringifier = conf_dict["stringifier"] in stringifier_opts
+     stringifier_rb_group = []
+     stringifier_edit = urwid.Edit(edit_text=conf_dict["custom_stringifier"])
+-    stringifier_info = urwid.Text(
+-        "This is the default function that will be called on variables in the "
+-        "variables list. You can also change this on a per-variable basis by "
+-        "selecting a variable and typing 'e' to edit the variable's display "
+-        "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+-        "be slower than the default, type, or id stringifiers.\n")
++    stringifier_info = None
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+                                                "input", "focused input")
+     stringifier_rbs = [
+</pre><h3>Mutant 240</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -359,7 +359,7 @@
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+         "be slower than the default, type, or id stringifiers.\n")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+-                                               "input", "focused input")
++                                               "XXinputXX", "focused input")
+     stringifier_rbs = [
+             urwid.RadioButton(stringifier_rb_group, name,
+                 conf_dict["stringifier"] == name,
+</pre><h3>Mutant 241</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -359,7 +359,7 @@
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+         "be slower than the default, type, or id stringifiers.\n")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+-                                               "input", "focused input")
++                                               "input", "XXfocused inputXX")
+     stringifier_rbs = [
+             urwid.RadioButton(stringifier_rb_group, name,
+                 conf_dict["stringifier"] == name,
+</pre><h3>Mutant 242</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -358,8 +358,7 @@
+         "selecting a variable and typing 'e' to edit the variable's display "
+         "settings, or by typing one of d/t/r/s/i/c. Note that str and repr will "
+         "be slower than the default, type, or id stringifiers.\n")
+-    stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+-                                               "input", "focused input")
++    stringifier_edit_list_item = None
+     stringifier_rbs = [
+             urwid.RadioButton(stringifier_rb_group, name,
+                 conf_dict["stringifier"] == name,
+</pre><h3>Mutant 243</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -362,7 +362,7 @@
+                                                "input", "focused input")
+     stringifier_rbs = [
+             urwid.RadioButton(stringifier_rb_group, name,
+-                conf_dict["stringifier"] == name,
++                conf_dict["XXstringifierXX"] == name,
+                 on_state_change=_update_config,
+                 user_data=("stringifier", name))
+             for name in stringifier_opts
+</pre><h3>Mutant 244</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -362,7 +362,7 @@
+                                                "input", "focused input")
+     stringifier_rbs = [
+             urwid.RadioButton(stringifier_rb_group, name,
+-                conf_dict["stringifier"] == name,
++                conf_dict["stringifier"] != name,
+                 on_state_change=_update_config,
+                 user_data=("stringifier", name))
+             for name in stringifier_opts
+</pre><h3>Mutant 245</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -364,7 +364,7 @@
+             urwid.RadioButton(stringifier_rb_group, name,
+                 conf_dict["stringifier"] == name,
+                 on_state_change=_update_config,
+-                user_data=("stringifier", name))
++                user_data=("XXstringifierXX", name))
+             for name in stringifier_opts
+             ]+[
+                 urwid.RadioButton(stringifier_rb_group, "Custom:",
+</pre><h3>Mutant 246</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -366,7 +366,7 @@
+                 on_state_change=_update_config,
+                 user_data=("stringifier", name))
+             for name in stringifier_opts
+-            ]+[
++            ]-[
+                 urwid.RadioButton(stringifier_rb_group, "Custom:",
+                     not known_stringifier, on_state_change=_update_config,
+                     user_data=("stringifier", None)),
+</pre><h3>Mutant 247</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -367,7 +367,7 @@
+                 user_data=("stringifier", name))
+             for name in stringifier_opts
+             ]+[
+-                urwid.RadioButton(stringifier_rb_group, "Custom:",
++                urwid.RadioButton(stringifier_rb_group, "XXCustom:XX",
+                     not known_stringifier, on_state_change=_update_config,
+                     user_data=("stringifier", None)),
+                 stringifier_edit_list_item,
+</pre><h3>Mutant 248</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -368,7 +368,7 @@
+             for name in stringifier_opts
+             ]+[
+                 urwid.RadioButton(stringifier_rb_group, "Custom:",
+-                    not known_stringifier, on_state_change=_update_config,
++                     known_stringifier, on_state_change=_update_config,
+                     user_data=("stringifier", None)),
+                 stringifier_edit_list_item,
+                 urwid.Text("\nTo use a custom stringifier, see "
+</pre><h3>Mutant 249</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -369,7 +369,7 @@
+             ]+[
+                 urwid.RadioButton(stringifier_rb_group, "Custom:",
+                     not known_stringifier, on_state_change=_update_config,
+-                    user_data=("stringifier", None)),
++                    user_data=("XXstringifierXX", None)),
+                 stringifier_edit_list_item,
+                 urwid.Text("\nTo use a custom stringifier, see "
+                     "examples/stringifier.py in the pudb distribution. Enter the "
+</pre><h3>Mutant 250</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -371,7 +371,7 @@
+                     not known_stringifier, on_state_change=_update_config,
+                     user_data=("stringifier", None)),
+                 stringifier_edit_list_item,
+-                urwid.Text("\nTo use a custom stringifier, see "
++                urwid.Text("XX\nTo use a custom stringifier, see XX"
+                     "examples/stringifier.py in the pudb distribution. Enter the "
+                     "full path to a file like it in the box above. "
+                     "'~' will be expanded to your home directory. "
+</pre><h3>Mutant 251</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -372,7 +372,7 @@
+                     user_data=("stringifier", None)),
+                 stringifier_edit_list_item,
+                 urwid.Text("\nTo use a custom stringifier, see "
+-                    "examples/stringifier.py in the pudb distribution. Enter the "
++                    "XXexamples/stringifier.py in the pudb distribution. Enter the XX"
+                     "full path to a file like it in the box above. "
+                     "'~' will be expanded to your home directory. "
+                     "The file should contain a function called pudb_stringifier() "
+</pre><h3>Mutant 252</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -373,7 +373,7 @@
+                 stringifier_edit_list_item,
+                 urwid.Text("\nTo use a custom stringifier, see "
+                     "examples/stringifier.py in the pudb distribution. Enter the "
+-                    "full path to a file like it in the box above. "
++                    "XXfull path to a file like it in the box above. XX"
+                     "'~' will be expanded to your home directory. "
+                     "The file should contain a function called pudb_stringifier() "
+                     "at the module level, which should take a single argument and "
+</pre><h3>Mutant 253</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -374,7 +374,7 @@
+                 urwid.Text("\nTo use a custom stringifier, see "
+                     "examples/stringifier.py in the pudb distribution. Enter the "
+                     "full path to a file like it in the box above. "
+-                    "'~' will be expanded to your home directory. "
++                    "XX'~' will be expanded to your home directory. XX"
+                     "The file should contain a function called pudb_stringifier() "
+                     "at the module level, which should take a single argument and "
+                     "return the desired string form of the object passed to it. "
+</pre><h3>Mutant 254</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -375,7 +375,7 @@
+                     "examples/stringifier.py in the pudb distribution. Enter the "
+                     "full path to a file like it in the box above. "
+                     "'~' will be expanded to your home directory. "
+-                    "The file should contain a function called pudb_stringifier() "
++                    "XXThe file should contain a function called pudb_stringifier() XX"
+                     "at the module level, which should take a single argument and "
+                     "return the desired string form of the object passed to it. "
+                     "Note that if you choose a custom stringifier, the variables "
+</pre><h3>Mutant 255</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -376,7 +376,7 @@
+                     "full path to a file like it in the box above. "
+                     "'~' will be expanded to your home directory. "
+                     "The file should contain a function called pudb_stringifier() "
+-                    "at the module level, which should take a single argument and "
++                    "XXat the module level, which should take a single argument and XX"
+                     "return the desired string form of the object passed to it. "
+                     "Note that if you choose a custom stringifier, the variables "
+                     "view will not be updated until you close this dialog."),
+</pre><h3>Mutant 256</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -377,7 +377,7 @@
+                     "'~' will be expanded to your home directory. "
+                     "The file should contain a function called pudb_stringifier() "
+                     "at the module level, which should take a single argument and "
+-                    "return the desired string form of the object passed to it. "
++                    "XXreturn the desired string form of the object passed to it. XX"
+                     "Note that if you choose a custom stringifier, the variables "
+                     "view will not be updated until you close this dialog."),
+             ]
+</pre><h3>Mutant 257</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -378,7 +378,7 @@
+                     "The file should contain a function called pudb_stringifier() "
+                     "at the module level, which should take a single argument and "
+                     "return the desired string form of the object passed to it. "
+-                    "Note that if you choose a custom stringifier, the variables "
++                    "XXNote that if you choose a custom stringifier, the variables XX"
+                     "view will not be updated until you close this dialog."),
+             ]
+ 
+</pre><h3>Mutant 258</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -379,7 +379,7 @@
+                     "at the module level, which should take a single argument and "
+                     "return the desired string form of the object passed to it. "
+                     "Note that if you choose a custom stringifier, the variables "
+-                    "view will not be updated until you close this dialog."),
++                    "XXview will not be updated until you close this dialog.XX"),
+             ]
+ 
+     # }}}
+</pre><h3>Mutant 259</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -360,27 +360,7 @@
+         "be slower than the default, type, or id stringifiers.\n")
+     stringifier_edit_list_item = urwid.AttrMap(stringifier_edit,
+                                                "input", "focused input")
+-    stringifier_rbs = [
+-            urwid.RadioButton(stringifier_rb_group, name,
+-                conf_dict["stringifier"] == name,
+-                on_state_change=_update_config,
+-                user_data=("stringifier", name))
+-            for name in stringifier_opts
+-            ]+[
+-                urwid.RadioButton(stringifier_rb_group, "Custom:",
+-                    not known_stringifier, on_state_change=_update_config,
+-                    user_data=("stringifier", None)),
+-                stringifier_edit_list_item,
+-                urwid.Text("\nTo use a custom stringifier, see "
+-                    "examples/stringifier.py in the pudb distribution. Enter the "
+-                    "full path to a file like it in the box above. "
+-                    "'~' will be expanded to your home directory. "
+-                    "The file should contain a function called pudb_stringifier() "
+-                    "at the module level, which should take a single argument and "
+-                    "return the desired string form of the object passed to it. "
+-                    "Note that if you choose a custom stringifier, the variables "
+-                    "view will not be updated until you close this dialog."),
+-            ]
++    stringifier_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 260</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -386,7 +386,7 @@
+ 
+     # {{{ variables access level
+ 
+-    default_variables_access_level_opts = ["public", "private", "all"]
++    default_variables_access_level_opts = ["XXpublicXX", "private", "all"]
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+</pre><h3>Mutant 261</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -386,7 +386,7 @@
+ 
+     # {{{ variables access level
+ 
+-    default_variables_access_level_opts = ["public", "private", "all"]
++    default_variables_access_level_opts = ["public", "XXprivateXX", "all"]
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+</pre><h3>Mutant 262</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -386,7 +386,7 @@
+ 
+     # {{{ variables access level
+ 
+-    default_variables_access_level_opts = ["public", "private", "all"]
++    default_variables_access_level_opts = ["public", "private", "XXallXX"]
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+</pre><h3>Mutant 263</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -386,7 +386,7 @@
+ 
+     # {{{ variables access level
+ 
+-    default_variables_access_level_opts = ["public", "private", "all"]
++    default_variables_access_level_opts = None
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+</pre><h3>Mutant 264</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -387,7 +387,7 @@
+     # {{{ variables access level
+ 
+     default_variables_access_level_opts = ["public", "private", "all"]
+-    default_variables_access_level_rb_group = []
++    default_variables_access_level_rb_group = None
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+             "of variables in the variables list.\n"
+</pre><h3>Mutant 265</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -389,7 +389,7 @@
+     default_variables_access_level_opts = ["public", "private", "all"]
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+-            "Set the default attribute visibility "
++            "XXSet the default attribute visibility XX"
+             "of variables in the variables list.\n"
+             "\nNote that you can change this option on "
+             "a per-variable basis by selecting the "
+</pre><h3>Mutant 266</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -390,7 +390,7 @@
+     default_variables_access_level_rb_group = []
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+-            "of variables in the variables list.\n"
++            "XXof variables in the variables list.\nXX"
+             "\nNote that you can change this option on "
+             "a per-variable basis by selecting the "
+             "variable and pressing '*'.")
+</pre><h3>Mutant 267</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -391,7 +391,7 @@
+     default_variables_access_level_info = urwid.Text(
+             "Set the default attribute visibility "
+             "of variables in the variables list.\n"
+-            "\nNote that you can change this option on "
++            "XX\nNote that you can change this option on XX"
+             "a per-variable basis by selecting the "
+             "variable and pressing '*'.")
+     default_variables_access_level_rbs = [
+</pre><h3>Mutant 268</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -392,7 +392,7 @@
+             "Set the default attribute visibility "
+             "of variables in the variables list.\n"
+             "\nNote that you can change this option on "
+-            "a per-variable basis by selecting the "
++            "XXa per-variable basis by selecting the XX"
+             "variable and pressing '*'.")
+     default_variables_access_level_rbs = [
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+</pre><h3>Mutant 269</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -393,7 +393,7 @@
+             "of variables in the variables list.\n"
+             "\nNote that you can change this option on "
+             "a per-variable basis by selecting the "
+-            "variable and pressing '*'.")
++            "XXvariable and pressing '*'.XX")
+     default_variables_access_level_rbs = [
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+                 conf_dict["default_variables_access_level"] == name,
+</pre><h3>Mutant 270</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -388,12 +388,7 @@
+ 
+     default_variables_access_level_opts = ["public", "private", "all"]
+     default_variables_access_level_rb_group = []
+-    default_variables_access_level_info = urwid.Text(
+-            "Set the default attribute visibility "
+-            "of variables in the variables list.\n"
+-            "\nNote that you can change this option on "
+-            "a per-variable basis by selecting the "
+-            "variable and pressing '*'.")
++    default_variables_access_level_info = None
+     default_variables_access_level_rbs = [
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+                 conf_dict["default_variables_access_level"] == name,
+</pre><h3>Mutant 271</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -396,7 +396,7 @@
+             "variable and pressing '*'.")
+     default_variables_access_level_rbs = [
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+-                conf_dict["default_variables_access_level"] == name,
++                conf_dict["XXdefault_variables_access_levelXX"] == name,
+                 on_state_change=_update_config,
+                 user_data=("default_variables_access_level", name))
+             for name in default_variables_access_level_opts
+</pre><h3>Mutant 272</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -396,7 +396,7 @@
+             "variable and pressing '*'.")
+     default_variables_access_level_rbs = [
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+-                conf_dict["default_variables_access_level"] == name,
++                conf_dict["default_variables_access_level"] != name,
+                 on_state_change=_update_config,
+                 user_data=("default_variables_access_level", name))
+             for name in default_variables_access_level_opts
+</pre><h3>Mutant 273</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -398,7 +398,7 @@
+             urwid.RadioButton(default_variables_access_level_rb_group, name,
+                 conf_dict["default_variables_access_level"] == name,
+                 on_state_change=_update_config,
+-                user_data=("default_variables_access_level", name))
++                user_data=("XXdefault_variables_access_levelXX", name))
+             for name in default_variables_access_level_opts
+             ]
+ 
+</pre><h3>Mutant 274</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -394,13 +394,7 @@
+             "\nNote that you can change this option on "
+             "a per-variable basis by selecting the "
+             "variable and pressing '*'.")
+-    default_variables_access_level_rbs = [
+-            urwid.RadioButton(default_variables_access_level_rb_group, name,
+-                conf_dict["default_variables_access_level"] == name,
+-                on_state_change=_update_config,
+-                user_data=("default_variables_access_level", name))
+-            for name in default_variables_access_level_opts
+-            ]
++    default_variables_access_level_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 275</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -406,7 +406,7 @@
+ 
+     # {{{ wrap variables
+ 
+-    cb_wrap_variables = urwid.CheckBox("Wrap variables",
++    cb_wrap_variables = urwid.CheckBox("XXWrap variablesXX",
+             bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
+                 user_data=("wrap_variables", None))
+ 
+</pre><h3>Mutant 276</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -407,7 +407,7 @@
+     # {{{ wrap variables
+ 
+     cb_wrap_variables = urwid.CheckBox("Wrap variables",
+-            bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
++            bool(conf_dict["XXwrap_variablesXX"]), on_state_change=_update_config,
+                 user_data=("wrap_variables", None))
+ 
+     wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+</pre><h3>Mutant 277</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -408,7 +408,7 @@
+ 
+     cb_wrap_variables = urwid.CheckBox("Wrap variables",
+             bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
+-                user_data=("wrap_variables", None))
++                user_data=("XXwrap_variablesXX", None))
+ 
+     wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+                                      "a per-variable basis by selecting the "
+</pre><h3>Mutant 278</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -406,9 +406,7 @@
+ 
+     # {{{ wrap variables
+ 
+-    cb_wrap_variables = urwid.CheckBox("Wrap variables",
+-            bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
+-                user_data=("wrap_variables", None))
++    cb_wrap_variables = None
+ 
+     wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+                                      "a per-variable basis by selecting the "
+</pre><h3>Mutant 279</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -410,7 +410,7 @@
+             bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
+                 user_data=("wrap_variables", None))
+ 
+-    wrap_variables_info = urwid.Text("\nNote that you can change this option on "
++    wrap_variables_info = urwid.Text("XX\nNote that you can change this option on XX"
+                                      "a per-variable basis by selecting the "
+                                      "variable and pressing 'w'.")
+ 
+</pre><h3>Mutant 280</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -411,7 +411,7 @@
+                 user_data=("wrap_variables", None))
+ 
+     wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+-                                     "a per-variable basis by selecting the "
++                                     "XXa per-variable basis by selecting the XX"
+                                      "variable and pressing 'w'.")
+ 
+     # }}}
+</pre><h3>Mutant 281</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -412,7 +412,7 @@
+ 
+     wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+                                      "a per-variable basis by selecting the "
+-                                     "variable and pressing 'w'.")
++                                     "XXvariable and pressing 'w'.XX")
+ 
+     # }}}
+ 
+</pre><h3>Mutant 282</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -410,9 +410,7 @@
+             bool(conf_dict["wrap_variables"]), on_state_change=_update_config,
+                 user_data=("wrap_variables", None))
+ 
+-    wrap_variables_info = urwid.Text("\nNote that you can change this option on "
+-                                     "a per-variable basis by selecting the "
+-                                     "variable and pressing 'w'.")
++    wrap_variables_info = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 283</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -418,7 +418,7 @@
+ 
+     # {{{ display
+ 
+-    display_info = urwid.Text("What driver is used to talk to your terminal. "
++    display_info = urwid.Text("XXWhat driver is used to talk to your terminal. XX"
+             "'raw' has the most features (colors and highlighting), "
+             "but is only correct for "
+             "XTerm and terminals like it. 'curses' "
+</pre><h3>Mutant 284</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -419,7 +419,7 @@
+     # {{{ display
+ 
+     display_info = urwid.Text("What driver is used to talk to your terminal. "
+-            "'raw' has the most features (colors and highlighting), "
++            "XX'raw' has the most features (colors and highlighting), XX"
+             "but is only correct for "
+             "XTerm and terminals like it. 'curses' "
+             "has fewer "
+</pre><h3>Mutant 285</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -420,7 +420,7 @@
+ 
+     display_info = urwid.Text("What driver is used to talk to your terminal. "
+             "'raw' has the most features (colors and highlighting), "
+-            "but is only correct for "
++            "XXbut is only correct for XX"
+             "XTerm and terminals like it. 'curses' "
+             "has fewer "
+             "features, but it will work with just about any terminal. 'auto' "
+</pre><h3>Mutant 286</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -421,7 +421,7 @@
+     display_info = urwid.Text("What driver is used to talk to your terminal. "
+             "'raw' has the most features (colors and highlighting), "
+             "but is only correct for "
+-            "XTerm and terminals like it. 'curses' "
++            "XXXTerm and terminals like it. 'curses' XX"
+             "has fewer "
+             "features, but it will work with just about any terminal. 'auto' "
+             "will attempt to pick between the two based on availability and "
+</pre><h3>Mutant 287</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -422,7 +422,7 @@
+             "'raw' has the most features (colors and highlighting), "
+             "but is only correct for "
+             "XTerm and terminals like it. 'curses' "
+-            "has fewer "
++            "XXhas fewer XX"
+             "features, but it will work with just about any terminal. 'auto' "
+             "will attempt to pick between the two based on availability and "
+             "the $TERM environment variable.\n\n"
+</pre><h3>Mutant 288</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -423,7 +423,7 @@
+             "but is only correct for "
+             "XTerm and terminals like it. 'curses' "
+             "has fewer "
+-            "features, but it will work with just about any terminal. 'auto' "
++            "XXfeatures, but it will work with just about any terminal. 'auto' XX"
+             "will attempt to pick between the two based on availability and "
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+</pre><h3>Mutant 289</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -424,7 +424,7 @@
+             "XTerm and terminals like it. 'curses' "
+             "has fewer "
+             "features, but it will work with just about any terminal. 'auto' "
+-            "will attempt to pick between the two based on availability and "
++            "XXwill attempt to pick between the two based on availability and XX"
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+ 
+</pre><h3>Mutant 290</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -425,7 +425,7 @@
+             "has fewer "
+             "features, but it will work with just about any terminal. 'auto' "
+             "will attempt to pick between the two based on availability and "
+-            "the $TERM environment variable.\n\n"
++            "XXthe $TERM environment variable.\n\nXX"
+             "Changing this setting requires a restart of PuDB.")
+ 
+     displays = ["auto", "raw", "curses"]
+</pre><h3>Mutant 291</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -426,7 +426,7 @@
+             "features, but it will work with just about any terminal. 'auto' "
+             "will attempt to pick between the two based on availability and "
+             "the $TERM environment variable.\n\n"
+-            "Changing this setting requires a restart of PuDB.")
++            "XXChanging this setting requires a restart of PuDB.XX")
+ 
+     displays = ["auto", "raw", "curses"]
+ 
+</pre><h3>Mutant 292</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -418,15 +418,7 @@
+ 
+     # {{{ display
+ 
+-    display_info = urwid.Text("What driver is used to talk to your terminal. "
+-            "'raw' has the most features (colors and highlighting), "
+-            "but is only correct for "
+-            "XTerm and terminals like it. 'curses' "
+-            "has fewer "
+-            "features, but it will work with just about any terminal. 'auto' "
+-            "will attempt to pick between the two based on availability and "
+-            "the $TERM environment variable.\n\n"
+-            "Changing this setting requires a restart of PuDB.")
++    display_info = None
+ 
+     displays = ["auto", "raw", "curses"]
+ 
+</pre><h3>Mutant 293</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -428,7 +428,7 @@
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+ 
+-    displays = ["auto", "raw", "curses"]
++    displays = ["XXautoXX", "raw", "curses"]
+ 
+     display_rb_group = []
+     display_rbs = [
+</pre><h3>Mutant 294</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -428,7 +428,7 @@
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+ 
+-    displays = ["auto", "raw", "curses"]
++    displays = ["auto", "XXrawXX", "curses"]
+ 
+     display_rb_group = []
+     display_rbs = [
+</pre><h3>Mutant 295</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -428,7 +428,7 @@
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+ 
+-    displays = ["auto", "raw", "curses"]
++    displays = ["auto", "raw", "XXcursesXX"]
+ 
+     display_rb_group = []
+     display_rbs = [
+</pre><h3>Mutant 296</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -428,7 +428,7 @@
+             "the $TERM environment variable.\n\n"
+             "Changing this setting requires a restart of PuDB.")
+ 
+-    displays = ["auto", "raw", "curses"]
++    displays = None
+ 
+     display_rb_group = []
+     display_rbs = [
+</pre><h3>Mutant 297</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -430,7 +430,7 @@
+ 
+     displays = ["auto", "raw", "curses"]
+ 
+-    display_rb_group = []
++    display_rb_group = None
+     display_rbs = [
+             urwid.RadioButton(display_rb_group, name,
+                 conf_dict["display"] == name)
+</pre><h3>Mutant 298</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -433,7 +433,7 @@
+     display_rb_group = []
+     display_rbs = [
+             urwid.RadioButton(display_rb_group, name,
+-                conf_dict["display"] == name)
++                conf_dict["XXdisplayXX"] == name)
+             for name in displays]
+ 
+     # }}}
+</pre><h3>Mutant 299</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -433,7 +433,7 @@
+     display_rb_group = []
+     display_rbs = [
+             urwid.RadioButton(display_rb_group, name,
+-                conf_dict["display"] == name)
++                conf_dict["display"] != name)
+             for name in displays]
+ 
+     # }}}
+</pre><h3>Mutant 300</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -431,10 +431,7 @@
+     displays = ["auto", "raw", "curses"]
+ 
+     display_rb_group = []
+-    display_rbs = [
+-            urwid.RadioButton(display_rb_group, name,
+-                conf_dict["display"] == name)
+-            for name in displays]
++    display_rbs = None
+ 
+     # }}}
+ 
+</pre><h3>Mutant 301</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -440,7 +440,7 @@
+ 
+     lb_contents = (
+             [heading]
+-            + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
+             + [cb_line_numbers]
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+</pre><h3>Mutant 302</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -440,7 +440,7 @@
+ 
+     lb_contents = (
+             [heading]
+-            + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XXGeneral:\nXX"), "group head")]
+             + [cb_line_numbers]
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+</pre><h3>Mutant 303</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -440,7 +440,7 @@
+ 
+     lb_contents = (
+             [heading]
+-            + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("General:\n"), "XXgroup headXX")]
+             + [cb_line_numbers]
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+</pre><h3>Mutant 304</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -441,7 +441,7 @@
+     lb_contents = (
+             [heading]
+             + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
+-            + [cb_line_numbers]
++            - [cb_line_numbers]
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+ 
+</pre><h3>Mutant 305</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -442,7 +442,7 @@
+             [heading]
+             + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
+             + [cb_line_numbers]
+-            + [cb_prompt_on_quit]
++            - [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+ 
+             + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+</pre><h3>Mutant 306</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -443,7 +443,7 @@
+             + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
+             + [cb_line_numbers]
+             + [cb_prompt_on_quit]
+-            + [hide_cmdline_win]
++            - [hide_cmdline_win]
+ 
+             + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+             + [shell_info]
+</pre><h3>Mutant 307</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -445,7 +445,7 @@
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+             + [shell_info]
+             + shell_rbs
+ 
+</pre><h3>Mutant 308</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -445,7 +445,7 @@
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nShell:\nXX"), "group head")]
+             + [shell_info]
+             + shell_rbs
+ 
+</pre><h3>Mutant 309</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -445,7 +445,7 @@
+             + [cb_prompt_on_quit]
+             + [hide_cmdline_win]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nShell:\n"), "XXgroup headXX")]
+             + [shell_info]
+             + shell_rbs
+ 
+</pre><h3>Mutant 310</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -446,7 +446,7 @@
+             + [hide_cmdline_win]
+ 
+             + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+-            + [shell_info]
++            - [shell_info]
+             + shell_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+</pre><h3>Mutant 311</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -447,7 +447,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+             + [shell_info]
+-            + shell_rbs
++            - shell_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+             + theme_rbs
+</pre><h3>Mutant 312</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -449,7 +449,7 @@
+             + [shell_info]
+             + shell_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+             + theme_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+</pre><h3>Mutant 313</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -449,7 +449,7 @@
+             + [shell_info]
+             + shell_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nTheme:\nXX"), "group head")]
+             + theme_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+</pre><h3>Mutant 314</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -449,7 +449,7 @@
+             + [shell_info]
+             + shell_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "XXgroup headXX")]
+             + theme_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+</pre><h3>Mutant 315</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -450,7 +450,7 @@
+             + shell_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+-            + theme_rbs
++            - theme_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+             + [stack_info]
+</pre><h3>Mutant 316</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -452,7 +452,7 @@
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+             + theme_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+             + [stack_info]
+             + stack_rbs
+ 
+</pre><h3>Mutant 317</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -452,7 +452,7 @@
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+             + theme_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nStack Order:\nXX"), "group head")]
+             + [stack_info]
+             + stack_rbs
+ 
+</pre><h3>Mutant 318</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -452,7 +452,7 @@
+             + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+             + theme_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "XXgroup headXX")]
+             + [stack_info]
+             + stack_rbs
+ 
+</pre><h3>Mutant 319</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -453,7 +453,7 @@
+             + theme_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+-            + [stack_info]
++            - [stack_info]
+             + stack_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+</pre><h3>Mutant 320</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -454,7 +454,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+             + [stack_info]
+-            + stack_rbs
++            - stack_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+             + [stringifier_info]
+</pre><h3>Mutant 321</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -456,7 +456,7 @@
+             + [stack_info]
+             + stack_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+             + [stringifier_info]
+             + stringifier_rbs
+ 
+</pre><h3>Mutant 322</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -456,7 +456,7 @@
+             + [stack_info]
+             + stack_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nVariable Stringifier:\nXX"), "group head")]
+             + [stringifier_info]
+             + stringifier_rbs
+ 
+</pre><h3>Mutant 323</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -456,7 +456,7 @@
+             + [stack_info]
+             + stack_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "XXgroup headXX")]
+             + [stringifier_info]
+             + stringifier_rbs
+ 
+</pre><h3>Mutant 324</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -457,7 +457,7 @@
+             + stack_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+-            + [stringifier_info]
++            - [stringifier_info]
+             + stringifier_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+</pre><h3>Mutant 325</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -458,7 +458,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+             + [stringifier_info]
+-            + stringifier_rbs
++            - stringifier_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+                 "group head")]
+</pre><h3>Mutant 326</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -460,7 +460,7 @@
+             + [stringifier_info]
+             + stringifier_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
++            - [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+                 "group head")]
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+</pre><h3>Mutant 327</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -460,7 +460,7 @@
+             + [stringifier_info]
+             + stringifier_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
++            + [urwid.AttrMap(urwid.Text("XX\nVariables Attribute Visibility:\nXX"),
+                 "group head")]
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+</pre><h3>Mutant 328</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -461,7 +461,7 @@
+             + stringifier_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+-                "group head")]
++                "XXgroup headXX")]
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+ 
+</pre><h3>Mutant 329</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -462,7 +462,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+                 "group head")]
+-            + [default_variables_access_level_info]
++            - [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+</pre><h3>Mutant 330</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -463,7 +463,7 @@
+             + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+                 "group head")]
+             + [default_variables_access_level_info]
+-            + default_variables_access_level_rbs
++            - default_variables_access_level_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+             + [cb_wrap_variables]
+</pre><h3>Mutant 331</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -465,7 +465,7 @@
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+</pre><h3>Mutant 332</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -465,7 +465,7 @@
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nWrap Variables:\nXX"), "group head")]
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+</pre><h3>Mutant 333</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -465,7 +465,7 @@
+             + [default_variables_access_level_info]
+             + default_variables_access_level_rbs
+ 
+-            + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "XXgroup headXX")]
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+</pre><h3>Mutant 334</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -466,7 +466,7 @@
+             + default_variables_access_level_rbs
+ 
+             + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+-            + [cb_wrap_variables]
++            - [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+             + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+</pre><h3>Mutant 335</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -467,7 +467,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+             + [cb_wrap_variables]
+-            + [wrap_variables_info]
++            - [wrap_variables_info]
+ 
+             + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+             + [display_info]
+</pre><h3>Mutant 336</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -469,7 +469,7 @@
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
++            - [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+             + [display_info]
+             + display_rbs
+             )
+</pre><h3>Mutant 337</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -469,7 +469,7 @@
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("XX\nDisplay driver:\nXX"), "group head")]
+             + [display_info]
+             + display_rbs
+             )
+</pre><h3>Mutant 338</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -469,7 +469,7 @@
+             + [cb_wrap_variables]
+             + [wrap_variables_info]
+ 
+-            + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
++            + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "XXgroup headXX")]
+             + [display_info]
+             + display_rbs
+             )
+</pre><h3>Mutant 339</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -470,7 +470,7 @@
+             + [wrap_variables_info]
+ 
+             + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+-            + [display_info]
++            - [display_info]
+             + display_rbs
+             )
+ 
+</pre><h3>Mutant 340</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -471,7 +471,7 @@
+ 
+             + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+             + [display_info]
+-            + display_rbs
++            - display_rbs
+             )
+ 
+     lb = urwid.ListBox(urwid.SimpleListWalker(lb_contents))
+</pre><h3>Mutant 341</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -438,41 +438,7 @@
+ 
+     # }}}
+ 
+-    lb_contents = (
+-            [heading]
+-            + [urwid.AttrMap(urwid.Text("General:\n"), "group head")]
+-            + [cb_line_numbers]
+-            + [cb_prompt_on_quit]
+-            + [hide_cmdline_win]
+-
+-            + [urwid.AttrMap(urwid.Text("\nShell:\n"), "group head")]
+-            + [shell_info]
+-            + shell_rbs
+-
+-            + [urwid.AttrMap(urwid.Text("\nTheme:\n"), "group head")]
+-            + theme_rbs
+-
+-            + [urwid.AttrMap(urwid.Text("\nStack Order:\n"), "group head")]
+-            + [stack_info]
+-            + stack_rbs
+-
+-            + [urwid.AttrMap(urwid.Text("\nVariable Stringifier:\n"), "group head")]
+-            + [stringifier_info]
+-            + stringifier_rbs
+-
+-            + [urwid.AttrMap(urwid.Text("\nVariables Attribute Visibility:\n"),
+-                "group head")]
+-            + [default_variables_access_level_info]
+-            + default_variables_access_level_rbs
+-
+-            + [urwid.AttrMap(urwid.Text("\nWrap Variables:\n"), "group head")]
+-            + [cb_wrap_variables]
+-            + [wrap_variables_info]
+-
+-            + [urwid.AttrMap(urwid.Text("\nDisplay driver:\n"), "group head")]
+-            + [display_info]
+-            + display_rbs
+-            )
++    lb_contents = None
+ 
+     lb = urwid.ListBox(urwid.SimpleListWalker(lb_contents))
+ 
+</pre><h3>Mutant 342</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -474,7 +474,7 @@
+             + display_rbs
+             )
+ 
+-    lb = urwid.ListBox(urwid.SimpleListWalker(lb_contents))
++    lb = None
+ 
+     if ui.dialog(lb,         [
+             ("OK", True),
+</pre><h3>Mutant 343</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -477,7 +477,7 @@
+     lb = urwid.ListBox(urwid.SimpleListWalker(lb_contents))
+ 
+     if ui.dialog(lb,         [
+-            ("OK", True),
++            ("XXOKXX", True),
+             ("Cancel", False),
+             ],
+             title="Edit Preferences"):
+</pre><h3>Mutant 344</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -477,7 +477,7 @@
+     lb = urwid.ListBox(urwid.SimpleListWalker(lb_contents))
+ 
+     if ui.dialog(lb,         [
+-            ("OK", True),
++            ("OK", False),
+             ("Cancel", False),
+             ],
+             title="Edit Preferences"):
+</pre><h3>Mutant 345</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -478,7 +478,7 @@
+ 
+     if ui.dialog(lb,         [
+             ("OK", True),
+-            ("Cancel", False),
++            ("XXCancelXX", False),
+             ],
+             title="Edit Preferences"):
+         # Only update the settings here that instant-apply (above) doesn't take
+</pre><h3>Mutant 346</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -478,7 +478,7 @@
+ 
+     if ui.dialog(lb,         [
+             ("OK", True),
+-            ("Cancel", False),
++            ("Cancel", True),
+             ],
+             title="Edit Preferences"):
+         # Only update the settings here that instant-apply (above) doesn't take
+</pre><h3>Mutant 347</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -480,7 +480,7 @@
+             ("OK", True),
+             ("Cancel", False),
+             ],
+-            title="Edit Preferences"):
++            title="XXEdit PreferencesXX"):
+         # Only update the settings here that instant-apply (above) doesn't take
+         # care of.
+ 
+</pre><h3>Mutant 348</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -485,7 +485,7 @@
+         # care of.
+ 
+         # if we had a custom theme, it wasn't updated live
+-        if theme_rb_group[-1].state:
++        if theme_rb_group[+1].state:
+             newvalue = theme_edit.get_edit_text()
+             conf_dict.update(theme=newvalue, custom_theme=newvalue)
+             _update_theme()
+</pre><h3>Mutant 349</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -485,7 +485,7 @@
+         # care of.
+ 
+         # if we had a custom theme, it wasn't updated live
+-        if theme_rb_group[-1].state:
++        if theme_rb_group[-2].state:
+             newvalue = theme_edit.get_edit_text()
+             conf_dict.update(theme=newvalue, custom_theme=newvalue)
+             _update_theme()
+</pre><h3>Mutant 350</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -486,7 +486,7 @@
+ 
+         # if we had a custom theme, it wasn't updated live
+         if theme_rb_group[-1].state:
+-            newvalue = theme_edit.get_edit_text()
++            newvalue = None
+             conf_dict.update(theme=newvalue, custom_theme=newvalue)
+             _update_theme()
+ 
+</pre><h3>Mutant 351</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -491,7 +491,7 @@
+             _update_theme()
+ 
+         # Ditto for custom stringifiers
+-        if stringifier_rb_group[-1].state:
++        if stringifier_rb_group[+1].state:
+             newvalue = stringifier_edit.get_edit_text()
+             conf_dict.update(stringifier=newvalue, custom_stringifier=newvalue)
+             _update_stringifier()
+</pre><h3>Mutant 352</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -491,7 +491,7 @@
+             _update_theme()
+ 
+         # Ditto for custom stringifiers
+-        if stringifier_rb_group[-1].state:
++        if stringifier_rb_group[-2].state:
+             newvalue = stringifier_edit.get_edit_text()
+             conf_dict.update(stringifier=newvalue, custom_stringifier=newvalue)
+             _update_stringifier()
+</pre><h3>Mutant 353</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -492,7 +492,7 @@
+ 
+         # Ditto for custom stringifiers
+         if stringifier_rb_group[-1].state:
+-            newvalue = stringifier_edit.get_edit_text()
++            newvalue = None
+             conf_dict.update(stringifier=newvalue, custom_stringifier=newvalue)
+             _update_stringifier()
+ 
+</pre><h3>Mutant 354</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -496,7 +496,7 @@
+             conf_dict.update(stringifier=newvalue, custom_stringifier=newvalue)
+             _update_stringifier()
+ 
+-        if shell_rb_group[-1].state:
++        if shell_rb_group[+1].state:
+             newvalue = shell_edit.get_edit_text()
+             conf_dict.update(shell=newvalue, custom_shell=newvalue)
+         else:
+</pre><h3>Mutant 355</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -496,7 +496,7 @@
+             conf_dict.update(stringifier=newvalue, custom_stringifier=newvalue)
+             _update_stringifier()
+ 
+-        if shell_rb_group[-1].state:
++        if shell_rb_group[-2].state:
+             newvalue = shell_edit.get_edit_text()
+             conf_dict.update(shell=newvalue, custom_shell=newvalue)
+         else:
+</pre><h3>Mutant 356</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -497,7 +497,7 @@
+             _update_stringifier()
+ 
+         if shell_rb_group[-1].state:
+-            newvalue = shell_edit.get_edit_text()
++            newvalue = None
+             conf_dict.update(shell=newvalue, custom_shell=newvalue)
+         else:
+             for shell, shell_rb in zip(shells, shell_rbs):
+</pre><h3>Mutant 357</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -502,7 +502,7 @@
+         else:
+             for shell, shell_rb in zip(shells, shell_rbs):
+                 if shell_rb.get_state():
+-                    conf_dict["shell"] = shell
++                    conf_dict["XXshellXX"] = shell
+ 
+         for display, display_rb in zip(displays, display_rbs):
+             if display_rb.get_state():
+</pre><h3>Mutant 358</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -502,7 +502,7 @@
+         else:
+             for shell, shell_rb in zip(shells, shell_rbs):
+                 if shell_rb.get_state():
+-                    conf_dict["shell"] = shell
++                    conf_dict["shell"] = None
+ 
+         for display, display_rb in zip(displays, display_rbs):
+             if display_rb.get_state():
+</pre><h3>Mutant 359</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -506,7 +506,7 @@
+ 
+         for display, display_rb in zip(displays, display_rbs):
+             if display_rb.get_state():
+-                conf_dict["display"] = display
++                conf_dict["XXdisplayXX"] = display
+ 
+     else:  # The user chose cancel, revert changes
+         conf_dict.update(old_conf_dict)
+</pre><h3>Mutant 360</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -506,7 +506,7 @@
+ 
+         for display, display_rb in zip(displays, display_rbs):
+             if display_rb.get_state():
+-                conf_dict["display"] = display
++                conf_dict["display"] = None
+ 
+     else:  # The user chose cancel, revert changes
+         conf_dict.update(old_conf_dict)
+</pre><h3>Mutant 363</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -524,7 +524,7 @@
+     breakpoints = []
+     for arg in lines:
+         if not arg:
+-            continue
++            break
+         arg = arg[1:]
+ 
+         filename = None
+</pre><h3>Mutant 364</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -525,7 +525,7 @@
+     for arg in lines:
+         if not arg:
+             continue
+-        arg = arg[1:]
++        arg = arg[2:]
+ 
+         filename = None
+         lineno = None
+</pre><h3>Mutant 366</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -527,7 +527,7 @@
+             continue
+         arg = arg[1:]
+ 
+-        filename = None
++        filename = ""
+         lineno = None
+         cond = None
+         comma = arg.find(",")
+</pre><h3>Mutant 367</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -528,7 +528,7 @@
+         arg = arg[1:]
+ 
+         filename = None
+-        lineno = None
++        lineno = ""
+         cond = None
+         comma = arg.find(",")
+ 
+</pre><h3>Mutant 369</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -530,7 +530,7 @@
+         filename = None
+         lineno = None
+         cond = None
+-        comma = arg.find(",")
++        comma = arg.find("XX,XX")
+ 
+         if comma > 0:
+             # parse stuff after comma: "condition"
+</pre><h3>Mutant 371</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -532,7 +532,7 @@
+         cond = None
+         comma = arg.find(",")
+ 
+-        if comma > 0:
++        if comma >= 0:
+             # parse stuff after comma: "condition"
+             cond = arg[comma+1:].lstrip()
+             arg = arg[:comma].rstrip()
+</pre><h3>Mutant 372</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -532,7 +532,7 @@
+         cond = None
+         comma = arg.find(",")
+ 
+-        if comma > 0:
++        if comma > 1:
+             # parse stuff after comma: "condition"
+             cond = arg[comma+1:].lstrip()
+             arg = arg[:comma].rstrip()
+</pre><h3>Mutant 373</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -534,7 +534,7 @@
+ 
+         if comma > 0:
+             # parse stuff after comma: "condition"
+-            cond = arg[comma+1:].lstrip()
++            cond = arg[comma-1:].lstrip()
+             arg = arg[:comma].rstrip()
+ 
+         colon = arg.rfind(":")
+</pre><h3>Mutant 374</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -534,7 +534,7 @@
+ 
+         if comma > 0:
+             # parse stuff after comma: "condition"
+-            cond = arg[comma+1:].lstrip()
++            cond = arg[comma+2:].lstrip()
+             arg = arg[:comma].rstrip()
+ 
+         colon = arg.rfind(":")
+</pre><h3>Mutant 375</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -534,7 +534,7 @@
+ 
+         if comma > 0:
+             # parse stuff after comma: "condition"
+-            cond = arg[comma+1:].lstrip()
++            cond = None
+             arg = arg[:comma].rstrip()
+ 
+         colon = arg.rfind(":")
+</pre><h3>Mutant 376</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -535,7 +535,7 @@
+         if comma > 0:
+             # parse stuff after comma: "condition"
+             cond = arg[comma+1:].lstrip()
+-            arg = arg[:comma].rstrip()
++            arg = None
+ 
+         colon = arg.rfind(":")
+         funcname = None
+</pre><h3>Mutant 380</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -540,7 +540,7 @@
+         colon = arg.rfind(":")
+         funcname = None
+ 
+-        if colon > 0:
++        if colon >= 0:
+             filename = arg[:colon].strip()
+ 
+             f = lookup_module(filename)
+</pre><h3>Mutant 381</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -540,7 +540,7 @@
+         colon = arg.rfind(":")
+         funcname = None
+ 
+-        if colon > 0:
++        if colon > 1:
+             filename = arg[:colon].strip()
+ 
+             f = lookup_module(filename)
+</pre><h3>Mutant 382</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -541,7 +541,7 @@
+         funcname = None
+ 
+         if colon > 0:
+-            filename = arg[:colon].strip()
++            filename = None
+ 
+             f = lookup_module(filename)
+             if not f:
+</pre><h3>Mutant 385</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -545,7 +545,7 @@
+ 
+             f = lookup_module(filename)
+             if not f:
+-                continue
++                break
+             else:
+                 filename = f
+ 
+</pre><h3>Mutant 391</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -553,7 +553,7 @@
+             try:
+                 lineno = int(arg)
+             except ValueError:
+-                continue
++                break
+         else:
+             continue
+ 
+</pre><h3>Mutant 392</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -555,7 +555,7 @@
+             except ValueError:
+                 continue
+         else:
+-            continue
++            break
+ 
+         if get_breakpoint_invalid_reason(filename, lineno) is None:
+             breakpoints.append((filename, lineno, False, cond, funcname))
+</pre><h3>Mutant 395</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -565,7 +565,7 @@
+ 
+ def get_breakpoints_file_name():
+     from os.path import join
+-    save_path = get_save_config_path()
++    save_path = None
+     if not save_path:
+         return None
+     else:
+</pre><h3>Mutant 396</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -566,7 +566,7 @@
+ def get_breakpoints_file_name():
+     from os.path import join
+     save_path = get_save_config_path()
+-    if not save_path:
++    if  save_path:
+         return None
+     else:
+         return join(save_path, SAVED_BREAKPOINTS_FILE_NAME)
+</pre><h3>Mutant 405</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -609,7 +609,7 @@
+     histfile = open(get_breakpoints_file_name(), "w")
+     bp_list = {(bp.file, bp.line, bp.cond) for bp in bp_list}
+     for bp in bp_list:
+-        line = "b %s:%d" % (bp[0], bp[1])
++        line = "XXb %s:%dXX" % (bp[0], bp[1])
+         if bp[2]:
+             line += ", %s" % bp[2]
+         line += "\n"
+</pre><h3>Mutant 407</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -609,7 +609,7 @@
+     histfile = open(get_breakpoints_file_name(), "w")
+     bp_list = {(bp.file, bp.line, bp.cond) for bp in bp_list}
+     for bp in bp_list:
+-        line = "b %s:%d" % (bp[0], bp[1])
++        line = "b %s:%d" % (bp[1], bp[1])
+         if bp[2]:
+             line += ", %s" % bp[2]
+         line += "\n"
+</pre><h3>Mutant 411</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -611,7 +611,7 @@
+     for bp in bp_list:
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+-            line += ", %s" % bp[2]
++            line = ", %s" % bp[2]
+         line += "\n"
+         histfile.write(line)
+     histfile.close()
+</pre><h3>Mutant 412</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -611,7 +611,7 @@
+     for bp in bp_list:
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+-            line += ", %s" % bp[2]
++            line -= ", %s" % bp[2]
+         line += "\n"
+         histfile.write(line)
+     histfile.close()
+</pre><h3>Mutant 413</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -611,7 +611,7 @@
+     for bp in bp_list:
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+-            line += ", %s" % bp[2]
++            line += "XX, %sXX" % bp[2]
+         line += "\n"
+         histfile.write(line)
+     histfile.close()
+</pre><h3>Mutant 414</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -611,7 +611,7 @@
+     for bp in bp_list:
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+-            line += ", %s" % bp[2]
++            line += ", %s" / bp[2]
+         line += "\n"
+         histfile.write(line)
+     histfile.close()
+</pre><h3>Mutant 415</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -611,7 +611,7 @@
+     for bp in bp_list:
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+-            line += ", %s" % bp[2]
++            line += ", %s" % bp[3]
+         line += "\n"
+         histfile.write(line)
+     histfile.close()
+</pre><h3>Mutant 416</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -612,7 +612,7 @@
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+             line += ", %s" % bp[2]
+-        line += "\n"
++        line = "\n"
+         histfile.write(line)
+     histfile.close()
+ 
+</pre><h3>Mutant 418</h3><pre>--- ./settings.py
++++ ./settings.py
+@@ -612,7 +612,7 @@
+         line = "b %s:%d" % (bp[0], bp[1])
+         if bp[2]:
+             line += ", %s" % bp[2]
+-        line += "\n"
++        line += "XX\nXX"
+         histfile.write(line)
+     histfile.close()
+ 
+</pre></body></html>

@@ -1,0 +1,28 @@
+<html><body><h1>./_shtab.py</h1>Killed 0 out of 3 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1026</h3><pre>--- ./_shtab.py
++++ ./_shtab.py
+@@ -1,4 +1,4 @@
+-FILE = None
++FILE = ""
+ DIRECTORY = DIR = None
+ 
+ 
+</pre><h3>Mutant 1027</h3><pre>--- ./_shtab.py
++++ ./_shtab.py
+@@ -1,5 +1,5 @@
+ FILE = None
+-DIRECTORY = DIR = None
++DIRECTORY = DIR = ""
+ 
+ 
+ def add_argument_to(parser, *args, **kwargs):
+</pre><h3>Mutant 1028</h3><pre>--- ./_shtab.py
++++ ./_shtab.py
+@@ -4,6 +4,6 @@
+ 
+ def add_argument_to(parser, *args, **kwargs):
+     from argparse import Action
+-    Action.complete = None
++    Action.complete = ""
+     return parser
+ 
+</pre></body></html>

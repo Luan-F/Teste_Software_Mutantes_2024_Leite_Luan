@@ -1,0 +1,23 @@
+<html><body><h1>./__main__.py</h1>Killed 0 out of 2 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 419</h3><pre>--- ./__main__.py
++++ ./__main__.py
+@@ -24,7 +24,7 @@
+ """
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     from pudb.run import main
+     main()
+ 
+</pre><h3>Mutant 420</h3><pre>--- ./__main__.py
++++ ./__main__.py
+@@ -24,7 +24,7 @@
+ """
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     from pudb.run import main
+     main()
+ 
+</pre></body></html>

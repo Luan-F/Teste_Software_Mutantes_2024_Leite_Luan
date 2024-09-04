@@ -1,0 +1,56 @@
+<html><body><h1>./test/test_settings.py</h1>Killed 28 out of 33 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 4001</h3><pre>--- ./test/test_settings.py
++++ ./test/test_settings.py
+@@ -22,7 +22,7 @@
+ 
+ 
+ def test_save_breakpoints(mocker):
+-    MockBP = collections.namedtuple("MockBreakpoint", "file line cond")
++    MockBP = collections.namedtuple("XXMockBreakpointXX", "file line cond")
+     mock_breakpoints = [MockBP("/home/user/test.py", 41, None),
+                         MockBP("/home/user/test.py", 50, None)]
+     mocker.patch("pudb.settings.get_breakpoints_file_name",
+</pre><h3>Mutant 4004</h3><pre>--- ./test/test_settings.py
++++ ./test/test_settings.py
+@@ -23,7 +23,7 @@
+ 
+ def test_save_breakpoints(mocker):
+     MockBP = collections.namedtuple("MockBreakpoint", "file line cond")
+-    mock_breakpoints = [MockBP("/home/user/test.py", 41, None),
++    mock_breakpoints = [MockBP("XX/home/user/test.pyXX", 41, None),
+                         MockBP("/home/user/test.py", 50, None)]
+     mocker.patch("pudb.settings.get_breakpoints_file_name",
+                  mocker.Mock(return_value="saved-breakpoints"))
+</pre><h3>Mutant 4005</h3><pre>--- ./test/test_settings.py
++++ ./test/test_settings.py
+@@ -23,7 +23,7 @@
+ 
+ def test_save_breakpoints(mocker):
+     MockBP = collections.namedtuple("MockBreakpoint", "file line cond")
+-    mock_breakpoints = [MockBP("/home/user/test.py", 41, None),
++    mock_breakpoints = [MockBP("/home/user/test.py", 42, None),
+                         MockBP("/home/user/test.py", 50, None)]
+     mocker.patch("pudb.settings.get_breakpoints_file_name",
+                  mocker.Mock(return_value="saved-breakpoints"))
+</pre><h3>Mutant 4006</h3><pre>--- ./test/test_settings.py
++++ ./test/test_settings.py
+@@ -24,7 +24,7 @@
+ def test_save_breakpoints(mocker):
+     MockBP = collections.namedtuple("MockBreakpoint", "file line cond")
+     mock_breakpoints = [MockBP("/home/user/test.py", 41, None),
+-                        MockBP("/home/user/test.py", 50, None)]
++                        MockBP("XX/home/user/test.pyXX", 50, None)]
+     mocker.patch("pudb.settings.get_breakpoints_file_name",
+                  mocker.Mock(return_value="saved-breakpoints"))
+     mock_open = mocker.mock_open()
+</pre><h3>Mutant 4007</h3><pre>--- ./test/test_settings.py
++++ ./test/test_settings.py
+@@ -24,7 +24,7 @@
+ def test_save_breakpoints(mocker):
+     MockBP = collections.namedtuple("MockBreakpoint", "file line cond")
+     mock_breakpoints = [MockBP("/home/user/test.py", 41, None),
+-                        MockBP("/home/user/test.py", 50, None)]
++                        MockBP("/home/user/test.py", 51, None)]
+     mocker.patch("pudb.settings.get_breakpoints_file_name",
+                  mocker.Mock(return_value="saved-breakpoints"))
+     mock_open = mocker.mock_open()
+</pre></body></html>

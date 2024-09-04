@@ -1,0 +1,2350 @@
+<html><body><h1>./source_view.py</h1>Killed 24 out of 237 mutants<h2>Timeouts</h2>Mutants that made the test suite take a lot longer so the tests were killed.<h3>Mutant 645</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -345,7 +345,7 @@
+             for ttype, value in tokensource:
+                 while True:
+                     newline_pos = value.find("\n")
+-                    if newline_pos == -1:
++                    if newline_pos != -1:
+                         self.add_snippet(ttype, value)
+                         break
+                     else:
+</pre><h3>Mutant 646</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -345,7 +345,7 @@
+             for ttype, value in tokensource:
+                 while True:
+                     newline_pos = value.find("\n")
+-                    if newline_pos == -1:
++                    if newline_pos == +1:
+                         self.add_snippet(ttype, value)
+                         break
+                     else:
+</pre><h3>Mutant 647</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -345,7 +345,7 @@
+             for ttype, value in tokensource:
+                 while True:
+                     newline_pos = value.find("\n")
+-                    if newline_pos == -1:
++                    if newline_pos == -2:
+                         self.add_snippet(ttype, value)
+                         break
+                     else:
+</pre><h3>Mutant 648</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -347,7 +347,7 @@
+                     newline_pos = value.find("\n")
+                     if newline_pos == -1:
+                         self.add_snippet(ttype, value)
+-                        break
++                        continue
+                     else:
+                         self.add_snippet(ttype, value[:newline_pos])
+                         self.shipout_line()
+</pre><h3>Mutant 649</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -351,7 +351,7 @@
+                     else:
+                         self.add_snippet(ttype, value[:newline_pos])
+                         self.shipout_line()
+-                        value = value[newline_pos+1:]
++                        value = value[newline_pos-1:]
+ 
+             if self.current_line:
+                 self.shipout_line()
+</pre><h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 421</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -27,7 +27,7 @@
+ import urwid
+ 
+ 
+-TABSTOP = 8
++TABSTOP = 9
+ 
+ 
+ class SourceLine(urwid.FlowWidget):
+</pre><h3>Mutant 423</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -31,7 +31,7 @@
+ 
+ 
+ class SourceLine(urwid.FlowWidget):
+-    def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=False):
++    def __init__(self, dbg_ui, text, line_nr="XXXX", attr=None, has_breakpoint=False):
+         self.dbg_ui = dbg_ui
+         self.text = text
+         self.attr = attr
+</pre><h3>Mutant 424</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -31,7 +31,7 @@
+ 
+ 
+ class SourceLine(urwid.FlowWidget):
+-    def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=False):
++    def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=True):
+         self.dbg_ui = dbg_ui
+         self.text = text
+         self.attr = attr
+</pre><h3>Mutant 425</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -32,7 +32,7 @@
+ 
+ class SourceLine(urwid.FlowWidget):
+     def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=False):
+-        self.dbg_ui = dbg_ui
++        self.dbg_ui = None
+         self.text = text
+         self.attr = attr
+         self.line_nr = line_nr
+</pre><h3>Mutant 426</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -33,7 +33,7 @@
+ class SourceLine(urwid.FlowWidget):
+     def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=False):
+         self.dbg_ui = dbg_ui
+-        self.text = text
++        self.text = None
+         self.attr = attr
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+</pre><h3>Mutant 427</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -34,7 +34,7 @@
+     def __init__(self, dbg_ui, text, line_nr="", attr=None, has_breakpoint=False):
+         self.dbg_ui = dbg_ui
+         self.text = text
+-        self.attr = attr
++        self.attr = None
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+         self.is_current = False
+</pre><h3>Mutant 428</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -35,7 +35,7 @@
+         self.dbg_ui = dbg_ui
+         self.text = text
+         self.attr = attr
+-        self.line_nr = line_nr
++        self.line_nr = None
+         self.has_breakpoint = has_breakpoint
+         self.is_current = False
+         self.highlight = False
+</pre><h3>Mutant 429</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -36,7 +36,7 @@
+         self.text = text
+         self.attr = attr
+         self.line_nr = line_nr
+-        self.has_breakpoint = has_breakpoint
++        self.has_breakpoint = None
+         self.is_current = False
+         self.highlight = False
+ 
+</pre><h3>Mutant 430</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -37,7 +37,7 @@
+         self.attr = attr
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+-        self.is_current = False
++        self.is_current = True
+         self.highlight = False
+ 
+     def selectable(self):
+</pre><h3>Mutant 431</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -37,7 +37,7 @@
+         self.attr = attr
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+-        self.is_current = False
++        self.is_current = None
+         self.highlight = False
+ 
+     def selectable(self):
+</pre><h3>Mutant 432</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -38,7 +38,7 @@
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+         self.is_current = False
+-        self.highlight = False
++        self.highlight = True
+ 
+     def selectable(self):
+         return True
+</pre><h3>Mutant 433</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -38,7 +38,7 @@
+         self.line_nr = line_nr
+         self.has_breakpoint = has_breakpoint
+         self.is_current = False
+-        self.highlight = False
++        self.highlight = None
+ 
+     def selectable(self):
+         return True
+</pre><h3>Mutant 434</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -41,7 +41,7 @@
+         self.highlight = False
+ 
+     def selectable(self):
+-        return True
++        return False
+ 
+     def set_current(self, is_current):
+         self.is_current = is_current
+</pre><h3>Mutant 435</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -44,7 +44,7 @@
+         return True
+ 
+     def set_current(self, is_current):
+-        self.is_current = is_current
++        self.is_current = None
+         self._invalidate()
+ 
+     def set_highlight(self, highlight):
+</pre><h3>Mutant 436</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -48,7 +48,7 @@
+         self._invalidate()
+ 
+     def set_highlight(self, highlight):
+-        self.highlight = highlight
++        self.highlight = None
+         self._invalidate()
+ 
+     def set_breakpoint(self, has_breakpoint):
+</pre><h3>Mutant 437</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -52,7 +52,7 @@
+         self._invalidate()
+ 
+     def set_breakpoint(self, has_breakpoint):
+-        self.has_breakpoint = has_breakpoint
++        self.has_breakpoint = None
+         self._invalidate()
+ 
+     def rows(self, size, focus=False):
+</pre><h3>Mutant 438</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -55,7 +55,7 @@
+         self.has_breakpoint = has_breakpoint
+         self._invalidate()
+ 
+-    def rows(self, size, focus=False):
++    def rows(self, size, focus=True):
+         return 1
+ 
+     def render(self, size, focus=False):
+</pre><h3>Mutant 439</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -56,7 +56,7 @@
+         self._invalidate()
+ 
+     def rows(self, size, focus=False):
+-        return 1
++        return 2
+ 
+     def render(self, size, focus=False):
+         from pudb.debugger import CONFIG
+</pre><h3>Mutant 440</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -58,7 +58,7 @@
+     def rows(self, size, focus=False):
+         return 1
+ 
+-    def render(self, size, focus=False):
++    def render(self, size, focus=True):
+         from pudb.debugger import CONFIG
+         render_line_nr = CONFIG["line_numbers"]
+ 
+</pre><h3>Mutant 441</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -60,7 +60,7 @@
+ 
+     def render(self, size, focus=False):
+         from pudb.debugger import CONFIG
+-        render_line_nr = CONFIG["line_numbers"]
++        render_line_nr = CONFIG["XXline_numbersXX"]
+ 
+         maxcol = size[0]
+         hscroll = self.dbg_ui.source_hscroll_start
+</pre><h3>Mutant 442</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -60,7 +60,7 @@
+ 
+     def render(self, size, focus=False):
+         from pudb.debugger import CONFIG
+-        render_line_nr = CONFIG["line_numbers"]
++        render_line_nr = None
+ 
+         maxcol = size[0]
+         hscroll = self.dbg_ui.source_hscroll_start
+</pre><h3>Mutant 443</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -62,7 +62,7 @@
+         from pudb.debugger import CONFIG
+         render_line_nr = CONFIG["line_numbers"]
+ 
+-        maxcol = size[0]
++        maxcol = size[1]
+         hscroll = self.dbg_ui.source_hscroll_start
+ 
+         # attrs is a list of words like "focused" and "breakpoint"
+</pre><h3>Mutant 444</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -62,7 +62,7 @@
+         from pudb.debugger import CONFIG
+         render_line_nr = CONFIG["line_numbers"]
+ 
+-        maxcol = size[0]
++        maxcol = None
+         hscroll = self.dbg_ui.source_hscroll_start
+ 
+         # attrs is a list of words like "focused" and "breakpoint"
+</pre><h3>Mutant 445</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -63,7 +63,7 @@
+         render_line_nr = CONFIG["line_numbers"]
+ 
+         maxcol = size[0]
+-        hscroll = self.dbg_ui.source_hscroll_start
++        hscroll = None
+ 
+         # attrs is a list of words like "focused" and "breakpoint"
+         attrs = []
+</pre><h3>Mutant 446</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -66,7 +66,7 @@
+         hscroll = self.dbg_ui.source_hscroll_start
+ 
+         # attrs is a list of words like "focused" and "breakpoint"
+-        attrs = []
++        attrs = None
+ 
+         if self.is_current:
+             crnt = ">"
+</pre><h3>Mutant 447</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -69,7 +69,7 @@
+         attrs = []
+ 
+         if self.is_current:
+-            crnt = ">"
++            crnt = "XX>XX"
+             attrs.append("current")
+         else:
+             crnt = " "
+</pre><h3>Mutant 448</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -69,7 +69,7 @@
+         attrs = []
+ 
+         if self.is_current:
+-            crnt = ">"
++            crnt = None
+             attrs.append("current")
+         else:
+             crnt = " "
+</pre><h3>Mutant 449</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -70,7 +70,7 @@
+ 
+         if self.is_current:
+             crnt = ">"
+-            attrs.append("current")
++            attrs.append("XXcurrentXX")
+         else:
+             crnt = " "
+ 
+</pre><h3>Mutant 450</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -72,7 +72,7 @@
+             crnt = ">"
+             attrs.append("current")
+         else:
+-            crnt = " "
++            crnt = "XX XX"
+ 
+         if self.has_breakpoint:
+             bp = "*"
+</pre><h3>Mutant 451</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -72,7 +72,7 @@
+             crnt = ">"
+             attrs.append("current")
+         else:
+-            crnt = " "
++            crnt = None
+ 
+         if self.has_breakpoint:
+             bp = "*"
+</pre><h3>Mutant 452</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -75,7 +75,7 @@
+             crnt = " "
+ 
+         if self.has_breakpoint:
+-            bp = "*"
++            bp = "XX*XX"
+             attrs.append("breakpoint")
+         else:
+             bp = " "
+</pre><h3>Mutant 453</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -75,7 +75,7 @@
+             crnt = " "
+ 
+         if self.has_breakpoint:
+-            bp = "*"
++            bp = None
+             attrs.append("breakpoint")
+         else:
+             bp = " "
+</pre><h3>Mutant 454</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -76,7 +76,7 @@
+ 
+         if self.has_breakpoint:
+             bp = "*"
+-            attrs.append("breakpoint")
++            attrs.append("XXbreakpointXX")
+         else:
+             bp = " "
+ 
+</pre><h3>Mutant 455</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -78,7 +78,7 @@
+             bp = "*"
+             attrs.append("breakpoint")
+         else:
+-            bp = " "
++            bp = "XX XX"
+ 
+         if focus:
+             attrs.append("focused")
+</pre><h3>Mutant 456</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -78,7 +78,7 @@
+             bp = "*"
+             attrs.append("breakpoint")
+         else:
+-            bp = " "
++            bp = None
+ 
+         if focus:
+             attrs.append("focused")
+</pre><h3>Mutant 457</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -81,7 +81,7 @@
+             bp = " "
+ 
+         if focus:
+-            attrs.append("focused")
++            attrs.append("XXfocusedXX")
+         elif self.highlight:
+             if not self.has_breakpoint:
+                 attrs.append("highlighted")
+</pre><h3>Mutant 458</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -83,7 +83,7 @@
+         if focus:
+             attrs.append("focused")
+         elif self.highlight:
+-            if not self.has_breakpoint:
++            if  self.has_breakpoint:
+                 attrs.append("highlighted")
+ 
+         text = self.text
+</pre><h3>Mutant 459</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -84,7 +84,7 @@
+             attrs.append("focused")
+         elif self.highlight:
+             if not self.has_breakpoint:
+-                attrs.append("highlighted")
++                attrs.append("XXhighlightedXX")
+ 
+         text = self.text
+         if not attrs and self.attr is not None:
+</pre><h3>Mutant 460</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -86,7 +86,7 @@
+             if not self.has_breakpoint:
+                 attrs.append("highlighted")
+ 
+-        text = self.text
++        text = None
+         if not attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+</pre><h3>Mutant 461</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -87,7 +87,7 @@
+                 attrs.append("highlighted")
+ 
+         text = self.text
+-        if not attrs and self.attr is not None:
++        if  attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+</pre><h3>Mutant 462</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -87,7 +87,7 @@
+                 attrs.append("highlighted")
+ 
+         text = self.text
+-        if not attrs and self.attr is not None:
++        if not attrs and self.attr is  None:
+             attr = self.attr + [("source", None)]
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+</pre><h3>Mutant 463</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -87,7 +87,7 @@
+                 attrs.append("highlighted")
+ 
+         text = self.text
+-        if not attrs and self.attr is not None:
++        if not attrs or self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+</pre><h3>Mutant 464</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -88,7 +88,7 @@
+ 
+         text = self.text
+         if not attrs and self.attr is not None:
+-            attr = self.attr + [("source", None)]
++            attr = self.attr - [("source", None)]
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+ 
+</pre><h3>Mutant 465</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -88,7 +88,7 @@
+ 
+         text = self.text
+         if not attrs and self.attr is not None:
+-            attr = self.attr + [("source", None)]
++            attr = self.attr + [("XXsourceXX", None)]
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+ 
+</pre><h3>Mutant 466</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -88,7 +88,7 @@
+ 
+         text = self.text
+         if not attrs and self.attr is not None:
+-            attr = self.attr + [("source", None)]
++            attr = None
+         else:
+             attr = [(" ".join(attrs+["source"]), None)]
+ 
+</pre><h3>Mutant 467</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -90,7 +90,7 @@
+         if not attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+-            attr = [(" ".join(attrs+["source"]), None)]
++            attr = [("XX XX".join(attrs+["source"]), None)]
+ 
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+</pre><h3>Mutant 468</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -90,7 +90,7 @@
+         if not attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+-            attr = [(" ".join(attrs+["source"]), None)]
++            attr = [(" ".join(attrs-["source"]), None)]
+ 
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+</pre><h3>Mutant 469</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -90,7 +90,7 @@
+         if not attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+-            attr = [(" ".join(attrs+["source"]), None)]
++            attr = [(" ".join(attrs+["XXsourceXX"]), None)]
+ 
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+</pre><h3>Mutant 470</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -90,7 +90,7 @@
+         if not attrs and self.attr is not None:
+             attr = self.attr + [("source", None)]
+         else:
+-            attr = [(" ".join(attrs+["source"]), None)]
++            attr = None
+ 
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+</pre><h3>Mutant 471</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -95,7 +95,7 @@
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+         # build line prefix ---------------------------------------------------
+-        line_prefix = ""
++        line_prefix = "XXXX"
+         line_prefix_attr = []
+ 
+         if render_line_nr and self.line_nr:
+</pre><h3>Mutant 472</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -95,7 +95,7 @@
+         from urwid.util import apply_target_encoding, trim_text_attr_cs
+ 
+         # build line prefix ---------------------------------------------------
+-        line_prefix = ""
++        line_prefix = None
+         line_prefix_attr = []
+ 
+         if render_line_nr and self.line_nr:
+</pre><h3>Mutant 473</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -96,7 +96,7 @@
+ 
+         # build line prefix ---------------------------------------------------
+         line_prefix = ""
+-        line_prefix_attr = []
++        line_prefix_attr = None
+ 
+         if render_line_nr and self.line_nr:
+             line_prefix_attr = [("line number", len(self.line_nr))]
+</pre><h3>Mutant 474</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -98,7 +98,7 @@
+         line_prefix = ""
+         line_prefix_attr = []
+ 
+-        if render_line_nr and self.line_nr:
++        if render_line_nr or self.line_nr:
+             line_prefix_attr = [("line number", len(self.line_nr))]
+             line_prefix = self.line_nr
+ 
+</pre><h3>Mutant 475</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -99,7 +99,7 @@
+         line_prefix_attr = []
+ 
+         if render_line_nr and self.line_nr:
+-            line_prefix_attr = [("line number", len(self.line_nr))]
++            line_prefix_attr = [("XXline numberXX", len(self.line_nr))]
+             line_prefix = self.line_nr
+ 
+         line_prefix = crnt+bp+line_prefix
+</pre><h3>Mutant 476</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -99,7 +99,7 @@
+         line_prefix_attr = []
+ 
+         if render_line_nr and self.line_nr:
+-            line_prefix_attr = [("line number", len(self.line_nr))]
++            line_prefix_attr = None
+             line_prefix = self.line_nr
+ 
+         line_prefix = crnt+bp+line_prefix
+</pre><h3>Mutant 477</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -100,7 +100,7 @@
+ 
+         if render_line_nr and self.line_nr:
+             line_prefix_attr = [("line number", len(self.line_nr))]
+-            line_prefix = self.line_nr
++            line_prefix = None
+ 
+         line_prefix = crnt+bp+line_prefix
+         line_prefix_attr = [("current line marker", 1),
+</pre><h3>Mutant 478</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -102,7 +102,7 @@
+             line_prefix_attr = [("line number", len(self.line_nr))]
+             line_prefix = self.line_nr
+ 
+-        line_prefix = crnt+bp+line_prefix
++        line_prefix = crnt-bp+line_prefix
+         line_prefix_attr = [("current line marker", 1),
+                             ("breakpoint marker", 1)] \
+                 + line_prefix_attr
+</pre><h3>Mutant 479</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -102,7 +102,7 @@
+             line_prefix_attr = [("line number", len(self.line_nr))]
+             line_prefix = self.line_nr
+ 
+-        line_prefix = crnt+bp+line_prefix
++        line_prefix = crnt+bp-line_prefix
+         line_prefix_attr = [("current line marker", 1),
+                             ("breakpoint marker", 1)] \
+                 + line_prefix_attr
+</pre><h3>Mutant 480</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -102,7 +102,7 @@
+             line_prefix_attr = [("line number", len(self.line_nr))]
+             line_prefix = self.line_nr
+ 
+-        line_prefix = crnt+bp+line_prefix
++        line_prefix = None
+         line_prefix_attr = [("current line marker", 1),
+                             ("breakpoint marker", 1)] \
+                 + line_prefix_attr
+</pre><h3>Mutant 481</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -103,7 +103,7 @@
+             line_prefix = self.line_nr
+ 
+         line_prefix = crnt+bp+line_prefix
+-        line_prefix_attr = [("current line marker", 1),
++        line_prefix_attr = [("XXcurrent line markerXX", 1),
+                             ("breakpoint marker", 1)] \
+                 + line_prefix_attr
+ 
+</pre><h3>Mutant 482</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -103,7 +103,7 @@
+             line_prefix = self.line_nr
+ 
+         line_prefix = crnt+bp+line_prefix
+-        line_prefix_attr = [("current line marker", 1),
++        line_prefix_attr = [("current line marker", 2),
+                             ("breakpoint marker", 1)] \
+                 + line_prefix_attr
+ 
+</pre><h3>Mutant 483</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -104,7 +104,7 @@
+ 
+         line_prefix = crnt+bp+line_prefix
+         line_prefix_attr = [("current line marker", 1),
+-                            ("breakpoint marker", 1)] \
++                            ("XXbreakpoint markerXX", 1)] \
+                 + line_prefix_attr
+ 
+         # assume rendered width is same as len
+</pre><h3>Mutant 484</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -104,7 +104,7 @@
+ 
+         line_prefix = crnt+bp+line_prefix
+         line_prefix_attr = [("current line marker", 1),
+-                            ("breakpoint marker", 1)] \
++                            ("breakpoint marker", 2)] \
+                 + line_prefix_attr
+ 
+         # assume rendered width is same as len
+</pre><h3>Mutant 485</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -105,7 +105,7 @@
+         line_prefix = crnt+bp+line_prefix
+         line_prefix_attr = [("current line marker", 1),
+                             ("breakpoint marker", 1)] \
+-                + line_prefix_attr
++                - line_prefix_attr
+ 
+         # assume rendered width is same as len
+         line_prefix_len = len(line_prefix)
+</pre><h3>Mutant 486</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -103,9 +103,7 @@
+             line_prefix = self.line_nr
+ 
+         line_prefix = crnt+bp+line_prefix
+-        line_prefix_attr = [("current line marker", 1),
+-                            ("breakpoint marker", 1)] \
+-                + line_prefix_attr
++        line_prefix_attr = None
+ 
+         # assume rendered width is same as len
+         line_prefix_len = len(line_prefix)
+</pre><h3>Mutant 487</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -108,7 +108,7 @@
+                 + line_prefix_attr
+ 
+         # assume rendered width is same as len
+-        line_prefix_len = len(line_prefix)
++        line_prefix_len = None
+ 
+         encoded_line_prefix, line_prefix_cs = apply_target_encoding(line_prefix)
+ 
+</pre><h3>Mutant 488</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -110,7 +110,7 @@
+         # assume rendered width is same as len
+         line_prefix_len = len(line_prefix)
+ 
+-        encoded_line_prefix, line_prefix_cs = apply_target_encoding(line_prefix)
++        encoded_line_prefix, line_prefix_cs = None
+ 
+         assert len(encoded_line_prefix) == len(line_prefix)
+         # otherwise we'd have to adjust line_prefix_attr... :/
+</pre><h3>Mutant 489</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -112,7 +112,7 @@
+ 
+         encoded_line_prefix, line_prefix_cs = apply_target_encoding(line_prefix)
+ 
+-        assert len(encoded_line_prefix) == len(line_prefix)
++        assert len(encoded_line_prefix) != len(line_prefix)
+         # otherwise we'd have to adjust line_prefix_attr... :/
+ 
+         # shipout, encoding ---------------------------------------------------
+</pre><h3>Mutant 490</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -116,7 +116,7 @@
+         # otherwise we'd have to adjust line_prefix_attr... :/
+ 
+         # shipout, encoding ---------------------------------------------------
+-        cs = []
++        cs = None
+         encoded_text_segs = []
+         encoded_attr = []
+ 
+</pre><h3>Mutant 491</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -117,7 +117,7 @@
+ 
+         # shipout, encoding ---------------------------------------------------
+         cs = []
+-        encoded_text_segs = []
++        encoded_text_segs = None
+         encoded_attr = []
+ 
+         i = 0
+</pre><h3>Mutant 492</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -118,7 +118,7 @@
+         # shipout, encoding ---------------------------------------------------
+         cs = []
+         encoded_text_segs = []
+-        encoded_attr = []
++        encoded_attr = None
+ 
+         i = 0
+         for seg_attr, seg_len in attr:
+</pre><h3>Mutant 493</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -120,7 +120,7 @@
+         encoded_text_segs = []
+         encoded_attr = []
+ 
+-        i = 0
++        i = 1
+         for seg_attr, seg_len in attr:
+             if seg_len is None:
+                 # means: gobble up remainder of text and rest of line
+</pre><h3>Mutant 494</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -120,7 +120,7 @@
+         encoded_text_segs = []
+         encoded_attr = []
+ 
+-        i = 0
++        i = None
+         for seg_attr, seg_len in attr:
+             if seg_len is None:
+                 # means: gobble up remainder of text and rest of line
+</pre><h3>Mutant 495</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -122,7 +122,7 @@
+ 
+         i = 0
+         for seg_attr, seg_len in attr:
+-            if seg_len is None:
++            if seg_len is not None:
+                 # means: gobble up remainder of text and rest of line
+                 # and fill with attribute
+ 
+</pre><h3>Mutant 496</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -126,7 +126,7 @@
+                 # means: gobble up remainder of text and rest of line
+                 # and fill with attribute
+ 
+-                rowlen = hscroll+maxcol
++                rowlen = hscroll-maxcol
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+                         remaining_text + rowlen*" ")
+</pre><h3>Mutant 497</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -126,7 +126,7 @@
+                 # means: gobble up remainder of text and rest of line
+                 # and fill with attribute
+ 
+-                rowlen = hscroll+maxcol
++                rowlen = None
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+                         remaining_text + rowlen*" ")
+</pre><h3>Mutant 498</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -127,7 +127,7 @@
+                 # and fill with attribute
+ 
+                 rowlen = hscroll+maxcol
+-                remaining_text = text[i:]
++                remaining_text = None
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+                         remaining_text + rowlen*" ")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+</pre><h3>Mutant 499</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -129,7 +129,7 @@
+                 rowlen = hscroll+maxcol
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+-                        remaining_text + rowlen*" ")
++                        remaining_text - rowlen*" ")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+</pre><h3>Mutant 500</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -129,7 +129,7 @@
+                 rowlen = hscroll+maxcol
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+-                        remaining_text + rowlen*" ")
++                        remaining_text + rowlen/" ")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+</pre><h3>Mutant 501</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -129,7 +129,7 @@
+                 rowlen = hscroll+maxcol
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+-                        remaining_text + rowlen*" ")
++                        remaining_text + rowlen*"XX XX")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+</pre><h3>Mutant 502</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -128,8 +128,7 @@
+ 
+                 rowlen = hscroll+maxcol
+                 remaining_text = text[i:]
+-                encoded_seg_text, seg_cs = apply_target_encoding(
+-                        remaining_text + rowlen*" ")
++                encoded_seg_text, seg_cs = None
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+</pre><h3>Mutant 503</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -130,7 +130,7 @@
+                 remaining_text = text[i:]
+                 encoded_seg_text, seg_cs = apply_target_encoding(
+                         remaining_text + rowlen*" ")
+-                encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
++                encoded_attr.append((seg_attr, len(remaining_text)-rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+                 encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
+</pre><h3>Mutant 504</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -132,7 +132,7 @@
+                         remaining_text + rowlen*" ")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+-                unencoded_seg_text = text[i:i+seg_len]
++                unencoded_seg_text = text[i:i-seg_len]
+                 encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
+ 
+                 adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
+</pre><h3>Mutant 505</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -132,7 +132,7 @@
+                         remaining_text + rowlen*" ")
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+-                unencoded_seg_text = text[i:i+seg_len]
++                unencoded_seg_text = None
+                 encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
+ 
+                 adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
+</pre><h3>Mutant 506</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -133,7 +133,7 @@
+                 encoded_attr.append((seg_attr, len(remaining_text)+rowlen))
+             else:
+                 unencoded_seg_text = text[i:i+seg_len]
+-                encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
++                encoded_seg_text, seg_cs = None
+ 
+                 adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
+ 
+</pre><h3>Mutant 507</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -135,7 +135,7 @@
+                 unencoded_seg_text = text[i:i+seg_len]
+                 encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
+ 
+-                adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
++                adjustment = len(encoded_seg_text) + len(unencoded_seg_text)
+ 
+                 encoded_attr.append((seg_attr, seg_len + adjustment))
+ 
+</pre><h3>Mutant 508</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -135,7 +135,7 @@
+                 unencoded_seg_text = text[i:i+seg_len]
+                 encoded_seg_text, seg_cs = apply_target_encoding(unencoded_seg_text)
+ 
+-                adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
++                adjustment = None
+ 
+                 encoded_attr.append((seg_attr, seg_len + adjustment))
+ 
+</pre><h3>Mutant 509</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -137,7 +137,7 @@
+ 
+                 adjustment = len(encoded_seg_text) - len(unencoded_seg_text)
+ 
+-                encoded_attr.append((seg_attr, seg_len + adjustment))
++                encoded_attr.append((seg_attr, seg_len - adjustment))
+ 
+                 i += seg_len
+ 
+</pre><h3>Mutant 510</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -139,7 +139,7 @@
+ 
+                 encoded_attr.append((seg_attr, seg_len + adjustment))
+ 
+-                i += seg_len
++                i = seg_len
+ 
+             encoded_text_segs.append(encoded_seg_text)
+             cs.extend(seg_cs)
+</pre><h3>Mutant 511</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -139,7 +139,7 @@
+ 
+                 encoded_attr.append((seg_attr, seg_len + adjustment))
+ 
+-                i += seg_len
++                i -= seg_len
+ 
+             encoded_text_segs.append(encoded_seg_text)
+             cs.extend(seg_cs)
+</pre><h3>Mutant 512</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -144,7 +144,7 @@
+             encoded_text_segs.append(encoded_seg_text)
+             cs.extend(seg_cs)
+ 
+-        encoded_text = b"".join(encoded_text_segs)
++        encoded_text = b"XXXX".join(encoded_text_segs)
+         encoded_text, encoded_attr, cs = trim_text_attr_cs(
+                 encoded_text, encoded_attr, cs,
+                 hscroll, hscroll+maxcol-line_prefix_len)
+</pre><h3>Mutant 513</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -144,7 +144,7 @@
+             encoded_text_segs.append(encoded_seg_text)
+             cs.extend(seg_cs)
+ 
+-        encoded_text = b"".join(encoded_text_segs)
++        encoded_text = None
+         encoded_text, encoded_attr, cs = trim_text_attr_cs(
+                 encoded_text, encoded_attr, cs,
+                 hscroll, hscroll+maxcol-line_prefix_len)
+</pre><h3>Mutant 514</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -147,7 +147,7 @@
+         encoded_text = b"".join(encoded_text_segs)
+         encoded_text, encoded_attr, cs = trim_text_attr_cs(
+                 encoded_text, encoded_attr, cs,
+-                hscroll, hscroll+maxcol-line_prefix_len)
++                hscroll, hscroll-maxcol-line_prefix_len)
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+</pre><h3>Mutant 515</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -147,7 +147,7 @@
+         encoded_text = b"".join(encoded_text_segs)
+         encoded_text, encoded_attr, cs = trim_text_attr_cs(
+                 encoded_text, encoded_attr, cs,
+-                hscroll, hscroll+maxcol-line_prefix_len)
++                hscroll, hscroll+maxcol+line_prefix_len)
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+</pre><h3>Mutant 516</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -145,9 +145,7 @@
+             cs.extend(seg_cs)
+ 
+         encoded_text = b"".join(encoded_text_segs)
+-        encoded_text, encoded_attr, cs = trim_text_attr_cs(
+-                encoded_text, encoded_attr, cs,
+-                hscroll, hscroll+maxcol-line_prefix_len)
++        encoded_text, encoded_attr, cs = None
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+</pre><h3>Mutant 517</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -149,7 +149,7 @@
+                 encoded_text, encoded_attr, cs,
+                 hscroll, hscroll+maxcol-line_prefix_len)
+ 
+-        encoded_text = encoded_line_prefix + encoded_text
++        encoded_text = encoded_line_prefix - encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+         cs = line_prefix_cs + cs
+ 
+</pre><h3>Mutant 518</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -149,7 +149,7 @@
+                 encoded_text, encoded_attr, cs,
+                 hscroll, hscroll+maxcol-line_prefix_len)
+ 
+-        encoded_text = encoded_line_prefix + encoded_text
++        encoded_text = None
+         encoded_attr = line_prefix_attr + encoded_attr
+         cs = line_prefix_cs + cs
+ 
+</pre><h3>Mutant 519</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -150,7 +150,7 @@
+                 hscroll, hscroll+maxcol-line_prefix_len)
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+-        encoded_attr = line_prefix_attr + encoded_attr
++        encoded_attr = line_prefix_attr - encoded_attr
+         cs = line_prefix_cs + cs
+ 
+         return urwid.TextCanvas([encoded_text], [encoded_attr], [cs], maxcol=maxcol)
+</pre><h3>Mutant 520</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -150,7 +150,7 @@
+                 hscroll, hscroll+maxcol-line_prefix_len)
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+-        encoded_attr = line_prefix_attr + encoded_attr
++        encoded_attr = None
+         cs = line_prefix_cs + cs
+ 
+         return urwid.TextCanvas([encoded_text], [encoded_attr], [cs], maxcol=maxcol)
+</pre><h3>Mutant 521</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -151,7 +151,7 @@
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+-        cs = line_prefix_cs + cs
++        cs = line_prefix_cs - cs
+ 
+         return urwid.TextCanvas([encoded_text], [encoded_attr], [cs], maxcol=maxcol)
+ 
+</pre><h3>Mutant 522</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -151,7 +151,7 @@
+ 
+         encoded_text = encoded_line_prefix + encoded_text
+         encoded_attr = line_prefix_attr + encoded_attr
+-        cs = line_prefix_cs + cs
++        cs = None
+ 
+         return urwid.TextCanvas([encoded_text], [encoded_attr], [cs], maxcol=maxcol)
+ 
+</pre><h3>Mutant 523</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -161,7 +161,7 @@
+ 
+ class ParseState:
+     """States for the ArgumentParser class"""
+-    idle = 1
++    idle = 2
+     found_function = 2
+     found_open_paren = 3
+ 
+</pre><h3>Mutant 524</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -161,7 +161,7 @@
+ 
+ class ParseState:
+     """States for the ArgumentParser class"""
+-    idle = 1
++    idle = None
+     found_function = 2
+     found_open_paren = 3
+ 
+</pre><h3>Mutant 525</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -162,7 +162,7 @@
+ class ParseState:
+     """States for the ArgumentParser class"""
+     idle = 1
+-    found_function = 2
++    found_function = 3
+     found_open_paren = 3
+ 
+ 
+</pre><h3>Mutant 526</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -162,7 +162,7 @@
+ class ParseState:
+     """States for the ArgumentParser class"""
+     idle = 1
+-    found_function = 2
++    found_function = None
+     found_open_paren = 3
+ 
+ 
+</pre><h3>Mutant 527</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -163,7 +163,7 @@
+     """States for the ArgumentParser class"""
+     idle = 1
+     found_function = 2
+-    found_open_paren = 3
++    found_open_paren = 4
+ 
+ 
+ class ArgumentParser:
+</pre><h3>Mutant 528</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -163,7 +163,7 @@
+     """States for the ArgumentParser class"""
+     idle = 1
+     found_function = 2
+-    found_open_paren = 3
++    found_open_paren = None
+ 
+ 
+ class ArgumentParser:
+</pre><h3>Mutant 530</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -183,7 +183,7 @@
+ 
+     def __init__(self, pygments_token):
+         self.t = pygments_token
+-        self.state = ParseState.idle
++        self.state = None
+         self.paren_level = 0
+ 
+     def parse_token(self, token, s):
+</pre><h3>Mutant 531</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -184,7 +184,7 @@
+     def __init__(self, pygments_token):
+         self.t = pygments_token
+         self.state = ParseState.idle
+-        self.paren_level = 0
++        self.paren_level = 1
+ 
+     def parse_token(self, token, s):
+         """Parse token. Return None or replacement token type"""
+</pre><h3>Mutant 532</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -184,7 +184,7 @@
+     def __init__(self, pygments_token):
+         self.t = pygments_token
+         self.state = ParseState.idle
+-        self.paren_level = 0
++        self.paren_level = None
+ 
+     def parse_token(self, token, s):
+         """Parse token. Return None or replacement token type"""
+</pre><h3>Mutant 533</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -188,7 +188,7 @@
+ 
+     def parse_token(self, token, s):
+         """Parse token. Return None or replacement token type"""
+-        if self.state == ParseState.idle:
++        if self.state != ParseState.idle:
+             if token in (self.t.Name.Function, self.t.Name.Function.Magic):
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+</pre><h3>Mutant 534</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -189,7 +189,7 @@
+     def parse_token(self, token, s):
+         """Parse token. Return None or replacement token type"""
+         if self.state == ParseState.idle:
+-            if token in (self.t.Name.Function, self.t.Name.Function.Magic):
++            if token not in (self.t.Name.Function, self.t.Name.Function.Magic):
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+</pre><h3>Mutant 535</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -190,7 +190,7 @@
+         """Parse token. Return None or replacement token type"""
+         if self.state == ParseState.idle:
+             if token in (self.t.Name.Function, self.t.Name.Function.Magic):
+-                self.state = ParseState.found_function
++                self.state = None
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+</pre><h3>Mutant 536</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -191,7 +191,7 @@
+         if self.state == ParseState.idle:
+             if token in (self.t.Name.Function, self.t.Name.Function.Magic):
+                 self.state = ParseState.found_function
+-                self.paren_level = 0
++                self.paren_level = 1
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+</pre><h3>Mutant 537</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -191,7 +191,7 @@
+         if self.state == ParseState.idle:
+             if token in (self.t.Name.Function, self.t.Name.Function.Magic):
+                 self.state = ParseState.found_function
+-                self.paren_level = 0
++                self.paren_level = None
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+</pre><h3>Mutant 538</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -192,7 +192,7 @@
+             if token in (self.t.Name.Function, self.t.Name.Function.Magic):
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+-        elif self.state == ParseState.found_function:
++        elif self.state != ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+</pre><h3>Mutant 539</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -193,7 +193,7 @@
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+-            if token is self.t.Punctuation and s == "(":
++            if token is not self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+         else:
+</pre><h3>Mutant 540</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -193,7 +193,7 @@
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+-            if token is self.t.Punctuation and s == "(":
++            if token is self.t.Punctuation and s != "(":
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+         else:
+</pre><h3>Mutant 541</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -193,7 +193,7 @@
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+-            if token is self.t.Punctuation and s == "(":
++            if token is self.t.Punctuation and s == "XX(XX":
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+         else:
+</pre><h3>Mutant 542</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -193,7 +193,7 @@
+                 self.state = ParseState.found_function
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+-            if token is self.t.Punctuation and s == "(":
++            if token is self.t.Punctuation or s == "(":
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+         else:
+</pre><h3>Mutant 543</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -194,7 +194,7 @@
+                 self.paren_level = 0
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+-                self.state = ParseState.found_open_paren
++                self.state = None
+                 self.paren_level = 1
+         else:
+             if (token is self.t.Name):
+</pre><h3>Mutant 544</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -195,7 +195,7 @@
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+-                self.paren_level = 1
++                self.paren_level = 2
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+</pre><h3>Mutant 545</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -195,7 +195,7 @@
+         elif self.state == ParseState.found_function:
+             if token is self.t.Punctuation and s == "(":
+                 self.state = ParseState.found_open_paren
+-                self.paren_level = 1
++                self.paren_level = None
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+</pre><h3>Mutant 546</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -197,7 +197,7 @@
+                 self.state = ParseState.found_open_paren
+                 self.paren_level = 1
+         else:
+-            if (token is self.t.Name):
++            if (token is not self.t.Name):
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+</pre><h3>Mutant 547</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -199,7 +199,7 @@
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+-            elif token is self.t.Punctuation and s == ")":
++            elif token is not self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+</pre><h3>Mutant 548</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -199,7 +199,7 @@
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+-            elif token is self.t.Punctuation and s == ")":
++            elif token is self.t.Punctuation and s != ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+</pre><h3>Mutant 549</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -199,7 +199,7 @@
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+-            elif token is self.t.Punctuation and s == ")":
++            elif token is self.t.Punctuation and s == "XX)XX":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+</pre><h3>Mutant 550</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -199,7 +199,7 @@
+         else:
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+-            elif token is self.t.Punctuation and s == ")":
++            elif token is self.t.Punctuation or s == ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+</pre><h3>Mutant 551</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -200,7 +200,7 @@
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+-                self.paren_level -= 1
++                self.paren_level = 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+</pre><h3>Mutant 552</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -200,7 +200,7 @@
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+-                self.paren_level -= 1
++                self.paren_level += 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+</pre><h3>Mutant 553</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -200,7 +200,7 @@
+             if (token is self.t.Name):
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+-                self.paren_level -= 1
++                self.paren_level -= 2
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+</pre><h3>Mutant 554</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -201,7 +201,7 @@
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+-            elif token is self.t.Punctuation and s == "(":
++            elif token is not self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+</pre><h3>Mutant 555</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -201,7 +201,7 @@
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+-            elif token is self.t.Punctuation and s == "(":
++            elif token is self.t.Punctuation and s != "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+</pre><h3>Mutant 556</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -201,7 +201,7 @@
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+-            elif token is self.t.Punctuation and s == "(":
++            elif token is self.t.Punctuation and s == "XX(XX":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+</pre><h3>Mutant 557</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -201,7 +201,7 @@
+                 return self.t.Token.Argument
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+-            elif token is self.t.Punctuation and s == "(":
++            elif token is self.t.Punctuation or s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+</pre><h3>Mutant 558</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -202,7 +202,7 @@
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+-                self.paren_level += 1
++                self.paren_level = 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+         return None
+</pre><h3>Mutant 559</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -202,7 +202,7 @@
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+-                self.paren_level += 1
++                self.paren_level -= 1
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+         return None
+</pre><h3>Mutant 560</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -202,7 +202,7 @@
+             elif token is self.t.Punctuation and s == ")":
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+-                self.paren_level += 1
++                self.paren_level += 2
+             if self.paren_level == 0:
+                 self.state = ParseState.idle
+         return None
+</pre><h3>Mutant 561</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -203,7 +203,7 @@
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+-            if self.paren_level == 0:
++            if self.paren_level != 0:
+                 self.state = ParseState.idle
+         return None
+ 
+</pre><h3>Mutant 562</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -203,7 +203,7 @@
+                 self.paren_level -= 1
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+-            if self.paren_level == 0:
++            if self.paren_level == 1:
+                 self.state = ParseState.idle
+         return None
+ 
+</pre><h3>Mutant 563</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -204,7 +204,7 @@
+             elif token is self.t.Punctuation and s == "(":
+                 self.paren_level += 1
+             if self.paren_level == 0:
+-                self.state = ParseState.idle
++                self.state = None
+         return None
+ 
+ 
+</pre><h3>Mutant 564</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -212,7 +212,7 @@
+     import pygments  # noqa
+ except ImportError:
+     def format_source(debugger_ui, lines, breakpoints):
+-        lineno_format = "%%%dd " % (len(str(len(lines))))
++        lineno_format = "XX%%%dd XX" % (len(str(len(lines))))
+         return [
+             SourceLine(
+                 debugger_ui,
+</pre><h3>Mutant 565</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -212,7 +212,7 @@
+     import pygments  # noqa
+ except ImportError:
+     def format_source(debugger_ui, lines, breakpoints):
+-        lineno_format = "%%%dd " % (len(str(len(lines))))
++        lineno_format = "%%%dd " / (len(str(len(lines))))
+         return [
+             SourceLine(
+                 debugger_ui,
+</pre><h3>Mutant 566</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -212,7 +212,7 @@
+     import pygments  # noqa
+ except ImportError:
+     def format_source(debugger_ui, lines, breakpoints):
+-        lineno_format = "%%%dd " % (len(str(len(lines))))
++        lineno_format = None
+         return [
+             SourceLine(
+                 debugger_ui,
+</pre><h3>Mutant 567</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -216,7 +216,7 @@
+         return [
+             SourceLine(
+                 debugger_ui,
+-                line.rstrip("\n\r").expandtabs(TABSTOP),
++                line.rstrip("XX\n\rXX").expandtabs(TABSTOP),
+                 lineno_format % (i+1),
+                 None,
+                 has_breakpoint=i+1 in breakpoints,
+</pre><h3>Mutant 568</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -217,7 +217,7 @@
+             SourceLine(
+                 debugger_ui,
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+-                lineno_format % (i+1),
++                lineno_format / (i+1),
+                 None,
+                 has_breakpoint=i+1 in breakpoints,
+             )
+</pre><h3>Mutant 569</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -217,7 +217,7 @@
+             SourceLine(
+                 debugger_ui,
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+-                lineno_format % (i+1),
++                lineno_format % (i-1),
+                 None,
+                 has_breakpoint=i+1 in breakpoints,
+             )
+</pre><h3>Mutant 570</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -217,7 +217,7 @@
+             SourceLine(
+                 debugger_ui,
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+-                lineno_format % (i+1),
++                lineno_format % (i+2),
+                 None,
+                 has_breakpoint=i+1 in breakpoints,
+             )
+</pre><h3>Mutant 571</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -219,7 +219,7 @@
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+                 lineno_format % (i+1),
+                 None,
+-                has_breakpoint=i+1 in breakpoints,
++                has_breakpoint=i-1 in breakpoints,
+             )
+             for i, line in enumerate(lines)
+         ]
+</pre><h3>Mutant 572</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -219,7 +219,7 @@
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+                 lineno_format % (i+1),
+                 None,
+-                has_breakpoint=i+1 in breakpoints,
++                has_breakpoint=i+2 in breakpoints,
+             )
+             for i, line in enumerate(lines)
+         ]
+</pre><h3>Mutant 573</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -219,7 +219,7 @@
+                 line.rstrip("\n\r").expandtabs(TABSTOP),
+                 lineno_format % (i+1),
+                 None,
+-                has_breakpoint=i+1 in breakpoints,
++                has_breakpoint=i+1 not in breakpoints,
+             )
+             for i, line in enumerate(lines)
+         ]
+</pre><h3>Mutant 575</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -243,7 +243,7 @@
+     #       beginning of add_snippet().
+     #
+     ATTR_MAP = {  # noqa: N806
+-        t.Token: "source",
++        t.Token: "XXsourceXX",
+         t.Keyword.Namespace: "namespace",
+         t.Token.Argument: "argument",
+         t.Token.Dunder: "dunder",
+</pre><h3>Mutant 576</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -244,7 +244,7 @@
+     #
+     ATTR_MAP = {  # noqa: N806
+         t.Token: "source",
+-        t.Keyword.Namespace: "namespace",
++        t.Keyword.Namespace: "XXnamespaceXX",
+         t.Token.Argument: "argument",
+         t.Token.Dunder: "dunder",
+         t.Token.Keyword2: "keyword2",
+</pre><h3>Mutant 577</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -245,7 +245,7 @@
+     ATTR_MAP = {  # noqa: N806
+         t.Token: "source",
+         t.Keyword.Namespace: "namespace",
+-        t.Token.Argument: "argument",
++        t.Token.Argument: "XXargumentXX",
+         t.Token.Dunder: "dunder",
+         t.Token.Keyword2: "keyword2",
+         t.Keyword: "keyword",
+</pre><h3>Mutant 578</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -246,7 +246,7 @@
+         t.Token: "source",
+         t.Keyword.Namespace: "namespace",
+         t.Token.Argument: "argument",
+-        t.Token.Dunder: "dunder",
++        t.Token.Dunder: "XXdunderXX",
+         t.Token.Keyword2: "keyword2",
+         t.Keyword: "keyword",
+         t.Literal: "literal",
+</pre><h3>Mutant 579</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -247,7 +247,7 @@
+         t.Keyword.Namespace: "namespace",
+         t.Token.Argument: "argument",
+         t.Token.Dunder: "dunder",
+-        t.Token.Keyword2: "keyword2",
++        t.Token.Keyword2: "XXkeyword2XX",
+         t.Keyword: "keyword",
+         t.Literal: "literal",
+         t.Name: "name",
+</pre><h3>Mutant 580</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -248,7 +248,7 @@
+         t.Token.Argument: "argument",
+         t.Token.Dunder: "dunder",
+         t.Token.Keyword2: "keyword2",
+-        t.Keyword: "keyword",
++        t.Keyword: "XXkeywordXX",
+         t.Literal: "literal",
+         t.Name: "name",
+         t.Name.Exception: "exception",
+</pre><h3>Mutant 581</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -249,7 +249,7 @@
+         t.Token.Dunder: "dunder",
+         t.Token.Keyword2: "keyword2",
+         t.Keyword: "keyword",
+-        t.Literal: "literal",
++        t.Literal: "XXliteralXX",
+         t.Name: "name",
+         t.Name.Exception: "exception",
+         t.Name.Function: "function",
+</pre><h3>Mutant 582</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -250,7 +250,7 @@
+         t.Token.Keyword2: "keyword2",
+         t.Keyword: "keyword",
+         t.Literal: "literal",
+-        t.Name: "name",
++        t.Name: "XXnameXX",
+         t.Name.Exception: "exception",
+         t.Name.Function: "function",
+         t.Name.Function.Magic: "magic",
+</pre><h3>Mutant 583</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -251,7 +251,7 @@
+         t.Keyword: "keyword",
+         t.Literal: "literal",
+         t.Name: "name",
+-        t.Name.Exception: "exception",
++        t.Name.Exception: "XXexceptionXX",
+         t.Name.Function: "function",
+         t.Name.Function.Magic: "magic",
+         t.Name.Class: "class",
+</pre><h3>Mutant 584</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -252,7 +252,7 @@
+         t.Literal: "literal",
+         t.Name: "name",
+         t.Name.Exception: "exception",
+-        t.Name.Function: "function",
++        t.Name.Function: "XXfunctionXX",
+         t.Name.Function.Magic: "magic",
+         t.Name.Class: "class",
+         t.Name.Builtin: "builtin",
+</pre><h3>Mutant 585</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -253,7 +253,7 @@
+         t.Name: "name",
+         t.Name.Exception: "exception",
+         t.Name.Function: "function",
+-        t.Name.Function.Magic: "magic",
++        t.Name.Function.Magic: "XXmagicXX",
+         t.Name.Class: "class",
+         t.Name.Builtin: "builtin",
+         t.Name.Builtin.Pseudo: "pseudo",
+</pre><h3>Mutant 586</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -254,7 +254,7 @@
+         t.Name.Exception: "exception",
+         t.Name.Function: "function",
+         t.Name.Function.Magic: "magic",
+-        t.Name.Class: "class",
++        t.Name.Class: "XXclassXX",
+         t.Name.Builtin: "builtin",
+         t.Name.Builtin.Pseudo: "pseudo",
+         t.Name.Variable.Magic: "magic",
+</pre><h3>Mutant 587</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -255,7 +255,7 @@
+         t.Name.Function: "function",
+         t.Name.Function.Magic: "magic",
+         t.Name.Class: "class",
+-        t.Name.Builtin: "builtin",
++        t.Name.Builtin: "XXbuiltinXX",
+         t.Name.Builtin.Pseudo: "pseudo",
+         t.Name.Variable.Magic: "magic",
+         t.Punctuation: "punctuation",
+</pre><h3>Mutant 588</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -256,7 +256,7 @@
+         t.Name.Function.Magic: "magic",
+         t.Name.Class: "class",
+         t.Name.Builtin: "builtin",
+-        t.Name.Builtin.Pseudo: "pseudo",
++        t.Name.Builtin.Pseudo: "XXpseudoXX",
+         t.Name.Variable.Magic: "magic",
+         t.Punctuation: "punctuation",
+         t.Operator: "operator",
+</pre><h3>Mutant 589</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -257,7 +257,7 @@
+         t.Name.Class: "class",
+         t.Name.Builtin: "builtin",
+         t.Name.Builtin.Pseudo: "pseudo",
+-        t.Name.Variable.Magic: "magic",
++        t.Name.Variable.Magic: "XXmagicXX",
+         t.Punctuation: "punctuation",
+         t.Operator: "operator",
+         t.String: "string",
+</pre><h3>Mutant 590</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -258,7 +258,7 @@
+         t.Name.Builtin: "builtin",
+         t.Name.Builtin.Pseudo: "pseudo",
+         t.Name.Variable.Magic: "magic",
+-        t.Punctuation: "punctuation",
++        t.Punctuation: "XXpunctuationXX",
+         t.Operator: "operator",
+         t.String: "string",
+         t.String.Double: "doublestring",
+</pre><h3>Mutant 591</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -259,7 +259,7 @@
+         t.Name.Builtin.Pseudo: "pseudo",
+         t.Name.Variable.Magic: "magic",
+         t.Punctuation: "punctuation",
+-        t.Operator: "operator",
++        t.Operator: "XXoperatorXX",
+         t.String: "string",
+         t.String.Double: "doublestring",
+         t.String.Single: "singlestring",
+</pre><h3>Mutant 592</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -260,7 +260,7 @@
+         t.Name.Variable.Magic: "magic",
+         t.Punctuation: "punctuation",
+         t.Operator: "operator",
+-        t.String: "string",
++        t.String: "XXstringXX",
+         t.String.Double: "doublestring",
+         t.String.Single: "singlestring",
+         t.String.Backtick: "backtick",
+</pre><h3>Mutant 593</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -261,7 +261,7 @@
+         t.Punctuation: "punctuation",
+         t.Operator: "operator",
+         t.String: "string",
+-        t.String.Double: "doublestring",
++        t.String.Double: "XXdoublestringXX",
+         t.String.Single: "singlestring",
+         t.String.Backtick: "backtick",
+         t.String.Doc: "docstring",
+</pre><h3>Mutant 594</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -262,7 +262,7 @@
+         t.Operator: "operator",
+         t.String: "string",
+         t.String.Double: "doublestring",
+-        t.String.Single: "singlestring",
++        t.String.Single: "XXsinglestringXX",
+         t.String.Backtick: "backtick",
+         t.String.Doc: "docstring",
+         t.Comment: "comment",
+</pre><h3>Mutant 595</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -263,7 +263,7 @@
+         t.String: "string",
+         t.String.Double: "doublestring",
+         t.String.Single: "singlestring",
+-        t.String.Backtick: "backtick",
++        t.String.Backtick: "XXbacktickXX",
+         t.String.Doc: "docstring",
+         t.Comment: "comment",
+     }
+</pre><h3>Mutant 596</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -264,7 +264,7 @@
+         t.String.Double: "doublestring",
+         t.String.Single: "singlestring",
+         t.String.Backtick: "backtick",
+-        t.String.Doc: "docstring",
++        t.String.Doc: "XXdocstringXX",
+         t.Comment: "comment",
+     }
+ 
+</pre><h3>Mutant 597</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -265,7 +265,7 @@
+         t.String.Single: "singlestring",
+         t.String.Backtick: "backtick",
+         t.String.Doc: "docstring",
+-        t.Comment: "comment",
++        t.Comment: "XXcommentXX",
+     }
+ 
+     # Token translation table. Maps token types and their
+</pre><h3>Mutant 599</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -272,7 +272,7 @@
+     # associated strings to new token types.
+     ATTR_TRANSLATE = {  # noqa: N806
+             t.Keyword: {
+-                "class": t.Token.Keyword2,
++                "XXclassXX": t.Token.Keyword2,
+                 "def": t.Token.Keyword2,
+                 "exec": t.Token.Keyword2,
+                 "lambda": t.Token.Keyword2,
+</pre><h3>Mutant 600</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -273,7 +273,7 @@
+     ATTR_TRANSLATE = {  # noqa: N806
+             t.Keyword: {
+                 "class": t.Token.Keyword2,
+-                "def": t.Token.Keyword2,
++                "XXdefXX": t.Token.Keyword2,
+                 "exec": t.Token.Keyword2,
+                 "lambda": t.Token.Keyword2,
+                 "print": t.Token.Keyword2,
+</pre><h3>Mutant 601</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -274,7 +274,7 @@
+             t.Keyword: {
+                 "class": t.Token.Keyword2,
+                 "def": t.Token.Keyword2,
+-                "exec": t.Token.Keyword2,
++                "XXexecXX": t.Token.Keyword2,
+                 "lambda": t.Token.Keyword2,
+                 "print": t.Token.Keyword2,
+                 },
+</pre><h3>Mutant 602</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -275,7 +275,7 @@
+                 "class": t.Token.Keyword2,
+                 "def": t.Token.Keyword2,
+                 "exec": t.Token.Keyword2,
+-                "lambda": t.Token.Keyword2,
++                "XXlambdaXX": t.Token.Keyword2,
+                 "print": t.Token.Keyword2,
+                 },
+             t.Operator: {
+</pre><h3>Mutant 603</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -276,7 +276,7 @@
+                 "def": t.Token.Keyword2,
+                 "exec": t.Token.Keyword2,
+                 "lambda": t.Token.Keyword2,
+-                "print": t.Token.Keyword2,
++                "XXprintXX": t.Token.Keyword2,
+                 },
+             t.Operator: {
+                 ".": t.Token,
+</pre><h3>Mutant 604</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -279,7 +279,7 @@
+                 "print": t.Token.Keyword2,
+                 },
+             t.Operator: {
+-                ".": t.Token,
++                "XX.XX": t.Token,
+                 },
+             }
+ 
+</pre><h3>Mutant 606</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -286,7 +286,7 @@
+     class UrwidFormatter(Formatter):
+         def __init__(self, debugger_ui, lineno_format, breakpoints, **options):
+             Formatter.__init__(self, **options)
+-            self.current_line = ""
++            self.current_line = "XXXX"
+             self.current_attr = []
+             self.lineno = 1
+             self.result = []
+</pre><h3>Mutant 609</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -288,7 +288,7 @@
+             Formatter.__init__(self, **options)
+             self.current_line = ""
+             self.current_attr = []
+-            self.lineno = 1
++            self.lineno = 2
+             self.result = []
+             self.debugger_ui = debugger_ui
+             self.lineno_format = lineno_format
+</pre><h3>Mutant 612</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -290,7 +290,7 @@
+             self.current_attr = []
+             self.lineno = 1
+             self.result = []
+-            self.debugger_ui = debugger_ui
++            self.debugger_ui = None
+             self.lineno_format = lineno_format
+             self.breakpoints = breakpoints
+ 
+</pre><h3>Mutant 615</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -295,7 +295,7 @@
+             self.breakpoints = breakpoints
+ 
+         def add_snippet(self, ttype, s):
+-            if not s:
++            if  s:
+                 return
+ 
+             # Find function arguments. When found, change their
+</pre><h3>Mutant 616</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -300,7 +300,7 @@
+ 
+             # Find function arguments. When found, change their
+             # ttype to t.Token.Argument
+-            new_ttype = argument_parser.parse_token(ttype, s)
++            new_ttype = None
+             if new_ttype:
+                 ttype = new_ttype
+ 
+</pre><h3>Mutant 617</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -302,7 +302,7 @@
+             # ttype to t.Token.Argument
+             new_ttype = argument_parser.parse_token(ttype, s)
+             if new_ttype:
+-                ttype = new_ttype
++                ttype = None
+ 
+             # Translate tokens
+             if ttype in ATTR_TRANSLATE:
+</pre><h3>Mutant 619</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -306,7 +306,7 @@
+ 
+             # Translate tokens
+             if ttype in ATTR_TRANSLATE:
+-                if s in ATTR_TRANSLATE[ttype]:
++                if s not in ATTR_TRANSLATE[ttype]:
+                     ttype = ATTR_TRANSLATE[ttype][s]
+ 
+             # Translate dunder method tokens
+</pre><h3>Mutant 620</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -307,7 +307,7 @@
+             # Translate tokens
+             if ttype in ATTR_TRANSLATE:
+                 if s in ATTR_TRANSLATE[ttype]:
+-                    ttype = ATTR_TRANSLATE[ttype][s]
++                    ttype = None
+ 
+             # Translate dunder method tokens
+             # NOTE: leaves "Magic" name tokens alone
+</pre><h3>Mutant 621</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -311,7 +311,7 @@
+ 
+             # Translate dunder method tokens
+             # NOTE: leaves "Magic" name tokens alone
+-            if (ttype == t.Name.Function
++            if (ttype != t.Name.Function
+                     and s.startswith("__")
+                     and s.endswith("__")):
+                 ttype = t.Token.Dunder
+</pre><h3>Mutant 622</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -312,7 +312,7 @@
+             # Translate dunder method tokens
+             # NOTE: leaves "Magic" name tokens alone
+             if (ttype == t.Name.Function
+-                    and s.startswith("__")
++                    and s.startswith("XX__XX")
+                     and s.endswith("__")):
+                 ttype = t.Token.Dunder
+ 
+</pre><h3>Mutant 623</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -313,7 +313,7 @@
+             # NOTE: leaves "Magic" name tokens alone
+             if (ttype == t.Name.Function
+                     and s.startswith("__")
+-                    and s.endswith("__")):
++                    and s.endswith("XX__XX")):
+                 ttype = t.Token.Dunder
+ 
+             while ttype not in ATTR_MAP:
+</pre><h3>Mutant 624</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -311,8 +311,7 @@
+ 
+             # Translate dunder method tokens
+             # NOTE: leaves "Magic" name tokens alone
+-            if (ttype == t.Name.Function
+-                    and s.startswith("__")
++            if (ttype == t.Name.Function or s.startswith("__")
+                     and s.endswith("__")):
+                 ttype = t.Token.Dunder
+ 
+</pre><h3>Mutant 625</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -314,7 +314,7 @@
+             if (ttype == t.Name.Function
+                     and s.startswith("__")
+                     and s.endswith("__")):
+-                ttype = t.Token.Dunder
++                ttype = None
+ 
+             while ttype not in ATTR_MAP:
+                 if ttype.parent is not None:
+</pre><h3>Mutant 629</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -321,7 +321,7 @@
+                     ttype = ttype.parent
+                 else:
+                     raise RuntimeError(
+-                            "untreated token type: %s" % str(ttype))
++                            "XXuntreated token type: %sXX" % str(ttype))
+ 
+             attr = ATTR_MAP[ttype]
+ 
+</pre><h3>Mutant 630</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -321,7 +321,7 @@
+                     ttype = ttype.parent
+                 else:
+                     raise RuntimeError(
+-                            "untreated token type: %s" % str(ttype))
++                            "untreated token type: %s" / str(ttype))
+ 
+             attr = ATTR_MAP[ttype]
+ 
+</pre><h3>Mutant 631</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -323,7 +323,7 @@
+                     raise RuntimeError(
+                             "untreated token type: %s" % str(ttype))
+ 
+-            attr = ATTR_MAP[ttype]
++            attr = None
+ 
+             self.current_line += s
+             self.current_attr.append((attr, len(s)))
+</pre><h3>Mutant 632</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -325,7 +325,7 @@
+ 
+             attr = ATTR_MAP[ttype]
+ 
+-            self.current_line += s
++            self.current_line = s
+             self.current_attr.append((attr, len(s)))
+ 
+         def shipout_line(self):
+</pre><h3>Mutant 635</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -335,7 +335,7 @@
+                     self.current_line,
+                     self.lineno_format % self.lineno,
+                     self.current_attr,
+-                    has_breakpoint=self.lineno in self.breakpoints,
++                    has_breakpoint=self.lineno not in self.breakpoints,
+                 ))
+             self.current_line = ""
+             self.current_attr = []
+</pre><h3>Mutant 637</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -337,7 +337,7 @@
+                     self.current_attr,
+                     has_breakpoint=self.lineno in self.breakpoints,
+                 ))
+-            self.current_line = ""
++            self.current_line = None
+             self.current_attr = []
+             self.lineno += 1
+ 
+</pre><h3>Mutant 638</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -338,7 +338,7 @@
+                     has_breakpoint=self.lineno in self.breakpoints,
+                 ))
+             self.current_line = ""
+-            self.current_attr = []
++            self.current_attr = None
+             self.lineno += 1
+ 
+         def format(self, tokensource, outfile):
+</pre><h3>Mutant 639</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -339,7 +339,7 @@
+                 ))
+             self.current_line = ""
+             self.current_attr = []
+-            self.lineno += 1
++            self.lineno = 1
+ 
+         def format(self, tokensource, outfile):
+             for ttype, value in tokensource:
+</pre><h3>Mutant 640</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -339,7 +339,7 @@
+                 ))
+             self.current_line = ""
+             self.current_attr = []
+-            self.lineno += 1
++            self.lineno -= 1
+ 
+         def format(self, tokensource, outfile):
+             for ttype, value in tokensource:
+</pre><h3>Mutant 641</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -339,7 +339,7 @@
+                 ))
+             self.current_line = ""
+             self.current_attr = []
+-            self.lineno += 1
++            self.lineno += 2
+ 
+         def format(self, tokensource, outfile):
+             for ttype, value in tokensource:
+</pre><h3>Mutant 643</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -344,7 +344,7 @@
+         def format(self, tokensource, outfile):
+             for ttype, value in tokensource:
+                 while True:
+-                    newline_pos = value.find("\n")
++                    newline_pos = value.find("XX\nXX")
+                     if newline_pos == -1:
+                         self.add_snippet(ttype, value)
+                         break
+</pre><h3>Mutant 650</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -351,7 +351,7 @@
+                     else:
+                         self.add_snippet(ttype, value[:newline_pos])
+                         self.shipout_line()
+-                        value = value[newline_pos+1:]
++                        value = value[newline_pos+2:]
+ 
+             if self.current_line:
+                 self.shipout_line()
+</pre><h3>Mutant 652</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -357,7 +357,7 @@
+                 self.shipout_line()
+ 
+     def format_source(debugger_ui, lines, breakpoints):
+-        lineno_format = "%%%dd " % (len(str(len(lines))))
++        lineno_format = "XX%%%dd XX" % (len(str(len(lines))))
+         formatter = UrwidFormatter(debugger_ui, lineno_format, breakpoints)
+         highlight(
+             "".join(line.expandtabs(TABSTOP) for line in lines),
+</pre><h3>Mutant 656</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -360,7 +360,7 @@
+         lineno_format = "%%%dd " % (len(str(len(lines))))
+         formatter = UrwidFormatter(debugger_ui, lineno_format, breakpoints)
+         highlight(
+-            "".join(line.expandtabs(TABSTOP) for line in lines),
++            "XXXX".join(line.expandtabs(TABSTOP) for line in lines),
+             PythonLexer(stripnl=False),
+             formatter,
+         )
+</pre><h3>Mutant 657</h3><pre>--- ./source_view.py
++++ ./source_view.py
+@@ -361,7 +361,7 @@
+         formatter = UrwidFormatter(debugger_ui, lineno_format, breakpoints)
+         highlight(
+             "".join(line.expandtabs(TABSTOP) for line in lines),
+-            PythonLexer(stripnl=False),
++            PythonLexer(stripnl=True),
+             formatter,
+         )
+         return formatter.result
+</pre></body></html>

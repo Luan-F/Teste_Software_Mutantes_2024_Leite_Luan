@@ -1,0 +1,818 @@
+<html><body><h1>./shell.py</h1>Killed 0 out of 74 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 945</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -5,7 +5,7 @@
+     # See https://github.com/inducer/pudb/issues/177
+     bpython.__version__  # noqa: B018
+ except ImportError:
+-    HAVE_BPYTHON = False
++    HAVE_BPYTHON = True
+ else:
+     HAVE_BPYTHON = True
+ 
+</pre><h3>Mutant 946</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -5,7 +5,7 @@
+     # See https://github.com/inducer/pudb/issues/177
+     bpython.__version__  # noqa: B018
+ except ImportError:
+-    HAVE_BPYTHON = False
++    HAVE_BPYTHON = None
+ else:
+     HAVE_BPYTHON = True
+ 
+</pre><h3>Mutant 947</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -7,7 +7,7 @@
+ except ImportError:
+     HAVE_BPYTHON = False
+ else:
+-    HAVE_BPYTHON = True
++    HAVE_BPYTHON = False
+ 
+ try:
+     from ptpython.ipython import embed as ptipython_embed
+</pre><h3>Mutant 948</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -7,7 +7,7 @@
+ except ImportError:
+     HAVE_BPYTHON = False
+ else:
+-    HAVE_BPYTHON = True
++    HAVE_BPYTHON = None
+ 
+ try:
+     from ptpython.ipython import embed as ptipython_embed
+</pre><h3>Mutant 949</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -12,7 +12,7 @@
+ try:
+     from ptpython.ipython import embed as ptipython_embed
+ except ImportError:
+-    HAVE_PTIPYTHON = False
++    HAVE_PTIPYTHON = True
+ else:
+     HAVE_PTIPYTHON = True
+ 
+</pre><h3>Mutant 950</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -12,7 +12,7 @@
+ try:
+     from ptpython.ipython import embed as ptipython_embed
+ except ImportError:
+-    HAVE_PTIPYTHON = False
++    HAVE_PTIPYTHON = None
+ else:
+     HAVE_PTIPYTHON = True
+ 
+</pre><h3>Mutant 951</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -14,7 +14,7 @@
+ except ImportError:
+     HAVE_PTIPYTHON = False
+ else:
+-    HAVE_PTIPYTHON = True
++    HAVE_PTIPYTHON = False
+ 
+ try:
+     from ptpython.repl import embed as ptpython_embed, run_config
+</pre><h3>Mutant 952</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -14,7 +14,7 @@
+ except ImportError:
+     HAVE_PTIPYTHON = False
+ else:
+-    HAVE_PTIPYTHON = True
++    HAVE_PTIPYTHON = None
+ 
+ try:
+     from ptpython.repl import embed as ptpython_embed, run_config
+</pre><h3>Mutant 953</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -19,7 +19,7 @@
+ try:
+     from ptpython.repl import embed as ptpython_embed, run_config
+ except ImportError:
+-    HAVE_PTPYTHON = False
++    HAVE_PTPYTHON = True
+ else:
+     HAVE_PTPYTHON = True
+ 
+</pre><h3>Mutant 954</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -19,7 +19,7 @@
+ try:
+     from ptpython.repl import embed as ptpython_embed, run_config
+ except ImportError:
+-    HAVE_PTPYTHON = False
++    HAVE_PTPYTHON = None
+ else:
+     HAVE_PTPYTHON = True
+ 
+</pre><h3>Mutant 955</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -21,7 +21,7 @@
+ except ImportError:
+     HAVE_PTPYTHON = False
+ else:
+-    HAVE_PTPYTHON = True
++    HAVE_PTPYTHON = False
+ 
+ 
+ # {{{ combined locals/globals dict
+</pre><h3>Mutant 956</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -21,7 +21,7 @@
+ except ImportError:
+     HAVE_PTPYTHON = False
+ else:
+-    HAVE_PTPYTHON = True
++    HAVE_PTPYTHON = None
+ 
+ 
+ # {{{ combined locals/globals dict
+</pre><h3>Mutant 957</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -44,7 +44,7 @@
+     """
+     def __init__(self, source_dicts, target_dict):
+         dict.__init__(self)
+-        for s in source_dicts[::-1]:
++        for s in source_dicts[::+1]:
+             self.update(s)
+ 
+         self.target_dict = target_dict
+</pre><h3>Mutant 958</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -44,7 +44,7 @@
+     """
+     def __init__(self, source_dicts, target_dict):
+         dict.__init__(self)
+-        for s in source_dicts[::-1]:
++        for s in source_dicts[::-2]:
+             self.update(s)
+ 
+         self.target_dict = target_dict
+</pre><h3>Mutant 959</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -47,7 +47,7 @@
+         for s in source_dicts[::-1]:
+             self.update(s)
+ 
+-        self.target_dict = target_dict
++        self.target_dict = None
+ 
+     def __setitem__(self, key, value):
+         dict.__setitem__(self, key, value)
+</pre><h3>Mutant 960</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -51,7 +51,7 @@
+ 
+     def __setitem__(self, key, value):
+         dict.__setitem__(self, key, value)
+-        self.target_dict[key] = value
++        self.target_dict[key] = None
+ 
+     def __delitem__(self, key):
+         dict.__delitem__(self, key)
+</pre><h3>Mutant 961</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -60,7 +60,7 @@
+ # }}}
+ 
+ 
+-custom_shell_dict = {}
++custom_shell_dict = None
+ 
+ 
+ SHELL_FIRST_TIME = [True]
+</pre><h3>Mutant 962</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -63,7 +63,7 @@
+ custom_shell_dict = {}
+ 
+ 
+-SHELL_FIRST_TIME = [True]
++SHELL_FIRST_TIME = [False]
+ 
+ 
+ def run_classic_shell(globals, locals, message=""):
+</pre><h3>Mutant 963</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -63,7 +63,7 @@
+ custom_shell_dict = {}
+ 
+ 
+-SHELL_FIRST_TIME = [True]
++SHELL_FIRST_TIME = None
+ 
+ 
+ def run_classic_shell(globals, locals, message=""):
+</pre><h3>Mutant 964</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -66,7 +66,7 @@
+ SHELL_FIRST_TIME = [True]
+ 
+ 
+-def run_classic_shell(globals, locals, message=""):
++def run_classic_shell(globals, locals, message="XXXX"):
+     if SHELL_FIRST_TIME:
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+</pre><h3>Mutant 965</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -68,7 +68,7 @@
+ 
+ def run_classic_shell(globals, locals, message=""):
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = "XXHit Ctrl-D to return to PuDB.XX"
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 966</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -68,7 +68,7 @@
+ 
+ def run_classic_shell(globals, locals, message=""):
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = None
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 967</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -71,7 +71,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = "XXXX"
+ 
+     if message:
+         banner = f"{message}\n{banner}"
+</pre><h3>Mutant 968</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -71,7 +71,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = None
+ 
+     if message:
+         banner = f"{message}\n{banner}"
+</pre><h3>Mutant 969</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -74,7 +74,7 @@
+         banner = ""
+ 
+     if message:
+-        banner = f"{message}\n{banner}"
++        banner = f"XX{message}\n{banner}XX"
+ 
+     ns = SetPropagatingDict([locals, globals], locals)
+ 
+</pre><h3>Mutant 970</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -74,7 +74,7 @@
+         banner = ""
+ 
+     if message:
+-        banner = f"{message}\n{banner}"
++        banner = None
+ 
+     ns = SetPropagatingDict([locals, globals], locals)
+ 
+</pre><h3>Mutant 971</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -76,7 +76,7 @@
+     if message:
+         banner = f"{message}\n{banner}"
+ 
+-    ns = SetPropagatingDict([locals, globals], locals)
++    ns = None
+ 
+     from os.path import join
+ 
+</pre><h3>Mutant 972</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -83,7 +83,7 @@
+     from pudb.settings import get_save_config_path
+     hist_file = join(
+             get_save_config_path(),
+-            "shell-history")
++            "XXshell-historyXX")
+ 
+     try:
+         import readline
+</pre><h3>Mutant 973</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -81,9 +81,7 @@
+     from os.path import join
+ 
+     from pudb.settings import get_save_config_path
+-    hist_file = join(
+-            get_save_config_path(),
+-            "shell-history")
++    hist_file = None
+ 
+     try:
+         import readline
+</pre><h3>Mutant 974</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -88,7 +88,7 @@
+     try:
+         import readline
+         import rlcompleter
+-        have_readline = True
++        have_readline = False
+     except ImportError:
+         have_readline = False
+ 
+</pre><h3>Mutant 975</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -88,7 +88,7 @@
+     try:
+         import readline
+         import rlcompleter
+-        have_readline = True
++        have_readline = None
+     except ImportError:
+         have_readline = False
+ 
+</pre><h3>Mutant 976</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -90,7 +90,7 @@
+         import rlcompleter
+         have_readline = True
+     except ImportError:
+-        have_readline = False
++        have_readline = True
+ 
+     if have_readline:
+         readline.set_completer(
+</pre><h3>Mutant 977</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -90,7 +90,7 @@
+         import rlcompleter
+         have_readline = True
+     except ImportError:
+-        have_readline = False
++        have_readline = None
+ 
+     if have_readline:
+         readline.set_completer(
+</pre><h3>Mutant 978</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -95,7 +95,7 @@
+     if have_readline:
+         readline.set_completer(
+                 rlcompleter.Completer(ns).complete)
+-        readline.parse_and_bind("tab: complete")
++        readline.parse_and_bind("XXtab: completeXX")
+         readline.clear_history()
+         try:
+             readline.read_history_file(hist_file)
+</pre><h3>Mutant 979</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -103,7 +103,7 @@
+             pass
+ 
+     from code import InteractiveConsole
+-    cons = InteractiveConsole(ns)
++    cons = None
+ 
+     cons.interact(banner)
+ 
+</pre><h3>Mutant 980</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -112,7 +112,7 @@
+ 
+ 
+ def run_bpython_shell(globals, locals):
+-    ns = SetPropagatingDict([locals, globals], locals)
++    ns = None
+ 
+     import bpython
+     bpython.embed(args=[], locals_=ns)
+</pre><h3>Mutant 981</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -136,7 +136,7 @@
+         # Old IPythons versions (0.12?) may fail to import with
+         # ValueError: fallback required, but not specified
+         # https://github.com/inducer/pudb/pull/135
+-        return False
++        return True
+     else:
+         return True
+ 
+</pre><h3>Mutant 982</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -138,7 +138,7 @@
+         # https://github.com/inducer/pudb/pull/135
+         return False
+     else:
+-        return True
++        return False
+ 
+ 
+ def ipython_version():
+</pre><h3>Mutant 983</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -152,7 +152,7 @@
+ def run_ipython_shell_v10(globals, locals):
+     """IPython shell from IPython version 0.10"""
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = "XXHit Ctrl-D to return to PuDB.XX"
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 984</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -152,7 +152,7 @@
+ def run_ipython_shell_v10(globals, locals):
+     """IPython shell from IPython version 0.10"""
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = None
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 985</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -155,7 +155,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = "XXXX"
+ 
+     # avoid IPython's namespace litter
+     ns = locals.copy()
+</pre><h3>Mutant 986</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -155,7 +155,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = None
+ 
+     # avoid IPython's namespace litter
+     ns = locals.copy()
+</pre><h3>Mutant 987</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -158,7 +158,7 @@
+         banner = ""
+ 
+     # avoid IPython's namespace litter
+-    ns = locals.copy()
++    ns = None
+ 
+     from IPython.Shell import IPShell
+     IPShell(argv=[], user_ns=ns, user_global_ns=globals) \
+</pre><h3>Mutant 988</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -168,7 +168,7 @@
+ def _update_ipython_ns(shell, globals, locals):
+     """Update the IPython 0.11 namespace at every visit"""
+ 
+-    shell.user_ns = locals.copy()
++    shell.user_ns = None
+ 
+     try:
+         shell.user_global_ns = globals
+</pre><h3>Mutant 989</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -171,7 +171,7 @@
+     shell.user_ns = locals.copy()
+ 
+     try:
+-        shell.user_global_ns = globals
++        shell.user_global_ns = None
+     except AttributeError:
+         class DummyMod:
+             """A dummy module used for IPython's interactive namespace."""
+</pre><h3>Mutant 990</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -177,7 +177,7 @@
+             """A dummy module used for IPython's interactive namespace."""
+             pass
+ 
+-        user_module = DummyMod()
++        user_module = None
+         user_module.__dict__ = globals
+         shell.user_module = user_module
+ 
+</pre><h3>Mutant 991</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -178,7 +178,7 @@
+             pass
+ 
+         user_module = DummyMod()
+-        user_module.__dict__ = globals
++        user_module.__dict__ = None
+         shell.user_module = user_module
+ 
+     shell.init_history()
+</pre><h3>Mutant 992</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -179,7 +179,7 @@
+ 
+         user_module = DummyMod()
+         user_module.__dict__ = globals
+-        shell.user_module = user_module
++        shell.user_module = None
+ 
+     shell.init_history()
+     shell.init_user_ns()
+</pre><h3>Mutant 993</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -189,7 +189,7 @@
+ def run_ipython_shell_v11(globals, locals):
+     """IPython shell from IPython version 0.11"""
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = "XXHit Ctrl-D to return to PuDB.XX"
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 994</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -189,7 +189,7 @@
+ def run_ipython_shell_v11(globals, locals):
+     """IPython shell from IPython version 0.11"""
+     if SHELL_FIRST_TIME:
+-        banner = "Hit Ctrl-D to return to PuDB."
++        banner = None
+         SHELL_FIRST_TIME.pop()
+     else:
+         banner = ""
+</pre><h3>Mutant 995</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -192,7 +192,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = "XXXX"
+ 
+     try:
+         # IPython 1.0 got rid of the frontend intermediary, and complains with
+</pre><h3>Mutant 996</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -192,7 +192,7 @@
+         banner = "Hit Ctrl-D to return to PuDB."
+         SHELL_FIRST_TIME.pop()
+     else:
+-        banner = ""
++        banner = None
+ 
+     try:
+         # IPython 1.0 got rid of the frontend intermediary, and complains with
+</pre><h3>Mutant 997</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -205,7 +205,7 @@
+     # XXX: in the future it could be useful to load a 'pudb' config for the
+     # user (if it exists) that could contain the user's macros and other
+     # niceities.
+-    config = load_default_config()
++    config = None
+     shell = TerminalInteractiveShell.instance(config=config,
+             banner2=banner)
+     # XXX This avoids a warning about not having unique session/line numbers.
+</pre><h3>Mutant 998</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -206,8 +206,7 @@
+     # user (if it exists) that could contain the user's macros and other
+     # niceities.
+     config = load_default_config()
+-    shell = TerminalInteractiveShell.instance(config=config,
+-            banner2=banner)
++    shell = None
+     # XXX This avoids a warning about not having unique session/line numbers.
+     # See the HistoryManager.writeout_cache method in IPython.core.history.
+     shell.history_manager.new_session()
+</pre><h3>Mutant 999</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -212,7 +212,7 @@
+     # See the HistoryManager.writeout_cache method in IPython.core.history.
+     shell.history_manager.new_session()
+     # Save the originating namespace
+-    old_locals = shell.user_ns
++    old_locals = None
+     old_globals = shell.user_global_ns
+ 
+     # Update shell with current namespace
+</pre><h3>Mutant 1000</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -213,7 +213,7 @@
+     shell.history_manager.new_session()
+     # Save the originating namespace
+     old_locals = shell.user_ns
+-    old_globals = shell.user_global_ns
++    old_globals = None
+ 
+     # Update shell with current namespace
+     _update_ipython_ns(shell, globals, locals)
+</pre><h3>Mutant 1001</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -218,7 +218,7 @@
+     # Update shell with current namespace
+     _update_ipython_ns(shell, globals, locals)
+ 
+-    args = []
++    args = None
+     if ipython_version() < (5, 0, 0):
+         args.append(banner)
+     else:
+</pre><h3>Mutant 1002</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -219,7 +219,7 @@
+     _update_ipython_ns(shell, globals, locals)
+ 
+     args = []
+-    if ipython_version() < (5, 0, 0):
++    if ipython_version() <= (5, 0, 0):
+         args.append(banner)
+     else:
+         print(banner)
+</pre><h3>Mutant 1003</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -219,7 +219,7 @@
+     _update_ipython_ns(shell, globals, locals)
+ 
+     args = []
+-    if ipython_version() < (5, 0, 0):
++    if ipython_version() < (6, 0, 0):
+         args.append(banner)
+     else:
+         print(banner)
+</pre><h3>Mutant 1004</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -219,7 +219,7 @@
+     _update_ipython_ns(shell, globals, locals)
+ 
+     args = []
+-    if ipython_version() < (5, 0, 0):
++    if ipython_version() < (5, 1, 0):
+         args.append(banner)
+     else:
+         print(banner)
+</pre><h3>Mutant 1005</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -219,7 +219,7 @@
+     _update_ipython_ns(shell, globals, locals)
+ 
+     args = []
+-    if ipython_version() < (5, 0, 0):
++    if ipython_version() < (5, 0, 1):
+         args.append(banner)
+     else:
+         print(banner)
+</pre><h3>Mutant 1006</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -222,7 +222,7 @@
+     if ipython_version() < (5, 0, 0):
+         args.append(banner)
+     else:
+-        print(banner)
++        print(None)
+ 
+     # XXX Quick and dirty way to fix issues with IPython 8.0.0+, introduced
+     # by commit 08d54c0e367b535fd88aca5273fd09e5e70d08f8.
+</pre><h3>Mutant 1007</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -231,7 +231,7 @@
+     # IPython.terminal.interactiveshell.TerminalInteractiveShell.mainloop()
+     # This allows us to repeatedly re-call mainloop() and the whole
+     # run_ipython_shell_v11() function
+-    shell._atexit_once_called = True
++    shell._atexit_once_called = False
+     shell.mainloop(*args)
+     del shell._atexit_once_called
+ 
+</pre><h3>Mutant 1008</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -231,7 +231,7 @@
+     # IPython.terminal.interactiveshell.TerminalInteractiveShell.mainloop()
+     # This allows us to repeatedly re-call mainloop() and the whole
+     # run_ipython_shell_v11() function
+-    shell._atexit_once_called = True
++    shell._atexit_once_called = None
+     shell.mainloop(*args)
+     del shell._atexit_once_called
+ 
+</pre><h3>Mutant 1009</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -241,7 +241,7 @@
+ 
+ def run_ipython_shell(globals, locals):
+     import IPython
+-    if have_ipython() and hasattr(IPython, "Shell"):
++    if have_ipython() and hasattr(IPython, "XXShellXX"):
+         return run_ipython_shell_v10(globals, locals)
+     else:
+         return run_ipython_shell_v11(globals, locals)
+</pre><h3>Mutant 1010</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -241,7 +241,7 @@
+ 
+ def run_ipython_shell(globals, locals):
+     import IPython
+-    if have_ipython() and hasattr(IPython, "Shell"):
++    if have_ipython() or hasattr(IPython, "Shell"):
+         return run_ipython_shell_v10(globals, locals)
+     else:
+         return run_ipython_shell_v11(globals, locals)
+</pre><h3>Mutant 1011</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -253,7 +253,7 @@
+     class DummyMod:
+         pass
+ 
+-    user_module = DummyMod()
++    user_module = None
+     user_module.__dict__ = globals
+     embed_kernel(module=user_module, local_ns=locals)
+ 
+</pre><h3>Mutant 1012</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -254,7 +254,7 @@
+         pass
+ 
+     user_module = DummyMod()
+-    user_module.__dict__ = globals
++    user_module.__dict__ = None
+     embed_kernel(module=user_module, local_ns=locals)
+ 
+ # }}}
+</pre><h3>Mutant 1013</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -266,7 +266,7 @@
+     from ptpython.entry_points.run_ptpython import (  # pylint: disable=import-error
+         get_config_and_history_file,
+     )
+-    parser = ArgumentParser()
++    parser = None
+     parser.add_argument("--history_file")
+     parser.add_argument("--config_file")
+     return get_config_and_history_file(parser.parse_args([]))[1]
+</pre><h3>Mutant 1014</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -267,7 +267,7 @@
+         get_config_and_history_file,
+     )
+     parser = ArgumentParser()
+-    parser.add_argument("--history_file")
++    parser.add_argument("XX--history_fileXX")
+     parser.add_argument("--config_file")
+     return get_config_and_history_file(parser.parse_args([]))[1]
+ 
+</pre><h3>Mutant 1015</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -268,7 +268,7 @@
+     )
+     parser = ArgumentParser()
+     parser.add_argument("--history_file")
+-    parser.add_argument("--config_file")
++    parser.add_argument("XX--config_fileXX")
+     return get_config_and_history_file(parser.parse_args([]))[1]
+ 
+ 
+</pre><h3>Mutant 1016</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -269,7 +269,7 @@
+     parser = ArgumentParser()
+     parser.add_argument("--history_file")
+     parser.add_argument("--config_file")
+-    return get_config_and_history_file(parser.parse_args([]))[1]
++    return get_config_and_history_file(parser.parse_args([]))[2]
+ 
+ 
+ def run_ptpython_shell(globals, locals):
+</pre><h3>Mutant 1017</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -274,7 +274,7 @@
+ 
+ def run_ptpython_shell(globals, locals):
+     # Use the default ptpython history
+-    history_filename = get_ptpython_history_file()
++    history_filename = None
+     ptpython_embed(globals=globals.copy(), locals=locals.copy(),
+                    history_filename=history_filename,
+                    configure=run_config)
+</pre><h3>Mutant 1018</h3><pre>--- ./shell.py
++++ ./shell.py
+@@ -282,7 +282,7 @@
+ 
+ def run_ptipython_shell(globals, locals):
+     # Use the default ptpython history
+-    history_filename = get_ptpython_history_file()
++    history_filename = None
+     ptipython_embed(globals=globals.copy(), locals=locals.copy(),
+                    history_filename=history_filename,
+                    configure=run_config)
+</pre></body></html>

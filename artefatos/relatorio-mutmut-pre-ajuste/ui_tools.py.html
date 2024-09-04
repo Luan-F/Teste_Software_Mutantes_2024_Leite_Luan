@@ -1,0 +1,2213 @@
+<html><body><h1>./ui_tools.py</h1>Killed 25 out of 226 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3759</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -23,7 +23,7 @@
+     # Consistent with
+     # https://github.com/urwid/urwid/blob/2cc54891965283faf9113da72202f5d405f90fa3/urwid/util.py#L126-L128
+ 
+-    s = s.replace(escape.SI+escape.SO, "")  # remove redundant shifts
++    s = s.replace(escape.SI+escape.SO, "XXXX")  # remove redundant shifts
+     s = s.encode(_target_encoding, "replace")
+     return s
+ 
+</pre><h3>Mutant 3761</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -24,7 +24,7 @@
+     # https://github.com/urwid/urwid/blob/2cc54891965283faf9113da72202f5d405f90fa3/urwid/util.py#L126-L128
+ 
+     s = s.replace(escape.SI+escape.SO, "")  # remove redundant shifts
+-    s = s.encode(_target_encoding, "replace")
++    s = s.encode(_target_encoding, "XXreplaceXX")
+     return s
+ 
+ 
+</pre><h3>Mutant 3766</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -35,7 +35,7 @@
+ 
+     for line, line_attr in zip(txt, attr):
+         # filter out zero-length attrs
+-        line_attr = [(aname, la) for aname, la in line_attr if la > 0]
++        line_attr = [(aname, la) for aname, la in line_attr if la >= 0]
+ 
+         diff = maxcol - text_width(line)
+         if diff > 0:
+</pre><h3>Mutant 3767</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -35,7 +35,7 @@
+ 
+     for line, line_attr in zip(txt, attr):
+         # filter out zero-length attrs
+-        line_attr = [(aname, la) for aname, la in line_attr if la > 0]
++        line_attr = [(aname, la) for aname, la in line_attr if la > 1]
+ 
+         diff = maxcol - text_width(line)
+         if diff > 0:
+</pre><h3>Mutant 3771</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -38,7 +38,7 @@
+         line_attr = [(aname, la) for aname, la in line_attr if la > 0]
+ 
+         diff = maxcol - text_width(line)
+-        if diff > 0:
++        if diff >= 0:
+             line += " "*diff
+             line_attr.append((fill_attr, diff))
+         else:
+</pre><h3>Mutant 3772</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -38,7 +38,7 @@
+         line_attr = [(aname, la) for aname, la in line_attr if la > 0]
+ 
+         diff = maxcol - text_width(line)
+-        if diff > 0:
++        if diff > 1:
+             line += " "*diff
+             line_attr.append((fill_attr, diff))
+         else:
+</pre><h3>Mutant 3777</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -43,7 +43,7 @@
+             line_attr.append((fill_attr, diff))
+         else:
+             from urwid.util import rle_subseg
+-            line = line[:calc_text_pos(line, 0, len(line), maxcol)[0]]
++            line = line[:calc_text_pos(line, 1, len(line), maxcol)[0]]
+             line_attr = rle_subseg(line_attr, 0, maxcol)
+ 
+         from urwid.util import apply_target_encoding
+</pre><h3>Mutant 3778</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -43,7 +43,7 @@
+             line_attr.append((fill_attr, diff))
+         else:
+             from urwid.util import rle_subseg
+-            line = line[:calc_text_pos(line, 0, len(line), maxcol)[0]]
++            line = line[:calc_text_pos(line, 0, len(line), maxcol)[1]]
+             line_attr = rle_subseg(line_attr, 0, maxcol)
+ 
+         from urwid.util import apply_target_encoding
+</pre><h3>Mutant 3790</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -73,7 +73,7 @@
+ 
+ def make_hotkey_markup(s):
+     import re
+-    match = re.match(r"^([^_]*)_(.)(.*)$", s)
++    match = re.match(r"XX^([^_]*)_(.)(.*)$XX", s)
+     assert match is not None
+ 
+     return [
+</pre><h3>Mutant 3791</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -73,7 +73,7 @@
+ 
+ def make_hotkey_markup(s):
+     import re
+-    match = re.match(r"^([^_]*)_(.)(.*)$", s)
++    match = None
+     assert match is not None
+ 
+     return [
+</pre><h3>Mutant 3792</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -74,7 +74,7 @@
+ def make_hotkey_markup(s):
+     import re
+     match = re.match(r"^([^_]*)_(.)(.*)$", s)
+-    assert match is not None
++    assert match is  None
+ 
+     return [
+             (None, match.group(1)),
+</pre><h3>Mutant 3793</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -77,7 +77,7 @@
+     assert match is not None
+ 
+     return [
+-            (None, match.group(1)),
++            (None, match.group(2)),
+             ("hotkey", match.group(2)),
+             (None, match.group(3)),
+             ]
+</pre><h3>Mutant 3794</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -78,7 +78,7 @@
+ 
+     return [
+             (None, match.group(1)),
+-            ("hotkey", match.group(2)),
++            ("XXhotkeyXX", match.group(2)),
+             (None, match.group(3)),
+             ]
+ 
+</pre><h3>Mutant 3795</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -78,7 +78,7 @@
+ 
+     return [
+             (None, match.group(1)),
+-            ("hotkey", match.group(2)),
++            ("hotkey", match.group(3)),
+             (None, match.group(3)),
+             ]
+ 
+</pre><h3>Mutant 3796</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -79,7 +79,7 @@
+     return [
+             (None, match.group(1)),
+             ("hotkey", match.group(2)),
+-            (None, match.group(3)),
++            (None, match.group(4)),
+             ]
+ 
+ 
+</pre><h3>Mutant 3797</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -85,7 +85,7 @@
+ 
+ def labelled_value(label, value):
+     return urwid.AttrMap(urwid.Text([
+-        ("label", label), str(value)]),
++        ("XXlabelXX", label), str(value)]),
+         "fixed value", "fixed value")
+ 
+ 
+</pre><h3>Mutant 3798</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -86,7 +86,7 @@
+ def labelled_value(label, value):
+     return urwid.AttrMap(urwid.Text([
+         ("label", label), str(value)]),
+-        "fixed value", "fixed value")
++        "XXfixed valueXX", "fixed value")
+ 
+ 
+ def find_widget_in_container(container, widget) -> int:
+</pre><h3>Mutant 3799</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -86,7 +86,7 @@
+ def labelled_value(label, value):
+     return urwid.AttrMap(urwid.Text([
+         ("label", label), str(value)]),
+-        "fixed value", "fixed value")
++        "fixed value", "XXfixed valueXX")
+ 
+ 
+ def find_widget_in_container(container, widget) -> int:
+</pre><h3>Mutant 3800</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -91,7 +91,7 @@
+ 
+ def find_widget_in_container(container, widget) -> int:
+     for i, (w, _) in enumerate(container.contents):
+-        if w == widget:
++        if w != widget:
+             return i
+ 
+     raise ValueError(f"Widget not found in '{type(container).__name__}': {widget!r}")
+</pre><h3>Mutant 3801</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -94,7 +94,7 @@
+         if w == widget:
+             return i
+ 
+-    raise ValueError(f"Widget not found in '{type(container).__name__}': {widget!r}")
++    raise ValueError(f"XXWidget not found in '{type(container).__name__}': {widget!r}XX")
+ 
+ 
+ def focus_widget_in_container(container, widget) -> None:
+</pre><h3>Mutant 3802</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -98,7 +98,7 @@
+ 
+ 
+ def focus_widget_in_container(container, widget) -> None:
+-    container.focus_position = find_widget_in_container(container, widget)
++    container.focus_position = None
+ 
+ 
+ class SelectableText(urwid.Text):
+</pre><h3>Mutant 3803</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -103,7 +103,7 @@
+ 
+ class SelectableText(urwid.Text):
+     def selectable(self):
+-        return True
++        return False
+ 
+     def keypress(self, size, key):
+         return key
+</pre><h3>Mutant 3804</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -110,7 +110,7 @@
+ 
+ 
+ class SignalWrap(urwid.WidgetWrap):
+-    def __init__(self, w, is_preemptive=False):
++    def __init__(self, w, is_preemptive=True):
+         urwid.WidgetWrap.__init__(self, w)
+         self.event_listeners = []
+         self.is_preemptive = is_preemptive
+</pre><h3>Mutant 3805</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -112,7 +112,7 @@
+ class SignalWrap(urwid.WidgetWrap):
+     def __init__(self, w, is_preemptive=False):
+         urwid.WidgetWrap.__init__(self, w)
+-        self.event_listeners = []
++        self.event_listeners = None
+         self.is_preemptive = is_preemptive
+ 
+     def listen(self, mask, handler):
+</pre><h3>Mutant 3806</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -113,7 +113,7 @@
+     def __init__(self, w, is_preemptive=False):
+         urwid.WidgetWrap.__init__(self, w)
+         self.event_listeners = []
+-        self.is_preemptive = is_preemptive
++        self.is_preemptive = None
+ 
+     def listen(self, mask, handler):
+         self.event_listeners.append((mask, handler))
+</pre><h3>Mutant 3807</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -119,7 +119,7 @@
+         self.event_listeners.append((mask, handler))
+ 
+     def keypress(self, size, key):
+-        result = key
++        result = None
+ 
+         if self.is_preemptive:
+             for mask, handler in self.event_listeners:
+</pre><h3>Mutant 3808</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -123,7 +123,7 @@
+ 
+         if self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is not None or mask == key:
+                     result = handler(self, size, key)
+                     break
+ 
+</pre><h3>Mutant 3809</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -123,7 +123,7 @@
+ 
+         if self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is None or mask != key:
+                     result = handler(self, size, key)
+                     break
+ 
+</pre><h3>Mutant 3810</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -123,7 +123,7 @@
+ 
+         if self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is None and mask == key:
+                     result = handler(self, size, key)
+                     break
+ 
+</pre><h3>Mutant 3811</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -124,7 +124,7 @@
+         if self.is_preemptive:
+             for mask, handler in self.event_listeners:
+                 if mask is None or mask == key:
+-                    result = handler(self, size, key)
++                    result = None
+                     break
+ 
+         if result is not None:
+</pre><h3>Mutant 3812</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -125,7 +125,7 @@
+             for mask, handler in self.event_listeners:
+                 if mask is None or mask == key:
+                     result = handler(self, size, key)
+-                    break
++                    continue
+ 
+         if result is not None:
+             result = self._w.keypress(size, key)
+</pre><h3>Mutant 3813</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -127,7 +127,7 @@
+                     result = handler(self, size, key)
+                     break
+ 
+-        if result is not None:
++        if result is  None:
+             result = self._w.keypress(size, key)
+ 
+         if result is not None and not self.is_preemptive:
+</pre><h3>Mutant 3814</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -128,7 +128,7 @@
+                     break
+ 
+         if result is not None:
+-            result = self._w.keypress(size, key)
++            result = None
+ 
+         if result is not None and not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+</pre><h3>Mutant 3815</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -130,7 +130,7 @@
+         if result is not None:
+             result = self._w.keypress(size, key)
+ 
+-        if result is not None and not self.is_preemptive:
++        if result is  None and not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+                 if mask is None or mask == key:
+                     return handler(self, size, key)
+</pre><h3>Mutant 3816</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -130,7 +130,7 @@
+         if result is not None:
+             result = self._w.keypress(size, key)
+ 
+-        if result is not None and not self.is_preemptive:
++        if result is not None and  self.is_preemptive:
+             for mask, handler in self.event_listeners:
+                 if mask is None or mask == key:
+                     return handler(self, size, key)
+</pre><h3>Mutant 3817</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -130,7 +130,7 @@
+         if result is not None:
+             result = self._w.keypress(size, key)
+ 
+-        if result is not None and not self.is_preemptive:
++        if result is not None or not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+                 if mask is None or mask == key:
+                     return handler(self, size, key)
+</pre><h3>Mutant 3818</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -132,7 +132,7 @@
+ 
+         if result is not None and not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is not None or mask == key:
+                     return handler(self, size, key)
+ 
+         return result
+</pre><h3>Mutant 3819</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -132,7 +132,7 @@
+ 
+         if result is not None and not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is None or mask != key:
+                     return handler(self, size, key)
+ 
+         return result
+</pre><h3>Mutant 3820</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -132,7 +132,7 @@
+ 
+         if result is not None and not self.is_preemptive:
+             for mask, handler in self.event_listeners:
+-                if mask is None or mask == key:
++                if mask is None and mask == key:
+                     return handler(self, size, key)
+ 
+         return result
+</pre><h3>Mutant 3821</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -142,7 +142,7 @@
+ 
+ class StackFrame(urwid.FlowWidget):
+     def __init__(self, is_current, name, class_name, filename, line):
+-        self.is_current = is_current
++        self.is_current = None
+         self.name = name
+         self.class_name = class_name
+         self.filename = filename
+</pre><h3>Mutant 3822</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -143,7 +143,7 @@
+ class StackFrame(urwid.FlowWidget):
+     def __init__(self, is_current, name, class_name, filename, line):
+         self.is_current = is_current
+-        self.name = name
++        self.name = None
+         self.class_name = class_name
+         self.filename = filename
+         self.line = line
+</pre><h3>Mutant 3823</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -144,7 +144,7 @@
+     def __init__(self, is_current, name, class_name, filename, line):
+         self.is_current = is_current
+         self.name = name
+-        self.class_name = class_name
++        self.class_name = None
+         self.filename = filename
+         self.line = line
+ 
+</pre><h3>Mutant 3824</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -145,7 +145,7 @@
+         self.is_current = is_current
+         self.name = name
+         self.class_name = class_name
+-        self.filename = filename
++        self.filename = None
+         self.line = line
+ 
+     def selectable(self):
+</pre><h3>Mutant 3825</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -146,7 +146,7 @@
+         self.name = name
+         self.class_name = class_name
+         self.filename = filename
+-        self.line = line
++        self.line = None
+ 
+     def selectable(self):
+         return True
+</pre><h3>Mutant 3826</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -149,7 +149,7 @@
+         self.line = line
+ 
+     def selectable(self):
+-        return True
++        return False
+ 
+     def rows(self, size, focus=False):
+         return 1
+</pre><h3>Mutant 3827</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -151,7 +151,7 @@
+     def selectable(self):
+         return True
+ 
+-    def rows(self, size, focus=False):
++    def rows(self, size, focus=True):
+         return 1
+ 
+     def render(self, size, focus=False):
+</pre><h3>Mutant 3828</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -152,7 +152,7 @@
+         return True
+ 
+     def rows(self, size, focus=False):
+-        return 1
++        return 2
+ 
+     def render(self, size, focus=False):
+         maxcol = size[0]
+</pre><h3>Mutant 3829</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -154,7 +154,7 @@
+     def rows(self, size, focus=False):
+         return 1
+ 
+-    def render(self, size, focus=False):
++    def render(self, size, focus=True):
+         maxcol = size[0]
+         if focus:
+             apfx = "focused "
+</pre><h3>Mutant 3830</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -155,7 +155,7 @@
+         return 1
+ 
+     def render(self, size, focus=False):
+-        maxcol = size[0]
++        maxcol = size[1]
+         if focus:
+             apfx = "focused "
+         else:
+</pre><h3>Mutant 3831</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -155,7 +155,7 @@
+         return 1
+ 
+     def render(self, size, focus=False):
+-        maxcol = size[0]
++        maxcol = None
+         if focus:
+             apfx = "focused "
+         else:
+</pre><h3>Mutant 3832</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -157,7 +157,7 @@
+     def render(self, size, focus=False):
+         maxcol = size[0]
+         if focus:
+-            apfx = "focused "
++            apfx = "XXfocused XX"
+         else:
+             apfx = ""
+ 
+</pre><h3>Mutant 3833</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -157,7 +157,7 @@
+     def render(self, size, focus=False):
+         maxcol = size[0]
+         if focus:
+-            apfx = "focused "
++            apfx = None
+         else:
+             apfx = ""
+ 
+</pre><h3>Mutant 3834</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -159,7 +159,7 @@
+         if focus:
+             apfx = "focused "
+         else:
+-            apfx = ""
++            apfx = "XXXX"
+ 
+         if self.is_current:
+             apfx += "current "
+</pre><h3>Mutant 3835</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -159,7 +159,7 @@
+         if focus:
+             apfx = "focused "
+         else:
+-            apfx = ""
++            apfx = None
+ 
+         if self.is_current:
+             apfx += "current "
+</pre><h3>Mutant 3836</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -162,7 +162,7 @@
+             apfx = ""
+ 
+         if self.is_current:
+-            apfx += "current "
++            apfx = "current "
+             crnt_pfx = ">> "
+         else:
+             crnt_pfx = "   "
+</pre><h3>Mutant 3837</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -162,7 +162,7 @@
+             apfx = ""
+ 
+         if self.is_current:
+-            apfx += "current "
++            apfx -= "current "
+             crnt_pfx = ">> "
+         else:
+             crnt_pfx = "   "
+</pre><h3>Mutant 3838</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -162,7 +162,7 @@
+             apfx = ""
+ 
+         if self.is_current:
+-            apfx += "current "
++            apfx += "XXcurrent XX"
+             crnt_pfx = ">> "
+         else:
+             crnt_pfx = "   "
+</pre><h3>Mutant 3839</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -163,7 +163,7 @@
+ 
+         if self.is_current:
+             apfx += "current "
+-            crnt_pfx = ">> "
++            crnt_pfx = "XX>> XX"
+         else:
+             crnt_pfx = "   "
+ 
+</pre><h3>Mutant 3840</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -163,7 +163,7 @@
+ 
+         if self.is_current:
+             apfx += "current "
+-            crnt_pfx = ">> "
++            crnt_pfx = None
+         else:
+             crnt_pfx = "   "
+ 
+</pre><h3>Mutant 3841</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -165,7 +165,7 @@
+             apfx += "current "
+             crnt_pfx = ">> "
+         else:
+-            crnt_pfx = "   "
++            crnt_pfx = "XX   XX"
+ 
+         text = crnt_pfx+self.name
+         attr = [(apfx+"frame name", 4+len(self.name))]
+</pre><h3>Mutant 3842</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -165,7 +165,7 @@
+             apfx += "current "
+             crnt_pfx = ">> "
+         else:
+-            crnt_pfx = "   "
++            crnt_pfx = None
+ 
+         text = crnt_pfx+self.name
+         attr = [(apfx+"frame name", 4+len(self.name))]
+</pre><h3>Mutant 3843</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -167,7 +167,7 @@
+         else:
+             crnt_pfx = "   "
+ 
+-        text = crnt_pfx+self.name
++        text = crnt_pfx-self.name
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+</pre><h3>Mutant 3844</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -167,7 +167,7 @@
+         else:
+             crnt_pfx = "   "
+ 
+-        text = crnt_pfx+self.name
++        text = None
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+</pre><h3>Mutant 3845</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -168,7 +168,7 @@
+             crnt_pfx = "   "
+ 
+         text = crnt_pfx+self.name
+-        attr = [(apfx+"frame name", 4+len(self.name))]
++        attr = [(apfx-"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+</pre><h3>Mutant 3846</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -168,7 +168,7 @@
+             crnt_pfx = "   "
+ 
+         text = crnt_pfx+self.name
+-        attr = [(apfx+"frame name", 4+len(self.name))]
++        attr = [(apfx+"XXframe nameXX", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+</pre><h3>Mutant 3847</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -168,7 +168,7 @@
+             crnt_pfx = "   "
+ 
+         text = crnt_pfx+self.name
+-        attr = [(apfx+"frame name", 4+len(self.name))]
++        attr = [(apfx+"frame name", 5+len(self.name))]
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+</pre><h3>Mutant 3848</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -168,7 +168,7 @@
+             crnt_pfx = "   "
+ 
+         text = crnt_pfx+self.name
+-        attr = [(apfx+"frame name", 4+len(self.name))]
++        attr = [(apfx+"frame name", 4-len(self.name))]
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+</pre><h3>Mutant 3849</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -168,7 +168,7 @@
+             crnt_pfx = "   "
+ 
+         text = crnt_pfx+self.name
+-        attr = [(apfx+"frame name", 4+len(self.name))]
++        attr = None
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+</pre><h3>Mutant 3850</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -170,7 +170,7 @@
+         text = crnt_pfx+self.name
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+-        if self.class_name is not None:
++        if self.class_name is  None:
+             text += " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+</pre><h3>Mutant 3851</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -171,7 +171,7 @@
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+-            text += " [%s]" % self.class_name
++            text = " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+</pre><h3>Mutant 3852</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -171,7 +171,7 @@
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+-            text += " [%s]" % self.class_name
++            text -= " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+</pre><h3>Mutant 3853</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -171,7 +171,7 @@
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+-            text += " [%s]" % self.class_name
++            text += "XX [%s]XX" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+</pre><h3>Mutant 3854</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -171,7 +171,7 @@
+         attr = [(apfx+"frame name", 4+len(self.name))]
+ 
+         if self.class_name is not None:
+-            text += " [%s]" % self.class_name
++            text += " [%s]" / self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+</pre><h3>Mutant 3855</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -172,7 +172,7 @@
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+-            attr.append((apfx+"frame class", len(self.class_name)+2))
++            attr.append((apfx-"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+</pre><h3>Mutant 3856</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -172,7 +172,7 @@
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+-            attr.append((apfx+"frame class", len(self.class_name)+2))
++            attr.append((apfx+"XXframe classXX", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+</pre><h3>Mutant 3857</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -172,7 +172,7 @@
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+-            attr.append((apfx+"frame class", len(self.class_name)+2))
++            attr.append((apfx+"frame class", len(self.class_name)-2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+</pre><h3>Mutant 3858</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -172,7 +172,7 @@
+ 
+         if self.class_name is not None:
+             text += " [%s]" % self.class_name
+-            attr.append((apfx+"frame class", len(self.class_name)+2))
++            attr.append((apfx+"frame class", len(self.class_name)+3))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+</pre><h3>Mutant 3859</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -174,7 +174,7 @@
+             text += " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+-        loc = " %s:%d" % (self.filename, self.line)
++        loc = "XX %s:%dXX" % (self.filename, self.line)
+         text += loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+</pre><h3>Mutant 3860</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -174,7 +174,7 @@
+             text += " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+-        loc = " %s:%d" % (self.filename, self.line)
++        loc = " %s:%d" / (self.filename, self.line)
+         text += loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+</pre><h3>Mutant 3861</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -174,7 +174,7 @@
+             text += " [%s]" % self.class_name
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+-        loc = " %s:%d" % (self.filename, self.line)
++        loc = None
+         text += loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+</pre><h3>Mutant 3862</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -175,7 +175,7 @@
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+-        text += loc
++        text = loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"frame location")
+</pre><h3>Mutant 3863</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -175,7 +175,7 @@
+             attr.append((apfx+"frame class", len(self.class_name)+2))
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+-        text += loc
++        text -= loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"frame location")
+</pre><h3>Mutant 3864</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -176,7 +176,7 @@
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+-        attr.append((apfx+"frame location", len(loc)))
++        attr.append((apfx-"frame location", len(loc)))
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"frame location")
+ 
+</pre><h3>Mutant 3865</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -176,7 +176,7 @@
+ 
+         loc = " %s:%d" % (self.filename, self.line)
+         text += loc
+-        attr.append((apfx+"frame location", len(loc)))
++        attr.append((apfx+"XXframe locationXX", len(loc)))
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"frame location")
+ 
+</pre><h3>Mutant 3866</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -178,7 +178,7 @@
+         text += loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+-        return make_canvas([text], [attr], maxcol, apfx+"frame location")
++        return make_canvas([text], [attr], maxcol, apfx-"frame location")
+ 
+     def keypress(self, size, key):
+         return key
+</pre><h3>Mutant 3867</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -178,7 +178,7 @@
+         text += loc
+         attr.append((apfx+"frame location", len(loc)))
+ 
+-        return make_canvas([text], [attr], maxcol, apfx+"frame location")
++        return make_canvas([text], [attr], maxcol, apfx+"XXframe locationXX")
+ 
+     def keypress(self, size, key):
+         return key
+</pre><h3>Mutant 3868</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -186,7 +186,7 @@
+ 
+ class BreakpointFrame(urwid.FlowWidget):
+     def __init__(self, is_current, filename, breakpoint):
+-        self.is_current = is_current
++        self.is_current = None
+         self.filename = filename
+         self.breakpoint = breakpoint
+         self.line = breakpoint.line  # Starts at 1
+</pre><h3>Mutant 3869</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -187,7 +187,7 @@
+ class BreakpointFrame(urwid.FlowWidget):
+     def __init__(self, is_current, filename, breakpoint):
+         self.is_current = is_current
+-        self.filename = filename
++        self.filename = None
+         self.breakpoint = breakpoint
+         self.line = breakpoint.line  # Starts at 1
+         self.enabled = breakpoint.enabled
+</pre><h3>Mutant 3870</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -188,7 +188,7 @@
+     def __init__(self, is_current, filename, breakpoint):
+         self.is_current = is_current
+         self.filename = filename
+-        self.breakpoint = breakpoint
++        self.breakpoint = None
+         self.line = breakpoint.line  # Starts at 1
+         self.enabled = breakpoint.enabled
+         self.hits = breakpoint.hits
+</pre><h3>Mutant 3871</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -189,7 +189,7 @@
+         self.is_current = is_current
+         self.filename = filename
+         self.breakpoint = breakpoint
+-        self.line = breakpoint.line  # Starts at 1
++        self.line = None  # Starts at 1
+         self.enabled = breakpoint.enabled
+         self.hits = breakpoint.hits
+ 
+</pre><h3>Mutant 3872</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -190,7 +190,7 @@
+         self.filename = filename
+         self.breakpoint = breakpoint
+         self.line = breakpoint.line  # Starts at 1
+-        self.enabled = breakpoint.enabled
++        self.enabled = None
+         self.hits = breakpoint.hits
+ 
+     def selectable(self):
+</pre><h3>Mutant 3873</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -191,7 +191,7 @@
+         self.breakpoint = breakpoint
+         self.line = breakpoint.line  # Starts at 1
+         self.enabled = breakpoint.enabled
+-        self.hits = breakpoint.hits
++        self.hits = None
+ 
+     def selectable(self):
+         return True
+</pre><h3>Mutant 3874</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -194,7 +194,7 @@
+         self.hits = breakpoint.hits
+ 
+     def selectable(self):
+-        return True
++        return False
+ 
+     def rows(self, size, focus=False):
+         return 1
+</pre><h3>Mutant 3875</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -196,7 +196,7 @@
+     def selectable(self):
+         return True
+ 
+-    def rows(self, size, focus=False):
++    def rows(self, size, focus=True):
+         return 1
+ 
+     def render(self, size, focus=False):
+</pre><h3>Mutant 3876</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -197,7 +197,7 @@
+         return True
+ 
+     def rows(self, size, focus=False):
+-        return 1
++        return 2
+ 
+     def render(self, size, focus=False):
+         maxcol = size[0]
+</pre><h3>Mutant 3877</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -199,7 +199,7 @@
+     def rows(self, size, focus=False):
+         return 1
+ 
+-    def render(self, size, focus=False):
++    def render(self, size, focus=True):
+         maxcol = size[0]
+         if focus:
+             apfx = "focused "
+</pre><h3>Mutant 3878</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -200,7 +200,7 @@
+         return 1
+ 
+     def render(self, size, focus=False):
+-        maxcol = size[0]
++        maxcol = size[1]
+         if focus:
+             apfx = "focused "
+         else:
+</pre><h3>Mutant 3879</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -200,7 +200,7 @@
+         return 1
+ 
+     def render(self, size, focus=False):
+-        maxcol = size[0]
++        maxcol = None
+         if focus:
+             apfx = "focused "
+         else:
+</pre><h3>Mutant 3880</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -202,7 +202,7 @@
+     def render(self, size, focus=False):
+         maxcol = size[0]
+         if focus:
+-            apfx = "focused "
++            apfx = "XXfocused XX"
+         else:
+             apfx = ""
+ 
+</pre><h3>Mutant 3881</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -202,7 +202,7 @@
+     def render(self, size, focus=False):
+         maxcol = size[0]
+         if focus:
+-            apfx = "focused "
++            apfx = None
+         else:
+             apfx = ""
+ 
+</pre><h3>Mutant 3882</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -204,7 +204,7 @@
+         if focus:
+             apfx = "focused "
+         else:
+-            apfx = ""
++            apfx = "XXXX"
+ 
+         bp_pfx = ""
+         if not self.enabled:
+</pre><h3>Mutant 3883</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -204,7 +204,7 @@
+         if focus:
+             apfx = "focused "
+         else:
+-            apfx = ""
++            apfx = None
+ 
+         bp_pfx = ""
+         if not self.enabled:
+</pre><h3>Mutant 3884</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -206,7 +206,7 @@
+         else:
+             apfx = ""
+ 
+-        bp_pfx = ""
++        bp_pfx = "XXXX"
+         if not self.enabled:
+             apfx += "disabled "
+             bp_pfx += "X"
+</pre><h3>Mutant 3885</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -206,7 +206,7 @@
+         else:
+             apfx = ""
+ 
+-        bp_pfx = ""
++        bp_pfx = None
+         if not self.enabled:
+             apfx += "disabled "
+             bp_pfx += "X"
+</pre><h3>Mutant 3886</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -207,7 +207,7 @@
+             apfx = ""
+ 
+         bp_pfx = ""
+-        if not self.enabled:
++        if  self.enabled:
+             apfx += "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+</pre><h3>Mutant 3887</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -208,7 +208,7 @@
+ 
+         bp_pfx = ""
+         if not self.enabled:
+-            apfx += "disabled "
++            apfx = "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+</pre><h3>Mutant 3888</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -208,7 +208,7 @@
+ 
+         bp_pfx = ""
+         if not self.enabled:
+-            apfx += "disabled "
++            apfx -= "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+</pre><h3>Mutant 3889</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -208,7 +208,7 @@
+ 
+         bp_pfx = ""
+         if not self.enabled:
+-            apfx += "disabled "
++            apfx += "XXdisabled XX"
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+</pre><h3>Mutant 3890</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -209,7 +209,7 @@
+         bp_pfx = ""
+         if not self.enabled:
+             apfx += "disabled "
+-            bp_pfx += "X"
++            bp_pfx = "X"
+         if self.is_current:
+             apfx += "current "
+             bp_pfx += ">>"
+</pre><h3>Mutant 3891</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -209,7 +209,7 @@
+         bp_pfx = ""
+         if not self.enabled:
+             apfx += "disabled "
+-            bp_pfx += "X"
++            bp_pfx -= "X"
+         if self.is_current:
+             apfx += "current "
+             bp_pfx += ">>"
+</pre><h3>Mutant 3892</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -209,7 +209,7 @@
+         bp_pfx = ""
+         if not self.enabled:
+             apfx += "disabled "
+-            bp_pfx += "X"
++            bp_pfx += "XXXXX"
+         if self.is_current:
+             apfx += "current "
+             bp_pfx += ">>"
+</pre><h3>Mutant 3893</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -211,7 +211,7 @@
+             apfx += "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+-            apfx += "current "
++            apfx = "current "
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+</pre><h3>Mutant 3894</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -211,7 +211,7 @@
+             apfx += "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+-            apfx += "current "
++            apfx -= "current "
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+</pre><h3>Mutant 3895</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -211,7 +211,7 @@
+             apfx += "disabled "
+             bp_pfx += "X"
+         if self.is_current:
+-            apfx += "current "
++            apfx += "XXcurrent XX"
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+</pre><h3>Mutant 3896</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -212,7 +212,7 @@
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+-            bp_pfx += ">>"
++            bp_pfx = ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+</pre><h3>Mutant 3897</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -212,7 +212,7 @@
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+-            bp_pfx += ">>"
++            bp_pfx -= ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+</pre><h3>Mutant 3898</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -212,7 +212,7 @@
+             bp_pfx += "X"
+         if self.is_current:
+             apfx += "current "
+-            bp_pfx += ">>"
++            bp_pfx += "XX>>XX"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+</pre><h3>Mutant 3899</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -213,7 +213,7 @@
+         if self.is_current:
+             apfx += "current "
+             bp_pfx += ">>"
+-        bp_pfx = bp_pfx.ljust(3)
++        bp_pfx = bp_pfx.ljust(4)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+</pre><h3>Mutant 3900</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -213,7 +213,7 @@
+         if self.is_current:
+             apfx += "current "
+             bp_pfx += ">>"
+-        bp_pfx = bp_pfx.ljust(3)
++        bp_pfx = None
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+</pre><h3>Mutant 3901</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -215,7 +215,7 @@
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+-        hits_label = "hits" if self.hits != 1 else "hit"
++        hits_label = "XXhitsXX" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+</pre><h3>Mutant 3902</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -215,7 +215,7 @@
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+-        hits_label = "hits" if self.hits != 1 else "hit"
++        hits_label = "hits" if self.hits == 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+</pre><h3>Mutant 3903</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -215,7 +215,7 @@
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+-        hits_label = "hits" if self.hits != 1 else "hit"
++        hits_label = "hits" if self.hits != 2 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+</pre><h3>Mutant 3904</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -215,7 +215,7 @@
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+-        hits_label = "hits" if self.hits != 1 else "hit"
++        hits_label = "hits" if self.hits != 1 else "XXhitXX"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+</pre><h3>Mutant 3905</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -215,7 +215,7 @@
+             bp_pfx += ">>"
+         bp_pfx = bp_pfx.ljust(3)
+ 
+-        hits_label = "hits" if self.hits != 1 else "hit"
++        hits_label = None
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+</pre><h3>Mutant 3906</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -216,7 +216,7 @@
+         bp_pfx = bp_pfx.ljust(3)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+-        loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
++        loc = f"XX {self.filename}:{self.line} ({self.hits} {hits_label})XX"
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+</pre><h3>Mutant 3907</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -216,7 +216,7 @@
+         bp_pfx = bp_pfx.ljust(3)
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+-        loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
++        loc = None
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+</pre><h3>Mutant 3908</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -217,7 +217,7 @@
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+-        text = bp_pfx+loc
++        text = bp_pfx-loc
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
+</pre><h3>Mutant 3909</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -217,7 +217,7 @@
+ 
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+-        text = bp_pfx+loc
++        text = None
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
+</pre><h3>Mutant 3910</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -218,7 +218,7 @@
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+-        attr = [(apfx+"breakpoint", len(text))]
++        attr = [(apfx-"breakpoint", len(text))]
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
+ 
+</pre><h3>Mutant 3911</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -218,7 +218,7 @@
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+-        attr = [(apfx+"breakpoint", len(text))]
++        attr = [(apfx+"XXbreakpointXX", len(text))]
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
+ 
+</pre><h3>Mutant 3912</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -218,7 +218,7 @@
+         hits_label = "hits" if self.hits != 1 else "hit"
+         loc = f" {self.filename}:{self.line} ({self.hits} {hits_label})"
+         text = bp_pfx+loc
+-        attr = [(apfx+"breakpoint", len(text))]
++        attr = None
+ 
+         return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
+ 
+</pre><h3>Mutant 3913</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -220,7 +220,7 @@
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+-        return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
++        return make_canvas([text], [attr], maxcol, apfx-"breakpoint")
+ 
+     def keypress(self, size, key):
+         return key
+</pre><h3>Mutant 3914</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -220,7 +220,7 @@
+         text = bp_pfx+loc
+         attr = [(apfx+"breakpoint", len(text))]
+ 
+-        return make_canvas([text], [attr], maxcol, apfx+"breakpoint")
++        return make_canvas([text], [attr], maxcol, apfx+"XXbreakpointXX")
+ 
+     def keypress(self, size, key):
+         return key
+</pre><h3>Mutant 3915</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -228,7 +228,7 @@
+ 
+ class SearchController:
+     def __init__(self, ui):
+-        self.ui = ui
++        self.ui = None
+         self.highlight_line = None
+ 
+         self.search_box = None
+</pre><h3>Mutant 3916</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -229,7 +229,7 @@
+ class SearchController:
+     def __init__(self, ui):
+         self.ui = ui
+-        self.highlight_line = None
++        self.highlight_line = ""
+ 
+         self.search_box = None
+         self.last_search_string = None
+</pre><h3>Mutant 3917</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -231,7 +231,7 @@
+         self.ui = ui
+         self.highlight_line = None
+ 
+-        self.search_box = None
++        self.search_box = ""
+         self.last_search_string = None
+ 
+     def cancel_highlight(self):
+</pre><h3>Mutant 3918</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -232,7 +232,7 @@
+         self.highlight_line = None
+ 
+         self.search_box = None
+-        self.last_search_string = None
++        self.last_search_string = ""
+ 
+     def cancel_highlight(self):
+         if self.highlight_line is not None:
+</pre><h3>Mutant 3919</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -235,7 +235,7 @@
+         self.last_search_string = None
+ 
+     def cancel_highlight(self):
+-        if self.highlight_line is not None:
++        if self.highlight_line is  None:
+             self.highlight_line.set_highlight(False)
+             self.highlight_line = None
+ 
+</pre><h3>Mutant 3920</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -236,7 +236,7 @@
+ 
+     def cancel_highlight(self):
+         if self.highlight_line is not None:
+-            self.highlight_line.set_highlight(False)
++            self.highlight_line.set_highlight(True)
+             self.highlight_line = None
+ 
+     def cancel_search(self):
+</pre><h3>Mutant 3921</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -237,7 +237,7 @@
+     def cancel_highlight(self):
+         if self.highlight_line is not None:
+             self.highlight_line.set_highlight(False)
+-            self.highlight_line = None
++            self.highlight_line = ""
+ 
+     def cancel_search(self):
+         self.cancel_highlight()
+</pre><h3>Mutant 3922</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -244,7 +244,7 @@
+         self.hide_search_ui()
+ 
+     def hide_search_ui(self):
+-        self.search_box = None
++        self.search_box = ""
+         del self.ui.lhs_col.contents[0]
+         self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[0])
+ 
+</pre><h3>Mutant 3923</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -245,7 +245,7 @@
+ 
+     def hide_search_ui(self):
+         self.search_box = None
+-        del self.ui.lhs_col.contents[0]
++        del self.ui.lhs_col.contents[1]
+         self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[0])
+ 
+     def open_search_ui(self):
+</pre><h3>Mutant 3924</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -246,7 +246,7 @@
+     def hide_search_ui(self):
+         self.search_box = None
+         del self.ui.lhs_col.contents[0]
+-        self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[0])
++        self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[1])
+ 
+     def open_search_ui(self):
+         lhs_col = self.ui.lhs_col
+</pre><h3>Mutant 3925</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -249,7 +249,7 @@
+         self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[0])
+ 
+     def open_search_ui(self):
+-        lhs_col = self.ui.lhs_col
++        lhs_col = None
+ 
+         if self.search_box is None:
+             _, self.search_start = self.ui.source.get_focus()
+</pre><h3>Mutant 3926</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -251,7 +251,7 @@
+     def open_search_ui(self):
+         lhs_col = self.ui.lhs_col
+ 
+-        if self.search_box is None:
++        if self.search_box is not None:
+             _, self.search_start = self.ui.source.get_focus()
+ 
+             self.search_box = SearchBox(self)
+</pre><h3>Mutant 3927</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -252,7 +252,7 @@
+         lhs_col = self.ui.lhs_col
+ 
+         if self.search_box is None:
+-            _, self.search_start = self.ui.source.get_focus()
++            _, self.search_start = None
+ 
+             self.search_box = SearchBox(self)
+             self.search_AttrMap = urwid.AttrMap(
+</pre><h3>Mutant 3928</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -254,7 +254,7 @@
+         if self.search_box is None:
+             _, self.search_start = self.ui.source.get_focus()
+ 
+-            self.search_box = SearchBox(self)
++            self.search_box = None
+             self.search_AttrMap = urwid.AttrMap(
+                     self.search_box, "search box")
+ 
+</pre><h3>Mutant 3929</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -256,7 +256,7 @@
+ 
+             self.search_box = SearchBox(self)
+             self.search_AttrMap = urwid.AttrMap(
+-                    self.search_box, "search box")
++                    self.search_box, "XXsearch boxXX")
+ 
+             lhs_col.item_types.insert(
+                     0, ("flow", None))
+</pre><h3>Mutant 3930</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -255,8 +255,7 @@
+             _, self.search_start = self.ui.source.get_focus()
+ 
+             self.search_box = SearchBox(self)
+-            self.search_AttrMap = urwid.AttrMap(
+-                    self.search_box, "search box")
++            self.search_AttrMap = None
+ 
+             lhs_col.item_types.insert(
+                     0, ("flow", None))
+</pre><h3>Mutant 3931</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -259,7 +259,7 @@
+                     self.search_box, "search box")
+ 
+             lhs_col.item_types.insert(
+-                    0, ("flow", None))
++                    1, ("flow", None))
+             lhs_col.widget_list.insert(0, self.search_AttrMap)
+             self.ui.reset_cmdline_size()
+ 
+</pre><h3>Mutant 3932</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -259,7 +259,7 @@
+                     self.search_box, "search box")
+ 
+             lhs_col.item_types.insert(
+-                    0, ("flow", None))
++                    0, ("XXflowXX", None))
+             lhs_col.widget_list.insert(0, self.search_AttrMap)
+             self.ui.reset_cmdline_size()
+ 
+</pre><h3>Mutant 3933</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -260,7 +260,7 @@
+ 
+             lhs_col.item_types.insert(
+                     0, ("flow", None))
+-            lhs_col.widget_list.insert(0, self.search_AttrMap)
++            lhs_col.widget_list.insert(1, self.search_AttrMap)
+             self.ui.reset_cmdline_size()
+ 
+         self.ui.columns.set_focus(lhs_col)
+</pre><h3>Mutant 3934</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -266,7 +266,7 @@
+         self.ui.columns.set_focus(lhs_col)
+         lhs_col.set_focus(self.search_AttrMap)
+ 
+-    def perform_search(self, dir, s=None, start=None, update_search_start=False):
++    def perform_search(self, dir, s=None, start=None, update_search_start=True):
+         self.cancel_highlight()
+ 
+         # self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[1])
+</pre><h3>Mutant 3935</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -271,7 +271,7 @@
+ 
+         # self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[1])
+ 
+-        if s is None:
++        if s is not None:
+             s = self.last_search_string
+ 
+             if s is None:
+</pre><h3>Mutant 3936</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -272,7 +272,7 @@
+         # self.ui.lhs_col.set_focus(self.ui.lhs_col.widget_list[1])
+ 
+         if s is None:
+-            s = self.last_search_string
++            s = None
+ 
+             if s is None:
+                 self.ui.message("No previous search term.")
+</pre><h3>Mutant 3937</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -274,7 +274,7 @@
+         if s is None:
+             s = self.last_search_string
+ 
+-            if s is None:
++            if s is not None:
+                 self.ui.message("No previous search term.")
+                 return False
+         else:
+</pre><h3>Mutant 3938</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -275,7 +275,7 @@
+             s = self.last_search_string
+ 
+             if s is None:
+-                self.ui.message("No previous search term.")
++                self.ui.message("XXNo previous search term.XX")
+                 return False
+         else:
+             self.last_search_string = s
+</pre><h3>Mutant 3939</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -276,7 +276,7 @@
+ 
+             if s is None:
+                 self.ui.message("No previous search term.")
+-                return False
++                return True
+         else:
+             self.last_search_string = s
+ 
+</pre><h3>Mutant 3940</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -278,7 +278,7 @@
+                 self.ui.message("No previous search term.")
+                 return False
+         else:
+-            self.last_search_string = s
++            self.last_search_string = None
+ 
+         if start is None:
+             start = self.search_start
+</pre><h3>Mutant 3941</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -280,7 +280,7 @@
+         else:
+             self.last_search_string = s
+ 
+-        if start is None:
++        if start is not None:
+             start = self.search_start
+ 
+         case_insensitive = s.lower() == s
+</pre><h3>Mutant 3942</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -281,7 +281,7 @@
+             self.last_search_string = s
+ 
+         if start is None:
+-            start = self.search_start
++            start = None
+ 
+         case_insensitive = s.lower() == s
+ 
+</pre><h3>Mutant 3943</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -283,7 +283,7 @@
+         if start is None:
+             start = self.search_start
+ 
+-        case_insensitive = s.lower() == s
++        case_insensitive = s.lower() != s
+ 
+         if start > len(self.ui.source):
+             start = 0
+</pre><h3>Mutant 3944</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -283,7 +283,7 @@
+         if start is None:
+             start = self.search_start
+ 
+-        case_insensitive = s.lower() == s
++        case_insensitive = None
+ 
+         if start > len(self.ui.source):
+             start = 0
+</pre><h3>Mutant 3945</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -285,7 +285,7 @@
+ 
+         case_insensitive = s.lower() == s
+ 
+-        if start > len(self.ui.source):
++        if start >= len(self.ui.source):
+             start = 0
+ 
+         i = (start+dir) % len(self.ui.source)
+</pre><h3>Mutant 3946</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -286,7 +286,7 @@
+         case_insensitive = s.lower() == s
+ 
+         if start > len(self.ui.source):
+-            start = 0
++            start = 1
+ 
+         i = (start+dir) % len(self.ui.source)
+ 
+</pre><h3>Mutant 3947</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -286,7 +286,7 @@
+         case_insensitive = s.lower() == s
+ 
+         if start > len(self.ui.source):
+-            start = 0
++            start = None
+ 
+         i = (start+dir) % len(self.ui.source)
+ 
+</pre><h3>Mutant 3948</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -288,7 +288,7 @@
+         if start > len(self.ui.source):
+             start = 0
+ 
+-        i = (start+dir) % len(self.ui.source)
++        i = (start-dir) % len(self.ui.source)
+ 
+         if i >= len(self.ui.source):
+             i = 0
+</pre><h3>Mutant 3949</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -288,7 +288,7 @@
+         if start > len(self.ui.source):
+             start = 0
+ 
+-        i = (start+dir) % len(self.ui.source)
++        i = (start+dir) / len(self.ui.source)
+ 
+         if i >= len(self.ui.source):
+             i = 0
+</pre><h3>Mutant 3950</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -288,7 +288,7 @@
+         if start > len(self.ui.source):
+             start = 0
+ 
+-        i = (start+dir) % len(self.ui.source)
++        i = None
+ 
+         if i >= len(self.ui.source):
+             i = 0
+</pre><h3>Mutant 3951</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -290,7 +290,7 @@
+ 
+         i = (start+dir) % len(self.ui.source)
+ 
+-        if i >= len(self.ui.source):
++        if i > len(self.ui.source):
+             i = 0
+ 
+         while i != start:
+</pre><h3>Mutant 3952</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -291,7 +291,7 @@
+         i = (start+dir) % len(self.ui.source)
+ 
+         if i >= len(self.ui.source):
+-            i = 0
++            i = 1
+ 
+         while i != start:
+             sline = self.ui.source[i].text
+</pre><h3>Mutant 3953</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -291,7 +291,7 @@
+         i = (start+dir) % len(self.ui.source)
+ 
+         if i >= len(self.ui.source):
+-            i = 0
++            i = None
+ 
+         while i != start:
+             sline = self.ui.source[i].text
+</pre><h3>Mutant 3954</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -293,7 +293,7 @@
+         if i >= len(self.ui.source):
+             i = 0
+ 
+-        while i != start:
++        while i == start:
+             sline = self.ui.source[i].text
+             if case_insensitive:
+                 sline = sline.lower()
+</pre><h3>Mutant 3955</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -294,7 +294,7 @@
+             i = 0
+ 
+         while i != start:
+-            sline = self.ui.source[i].text
++            sline = None
+             if case_insensitive:
+                 sline = sline.lower()
+ 
+</pre><h3>Mutant 3956</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -296,7 +296,7 @@
+         while i != start:
+             sline = self.ui.source[i].text
+             if case_insensitive:
+-                sline = sline.lower()
++                sline = None
+ 
+             if s in sline:
+                 sl = self.ui.source[i]
+</pre><h3>Mutant 3957</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -298,7 +298,7 @@
+             if case_insensitive:
+                 sline = sline.lower()
+ 
+-            if s in sline:
++            if s not in sline:
+                 sl = self.ui.source[i]
+                 sl.set_highlight(True)
+                 self.highlight_line = sl
+</pre><h3>Mutant 3958</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -299,7 +299,7 @@
+                 sline = sline.lower()
+ 
+             if s in sline:
+-                sl = self.ui.source[i]
++                sl = None
+                 sl.set_highlight(True)
+                 self.highlight_line = sl
+                 self.ui.source.set_focus(i)
+</pre><h3>Mutant 3959</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -300,7 +300,7 @@
+ 
+             if s in sline:
+                 sl = self.ui.source[i]
+-                sl.set_highlight(True)
++                sl.set_highlight(False)
+                 self.highlight_line = sl
+                 self.ui.source.set_focus(i)
+ 
+</pre><h3>Mutant 3960</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -301,7 +301,7 @@
+             if s in sline:
+                 sl = self.ui.source[i]
+                 sl.set_highlight(True)
+-                self.highlight_line = sl
++                self.highlight_line = None
+                 self.ui.source.set_focus(i)
+ 
+                 if update_search_start:
+</pre><h3>Mutant 3961</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -305,7 +305,7 @@
+                 self.ui.source.set_focus(i)
+ 
+                 if update_search_start:
+-                    self.search_start = i
++                    self.search_start = None
+ 
+                 return True
+ 
+</pre><h3>Mutant 3962</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -307,7 +307,7 @@
+                 if update_search_start:
+                     self.search_start = i
+ 
+-                return True
++                return False
+ 
+             i = (i+dir) % len(self.ui.source)
+ 
+</pre><h3>Mutant 3963</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -309,7 +309,7 @@
+ 
+                 return True
+ 
+-            i = (i+dir) % len(self.ui.source)
++            i = (i-dir) % len(self.ui.source)
+ 
+         return False
+ 
+</pre><h3>Mutant 3964</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -309,7 +309,7 @@
+ 
+                 return True
+ 
+-            i = (i+dir) % len(self.ui.source)
++            i = (i+dir) / len(self.ui.source)
+ 
+         return False
+ 
+</pre><h3>Mutant 3965</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -309,7 +309,7 @@
+ 
+                 return True
+ 
+-            i = (i+dir) % len(self.ui.source)
++            i = None
+ 
+         return False
+ 
+</pre><h3>Mutant 3966</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -311,7 +311,7 @@
+ 
+             i = (i+dir) % len(self.ui.source)
+ 
+-        return False
++        return True
+ 
+ 
+ class SearchBox(urwid.Edit):
+</pre><h3>Mutant 3967</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -316,7 +316,7 @@
+ 
+ class SearchBox(urwid.Edit):
+     def __init__(self, controller):
+-        urwid.Edit.__init__(self, [("label", "Search: ")], "")
++        urwid.Edit.__init__(self, [("XXlabelXX", "Search: ")], "")
+         self.controller = controller
+ 
+     def keypress(self, size, key):
+</pre><h3>Mutant 3968</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -316,7 +316,7 @@
+ 
+ class SearchBox(urwid.Edit):
+     def __init__(self, controller):
+-        urwid.Edit.__init__(self, [("label", "Search: ")], "")
++        urwid.Edit.__init__(self, [("label", "XXSearch: XX")], "")
+         self.controller = controller
+ 
+     def keypress(self, size, key):
+</pre><h3>Mutant 3969</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -316,7 +316,7 @@
+ 
+ class SearchBox(urwid.Edit):
+     def __init__(self, controller):
+-        urwid.Edit.__init__(self, [("label", "Search: ")], "")
++        urwid.Edit.__init__(self, [("label", "Search: ")], "XXXX")
+         self.controller = controller
+ 
+     def keypress(self, size, key):
+</pre><h3>Mutant 3970</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -317,7 +317,7 @@
+ class SearchBox(urwid.Edit):
+     def __init__(self, controller):
+         urwid.Edit.__init__(self, [("label", "Search: ")], "")
+-        self.controller = controller
++        self.controller = None
+ 
+     def keypress(self, size, key):
+         result = urwid.Edit.keypress(self, size, key)
+</pre><h3>Mutant 3971</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -320,7 +320,7 @@
+         self.controller = controller
+ 
+     def keypress(self, size, key):
+-        result = urwid.Edit.keypress(self, size, key)
++        result = None
+         txt = self.get_edit_text()
+ 
+         if result is not None:
+</pre><h3>Mutant 3972</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -321,7 +321,7 @@
+ 
+     def keypress(self, size, key):
+         result = urwid.Edit.keypress(self, size, key)
+-        txt = self.get_edit_text()
++        txt = None
+ 
+         if result is not None:
+             if key == "esc":
+</pre><h3>Mutant 3973</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -323,7 +323,7 @@
+         result = urwid.Edit.keypress(self, size, key)
+         txt = self.get_edit_text()
+ 
+-        if result is not None:
++        if result is  None:
+             if key == "esc":
+                 self.controller.cancel_search()
+                 return None
+</pre><h3>Mutant 3974</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -324,7 +324,7 @@
+         txt = self.get_edit_text()
+ 
+         if result is not None:
+-            if key == "esc":
++            if key != "esc":
+                 self.controller.cancel_search()
+                 return None
+             elif key == "enter":
+</pre><h3>Mutant 3975</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -324,7 +324,7 @@
+         txt = self.get_edit_text()
+ 
+         if result is not None:
+-            if key == "esc":
++            if key == "XXescXX":
+                 self.controller.cancel_search()
+                 return None
+             elif key == "enter":
+</pre><h3>Mutant 3976</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -327,7 +327,7 @@
+             if key == "esc":
+                 self.controller.cancel_search()
+                 return None
+-            elif key == "enter":
++            elif key != "enter":
+                 if txt:
+                     self.controller.hide_search_ui()
+                     self.controller.perform_search(dir=1, s=txt,
+</pre><h3>Mutant 3977</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -327,7 +327,7 @@
+             if key == "esc":
+                 self.controller.cancel_search()
+                 return None
+-            elif key == "enter":
++            elif key == "XXenterXX":
+                 if txt:
+                     self.controller.hide_search_ui()
+                     self.controller.perform_search(dir=1, s=txt,
+</pre><h3>Mutant 3978</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -330,7 +330,7 @@
+             elif key == "enter":
+                 if txt:
+                     self.controller.hide_search_ui()
+-                    self.controller.perform_search(dir=1, s=txt,
++                    self.controller.perform_search(dir=2, s=txt,
+                             update_search_start=True)
+                 else:
+                     self.controller.cancel_search()
+</pre><h3>Mutant 3979</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -331,7 +331,7 @@
+                 if txt:
+                     self.controller.hide_search_ui()
+                     self.controller.perform_search(dir=1, s=txt,
+-                            update_search_start=True)
++                            update_search_start=False)
+                 else:
+                     self.controller.cancel_search()
+                 return None
+</pre><h3>Mutant 3980</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -336,7 +336,7 @@
+                     self.controller.cancel_search()
+                 return None
+         else:
+-            if self.controller.perform_search(dir=1, s=txt):
++            if self.controller.perform_search(dir=2, s=txt):
+                 self.controller.search_AttrMap.set_attr_map({None: "search box"})
+             else:
+                 self.controller.search_AttrMap.set_attr_map(
+</pre><h3>Mutant 3981</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -337,7 +337,7 @@
+                 return None
+         else:
+             if self.controller.perform_search(dir=1, s=txt):
+-                self.controller.search_AttrMap.set_attr_map({None: "search box"})
++                self.controller.search_AttrMap.set_attr_map({None: "XXsearch boxXX"})
+             else:
+                 self.controller.search_AttrMap.set_attr_map(
+                         {None: "search not found"})
+</pre><h3>Mutant 3982</h3><pre>--- ./ui_tools.py
++++ ./ui_tools.py
+@@ -340,7 +340,7 @@
+                 self.controller.search_AttrMap.set_attr_map({None: "search box"})
+             else:
+                 self.controller.search_AttrMap.set_attr_map(
+-                        {None: "search not found"})
++                        {None: "XXsearch not foundXX"})
+ 
+         return result
+ 
+</pre></body></html>

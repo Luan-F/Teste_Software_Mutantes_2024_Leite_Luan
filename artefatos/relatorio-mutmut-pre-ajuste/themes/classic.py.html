@@ -1,0 +1,1259 @@
+<html><body><h1>./themes/classic.py</h1>Killed 0 out of 110 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 5216</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -1,7 +1,7 @@
+ from pudb.themes.utils import add_setting, link
+ 
+ 
+-link("current breakpoint", "current frame name")
++link("XXcurrent breakpointXX", "current frame name")
+ link("focused current breakpoint", "focused current frame name")
+ 
+ palette_dict = {
+</pre><h3>Mutant 5217</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -1,7 +1,7 @@
+ from pudb.themes.utils import add_setting, link
+ 
+ 
+-link("current breakpoint", "current frame name")
++link("current breakpoint", "XXcurrent frame nameXX")
+ link("focused current breakpoint", "focused current frame name")
+ 
+ palette_dict = {
+</pre><h3>Mutant 5218</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -2,7 +2,7 @@
+ 
+ 
+ link("current breakpoint", "current frame name")
+-link("focused current breakpoint", "focused current frame name")
++link("XXfocused current breakpointXX", "focused current frame name")
+ 
+ palette_dict = {
+     # {{{ base styles
+</pre><h3>Mutant 5219</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -2,7 +2,7 @@
+ 
+ 
+ link("current breakpoint", "current frame name")
+-link("focused current breakpoint", "focused current frame name")
++link("focused current breakpoint", "XXfocused current frame nameXX")
+ 
+ palette_dict = {
+     # {{{ base styles
+</pre><h3>Mutant 5220</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "XXbackgroundXX": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+</pre><h3>Mutant 5221</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "background": ("XXblackXX", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+</pre><h3>Mutant 5222</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -6,7 +6,7 @@
+ 
+ palette_dict = {
+     # {{{ base styles
+-    "background": ("black", "light gray"),
++    "background": ("black", "XXlight grayXX"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+</pre><h3>Mutant 5223</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "XXselectableXX": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+</pre><h3>Mutant 5224</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "selectable": ("XXblackXX", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+</pre><h3>Mutant 5225</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -7,7 +7,7 @@
+ palette_dict = {
+     # {{{ base styles
+     "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
++    "selectable": ("black", "XXdark cyanXX"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+</pre><h3>Mutant 5226</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "XXfocused selectableXX": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5227</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "focused selectable": ("XXblackXX", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5228</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -8,7 +8,7 @@
+     # {{{ base styles
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
++    "focused selectable": ("black", "XXlight cyanXX"),
+     "highlighted": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+</pre><h3>Mutant 5229</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "highlighted": ("dark blue", "yellow"),
++    "XXhighlightedXX": ("dark blue", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5230</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "highlighted": ("dark blue", "yellow"),
++    "highlighted": ("XXdark blueXX", "yellow"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5231</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -9,7 +9,7 @@
+     "background": ("black", "light gray"),
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+-    "highlighted": ("dark blue", "yellow"),
++    "highlighted": ("dark blue", "XXyellowXX"),
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+</pre><h3>Mutant 5232</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+-    "hotkey": (add_setting("black", "underline"), "light gray"),
++    "XXhotkeyXX": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+</pre><h3>Mutant 5233</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+-    "hotkey": (add_setting("black", "underline"), "light gray"),
++    "hotkey": (add_setting("XXblackXX", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+</pre><h3>Mutant 5234</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+-    "hotkey": (add_setting("black", "underline"), "light gray"),
++    "hotkey": (add_setting("black", "XXunderlineXX"), "light gray"),
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+</pre><h3>Mutant 5235</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -10,7 +10,7 @@
+     "selectable": ("black", "dark cyan"),
+     "focused selectable": ("black", "light cyan"),
+     "highlighted": ("dark blue", "yellow"),
+-    "hotkey": (add_setting("black", "underline"), "light gray"),
++    "hotkey": (add_setting("black", "underline"), "XXlight grayXX"),
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+</pre><h3>Mutant 5236</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -13,7 +13,7 @@
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+-    "header": ("dark blue", "light gray"),
++    "XXheaderXX": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+</pre><h3>Mutant 5237</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -13,7 +13,7 @@
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+-    "header": ("dark blue", "light gray"),
++    "header": ("XXdark blueXX", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+</pre><h3>Mutant 5238</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -13,7 +13,7 @@
+     "hotkey": (add_setting("black", "underline"), "light gray"),
+     # }}}
+     # {{{ general ui
+-    "header": ("dark blue", "light gray"),
++    "header": ("dark blue", "XXlight grayXX"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+</pre><h3>Mutant 5239</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "XXdialog titleXX": (add_setting("white", "bold"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5240</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("XXwhiteXX", "bold"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5241</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("white", "XXboldXX"), "dark blue"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5242</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -14,7 +14,7 @@
+     # }}}
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
++    "dialog title": (add_setting("white", "bold"), "XXdark blueXX"),
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+</pre><h3>Mutant 5243</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "warning": (add_setting("white", "bold"), "dark red"),
++    "XXwarningXX": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+</pre><h3>Mutant 5244</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "warning": (add_setting("white", "bold"), "dark red"),
++    "warning": (add_setting("XXwhiteXX", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+</pre><h3>Mutant 5245</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "warning": (add_setting("white", "bold"), "dark red"),
++    "warning": (add_setting("white", "XXboldXX"), "dark red"),
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+</pre><h3>Mutant 5246</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -15,7 +15,7 @@
+     # {{{ general ui
+     "header": ("dark blue", "light gray"),
+     "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "warning": (add_setting("white", "bold"), "dark red"),
++    "warning": (add_setting("white", "bold"), "XXdark redXX"),
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+</pre><h3>Mutant 5247</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -18,7 +18,7 @@
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+-    "source": ("yellow", "dark blue"),
++    "XXsourceXX": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+</pre><h3>Mutant 5248</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -18,7 +18,7 @@
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+-    "source": ("yellow", "dark blue"),
++    "source": ("XXyellowXX", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+</pre><h3>Mutant 5249</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -18,7 +18,7 @@
+     "warning": (add_setting("white", "bold"), "dark red"),
+     # }}}
+     # {{{ source view
+-    "source": ("yellow", "dark blue"),
++    "source": ("yellow", "XXdark blueXX"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+</pre><h3>Mutant 5250</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -19,7 +19,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+-    "current source": ("dark blue", "dark green"),
++    "XXcurrent sourceXX": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+</pre><h3>Mutant 5251</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -19,7 +19,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+-    "current source": ("dark blue", "dark green"),
++    "current source": ("XXdark blueXX", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+</pre><h3>Mutant 5252</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -19,7 +19,7 @@
+     # }}}
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+-    "current source": ("dark blue", "dark green"),
++    "current source": ("dark blue", "XXdark greenXX"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+</pre><h3>Mutant 5253</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -20,7 +20,7 @@
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+-    "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
++    "XXbreakpoint sourceXX": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+</pre><h3>Mutant 5254</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -20,7 +20,7 @@
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+-    "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
++    "breakpoint source": (add_setting("XXyellowXX", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+</pre><h3>Mutant 5255</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -20,7 +20,7 @@
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+-    "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
++    "breakpoint source": (add_setting("yellow", "XXboldXX"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+</pre><h3>Mutant 5256</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -20,7 +20,7 @@
+     # {{{ source view
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+-    "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
++    "breakpoint source": (add_setting("yellow", "bold"), "XXdark redXX"),
+     "line number": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+</pre><h3>Mutant 5257</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -21,7 +21,7 @@
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+-    "line number": ("light gray", "dark blue"),
++    "XXline numberXX": ("light gray", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5258</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -21,7 +21,7 @@
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+-    "line number": ("light gray", "dark blue"),
++    "line number": ("XXlight grayXX", "dark blue"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5259</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -21,7 +21,7 @@
+     "source": ("yellow", "dark blue"),
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+-    "line number": ("light gray", "dark blue"),
++    "line number": ("light gray", "XXdark blueXX"),
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+</pre><h3>Mutant 5260</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -22,7 +22,7 @@
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+-    "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
++    "XXbreakpoint markerXX": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5261</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -22,7 +22,7 @@
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+-    "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
++    "breakpoint marker": (add_setting("XXdark redXX", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5262</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -22,7 +22,7 @@
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+-    "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
++    "breakpoint marker": (add_setting("dark red", "XXboldXX"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5263</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -22,7 +22,7 @@
+     "current source": ("dark blue", "dark green"),
+     "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+     "line number": ("light gray", "dark blue"),
+-    "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
++    "breakpoint marker": (add_setting("dark red", "bold"), "XXdark blueXX"),
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5264</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -25,7 +25,7 @@
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "XXsidebar twoXX": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5265</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -25,7 +25,7 @@
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "sidebar two": ("XXdark blueXX", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5266</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -25,7 +25,7 @@
+     "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+     # }}}
+     # {{{ sidebar
+-    "sidebar two": ("dark blue", "dark cyan"),
++    "sidebar two": ("dark blue", "XXdark cyanXX"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+</pre><h3>Mutant 5267</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -26,7 +26,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "XXsidebar threeXX": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5268</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -26,7 +26,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "sidebar three": ("XXdark grayXX", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5269</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -26,7 +26,7 @@
+     # }}}
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
++    "sidebar three": ("dark gray", "XXdark cyanXX"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+</pre><h3>Mutant 5270</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -27,7 +27,7 @@
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "XXfocused sidebar twoXX": ("dark blue", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5271</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -27,7 +27,7 @@
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "focused sidebar two": ("XXdark blueXX", "light cyan"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5272</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -27,7 +27,7 @@
+     # {{{ sidebar
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
++    "focused sidebar two": ("dark blue", "XXlight cyanXX"),
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+</pre><h3>Mutant 5273</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -28,7 +28,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "XXfocused sidebar threeXX": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+</pre><h3>Mutant 5274</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -28,7 +28,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "focused sidebar three": ("XXdark grayXX", "light cyan"),
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+</pre><h3>Mutant 5275</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -28,7 +28,7 @@
+     "sidebar two": ("dark blue", "dark cyan"),
+     "sidebar three": ("dark gray", "dark cyan"),
+     "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
++    "focused sidebar three": ("dark gray", "XXlight cyanXX"),
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+</pre><h3>Mutant 5276</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -31,7 +31,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "return label": ("white", "dark blue"),
++    "XXreturn labelXX": ("white", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5277</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -31,7 +31,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "return label": ("white", "dark blue"),
++    "return label": ("XXwhiteXX", "dark blue"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5278</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -31,7 +31,7 @@
+     "focused sidebar three": ("dark gray", "light cyan"),
+     # }}}
+     # {{{ variables view
+-    "return label": ("white", "dark blue"),
++    "return label": ("white", "XXdark blueXX"),
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+</pre><h3>Mutant 5279</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -32,7 +32,7 @@
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "XXfocused return labelXX": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5280</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -32,7 +32,7 @@
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "focused return label": ("XXlight grayXX", "dark blue"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5281</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -32,7 +32,7 @@
+     # }}}
+     # {{{ variables view
+     "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
++    "focused return label": ("light gray", "XXdark blueXX"),
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+</pre><h3>Mutant 5282</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -35,7 +35,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "XXcurrent frame nameXX": (add_setting("white", "bold"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5283</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -35,7 +35,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("XXwhiteXX", "bold"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5284</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -35,7 +35,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("white", "XXboldXX"), "dark cyan"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5285</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -35,7 +35,7 @@
+     "focused return label": ("light gray", "dark blue"),
+     # }}}
+     # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
++    "current frame name": (add_setting("white", "bold"), "XXdark cyanXX"),
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+</pre><h3>Mutant 5286</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -36,7 +36,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "XXfocused current frame nameXX": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+</pre><h3>Mutant 5287</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -36,7 +36,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("XXblackXX", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+</pre><h3>Mutant 5288</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -36,7 +36,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("black", "XXboldXX"), "light cyan"),
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+</pre><h3>Mutant 5289</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -36,7 +36,7 @@
+     # }}}
+     # {{{ stack
+     "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
++    "focused current frame name": (add_setting("black", "bold"), "XXlight cyanXX"),
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+</pre><h3>Mutant 5290</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -39,7 +39,7 @@
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+-    "command line output": ("light cyan", "dark blue"),
++    "XXcommand line outputXX": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5291</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -39,7 +39,7 @@
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+-    "command line output": ("light cyan", "dark blue"),
++    "command line output": ("XXlight cyanXX", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5292</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -39,7 +39,7 @@
+     "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+     # }}}
+     # {{{ shell
+-    "command line output": ("light cyan", "dark blue"),
++    "command line output": ("light cyan", "XXdark blueXX"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5293</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -40,7 +40,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+-    "command line prompt": (add_setting("white", "bold"), "dark blue"),
++    "XXcommand line promptXX": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5294</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -40,7 +40,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+-    "command line prompt": (add_setting("white", "bold"), "dark blue"),
++    "command line prompt": (add_setting("XXwhiteXX", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5295</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -40,7 +40,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+-    "command line prompt": (add_setting("white", "bold"), "dark blue"),
++    "command line prompt": (add_setting("white", "XXboldXX"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5296</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -40,7 +40,7 @@
+     # }}}
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+-    "command line prompt": (add_setting("white", "bold"), "dark blue"),
++    "command line prompt": (add_setting("white", "bold"), "XXdark blueXX"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+</pre><h3>Mutant 5297</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -41,7 +41,7 @@
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+-    "command line error": (add_setting("light green", "bold"), "dark blue"),
++    "XXcommand line errorXX": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+</pre><h3>Mutant 5298</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -41,7 +41,7 @@
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+-    "command line error": (add_setting("light green", "bold"), "dark blue"),
++    "command line error": (add_setting("XXlight greenXX", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+</pre><h3>Mutant 5299</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -41,7 +41,7 @@
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+-    "command line error": (add_setting("light green", "bold"), "dark blue"),
++    "command line error": (add_setting("light green", "XXboldXX"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+</pre><h3>Mutant 5300</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -41,7 +41,7 @@
+     # {{{ shell
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+-    "command line error": (add_setting("light green", "bold"), "dark blue"),
++    "command line error": (add_setting("light green", "bold"), "XXdark blueXX"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+</pre><h3>Mutant 5301</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -42,7 +42,7 @@
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+-    "command line clear button": (add_setting("white", "bold"), "dark blue"),
++    "XXcommand line clear buttonXX": (add_setting("white", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+</pre><h3>Mutant 5302</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -42,7 +42,7 @@
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+-    "command line clear button": (add_setting("white", "bold"), "dark blue"),
++    "command line clear button": (add_setting("XXwhiteXX", "bold"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+</pre><h3>Mutant 5303</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -42,7 +42,7 @@
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+-    "command line clear button": (add_setting("white", "bold"), "dark blue"),
++    "command line clear button": (add_setting("white", "XXboldXX"), "dark blue"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+</pre><h3>Mutant 5304</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -42,7 +42,7 @@
+     "command line output": ("light cyan", "dark blue"),
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+-    "command line clear button": (add_setting("white", "bold"), "dark blue"),
++    "command line clear button": (add_setting("white", "bold"), "XXdark blueXX"),
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+</pre><h3>Mutant 5305</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -43,7 +43,7 @@
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+-    "command line focused button": ("dark blue", "dark cyan"),
++    "XXcommand line focused buttonXX": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5306</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -43,7 +43,7 @@
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+-    "command line focused button": ("dark blue", "dark cyan"),
++    "command line focused button": ("XXdark blueXX", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5307</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -43,7 +43,7 @@
+     "command line prompt": (add_setting("white", "bold"), "dark blue"),
+     "command line error": (add_setting("light green", "bold"), "dark blue"),
+     "command line clear button": (add_setting("white", "bold"), "dark blue"),
+-    "command line focused button": ("dark blue", "dark cyan"),
++    "command line focused button": ("dark blue", "XXdark cyanXX"),
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+</pre><h3>Mutant 5308</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -46,7 +46,7 @@
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword": (add_setting("white", "bold"), "dark blue"),
++    "XXkeywordXX": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+</pre><h3>Mutant 5309</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -46,7 +46,7 @@
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword": (add_setting("white", "bold"), "dark blue"),
++    "keyword": (add_setting("XXwhiteXX", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+</pre><h3>Mutant 5310</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -46,7 +46,7 @@
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword": (add_setting("white", "bold"), "dark blue"),
++    "keyword": (add_setting("white", "XXboldXX"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+</pre><h3>Mutant 5311</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -46,7 +46,7 @@
+     "command line focused button": ("dark blue", "dark cyan"),
+     # }}}
+     # {{{ Code syntax
+-    "keyword": (add_setting("white", "bold"), "dark blue"),
++    "keyword": (add_setting("white", "bold"), "XXdark blueXX"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+</pre><h3>Mutant 5312</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -47,7 +47,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+-    "function": ("light cyan", "dark blue"),
++    "XXfunctionXX": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+</pre><h3>Mutant 5313</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -47,7 +47,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+-    "function": ("light cyan", "dark blue"),
++    "function": ("XXlight cyanXX", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+</pre><h3>Mutant 5314</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -47,7 +47,7 @@
+     # }}}
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+-    "function": ("light cyan", "dark blue"),
++    "function": ("light cyan", "XXdark blueXX"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+</pre><h3>Mutant 5315</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -48,7 +48,7 @@
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+-    "literal": (add_setting("light green", "bold"), "dark blue"),
++    "XXliteralXX": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5316</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -48,7 +48,7 @@
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+-    "literal": (add_setting("light green", "bold"), "dark blue"),
++    "literal": (add_setting("XXlight greenXX", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5317</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -48,7 +48,7 @@
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+-    "literal": (add_setting("light green", "bold"), "dark blue"),
++    "literal": (add_setting("light green", "XXboldXX"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5318</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -48,7 +48,7 @@
+     # {{{ Code syntax
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+-    "literal": (add_setting("light green", "bold"), "dark blue"),
++    "literal": (add_setting("light green", "bold"), "XXdark blueXX"),
+     "punctuation": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+</pre><h3>Mutant 5319</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -49,7 +49,7 @@
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+-    "punctuation": ("light gray", "dark blue"),
++    "XXpunctuationXX": ("light gray", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+ }
+</pre><h3>Mutant 5320</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -49,7 +49,7 @@
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+-    "punctuation": ("light gray", "dark blue"),
++    "punctuation": ("XXlight grayXX", "dark blue"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+ }
+</pre><h3>Mutant 5321</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -49,7 +49,7 @@
+     "keyword": (add_setting("white", "bold"), "dark blue"),
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+-    "punctuation": ("light gray", "dark blue"),
++    "punctuation": ("light gray", "XXdark blueXX"),
+     "comment": ("dark cyan", "dark blue"),
+     # }}}
+ }
+</pre><h3>Mutant 5322</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -50,7 +50,7 @@
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+-    "comment": ("dark cyan", "dark blue"),
++    "XXcommentXX": ("dark cyan", "dark blue"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5323</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -50,7 +50,7 @@
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+-    "comment": ("dark cyan", "dark blue"),
++    "comment": ("XXdark cyanXX", "dark blue"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5324</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -50,7 +50,7 @@
+     "function": ("light cyan", "dark blue"),
+     "literal": (add_setting("light green", "bold"), "dark blue"),
+     "punctuation": ("light gray", "dark blue"),
+-    "comment": ("dark cyan", "dark blue"),
++    "comment": ("dark cyan", "XXdark blueXX"),
+     # }}}
+ }
+ 
+</pre><h3>Mutant 5325</h3><pre>--- ./themes/classic.py
++++ ./themes/classic.py
+@@ -4,55 +4,7 @@
+ link("current breakpoint", "current frame name")
+ link("focused current breakpoint", "focused current frame name")
+ 
+-palette_dict = {
+-    # {{{ base styles
+-    "background": ("black", "light gray"),
+-    "selectable": ("black", "dark cyan"),
+-    "focused selectable": ("black", "light cyan"),
+-    "highlighted": ("dark blue", "yellow"),
+-    "hotkey": (add_setting("black", "underline"), "light gray"),
+-    # }}}
+-    # {{{ general ui
+-    "header": ("dark blue", "light gray"),
+-    "dialog title": (add_setting("white", "bold"), "dark blue"),
+-    "warning": (add_setting("white", "bold"), "dark red"),
+-    # }}}
+-    # {{{ source view
+-    "source": ("yellow", "dark blue"),
+-    "current source": ("dark blue", "dark green"),
+-    "breakpoint source": (add_setting("yellow", "bold"), "dark red"),
+-    "line number": ("light gray", "dark blue"),
+-    "breakpoint marker": (add_setting("dark red", "bold"), "dark blue"),
+-    # }}}
+-    # {{{ sidebar
+-    "sidebar two": ("dark blue", "dark cyan"),
+-    "sidebar three": ("dark gray", "dark cyan"),
+-    "focused sidebar two": ("dark blue", "light cyan"),
+-    "focused sidebar three": ("dark gray", "light cyan"),
+-    # }}}
+-    # {{{ variables view
+-    "return label": ("white", "dark blue"),
+-    "focused return label": ("light gray", "dark blue"),
+-    # }}}
+-    # {{{ stack
+-    "current frame name": (add_setting("white", "bold"), "dark cyan"),
+-    "focused current frame name": (add_setting("black", "bold"), "light cyan"),
+-    # }}}
+-    # {{{ shell
+-    "command line output": ("light cyan", "dark blue"),
+-    "command line prompt": (add_setting("white", "bold"), "dark blue"),
+-    "command line error": (add_setting("light green", "bold"), "dark blue"),
+-    "command line clear button": (add_setting("white", "bold"), "dark blue"),
+-    "command line focused button": ("dark blue", "dark cyan"),
+-    # }}}
+-    # {{{ Code syntax
+-    "keyword": (add_setting("white", "bold"), "dark blue"),
+-    "function": ("light cyan", "dark blue"),
+-    "literal": (add_setting("light green", "bold"), "dark blue"),
+-    "punctuation": ("light gray", "dark blue"),
+-    "comment": ("dark cyan", "dark blue"),
+-    # }}}
+-}
++palette_dict = None
+ 
+ # vim: foldmethod=marker
+ 
+</pre></body></html>

@@ -1,0 +1,1309 @@
+<html><body><h1>./remote.py</h1>Killed 0 out of 117 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 658</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -50,7 +50,7 @@
+            "default_port", "debugger", "set_trace",
+            "debug_remote_on_single_rank"]
+ 
+-default_port = 6899
++default_port = 6900
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+</pre><h3>Mutant 659</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -50,7 +50,7 @@
+            "default_port", "debugger", "set_trace",
+            "debug_remote_on_single_rank"]
+ 
+-default_port = 6899
++default_port = None
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+</pre><h3>Mutant 660</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -52,7 +52,7 @@
+ 
+ default_port = 6899
+ 
+-PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
++PUDB_RDB_HOST = os.environ.get("XXPUDB_RDB_HOSTXX") or "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+</pre><h3>Mutant 661</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -52,7 +52,7 @@
+ 
+ default_port = 6899
+ 
+-PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
++PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "XX127.0.0.1XX"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+</pre><h3>Mutant 662</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -52,7 +52,7 @@
+ 
+ default_port = 6899
+ 
+-PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
++PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") and "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+</pre><h3>Mutant 663</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -52,7 +52,7 @@
+ 
+ default_port = 6899
+ 
+-PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
++PUDB_RDB_HOST = None
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+</pre><h3>Mutant 664</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -53,7 +53,7 @@
+ default_port = 6899
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+-PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
++PUDB_RDB_PORT = int(os.environ.get("XXPUDB_RDB_PORTXX") or default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+ #: Holds the currently active debugger.
+</pre><h3>Mutant 665</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -53,7 +53,7 @@
+ default_port = 6899
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+-PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
++PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") and default_port)
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+ #: Holds the currently active debugger.
+</pre><h3>Mutant 666</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -53,7 +53,7 @@
+ default_port = 6899
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+-PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
++PUDB_RDB_PORT = None
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+ #: Holds the currently active debugger.
+</pre><h3>Mutant 667</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -54,7 +54,7 @@
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+-PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
++PUDB_RDB_REVERSE = bool(os.environ.get("XXPUDB_RDB_REVERSEXX"))
+ 
+ #: Holds the currently active debugger.
+ _current = [None]
+</pre><h3>Mutant 668</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -54,7 +54,7 @@
+ 
+ PUDB_RDB_HOST = os.environ.get("PUDB_RDB_HOST") or "127.0.0.1"
+ PUDB_RDB_PORT = int(os.environ.get("PUDB_RDB_PORT") or default_port)
+-PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
++PUDB_RDB_REVERSE = None
+ 
+ #: Holds the currently active debugger.
+ _current = [None]
+</pre><h3>Mutant 669</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -57,7 +57,7 @@
+ PUDB_RDB_REVERSE = bool(os.environ.get("PUDB_RDB_REVERSE"))
+ 
+ #: Holds the currently active debugger.
+-_current = [None]
++_current = None
+ 
+ _frame = sys._getframe
+ 
+</pre><h3>Mutant 670</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -59,7 +59,7 @@
+ #: Holds the currently active debugger.
+ _current = [None]
+ 
+-_frame = sys._getframe
++_frame = None
+ 
+ NO_AVAILABLE_PORT = """\
+ {self.ident}: Couldn't find an available port.
+</pre><h3>Mutant 671</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -61,11 +61,7 @@
+ 
+ _frame = sys._getframe
+ 
+-NO_AVAILABLE_PORT = """\
+-{self.ident}: Couldn't find an available port.
+-
+-Please specify one using the PUDB_RDB_PORT environment variable.
+-"""
++NO_AVAILABLE_PORT = None
+ 
+ BANNER = """\
+ {self.ident}: Please start a telnet session using a command like:
+</pre><h3>Mutant 672</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -67,11 +67,7 @@
+ Please specify one using the PUDB_RDB_PORT environment variable.
+ """
+ 
+-BANNER = """\
+-{self.ident}: Please start a telnet session using a command like:
+-telnet {self.host} {self.port}
+-{self.ident}: Waiting for client...
+-"""
++BANNER = None
+ 
+ SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
+ SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
+</pre><h3>Mutant 673</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -73,7 +73,7 @@
+ {self.ident}: Waiting for client...
+ """
+ 
+-SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
++SESSION_STARTED = "XX{self.ident}: Now in session with {self.remote_addr}.XX"
+ SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
+ 
+ CONN_REFUSED = """\
+</pre><h3>Mutant 674</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -73,7 +73,7 @@
+ {self.ident}: Waiting for client...
+ """
+ 
+-SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
++SESSION_STARTED = None
+ SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
+ 
+ CONN_REFUSED = """\
+</pre><h3>Mutant 675</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -74,7 +74,7 @@
+ """
+ 
+ SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
+-SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
++SESSION_ENDED = "XX{self.ident}: Session with {self.remote_addr} ended.XX"
+ 
+ CONN_REFUSED = """\
+ Cannot connect to the reverse telnet client {self.host} {self.port}.
+</pre><h3>Mutant 676</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -74,7 +74,7 @@
+ """
+ 
+ SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
+-SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
++SESSION_ENDED = None
+ 
+ CONN_REFUSED = """\
+ Cannot connect to the reverse telnet client {self.host} {self.port}.
+</pre><h3>Mutant 677</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -76,15 +76,7 @@
+ SESSION_STARTED = "{self.ident}: Now in session with {self.remote_addr}."
+ SESSION_ENDED = "{self.ident}: Session with {self.remote_addr} ended."
+ 
+-CONN_REFUSED = """\
+-Cannot connect to the reverse telnet client {self.host} {self.port}.
+-
+-Try to open reverse client by running
+-stty -echo -icanon && nc -l -p 6899  # Linux
+-stty -echo -icanon && nc -l 6899  # BSD/MacOS
+-
+-Please specify one using the PUDB_RDB_PORT environment variable.
+-"""
++CONN_REFUSED = None
+ 
+ 
+ class TelnetCharacters:
+</pre><h3>Mutant 678</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -101,7 +101,7 @@
+         This class is not intended to be instantiated.
+     """
+     # Telnet protocol characters
+-    IAC = b"\xff"  # "Interpret As Command"
++    IAC = b"XX\xffXX"  # "Interpret As Command"
+     DO = b"\xfd"
+     WILL = b"\xfb"
+ 
+</pre><h3>Mutant 679</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -101,7 +101,7 @@
+         This class is not intended to be instantiated.
+     """
+     # Telnet protocol characters
+-    IAC = b"\xff"  # "Interpret As Command"
++    IAC = None  # "Interpret As Command"
+     DO = b"\xfd"
+     WILL = b"\xfb"
+ 
+</pre><h3>Mutant 680</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -102,7 +102,7 @@
+     """
+     # Telnet protocol characters
+     IAC = b"\xff"  # "Interpret As Command"
+-    DO = b"\xfd"
++    DO = b"XX\xfdXX"
+     WILL = b"\xfb"
+ 
+     # Telnet protocol options codes
+</pre><h3>Mutant 681</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -102,7 +102,7 @@
+     """
+     # Telnet protocol characters
+     IAC = b"\xff"  # "Interpret As Command"
+-    DO = b"\xfd"
++    DO = None
+     WILL = b"\xfb"
+ 
+     # Telnet protocol options codes
+</pre><h3>Mutant 682</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -103,7 +103,7 @@
+     # Telnet protocol characters
+     IAC = b"\xff"  # "Interpret As Command"
+     DO = b"\xfd"
+-    WILL = b"\xfb"
++    WILL = b"XX\xfbXX"
+ 
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+</pre><h3>Mutant 683</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -103,7 +103,7 @@
+     # Telnet protocol characters
+     IAC = b"\xff"  # "Interpret As Command"
+     DO = b"\xfd"
+-    WILL = b"\xfb"
++    WILL = None
+ 
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+</pre><h3>Mutant 684</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -107,7 +107,7 @@
+ 
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+-    ECHO = b"\x01"  # echo
++    ECHO = b"XX\x01XX"  # echo
+     SGA = b"\x03"  # suppress go ahead
+ 
+ 
+</pre><h3>Mutant 685</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -107,7 +107,7 @@
+ 
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+-    ECHO = b"\x01"  # echo
++    ECHO = None  # echo
+     SGA = b"\x03"  # suppress go ahead
+ 
+ 
+</pre><h3>Mutant 686</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -108,7 +108,7 @@
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+     ECHO = b"\x01"  # echo
+-    SGA = b"\x03"  # suppress go ahead
++    SGA = b"XX\x03XX"  # suppress go ahead
+ 
+ 
+ class RemoteDebugger(Debugger):
+</pre><h3>Mutant 687</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -108,7 +108,7 @@
+     # Telnet protocol options codes
+     # These ones all come from arpa/telnet.h
+     ECHO = b"\x01"  # echo
+-    SGA = b"\x03"  # suppress go ahead
++    SGA = None  # suppress go ahead
+ 
+ 
+ class RemoteDebugger(Debugger):
+</pre><h3>Mutant 688</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -116,7 +116,7 @@
+     .. automethod:: __init__
+     """
+ 
+-    me = "pudb"
++    me = "XXpudbXX"
+     _prev_outs = None
+     _sock = None
+ 
+</pre><h3>Mutant 689</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -116,7 +116,7 @@
+     .. automethod:: __init__
+     """
+ 
+-    me = "pudb"
++    me = None
+     _prev_outs = None
+     _sock = None
+ 
+</pre><h3>Mutant 690</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -117,7 +117,7 @@
+     """
+ 
+     me = "pudb"
+-    _prev_outs = None
++    _prev_outs = ""
+     _sock = None
+ 
+     def __init__(
+</pre><h3>Mutant 691</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -118,7 +118,7 @@
+ 
+     me = "pudb"
+     _prev_outs = None
+-    _sock = None
++    _sock = ""
+ 
+     def __init__(
+         self,
+</pre><h3>Mutant 692</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -124,7 +124,7 @@
+         self,
+         host=PUDB_RDB_HOST,
+         port=PUDB_RDB_PORT,
+-        port_search_limit=100,
++        port_search_limit=101,
+         out=sys.stdout,
+         term_size=None,
+         reverse=PUDB_RDB_REVERSE,
+</pre><h3>Mutant 693</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -138,7 +138,7 @@
+             running both in two tabs of the same terminal window, hence using
+             terminals of the same size.
+         """
+-        self.out = out
++        self.out = None
+ 
+         if term_size is None:
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+</pre><h3>Mutant 694</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -140,7 +140,7 @@
+         """
+         self.out = out
+ 
+-        if term_size is None:
++        if term_size is not None:
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+</pre><h3>Mutant 695</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -141,7 +141,7 @@
+         self.out = out
+ 
+         if term_size is None:
+-            term_size = os.environ.get("PUDB_TERM_SIZE")
++            term_size = os.environ.get("XXPUDB_TERM_SIZEXX")
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+                 if len(term_size) != 2:
+</pre><h3>Mutant 696</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -141,7 +141,7 @@
+         self.out = out
+ 
+         if term_size is None:
+-            term_size = os.environ.get("PUDB_TERM_SIZE")
++            term_size = None
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+                 if len(term_size) != 2:
+</pre><h3>Mutant 697</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -142,7 +142,7 @@
+ 
+         if term_size is None:
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+-            if term_size is not None:
++            if term_size is  None:
+                 term_size = tuple(map(int, term_size.split("x")))
+                 if len(term_size) != 2:
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+</pre><h3>Mutant 698</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -143,7 +143,7 @@
+         if term_size is None:
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+             if term_size is not None:
+-                term_size = tuple(map(int, term_size.split("x")))
++                term_size = tuple(map(int, term_size.split("XXxXX")))
+                 if len(term_size) != 2:
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+             else:
+</pre><h3>Mutant 699</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -143,7 +143,7 @@
+         if term_size is None:
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+             if term_size is not None:
+-                term_size = tuple(map(int, term_size.split("x")))
++                term_size = None
+                 if len(term_size) != 2:
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+             else:
+</pre><h3>Mutant 700</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -144,7 +144,7 @@
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+-                if len(term_size) != 2:
++                if len(term_size) == 2:
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+             else:
+                 try:
+</pre><h3>Mutant 701</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -144,7 +144,7 @@
+             term_size = os.environ.get("PUDB_TERM_SIZE")
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+-                if len(term_size) != 2:
++                if len(term_size) != 3:
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+             else:
+                 try:
+</pre><h3>Mutant 702</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -145,7 +145,7 @@
+             if term_size is not None:
+                 term_size = tuple(map(int, term_size.split("x")))
+                 if len(term_size) != 2:
+-                    raise ValueError("PUDB_TERM_SIZE should have two dimensions")
++                    raise ValueError("XXPUDB_TERM_SIZE should have two dimensionsXX")
+             else:
+                 try:
+                     s = os.get_terminal_size()
+</pre><h3>Mutant 703</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -148,7 +148,7 @@
+                     raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+             else:
+                 try:
+-                    s = os.get_terminal_size()
++                    s = None
+                     term_size = (s.columns, s.lines)
+                 except Exception:
+                     term_size = (80, 24)
+</pre><h3>Mutant 704</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -149,7 +149,7 @@
+             else:
+                 try:
+                     s = os.get_terminal_size()
+-                    term_size = (s.columns, s.lines)
++                    term_size = None
+                 except Exception:
+                     term_size = (80, 24)
+ 
+</pre><h3>Mutant 705</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -151,7 +151,7 @@
+                     s = os.get_terminal_size()
+                     term_size = (s.columns, s.lines)
+                 except Exception:
+-                    term_size = (80, 24)
++                    term_size = (81, 24)
+ 
+         self._prev_handles = sys.stdin, sys.stdout
+         self._client, (address, port) = self.get_client(
+</pre><h3>Mutant 706</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -151,7 +151,7 @@
+                     s = os.get_terminal_size()
+                     term_size = (s.columns, s.lines)
+                 except Exception:
+-                    term_size = (80, 24)
++                    term_size = (80, 25)
+ 
+         self._prev_handles = sys.stdin, sys.stdout
+         self._client, (address, port) = self.get_client(
+</pre><h3>Mutant 707</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -151,7 +151,7 @@
+                     s = os.get_terminal_size()
+                     term_size = (s.columns, s.lines)
+                 except Exception:
+-                    term_size = (80, 24)
++                    term_size = None
+ 
+         self._prev_handles = sys.stdin, sys.stdout
+         self._client, (address, port) = self.get_client(
+</pre><h3>Mutant 708</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -153,7 +153,7 @@
+                 except Exception:
+                     term_size = (80, 24)
+ 
+-        self._prev_handles = sys.stdin, sys.stdout
++        self._prev_handles = None
+         self._client, (address, port) = self.get_client(
+             host=host, port=port, search_limit=port_search_limit, reverse=reverse
+         )
+</pre><h3>Mutant 709</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -154,9 +154,7 @@
+                     term_size = (80, 24)
+ 
+         self._prev_handles = sys.stdin, sys.stdout
+-        self._client, (address, port) = self.get_client(
+-            host=host, port=port, search_limit=port_search_limit, reverse=reverse
+-        )
++        self._client, (address, port) = None
+         self.remote_addr = ":".join(str(v) for v in address)
+ 
+         self.say(SESSION_STARTED.format(self=self))
+</pre><h3>Mutant 710</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -157,7 +157,7 @@
+         self._client, (address, port) = self.get_client(
+             host=host, port=port, search_limit=port_search_limit, reverse=reverse
+         )
+-        self.remote_addr = ":".join(str(v) for v in address)
++        self.remote_addr = "XX:XX".join(str(v) for v in address)
+ 
+         self.say(SESSION_STARTED.format(self=self))
+ 
+</pre><h3>Mutant 711</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -157,7 +157,7 @@
+         self._client, (address, port) = self.get_client(
+             host=host, port=port, search_limit=port_search_limit, reverse=reverse
+         )
+-        self.remote_addr = ":".join(str(v) for v in address)
++        self.remote_addr = None
+ 
+         self.say(SESSION_STARTED.format(self=self))
+ 
+</pre><h3>Mutant 712</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -162,7 +162,7 @@
+         self.say(SESSION_STARTED.format(self=self))
+ 
+         # makefile ignores encoding if there's no buffering.
+-        raw_sock_file = self._client.makefile("rwb", 0)
++        raw_sock_file = self._client.makefile("XXrwbXX", 0)
+         import codecs
+ 
+         sock_file = codecs.StreamReaderWriter(
+</pre><h3>Mutant 713</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -162,7 +162,7 @@
+         self.say(SESSION_STARTED.format(self=self))
+ 
+         # makefile ignores encoding if there's no buffering.
+-        raw_sock_file = self._client.makefile("rwb", 0)
++        raw_sock_file = self._client.makefile("rwb", 1)
+         import codecs
+ 
+         sock_file = codecs.StreamReaderWriter(
+</pre><h3>Mutant 714</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -162,7 +162,7 @@
+         self.say(SESSION_STARTED.format(self=self))
+ 
+         # makefile ignores encoding if there's no buffering.
+-        raw_sock_file = self._client.makefile("rwb", 0)
++        raw_sock_file = None
+         import codecs
+ 
+         sock_file = codecs.StreamReaderWriter(
+</pre><h3>Mutant 715</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -166,7 +166,7 @@
+         import codecs
+ 
+         sock_file = codecs.StreamReaderWriter(
+-            raw_sock_file, codecs.getreader("utf-8"), codecs.getwriter("utf-8"))
++            raw_sock_file, codecs.getreader("XXutf-8XX"), codecs.getwriter("utf-8"))
+ 
+         self._handle = sys.stdin = sys.stdout = sock_file
+ 
+</pre><h3>Mutant 716</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -166,7 +166,7 @@
+         import codecs
+ 
+         sock_file = codecs.StreamReaderWriter(
+-            raw_sock_file, codecs.getreader("utf-8"), codecs.getwriter("utf-8"))
++            raw_sock_file, codecs.getreader("utf-8"), codecs.getwriter("XXutf-8XX"))
+ 
+         self._handle = sys.stdin = sys.stdout = sock_file
+ 
+</pre><h3>Mutant 717</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -165,8 +165,7 @@
+         raw_sock_file = self._client.makefile("rwb", 0)
+         import codecs
+ 
+-        sock_file = codecs.StreamReaderWriter(
+-            raw_sock_file, codecs.getreader("utf-8"), codecs.getwriter("utf-8"))
++        sock_file = None
+ 
+         self._handle = sys.stdin = sys.stdout = sock_file
+ 
+</pre><h3>Mutant 718</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -168,7 +168,7 @@
+         sock_file = codecs.StreamReaderWriter(
+             raw_sock_file, codecs.getreader("utf-8"), codecs.getwriter("utf-8"))
+ 
+-        self._handle = sys.stdin = sys.stdout = sock_file
++        self._handle = sys.stdin = sys.stdout = None
+ 
+         # nc negotiation doesn't support telnet options
+         if not reverse:
+</pre><h3>Mutant 719</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -171,7 +171,7 @@
+         self._handle = sys.stdin = sys.stdout = sock_file
+ 
+         # nc negotiation doesn't support telnet options
+-        if not reverse:
++        if  reverse:
+             tn = TelnetCharacters
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+</pre><h3>Mutant 720</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -172,7 +172,7 @@
+ 
+         # nc negotiation doesn't support telnet options
+         if not reverse:
+-            tn = TelnetCharacters
++            tn = None
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+             resp = raw_sock_file.read(3)
+</pre><h3>Mutant 721</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -174,7 +174,7 @@
+         if not reverse:
+             tn = TelnetCharacters
+ 
+-            raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
++            raw_sock_file.write(tn.IAC - tn.WILL + tn.SGA)
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+</pre><h3>Mutant 722</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -174,7 +174,7 @@
+         if not reverse:
+             tn = TelnetCharacters
+ 
+-            raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
++            raw_sock_file.write(tn.IAC + tn.WILL - tn.SGA)
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+</pre><h3>Mutant 723</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -175,7 +175,7 @@
+             tn = TelnetCharacters
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+-            resp = raw_sock_file.read(3)
++            resp = raw_sock_file.read(4)
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+</pre><h3>Mutant 724</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -175,7 +175,7 @@
+             tn = TelnetCharacters
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+-            resp = raw_sock_file.read(3)
++            resp = None
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+</pre><h3>Mutant 725</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -176,7 +176,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.SGA
++            assert resp != tn.IAC + tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+</pre><h3>Mutant 726</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -176,7 +176,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.SGA
++            assert resp == tn.IAC - tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+</pre><h3>Mutant 727</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -176,7 +176,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.SGA)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.SGA
++            assert resp == tn.IAC + tn.DO - tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+</pre><h3>Mutant 728</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -178,7 +178,7 @@
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+-            raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
++            raw_sock_file.write(tn.IAC - tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.ECHO
+ 
+</pre><h3>Mutant 729</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -178,7 +178,7 @@
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+-            raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
++            raw_sock_file.write(tn.IAC + tn.WILL - tn.ECHO)
+             resp = raw_sock_file.read(3)
+             assert resp == tn.IAC + tn.DO + tn.ECHO
+ 
+</pre><h3>Mutant 730</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -179,7 +179,7 @@
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+-            resp = raw_sock_file.read(3)
++            resp = raw_sock_file.read(4)
+             assert resp == tn.IAC + tn.DO + tn.ECHO
+ 
+         Debugger.__init__(
+</pre><h3>Mutant 731</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -179,7 +179,7 @@
+             assert resp == tn.IAC + tn.DO + tn.SGA
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+-            resp = raw_sock_file.read(3)
++            resp = None
+             assert resp == tn.IAC + tn.DO + tn.ECHO
+ 
+         Debugger.__init__(
+</pre><h3>Mutant 732</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -180,7 +180,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.ECHO
++            assert resp != tn.IAC + tn.DO + tn.ECHO
+ 
+         Debugger.__init__(
+             self, stdin=self._handle, stdout=self._handle, term_size=term_size
+</pre><h3>Mutant 733</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -180,7 +180,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.ECHO
++            assert resp == tn.IAC - tn.DO + tn.ECHO
+ 
+         Debugger.__init__(
+             self, stdin=self._handle, stdout=self._handle, term_size=term_size
+</pre><h3>Mutant 734</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -180,7 +180,7 @@
+ 
+             raw_sock_file.write(tn.IAC + tn.WILL + tn.ECHO)
+             resp = raw_sock_file.read(3)
+-            assert resp == tn.IAC + tn.DO + tn.ECHO
++            assert resp == tn.IAC + tn.DO - tn.ECHO
+ 
+         Debugger.__init__(
+             self, stdin=self._handle, stdout=self._handle, term_size=term_size
+</pre><h3>Mutant 735</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -186,7 +186,7 @@
+             self, stdin=self._handle, stdout=self._handle, term_size=term_size
+         )
+ 
+-    def get_client(self, host, port, search_limit=100, reverse=False):
++    def get_client(self, host, port, search_limit=101, reverse=False):
+         if reverse:
+             self.host, self.port = host, port
+             client, address = self.get_reverse_socket_client(host, port)
+</pre><h3>Mutant 736</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -186,7 +186,7 @@
+             self, stdin=self._handle, stdout=self._handle, term_size=term_size
+         )
+ 
+-    def get_client(self, host, port, search_limit=100, reverse=False):
++    def get_client(self, host, port, search_limit=100, reverse=True):
+         if reverse:
+             self.host, self.port = host, port
+             client, address = self.get_reverse_socket_client(host, port)
+</pre><h3>Mutant 737</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -188,7 +188,7 @@
+ 
+     def get_client(self, host, port, search_limit=100, reverse=False):
+         if reverse:
+-            self.host, self.port = host, port
++            self.host, self.port = None
+             client, address = self.get_reverse_socket_client(host, port)
+             self.ident = f"{self.me}:{self.port}"
+         else:
+</pre><h3>Mutant 738</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -189,7 +189,7 @@
+     def get_client(self, host, port, search_limit=100, reverse=False):
+         if reverse:
+             self.host, self.port = host, port
+-            client, address = self.get_reverse_socket_client(host, port)
++            client, address = None
+             self.ident = f"{self.me}:{self.port}"
+         else:
+             self._sock, conn_info = self.get_socket_client(
+</pre><h3>Mutant 739</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -190,7 +190,7 @@
+         if reverse:
+             self.host, self.port = host, port
+             client, address = self.get_reverse_socket_client(host, port)
+-            self.ident = f"{self.me}:{self.port}"
++            self.ident = f"XX{self.me}:{self.port}XX"
+         else:
+             self._sock, conn_info = self.get_socket_client(
+                 host, port, search_limit=search_limit,
+</pre><h3>Mutant 740</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -190,7 +190,7 @@
+         if reverse:
+             self.host, self.port = host, port
+             client, address = self.get_reverse_socket_client(host, port)
+-            self.ident = f"{self.me}:{self.port}"
++            self.ident = None
+         else:
+             self._sock, conn_info = self.get_socket_client(
+                 host, port, search_limit=search_limit,
+</pre><h3>Mutant 741</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -192,9 +192,7 @@
+             client, address = self.get_reverse_socket_client(host, port)
+             self.ident = f"{self.me}:{self.port}"
+         else:
+-            self._sock, conn_info = self.get_socket_client(
+-                host, port, search_limit=search_limit,
+-            )
++            self._sock, conn_info = None
+             self.host, self.port = conn_info
+             self.ident = f"{self.me}:{self.port}"
+             self.say(BANNER.format(self=self))
+</pre><h3>Mutant 742</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -195,7 +195,7 @@
+             self._sock, conn_info = self.get_socket_client(
+                 host, port, search_limit=search_limit,
+             )
+-            self.host, self.port = conn_info
++            self.host, self.port = None
+             self.ident = f"{self.me}:{self.port}"
+             self.say(BANNER.format(self=self))
+             client, address = self._sock.accept()
+</pre><h3>Mutant 743</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -196,7 +196,7 @@
+                 host, port, search_limit=search_limit,
+             )
+             self.host, self.port = conn_info
+-            self.ident = f"{self.me}:{self.port}"
++            self.ident = f"XX{self.me}:{self.port}XX"
+             self.say(BANNER.format(self=self))
+             client, address = self._sock.accept()
+         client.setblocking(1)
+</pre><h3>Mutant 744</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -196,7 +196,7 @@
+                 host, port, search_limit=search_limit,
+             )
+             self.host, self.port = conn_info
+-            self.ident = f"{self.me}:{self.port}"
++            self.ident = None
+             self.say(BANNER.format(self=self))
+             client, address = self._sock.accept()
+         client.setblocking(1)
+</pre><h3>Mutant 745</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -198,7 +198,7 @@
+             self.host, self.port = conn_info
+             self.ident = f"{self.me}:{self.port}"
+             self.say(BANNER.format(self=self))
+-            client, address = self._sock.accept()
++            client, address = None
+         client.setblocking(1)
+         return client, (address, self.port)
+ 
+</pre><h3>Mutant 746</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -199,7 +199,7 @@
+             self.ident = f"{self.me}:{self.port}"
+             self.say(BANNER.format(self=self))
+             client, address = self._sock.accept()
+-        client.setblocking(1)
++        client.setblocking(2)
+         return client, (address, self.port)
+ 
+     def get_reverse_socket_client(self, host, port):
+</pre><h3>Mutant 747</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -203,7 +203,7 @@
+         return client, (address, self.port)
+ 
+     def get_reverse_socket_client(self, host, port):
+-        _sock = socket.socket()
++        _sock = None
+         try:
+             _sock.connect((host, port))
+             _sock.setblocking(1)
+</pre><h3>Mutant 748</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -206,7 +206,7 @@
+         _sock = socket.socket()
+         try:
+             _sock.connect((host, port))
+-            _sock.setblocking(1)
++            _sock.setblocking(2)
+         except OSError as exc:
+             if exc.errno == errno.ECONNREFUSED:
+                 raise ValueError(CONN_REFUSED.format(self=self)) from exc
+</pre><h3>Mutant 749</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -208,7 +208,7 @@
+             _sock.connect((host, port))
+             _sock.setblocking(1)
+         except OSError as exc:
+-            if exc.errno == errno.ECONNREFUSED:
++            if exc.errno != errno.ECONNREFUSED:
+                 raise ValueError(CONN_REFUSED.format(self=self)) from exc
+             raise exc
+         return _sock, _sock.getpeername()
+</pre><h3>Mutant 750</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -214,7 +214,7 @@
+         return _sock, _sock.getpeername()
+ 
+     def get_socket_client(self, host, port, search_limit):
+-        _sock, this_port = self.get_avail_port(host, port, search_limit)
++        _sock, this_port = None
+         _sock.setblocking(1)
+         _sock.listen(1)
+         return _sock, (host, this_port)
+</pre><h3>Mutant 751</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -215,7 +215,7 @@
+ 
+     def get_socket_client(self, host, port, search_limit):
+         _sock, this_port = self.get_avail_port(host, port, search_limit)
+-        _sock.setblocking(1)
++        _sock.setblocking(2)
+         _sock.listen(1)
+         return _sock, (host, this_port)
+ 
+</pre><h3>Mutant 752</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -216,7 +216,7 @@
+     def get_socket_client(self, host, port, search_limit):
+         _sock, this_port = self.get_avail_port(host, port, search_limit)
+         _sock.setblocking(1)
+-        _sock.listen(1)
++        _sock.listen(2)
+         return _sock, (host, this_port)
+ 
+     def get_avail_port(self, host, port, search_limit=100, skew=+0):
+</pre><h3>Mutant 753</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -219,7 +219,7 @@
+         _sock.listen(1)
+         return _sock, (host, this_port)
+ 
+-    def get_avail_port(self, host, port, search_limit=100, skew=+0):
++    def get_avail_port(self, host, port, search_limit=101, skew=+0):
+         this_port = None
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+</pre><h3>Mutant 754</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -219,7 +219,7 @@
+         _sock.listen(1)
+         return _sock, (host, this_port)
+ 
+-    def get_avail_port(self, host, port, search_limit=100, skew=+0):
++    def get_avail_port(self, host, port, search_limit=100, skew=-0):
+         this_port = None
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+</pre><h3>Mutant 755</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -219,7 +219,7 @@
+         _sock.listen(1)
+         return _sock, (host, this_port)
+ 
+-    def get_avail_port(self, host, port, search_limit=100, skew=+0):
++    def get_avail_port(self, host, port, search_limit=100, skew=+1):
+         this_port = None
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+</pre><h3>Mutant 756</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -220,7 +220,7 @@
+         return _sock, (host, this_port)
+ 
+     def get_avail_port(self, host, port, search_limit=100, skew=+0):
+-        this_port = None
++        this_port = ""
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+             _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+</pre><h3>Mutant 757</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -222,7 +222,7 @@
+     def get_avail_port(self, host, port, search_limit=100, skew=+0):
+         this_port = None
+         for i in range(search_limit):
+-            _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++            _sock = None
+             _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+             this_port = port + i
+             try:
+</pre><h3>Mutant 758</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -223,7 +223,7 @@
+         this_port = None
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+-            _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++            _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 2)
+             this_port = port + i
+             try:
+                 _sock.bind((host, this_port))
+</pre><h3>Mutant 759</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -224,7 +224,7 @@
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+             _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+-            this_port = port + i
++            this_port = port - i
+             try:
+                 _sock.bind((host, this_port))
+             except OSError as exc:
+</pre><h3>Mutant 760</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -224,7 +224,7 @@
+         for i in range(search_limit):
+             _sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+             _sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+-            this_port = port + i
++            this_port = None
+             try:
+                 _sock.bind((host, this_port))
+             except OSError as exc:
+</pre><h3>Mutant 761</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -228,7 +228,7 @@
+             try:
+                 _sock.bind((host, this_port))
+             except OSError as exc:
+-                if exc.errno in [errno.EADDRINUSE, errno.EINVAL]:
++                if exc.errno not in [errno.EADDRINUSE, errno.EINVAL]:
+                     continue
+                 raise
+             else:
+</pre><h3>Mutant 762</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -229,7 +229,7 @@
+                 _sock.bind((host, this_port))
+             except OSError as exc:
+                 if exc.errno in [errno.EADDRINUSE, errno.EINVAL]:
+-                    continue
++                    break
+                 raise
+             else:
+                 return _sock, this_port
+</pre><h3>Mutant 763</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -240,7 +240,7 @@
+         print(m, file=self.out)
+ 
+     def close_remote_session(self):
+-        self.stdin, self.stdout = sys.stdin, sys.stdout = self._prev_handles
++        self.stdin, self.stdout = sys.stdin, sys.stdout = None
+         self._handle.close()
+         self._client.close()
+         if self._sock:
+</pre><h3>Mutant 764</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -256,7 +256,7 @@
+ ):
+     """Return the current debugger instance (if any),
+     or creates a new one."""
+-    rdb = _current[0]
++    rdb = _current[1]
+     if rdb is None:
+         rdb = _current[0] = RemoteDebugger(
+             host=host, port=port, term_size=term_size, reverse=reverse
+</pre><h3>Mutant 765</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -256,7 +256,7 @@
+ ):
+     """Return the current debugger instance (if any),
+     or creates a new one."""
+-    rdb = _current[0]
++    rdb = None
+     if rdb is None:
+         rdb = _current[0] = RemoteDebugger(
+             host=host, port=port, term_size=term_size, reverse=reverse
+</pre><h3>Mutant 766</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -257,7 +257,7 @@
+     """Return the current debugger instance (if any),
+     or creates a new one."""
+     rdb = _current[0]
+-    if rdb is None:
++    if rdb is not None:
+         rdb = _current[0] = RemoteDebugger(
+             host=host, port=port, term_size=term_size, reverse=reverse
+         )
+</pre><h3>Mutant 767</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -258,7 +258,7 @@
+     or creates a new one."""
+     rdb = _current[0]
+     if rdb is None:
+-        rdb = _current[0] = RemoteDebugger(
++        rdb = _current[1] = RemoteDebugger(
+             host=host, port=port, term_size=term_size, reverse=reverse
+         )
+         atexit.register(lambda e: e.close_remote_session(), rdb)
+</pre><h3>Mutant 768</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -258,9 +258,7 @@
+     or creates a new one."""
+     rdb = _current[0]
+     if rdb is None:
+-        rdb = _current[0] = RemoteDebugger(
+-            host=host, port=port, term_size=term_size, reverse=reverse
+-        )
++        rdb = _current[0] = None
+         atexit.register(lambda e: e.close_remote_session(), rdb)
+     return rdb
+ 
+</pre><h3>Mutant 769</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -261,7 +261,7 @@
+         rdb = _current[0] = RemoteDebugger(
+             host=host, port=port, term_size=term_size, reverse=reverse
+         )
+-        atexit.register(lambda e: e.close_remote_session(), rdb)
++        atexit.register(lambda e: None, rdb)
+     return rdb
+ 
+ 
+</pre><h3>Mutant 770</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -273,7 +273,7 @@
+     reverse=PUDB_RDB_REVERSE
+ ):
+     """Set breakpoint at current location, or a specified frame"""
+-    if frame is None:
++    if frame is not None:
+         frame = _frame().f_back
+ 
+     return debugger(
+</pre><h3>Mutant 771</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -274,7 +274,7 @@
+ ):
+     """Set breakpoint at current location, or a specified frame"""
+     if frame is None:
+-        frame = _frame().f_back
++        frame = None
+ 
+     return debugger(
+         term_size=term_size, host=host, port=port, reverse=reverse
+</pre><h3>Mutant 772</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -293,7 +293,7 @@
+     :param args: the arguments passed to ``func``.
+     :param kwargs: the kwargs passed to ``func``.
+     """
+-    if comm.rank == rank:
++    if comm.rank != rank:
+         debugger().runcall(func, *args, **kwargs)
+     else:
+         try:
+</pre><h3>Mutant 773</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -300,6 +300,6 @@
+             func(*args, **kwargs)
+         finally:
+             from time import sleep
+-            while True:
++            while False:
+                 sleep(1)
+ 
+</pre><h3>Mutant 774</h3><pre>--- ./remote.py
++++ ./remote.py
+@@ -301,5 +301,5 @@
+         finally:
+             from time import sleep
+             while True:
+-                sleep(1)
+-
++                sleep(2)
++
+</pre></body></html>

@@ -1,0 +1,1610 @@
+<html><body><h1>./__init__.py</h1>Killed 2 out of 146 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3342</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -29,7 +29,7 @@
+ from pudb.settings import load_config
+ 
+ 
+-NUM_VERSION = (2024, 1, 2)
++NUM_VERSION = (2025, 1, 2)
+ VERSION = ".".join(str(nv) for nv in NUM_VERSION)
+ __version__ = VERSION
+ 
+</pre><h3>Mutant 3343</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -29,7 +29,7 @@
+ from pudb.settings import load_config
+ 
+ 
+-NUM_VERSION = (2024, 1, 2)
++NUM_VERSION = (2024, 2, 2)
+ VERSION = ".".join(str(nv) for nv in NUM_VERSION)
+ __version__ = VERSION
+ 
+</pre><h3>Mutant 3344</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -29,7 +29,7 @@
+ from pudb.settings import load_config
+ 
+ 
+-NUM_VERSION = (2024, 1, 2)
++NUM_VERSION = (2024, 1, 3)
+ VERSION = ".".join(str(nv) for nv in NUM_VERSION)
+ __version__ = VERSION
+ 
+</pre><h3>Mutant 3346</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -30,7 +30,7 @@
+ 
+ 
+ NUM_VERSION = (2024, 1, 2)
+-VERSION = ".".join(str(nv) for nv in NUM_VERSION)
++VERSION = "XX.XX".join(str(nv) for nv in NUM_VERSION)
+ __version__ = VERSION
+ 
+ 
+</pre><h3>Mutant 3348</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -35,7 +35,7 @@
+ 
+ 
+ class PudbShortcuts:
+-    @property
++
+     def db(self):
+         dbg = _get_debugger()
+ 
+</pre><h3>Mutant 3349</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -37,7 +37,7 @@
+ class PudbShortcuts:
+     @property
+     def db(self):
+-        dbg = _get_debugger()
++        dbg = None
+ 
+         import threading
+         if isinstance(threading.current_thread(), threading._MainThread):
+</pre><h3>Mutant 3350</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -44,7 +44,6 @@
+             set_interrupt_handler()
+         dbg.set_trace(sys._getframe().f_back)
+ 
+-    @property
+     def go(self):
+         dbg = _get_debugger()
+ 
+</pre><h3>Mutant 3351</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -46,7 +46,7 @@
+ 
+     @property
+     def go(self):
+-        dbg = _get_debugger()
++        dbg = None
+ 
+         import threading
+         if isinstance(threading.current_thread(), threading._MainThread):
+</pre><h3>Mutant 3352</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -51,7 +51,7 @@
+         import threading
+         if isinstance(threading.current_thread(), threading._MainThread):
+             set_interrupt_handler()
+-        dbg.set_trace(sys._getframe().f_back, paused=False)
++        dbg.set_trace(sys._getframe().f_back, paused=True)
+ 
+ 
+ import builtins
+</pre><h3>Mutant 3353</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -57,7 +57,7 @@
+ import builtins
+ 
+ 
+-builtins.__dict__["pu"] = PudbShortcuts()
++builtins.__dict__["XXpuXX"] = PudbShortcuts()
+ 
+ 
+ def _tty_override():
+</pre><h3>Mutant 3354</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -57,7 +57,7 @@
+ import builtins
+ 
+ 
+-builtins.__dict__["pu"] = PudbShortcuts()
++builtins.__dict__["pu"] = None
+ 
+ 
+ def _tty_override():
+</pre><h3>Mutant 3355</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -62,7 +62,7 @@
+ 
+ def _tty_override():
+     import os
+-    return os.environ.get("PUDB_TTY")
++    return os.environ.get("XXPUDB_TTYXX")
+ 
+ 
+ def _open_tty(tty_path):
+</pre><h3>Mutant 3356</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -68,7 +68,7 @@
+ def _open_tty(tty_path):
+     import io
+     import os
+-    tty_file = io.TextIOWrapper(open(tty_path, "r+b", buffering=0))
++    tty_file = io.TextIOWrapper(open(tty_path, "XXr+bXX", buffering=0))
+     term_size = os.get_terminal_size(tty_file.fileno())
+ 
+     return tty_file, term_size
+</pre><h3>Mutant 3357</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -68,7 +68,7 @@
+ def _open_tty(tty_path):
+     import io
+     import os
+-    tty_file = io.TextIOWrapper(open(tty_path, "r+b", buffering=0))
++    tty_file = io.TextIOWrapper(open(tty_path, "r+b", buffering=1))
+     term_size = os.get_terminal_size(tty_file.fileno())
+ 
+     return tty_file, term_size
+</pre><h3>Mutant 3358</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -68,7 +68,7 @@
+ def _open_tty(tty_path):
+     import io
+     import os
+-    tty_file = io.TextIOWrapper(open(tty_path, "r+b", buffering=0))
++    tty_file = None
+     term_size = os.get_terminal_size(tty_file.fileno())
+ 
+     return tty_file, term_size
+</pre><h3>Mutant 3359</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -69,7 +69,7 @@
+     import io
+     import os
+     tty_file = io.TextIOWrapper(open(tty_path, "r+b", buffering=0))
+-    term_size = os.get_terminal_size(tty_file.fileno())
++    term_size = None
+ 
+     return tty_file, term_size
+ 
+</pre><h3>Mutant 3360</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -76,7 +76,7 @@
+ 
+ def _get_debugger(**kwargs):
+     from pudb.debugger import Debugger
+-    if not Debugger._current_debugger:
++    if  Debugger._current_debugger:
+         tty_path = _tty_override()
+         if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+</pre><h3>Mutant 3361</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -77,7 +77,7 @@
+ def _get_debugger(**kwargs):
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+-        tty_path = _tty_override()
++        tty_path = None
+         if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+</pre><h3>Mutant 3362</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path and ("XXstdinXX" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3363</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path and ("stdin"  in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3364</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path and ("stdin" not in kwargs or "XXstdoutXX" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3365</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path and ("stdin" not in kwargs or "stdout"  in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3366</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path and ("stdin" not in kwargs and "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3367</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -78,7 +78,7 @@
+     from pudb.debugger import Debugger
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+-        if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
++        if tty_path or ("stdin" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+</pre><h3>Mutant 3368</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -79,7 +79,7 @@
+     if not Debugger._current_debugger:
+         tty_path = _tty_override()
+         if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
+-            tty_file, term_size = _open_tty(tty_path)
++            tty_file, term_size = None
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+             kwargs.setdefault("term_size", term_size)
+</pre><h3>Mutant 3369</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -80,7 +80,7 @@
+         tty_path = _tty_override()
+         if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+-            kwargs.setdefault("stdin", tty_file)
++            kwargs.setdefault("XXstdinXX", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+             kwargs.setdefault("term_size", term_size)
+             kwargs.setdefault("tty_file", tty_file)
+</pre><h3>Mutant 3370</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -81,7 +81,7 @@
+         if tty_path and ("stdin" not in kwargs or "stdout" not in kwargs):
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+-            kwargs.setdefault("stdout", tty_file)
++            kwargs.setdefault("XXstdoutXX", tty_file)
+             kwargs.setdefault("term_size", term_size)
+             kwargs.setdefault("tty_file", tty_file)
+ 
+</pre><h3>Mutant 3371</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -82,7 +82,7 @@
+             tty_file, term_size = _open_tty(tty_path)
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+-            kwargs.setdefault("term_size", term_size)
++            kwargs.setdefault("XXterm_sizeXX", term_size)
+             kwargs.setdefault("tty_file", tty_file)
+ 
+         from pudb.debugger import Debugger
+</pre><h3>Mutant 3372</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -83,7 +83,7 @@
+             kwargs.setdefault("stdin", tty_file)
+             kwargs.setdefault("stdout", tty_file)
+             kwargs.setdefault("term_size", term_size)
+-            kwargs.setdefault("tty_file", tty_file)
++            kwargs.setdefault("XXtty_fileXX", tty_file)
+ 
+         from pudb.debugger import Debugger
+         dbg = Debugger(**kwargs)
+</pre><h3>Mutant 3373</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -86,7 +86,7 @@
+             kwargs.setdefault("tty_file", tty_file)
+ 
+         from pudb.debugger import Debugger
+-        dbg = Debugger(**kwargs)
++        dbg = None
+ 
+         return dbg
+     else:
+</pre><h3>Mutant 3374</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -90,7 +90,7 @@
+ 
+         return dbg
+     else:
+-        return Debugger._current_debugger[0]
++        return Debugger._current_debugger[1]
+ 
+ 
+ def _have_debugger():
+</pre><h3>Mutant 3375</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -99,7 +99,7 @@
+         return bool(Debugger._current_debugger)
+     except ImportError:
+         # Import cycles may happen if function is called during early startup
+-        return False
++        return True
+ 
+ 
+ import signal  # noqa
+</pre><h3>Mutant 3376</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -103,7 +103,7 @@
+ 
+ 
+ import signal  # noqa
+-DEFAULT_SIGNAL = signal.SIGINT
++DEFAULT_SIGNAL = None
+ del signal
+ 
+ 
+</pre><h3>Mutant 3377</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -108,7 +108,7 @@
+ 
+ 
+ def runmodule(*args, **kwargs):
+-    kwargs["run_as_module"] = True
++    kwargs["XXrun_as_moduleXX"] = True
+     runscript(*args, **kwargs)
+ 
+ 
+</pre><h3>Mutant 3378</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -108,7 +108,7 @@
+ 
+ 
+ def runmodule(*args, **kwargs):
+-    kwargs["run_as_module"] = True
++    kwargs["run_as_module"] = False
+     runscript(*args, **kwargs)
+ 
+ 
+</pre><h3>Mutant 3379</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -108,7 +108,7 @@
+ 
+ 
+ def runmodule(*args, **kwargs):
+-    kwargs["run_as_module"] = True
++    kwargs["run_as_module"] = None
+     runscript(*args, **kwargs)
+ 
+ 
+</pre><h3>Mutant 3380</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -112,7 +112,7 @@
+     runscript(*args, **kwargs)
+ 
+ 
+-def runscript(mainpyfile, steal_output=False, _continue_at_start=False,
++def runscript(mainpyfile, steal_output=True, _continue_at_start=False,
+               **kwargs):
+     try:
+         dbg = _get_debugger(
+</pre><h3>Mutant 3381</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -112,7 +112,7 @@
+     runscript(*args, **kwargs)
+ 
+ 
+-def runscript(mainpyfile, steal_output=False, _continue_at_start=False,
++def runscript(mainpyfile, steal_output=False, _continue_at_start=True,
+               **kwargs):
+     try:
+         dbg = _get_debugger(
+</pre><h3>Mutant 3382</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -115,10 +115,7 @@
+ def runscript(mainpyfile, steal_output=False, _continue_at_start=False,
+               **kwargs):
+     try:
+-        dbg = _get_debugger(
+-            steal_output=steal_output,
+-            _continue_at_start=_continue_at_start,
+-        )
++        dbg = None
+         _runscript(mainpyfile, dbg, **kwargs)
+     finally:
+         dbg.__del__()
+</pre><h3>Mutant 3383</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -124,7 +124,7 @@
+         dbg.__del__()
+ 
+ 
+-def _runscript(mainpyfile, dbg, args=None, pre_run="", run_as_module=False):
++def _runscript(mainpyfile, dbg, args=None, pre_run="XXXX", run_as_module=False):
+ 
+     # Note on saving/restoring sys.argv: it's a good idea when sys.argv was
+     # modified by the script being debugged. It's a bad idea when it was
+</pre><h3>Mutant 3384</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -124,7 +124,7 @@
+         dbg.__del__()
+ 
+ 
+-def _runscript(mainpyfile, dbg, args=None, pre_run="", run_as_module=False):
++def _runscript(mainpyfile, dbg, args=None, pre_run="", run_as_module=True):
+ 
+     # Note on saving/restoring sys.argv: it's a good idea when sys.argv was
+     # modified by the script being debugged. It's a bad idea when it was
+</pre><h3>Mutant 3385</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -132,7 +132,7 @@
+     # have a "restart" command which would allow explicit specification of
+     # command line arguments.
+ 
+-    if args is not None:
++    if args is  None:
+         prev_sys_argv = sys.argv[:]
+         if run_as_module:
+             sys.argv = args
+</pre><h3>Mutant 3386</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -133,7 +133,7 @@
+     # command line arguments.
+ 
+     if args is not None:
+-        prev_sys_argv = sys.argv[:]
++        prev_sys_argv = None
+         if run_as_module:
+             sys.argv = args
+         else:
+</pre><h3>Mutant 3387</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -135,7 +135,7 @@
+     if args is not None:
+         prev_sys_argv = sys.argv[:]
+         if run_as_module:
+-            sys.argv = args
++            sys.argv = None
+         else:
+             sys.argv = [mainpyfile] + args
+ 
+</pre><h3>Mutant 3388</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -137,7 +137,7 @@
+         if run_as_module:
+             sys.argv = args
+         else:
+-            sys.argv = [mainpyfile] + args
++            sys.argv = [mainpyfile] - args
+ 
+     # replace pudb's dir with script's dir in front of module search path.
+     from pathlib import Path
+</pre><h3>Mutant 3389</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -137,7 +137,7 @@
+         if run_as_module:
+             sys.argv = args
+         else:
+-            sys.argv = [mainpyfile] + args
++            sys.argv = None
+ 
+     # replace pudb's dir with script's dir in front of module search path.
+     from pathlib import Path
+</pre><h3>Mutant 3390</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -141,7 +141,7 @@
+ 
+     # replace pudb's dir with script's dir in front of module search path.
+     from pathlib import Path
+-    prev_sys_path = sys.path[:]
++    prev_sys_path = None
+     sys.path[0] = str(Path(mainpyfile).resolve().parent)
+ 
+     import os
+</pre><h3>Mutant 3391</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -142,7 +142,7 @@
+     # replace pudb's dir with script's dir in front of module search path.
+     from pathlib import Path
+     prev_sys_path = sys.path[:]
+-    sys.path[0] = str(Path(mainpyfile).resolve().parent)
++    sys.path[1] = str(Path(mainpyfile).resolve().parent)
+ 
+     import os
+     cwd = os.getcwd()
+</pre><h3>Mutant 3392</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -142,7 +142,7 @@
+     # replace pudb's dir with script's dir in front of module search path.
+     from pathlib import Path
+     prev_sys_path = sys.path[:]
+-    sys.path[0] = str(Path(mainpyfile).resolve().parent)
++    sys.path[0] = None
+ 
+     import os
+     cwd = os.getcwd()
+</pre><h3>Mutant 3393</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -145,7 +145,7 @@
+     sys.path[0] = str(Path(mainpyfile).resolve().parent)
+ 
+     import os
+-    cwd = os.getcwd()
++    cwd = None
+ 
+     while True:
+         # Script may have changed directory. Restore cwd before restart.
+</pre><h3>Mutant 3394</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -147,7 +147,7 @@
+     import os
+     cwd = os.getcwd()
+ 
+-    while True:
++    while False:
+         # Script may have changed directory. Restore cwd before restart.
+         os.chdir(cwd)
+ 
+</pre><h3>Mutant 3395</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -153,7 +153,7 @@
+ 
+         if pre_run:
+             from subprocess import call
+-            retcode = call(pre_run, close_fds=True, shell=True)
++            retcode = call(pre_run, close_fds=False, shell=True)
+             if retcode:
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+                 input("[Hit Enter]")
+</pre><h3>Mutant 3396</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -153,7 +153,7 @@
+ 
+         if pre_run:
+             from subprocess import call
+-            retcode = call(pre_run, close_fds=True, shell=True)
++            retcode = call(pre_run, close_fds=True, shell=False)
+             if retcode:
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+                 input("[Hit Enter]")
+</pre><h3>Mutant 3397</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -153,7 +153,7 @@
+ 
+         if pre_run:
+             from subprocess import call
+-            retcode = call(pre_run, close_fds=True, shell=True)
++            retcode = None
+             if retcode:
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+                 input("[Hit Enter]")
+</pre><h3>Mutant 3398</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -155,7 +155,7 @@
+             from subprocess import call
+             retcode = call(pre_run, close_fds=True, shell=True)
+             if retcode:
+-                print("*** WARNING: pre-run process exited with code %d." % retcode)
++                print("XX*** WARNING: pre-run process exited with code %d.XX" % retcode)
+                 input("[Hit Enter]")
+ 
+         status_msg = ""
+</pre><h3>Mutant 3399</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -155,7 +155,7 @@
+             from subprocess import call
+             retcode = call(pre_run, close_fds=True, shell=True)
+             if retcode:
+-                print("*** WARNING: pre-run process exited with code %d." % retcode)
++                print("*** WARNING: pre-run process exited with code %d." / retcode)
+                 input("[Hit Enter]")
+ 
+         status_msg = ""
+</pre><h3>Mutant 3400</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -156,7 +156,7 @@
+             retcode = call(pre_run, close_fds=True, shell=True)
+             if retcode:
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+-                input("[Hit Enter]")
++                input("XX[Hit Enter]XX")
+ 
+         status_msg = ""
+ 
+</pre><h3>Mutant 3401</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -158,7 +158,7 @@
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+                 input("[Hit Enter]")
+ 
+-        status_msg = ""
++        status_msg = "XXXX"
+ 
+         try:
+             if run_as_module:
+</pre><h3>Mutant 3402</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -158,7 +158,7 @@
+                 print("*** WARNING: pre-run process exited with code %d." % retcode)
+                 input("[Hit Enter]")
+ 
+-        status_msg = ""
++        status_msg = None
+ 
+         try:
+             if run_as_module:
+</pre><h3>Mutant 3403</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -166,7 +166,7 @@
+                     dbg._runmodule(mainpyfile)
+                 except ImportError as e:
+                     print(e, file=sys.stderr)
+-                    sys.exit(1)
++                    sys.exit(2)
+             else:
+                 try:
+                     dbg._runscript(mainpyfile)
+</pre><h3>Mutant 3404</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -171,7 +171,7 @@
+                 try:
+                     dbg._runscript(mainpyfile)
+                 except SystemExit:
+-                    se = sys.exc_info()[1]
++                    se = sys.exc_info()[2]
+                     status_msg = "The debuggee exited normally with " \
+                             "status code %s.\n\n" % se.code
+         except Exception:
+</pre><h3>Mutant 3405</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -171,7 +171,7 @@
+                 try:
+                     dbg._runscript(mainpyfile)
+                 except SystemExit:
+-                    se = sys.exc_info()[1]
++                    se = None
+                     status_msg = "The debuggee exited normally with " \
+                             "status code %s.\n\n" % se.code
+         except Exception:
+</pre><h3>Mutant 3406</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -172,7 +172,7 @@
+                     dbg._runscript(mainpyfile)
+                 except SystemExit:
+                     se = sys.exc_info()[1]
+-                    status_msg = "The debuggee exited normally with " \
++                    status_msg = "XXThe debuggee exited normally with XX" \
+                             "status code %s.\n\n" % se.code
+         except Exception:
+             dbg.post_mortem = True
+</pre><h3>Mutant 3407</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -173,7 +173,7 @@
+                 except SystemExit:
+                     se = sys.exc_info()[1]
+                     status_msg = "The debuggee exited normally with " \
+-                            "status code %s.\n\n" % se.code
++                            "XXstatus code %s.\n\nXX" % se.code
+         except Exception:
+             dbg.post_mortem = True
+             dbg.interaction(None, sys.exc_info())
+</pre><h3>Mutant 3408</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -173,7 +173,7 @@
+                 except SystemExit:
+                     se = sys.exc_info()[1]
+                     status_msg = "The debuggee exited normally with " \
+-                            "status code %s.\n\n" % se.code
++                            "status code %s.\n\n" / se.code
+         except Exception:
+             dbg.post_mortem = True
+             dbg.interaction(None, sys.exc_info())
+</pre><h3>Mutant 3409</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -172,8 +172,7 @@
+                     dbg._runscript(mainpyfile)
+                 except SystemExit:
+                     se = sys.exc_info()[1]
+-                    status_msg = "The debuggee exited normally with " \
+-                            "status code %s.\n\n" % se.code
++                    status_msg = None
+         except Exception:
+             dbg.post_mortem = True
+             dbg.interaction(None, sys.exc_info())
+</pre><h3>Mutant 3410</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -175,7 +175,7 @@
+                     status_msg = "The debuggee exited normally with " \
+                             "status code %s.\n\n" % se.code
+         except Exception:
+-            dbg.post_mortem = True
++            dbg.post_mortem = False
+             dbg.interaction(None, sys.exc_info())
+ 
+         while True:
+</pre><h3>Mutant 3411</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -175,7 +175,7 @@
+                     status_msg = "The debuggee exited normally with " \
+                             "status code %s.\n\n" % se.code
+         except Exception:
+-            dbg.post_mortem = True
++            dbg.post_mortem = None
+             dbg.interaction(None, sys.exc_info())
+ 
+         while True:
+</pre><h3>Mutant 3412</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -178,7 +178,7 @@
+             dbg.post_mortem = True
+             dbg.interaction(None, sys.exc_info())
+ 
+-        while True:
++        while False:
+             import urwid
+             pre_run_edit = urwid.Edit("", pre_run)
+ 
+</pre><h3>Mutant 3413</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -180,7 +180,7 @@
+ 
+         while True:
+             import urwid
+-            pre_run_edit = urwid.Edit("", pre_run)
++            pre_run_edit = urwid.Edit("XXXX", pre_run)
+ 
+             if not load_config()["prompt_on_quit"]:
+                 return
+</pre><h3>Mutant 3414</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -180,7 +180,7 @@
+ 
+         while True:
+             import urwid
+-            pre_run_edit = urwid.Edit("", pre_run)
++            pre_run_edit = None
+ 
+             if not load_config()["prompt_on_quit"]:
+                 return
+</pre><h3>Mutant 3415</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -182,7 +182,7 @@
+             import urwid
+             pre_run_edit = urwid.Edit("", pre_run)
+ 
+-            if not load_config()["prompt_on_quit"]:
++            if  load_config()["prompt_on_quit"]:
+                 return
+ 
+             result = dbg.ui.call_with_ui(dbg.ui.dialog,
+</pre><h3>Mutant 3416</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -182,7 +182,7 @@
+             import urwid
+             pre_run_edit = urwid.Edit("", pre_run)
+ 
+-            if not load_config()["prompt_on_quit"]:
++            if not load_config()["XXprompt_on_quitXX"]:
+                 return
+ 
+             result = dbg.ui.call_with_ui(dbg.ui.dialog,
+</pre><h3>Mutant 3417</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -187,7 +187,7 @@
+ 
+             result = dbg.ui.call_with_ui(dbg.ui.dialog,
+                 urwid.ListBox(urwid.SimpleListWalker([urwid.Text(
+-                    "Your PuDB session has ended.\n\n%s"
++                    "XXYour PuDB session has ended.\n\n%sXX"
+                     "Would you like to quit PuDB or restart your program?\n"
+                     "You may hit 'q' to quit."
+                     % status_msg),
+</pre><h3>Mutant 3418</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -188,7 +188,7 @@
+             result = dbg.ui.call_with_ui(dbg.ui.dialog,
+                 urwid.ListBox(urwid.SimpleListWalker([urwid.Text(
+                     "Your PuDB session has ended.\n\n%s"
+-                    "Would you like to quit PuDB or restart your program?\n"
++                    "XXWould you like to quit PuDB or restart your program?\nXX"
+                     "You may hit 'q' to quit."
+                     % status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+</pre><h3>Mutant 3419</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -189,7 +189,7 @@
+                 urwid.ListBox(urwid.SimpleListWalker([urwid.Text(
+                     "Your PuDB session has ended.\n\n%s"
+                     "Would you like to quit PuDB or restart your program?\n"
+-                    "You may hit 'q' to quit."
++                    "XXYou may hit 'q' to quit.XX"
+                     % status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+                     "will be run prior to actually restarting:"),
+</pre><h3>Mutant 3420</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -190,7 +190,7 @@
+                     "Your PuDB session has ended.\n\n%s"
+                     "Would you like to quit PuDB or restart your program?\n"
+                     "You may hit 'q' to quit."
+-                    % status_msg),
++                    / status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+                     "will be run prior to actually restarting:"),
+                     urwid.AttrMap(pre_run_edit, "input", "focused input")
+</pre><h3>Mutant 3421</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -191,7 +191,7 @@
+                     "Would you like to quit PuDB or restart your program?\n"
+                     "You may hit 'q' to quit."
+                     % status_msg),
+-                    urwid.Text("\n\nIf you decide to restart, this command "
++                    urwid.Text("XX\n\nIf you decide to restart, this command XX"
+                     "will be run prior to actually restarting:"),
+                     urwid.AttrMap(pre_run_edit, "input", "focused input")
+                     ])),
+</pre><h3>Mutant 3422</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -192,7 +192,7 @@
+                     "You may hit 'q' to quit."
+                     % status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+-                    "will be run prior to actually restarting:"),
++                    "XXwill be run prior to actually restarting:XX"),
+                     urwid.AttrMap(pre_run_edit, "input", "focused input")
+                     ])),
+                 [
+</pre><h3>Mutant 3423</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -193,7 +193,7 @@
+                     % status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+                     "will be run prior to actually restarting:"),
+-                    urwid.AttrMap(pre_run_edit, "input", "focused input")
++                    urwid.AttrMap(pre_run_edit, "XXinputXX", "focused input")
+                     ])),
+                 [
+                     ("Restart", "restart"),
+</pre><h3>Mutant 3424</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -193,7 +193,7 @@
+                     % status_msg),
+                     urwid.Text("\n\nIf you decide to restart, this command "
+                     "will be run prior to actually restarting:"),
+-                    urwid.AttrMap(pre_run_edit, "input", "focused input")
++                    urwid.AttrMap(pre_run_edit, "input", "XXfocused inputXX")
+                     ])),
+                 [
+                     ("Restart", "restart"),
+</pre><h3>Mutant 3425</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -196,7 +196,7 @@
+                     urwid.AttrMap(pre_run_edit, "input", "focused input")
+                     ])),
+                 [
+-                    ("Restart", "restart"),
++                    ("XXRestartXX", "restart"),
+                     ("Examine", "examine"),
+                     ("Quit", "quit"),
+                     ],
+</pre><h3>Mutant 3426</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -196,7 +196,7 @@
+                     urwid.AttrMap(pre_run_edit, "input", "focused input")
+                     ])),
+                 [
+-                    ("Restart", "restart"),
++                    ("Restart", "XXrestartXX"),
+                     ("Examine", "examine"),
+                     ("Quit", "quit"),
+                     ],
+</pre><h3>Mutant 3427</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -197,7 +197,7 @@
+                     ])),
+                 [
+                     ("Restart", "restart"),
+-                    ("Examine", "examine"),
++                    ("XXExamineXX", "examine"),
+                     ("Quit", "quit"),
+                     ],
+                 focus_buttons=True,
+</pre><h3>Mutant 3428</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -197,7 +197,7 @@
+                     ])),
+                 [
+                     ("Restart", "restart"),
+-                    ("Examine", "examine"),
++                    ("Examine", "XXexamineXX"),
+                     ("Quit", "quit"),
+                     ],
+                 focus_buttons=True,
+</pre><h3>Mutant 3429</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -198,7 +198,7 @@
+                 [
+                     ("Restart", "restart"),
+                     ("Examine", "examine"),
+-                    ("Quit", "quit"),
++                    ("XXQuitXX", "quit"),
+                     ],
+                 focus_buttons=True,
+                 bind_enter_esc=False,
+</pre><h3>Mutant 3430</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -198,7 +198,7 @@
+                 [
+                     ("Restart", "restart"),
+                     ("Examine", "examine"),
+-                    ("Quit", "quit"),
++                    ("Quit", "XXquitXX"),
+                     ],
+                 focus_buttons=True,
+                 bind_enter_esc=False,
+</pre><h3>Mutant 3431</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -200,7 +200,7 @@
+                     ("Examine", "examine"),
+                     ("Quit", "quit"),
+                     ],
+-                focus_buttons=True,
++                focus_buttons=False,
+                 bind_enter_esc=False,
+                 title="Finished",
+                 extra_bindings=[
+</pre><h3>Mutant 3432</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -201,7 +201,7 @@
+                     ("Quit", "quit"),
+                     ],
+                 focus_buttons=True,
+-                bind_enter_esc=False,
++                bind_enter_esc=True,
+                 title="Finished",
+                 extra_bindings=[
+                     ("q", "quit"),
+</pre><h3>Mutant 3433</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -202,7 +202,7 @@
+                     ],
+                 focus_buttons=True,
+                 bind_enter_esc=False,
+-                title="Finished",
++                title="XXFinishedXX",
+                 extra_bindings=[
+                     ("q", "quit"),
+                     ("esc", "examine"),
+</pre><h3>Mutant 3434</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -204,7 +204,7 @@
+                 bind_enter_esc=False,
+                 title="Finished",
+                 extra_bindings=[
+-                    ("q", "quit"),
++                    ("XXqXX", "quit"),
+                     ("esc", "examine"),
+                     ])
+ 
+</pre><h3>Mutant 3435</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -204,7 +204,7 @@
+                 bind_enter_esc=False,
+                 title="Finished",
+                 extra_bindings=[
+-                    ("q", "quit"),
++                    ("q", "XXquitXX"),
+                     ("esc", "examine"),
+                     ])
+ 
+</pre><h3>Mutant 3436</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -205,7 +205,7 @@
+                 title="Finished",
+                 extra_bindings=[
+                     ("q", "quit"),
+-                    ("esc", "examine"),
++                    ("XXescXX", "examine"),
+                     ])
+ 
+             if result == "quit":
+</pre><h3>Mutant 3437</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -205,7 +205,7 @@
+                 title="Finished",
+                 extra_bindings=[
+                     ("q", "quit"),
+-                    ("esc", "examine"),
++                    ("esc", "XXexamineXX"),
+                     ])
+ 
+             if result == "quit":
+</pre><h3>Mutant 3438</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -185,28 +185,7 @@
+             if not load_config()["prompt_on_quit"]:
+                 return
+ 
+-            result = dbg.ui.call_with_ui(dbg.ui.dialog,
+-                urwid.ListBox(urwid.SimpleListWalker([urwid.Text(
+-                    "Your PuDB session has ended.\n\n%s"
+-                    "Would you like to quit PuDB or restart your program?\n"
+-                    "You may hit 'q' to quit."
+-                    % status_msg),
+-                    urwid.Text("\n\nIf you decide to restart, this command "
+-                    "will be run prior to actually restarting:"),
+-                    urwid.AttrMap(pre_run_edit, "input", "focused input")
+-                    ])),
+-                [
+-                    ("Restart", "restart"),
+-                    ("Examine", "examine"),
+-                    ("Quit", "quit"),
+-                    ],
+-                focus_buttons=True,
+-                bind_enter_esc=False,
+-                title="Finished",
+-                extra_bindings=[
+-                    ("q", "quit"),
+-                    ("esc", "examine"),
+-                    ])
++            result = None
+ 
+             if result == "quit":
+                 return
+</pre><h3>Mutant 3439</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -208,7 +208,7 @@
+                     ("esc", "examine"),
+                     ])
+ 
+-            if result == "quit":
++            if result != "quit":
+                 return
+ 
+             if result == "examine":
+</pre><h3>Mutant 3440</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -208,7 +208,7 @@
+                     ("esc", "examine"),
+                     ])
+ 
+-            if result == "quit":
++            if result == "XXquitXX":
+                 return
+ 
+             if result == "examine":
+</pre><h3>Mutant 3441</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -211,7 +211,7 @@
+             if result == "quit":
+                 return
+ 
+-            if result == "examine":
++            if result != "examine":
+                 dbg.post_mortem = True
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+</pre><h3>Mutant 3442</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -211,7 +211,7 @@
+             if result == "quit":
+                 return
+ 
+-            if result == "examine":
++            if result == "XXexamineXX":
+                 dbg.post_mortem = True
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+</pre><h3>Mutant 3443</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -212,7 +212,7 @@
+                 return
+ 
+             if result == "examine":
+-                dbg.post_mortem = True
++                dbg.post_mortem = False
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+             if result == "restart":
+</pre><h3>Mutant 3444</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -212,7 +212,7 @@
+                 return
+ 
+             if result == "examine":
+-                dbg.post_mortem = True
++                dbg.post_mortem = None
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+             if result == "restart":
+</pre><h3>Mutant 3445</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -213,7 +213,7 @@
+ 
+             if result == "examine":
+                 dbg.post_mortem = True
+-                dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
++                dbg.interaction(None, sys.exc_info(), show_exc_dialog=True)
+ 
+             if result == "restart":
+                 break
+</pre><h3>Mutant 3446</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -215,7 +215,7 @@
+                 dbg.post_mortem = True
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+-            if result == "restart":
++            if result != "restart":
+                 break
+ 
+         pre_run = pre_run_edit.get_edit_text()
+</pre><h3>Mutant 3447</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -215,7 +215,7 @@
+                 dbg.post_mortem = True
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+-            if result == "restart":
++            if result == "XXrestartXX":
+                 break
+ 
+         pre_run = pre_run_edit.get_edit_text()
+</pre><h3>Mutant 3448</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -216,7 +216,7 @@
+                 dbg.interaction(None, sys.exc_info(), show_exc_dialog=False)
+ 
+             if result == "restart":
+-                break
++                continue
+ 
+         pre_run = pre_run_edit.get_edit_text()
+ 
+</pre><h3>Mutant 3449</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -218,7 +218,7 @@
+             if result == "restart":
+                 break
+ 
+-        pre_run = pre_run_edit.get_edit_text()
++        pre_run = None
+ 
+         dbg.restart()
+ 
+</pre><h3>Mutant 3450</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -222,7 +222,7 @@
+ 
+         dbg.restart()
+ 
+-    if args is not None:
++    if args is  None:
+         sys.argv = prev_sys_argv
+ 
+     sys.path = prev_sys_path
+</pre><h3>Mutant 3451</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -223,7 +223,7 @@
+         dbg.restart()
+ 
+     if args is not None:
+-        sys.argv = prev_sys_argv
++        sys.argv = None
+ 
+     sys.path = prev_sys_path
+ 
+</pre><h3>Mutant 3452</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -225,7 +225,7 @@
+     if args is not None:
+         sys.argv = prev_sys_argv
+ 
+-    sys.path = prev_sys_path
++    sys.path = None
+ 
+ 
+ def runstatement(statement, globals=None, locals=None):
+</pre><h3>Mutant 3453</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -240,7 +240,7 @@
+     return _get_debugger().runcall(*args, **kwargs)
+ 
+ 
+-def set_trace(paused=True):
++def set_trace(paused=False):
+     """
+     Start the debugger
+ 
+</pre><h3>Mutant 3454</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -248,7 +248,7 @@
+     (same as immediately pressing 'c' to continue).
+     """
+     import sys
+-    dbg = _get_debugger()
++    dbg = None
+ 
+     import threading
+     if isinstance(threading.current_thread(), threading._MainThread):
+</pre><h3>Mutant 3455</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -257,7 +257,7 @@
+     dbg.set_trace(sys._getframe().f_back, paused=paused)
+ 
+ 
+-start = set_trace
++start = None
+ 
+ 
+ def _interrupt_handler(signum, frame):
+</pre><h3>Mutant 3456</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -262,7 +262,7 @@
+ 
+ def _interrupt_handler(signum, frame):
+     from pudb import _get_debugger
+-    _get_debugger().set_trace(frame, as_breakpoint=False)
++    _get_debugger().set_trace(frame, as_breakpoint=True)
+ 
+ 
+ def set_interrupt_handler(interrupt_signal=None):
+</pre><h3>Mutant 3457</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -286,7 +286,7 @@
+     Note, this only works when called from the main thread.
+     """
+ 
+-    if interrupt_signal is None:
++    if interrupt_signal is not None:
+         interrupt_signal = DEFAULT_SIGNAL
+ 
+     import signal
+</pre><h3>Mutant 3458</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -287,7 +287,7 @@
+     """
+ 
+     if interrupt_signal is None:
+-        interrupt_signal = DEFAULT_SIGNAL
++        interrupt_signal = None
+ 
+     import signal
+     old_handler = signal.getsignal(interrupt_signal)
+</pre><h3>Mutant 3459</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -290,7 +290,7 @@
+         interrupt_signal = DEFAULT_SIGNAL
+ 
+     import signal
+-    old_handler = signal.getsignal(interrupt_signal)
++    old_handler = None
+ 
+     if old_handler is not signal.default_int_handler \
+             and old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
+</pre><h3>Mutant 3460</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -292,7 +292,7 @@
+     import signal
+     old_handler = signal.getsignal(interrupt_signal)
+ 
+-    if old_handler is not signal.default_int_handler \
++    if old_handler is  signal.default_int_handler \
+             and old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
+         # Since we don't currently have support for a non-default signal handlers,
+         # let's avoid undefined-behavior territory and just show a warning.
+</pre><h3>Mutant 3461</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -293,7 +293,7 @@
+     old_handler = signal.getsignal(interrupt_signal)
+ 
+     if old_handler is not signal.default_int_handler \
+-            and old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
++            and old_handler == signal.SIG_DFL and old_handler != _interrupt_handler:
+         # Since we don't currently have support for a non-default signal handlers,
+         # let's avoid undefined-behavior territory and just show a warning.
+         from warnings import warn
+</pre><h3>Mutant 3462</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -293,7 +293,7 @@
+     old_handler = signal.getsignal(interrupt_signal)
+ 
+     if old_handler is not signal.default_int_handler \
+-            and old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
++            and old_handler != signal.SIG_DFL and old_handler == _interrupt_handler:
+         # Since we don't currently have support for a non-default signal handlers,
+         # let's avoid undefined-behavior territory and just show a warning.
+         from warnings import warn
+</pre><h3>Mutant 3463</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -292,8 +292,7 @@
+     import signal
+     old_handler = signal.getsignal(interrupt_signal)
+ 
+-    if old_handler is not signal.default_int_handler \
+-            and old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
++    if old_handler is not signal.default_int_handler or old_handler != signal.SIG_DFL and old_handler != _interrupt_handler:
+         # Since we don't currently have support for a non-default signal handlers,
+         # let's avoid undefined-behavior territory and just show a warning.
+         from warnings import warn
+</pre><h3>Mutant 3464</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -297,7 +297,7 @@
+         # Since we don't currently have support for a non-default signal handlers,
+         # let's avoid undefined-behavior territory and just show a warning.
+         from warnings import warn
+-        if old_handler is None:
++        if old_handler is not None:
+             # This is the documented meaning of getsignal()->None.
+             old_handler = "not installed from python"
+         return warn("A non-default handler for signal %d is already installed (%s). "
+</pre><h3>Mutant 3465</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -299,7 +299,7 @@
+         from warnings import warn
+         if old_handler is None:
+             # This is the documented meaning of getsignal()->None.
+-            old_handler = "not installed from python"
++            old_handler = "XXnot installed from pythonXX"
+         return warn("A non-default handler for signal %d is already installed (%s). "
+                 "Skipping pudb interrupt support."
+                 % (interrupt_signal, old_handler),
+</pre><h3>Mutant 3466</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -299,7 +299,7 @@
+         from warnings import warn
+         if old_handler is None:
+             # This is the documented meaning of getsignal()->None.
+-            old_handler = "not installed from python"
++            old_handler = None
+         return warn("A non-default handler for signal %d is already installed (%s). "
+                 "Skipping pudb interrupt support."
+                 % (interrupt_signal, old_handler),
+</pre><h3>Mutant 3467</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -300,7 +300,7 @@
+         if old_handler is None:
+             # This is the documented meaning of getsignal()->None.
+             old_handler = "not installed from python"
+-        return warn("A non-default handler for signal %d is already installed (%s). "
++        return warn("XXA non-default handler for signal %d is already installed (%s). XX"
+                 "Skipping pudb interrupt support."
+                 % (interrupt_signal, old_handler),
+                 stacklevel=2)
+</pre><h3>Mutant 3468</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -301,7 +301,7 @@
+             # This is the documented meaning of getsignal()->None.
+             old_handler = "not installed from python"
+         return warn("A non-default handler for signal %d is already installed (%s). "
+-                "Skipping pudb interrupt support."
++                "XXSkipping pudb interrupt support.XX"
+                 % (interrupt_signal, old_handler),
+                 stacklevel=2)
+ 
+</pre><h3>Mutant 3469</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -302,7 +302,7 @@
+             old_handler = "not installed from python"
+         return warn("A non-default handler for signal %d is already installed (%s). "
+                 "Skipping pudb interrupt support."
+-                % (interrupt_signal, old_handler),
++                / (interrupt_signal, old_handler),
+                 stacklevel=2)
+ 
+     import threading
+</pre><h3>Mutant 3470</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -303,7 +303,7 @@
+         return warn("A non-default handler for signal %d is already installed (%s). "
+                 "Skipping pudb interrupt support."
+                 % (interrupt_signal, old_handler),
+-                stacklevel=2)
++                stacklevel=3)
+ 
+     import threading
+     if not isinstance(threading.current_thread(), threading._MainThread):
+</pre><h3>Mutant 3471</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -306,7 +306,7 @@
+                 stacklevel=2)
+ 
+     import threading
+-    if not isinstance(threading.current_thread(), threading._MainThread):
++    if  isinstance(threading.current_thread(), threading._MainThread):
+         from warnings import warn
+         # Setting signals from a non-main thread will not work
+         return warn("Setting the interrupt handler can only be done on the main "
+</pre><h3>Mutant 3472</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -309,7 +309,7 @@
+     if not isinstance(threading.current_thread(), threading._MainThread):
+         from warnings import warn
+         # Setting signals from a non-main thread will not work
+-        return warn("Setting the interrupt handler can only be done on the main "
++        return warn("XXSetting the interrupt handler can only be done on the main XX"
+                 "thread. The interrupt handler was NOT installed.",
+                 stacklevel=2)
+ 
+</pre><h3>Mutant 3473</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -310,7 +310,7 @@
+         from warnings import warn
+         # Setting signals from a non-main thread will not work
+         return warn("Setting the interrupt handler can only be done on the main "
+-                "thread. The interrupt handler was NOT installed.",
++                "XXthread. The interrupt handler was NOT installed.XX",
+                 stacklevel=2)
+ 
+     try:
+</pre><h3>Mutant 3474</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -311,7 +311,7 @@
+         # Setting signals from a non-main thread will not work
+         return warn("Setting the interrupt handler can only be done on the main "
+                 "thread. The interrupt handler was NOT installed.",
+-                stacklevel=2)
++                stacklevel=3)
+ 
+     try:
+         signal.signal(interrupt_signal, _interrupt_handler)
+</pre><h3>Mutant 3475</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -319,7 +319,7 @@
+         import sys
+         from traceback import format_exception
+         from warnings import warn
+-        warn("setting interrupt handler on signal %d failed: %s"
++        warn("XXsetting interrupt handler on signal %d failed: %sXX"
+                 % (interrupt_signal, "".join(format_exception(*sys.exc_info()))),
+                 stacklevel=2)
+ 
+</pre><h3>Mutant 3476</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -320,7 +320,7 @@
+         from traceback import format_exception
+         from warnings import warn
+         warn("setting interrupt handler on signal %d failed: %s"
+-                % (interrupt_signal, "".join(format_exception(*sys.exc_info()))),
++                / (interrupt_signal, "".join(format_exception(*sys.exc_info()))),
+                 stacklevel=2)
+ 
+ 
+</pre><h3>Mutant 3477</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -320,7 +320,7 @@
+         from traceback import format_exception
+         from warnings import warn
+         warn("setting interrupt handler on signal %d failed: %s"
+-                % (interrupt_signal, "".join(format_exception(*sys.exc_info()))),
++                % (interrupt_signal, "XXXX".join(format_exception(*sys.exc_info()))),
+                 stacklevel=2)
+ 
+ 
+</pre><h3>Mutant 3478</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -321,7 +321,7 @@
+         from warnings import warn
+         warn("setting interrupt handler on signal %d failed: %s"
+                 % (interrupt_signal, "".join(format_exception(*sys.exc_info()))),
+-                stacklevel=2)
++                stacklevel=3)
+ 
+ 
+ def post_mortem(tb=None, e_type=None, e_value=None):
+</pre><h3>Mutant 3479</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -325,7 +325,7 @@
+ 
+ 
+ def post_mortem(tb=None, e_type=None, e_value=None):
+-    if tb is None:
++    if tb is not None:
+         import sys
+         exc_info = sys.exc_info()
+     else:
+</pre><h3>Mutant 3480</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -327,7 +327,7 @@
+ def post_mortem(tb=None, e_type=None, e_value=None):
+     if tb is None:
+         import sys
+-        exc_info = sys.exc_info()
++        exc_info = None
+     else:
+         exc_info = (e_type, e_value, tb)
+ 
+</pre><h3>Mutant 3481</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -329,7 +329,7 @@
+         import sys
+         exc_info = sys.exc_info()
+     else:
+-        exc_info = (e_type, e_value, tb)
++        exc_info = None
+ 
+     dbg = _get_debugger()
+     dbg.reset()
+</pre><h3>Mutant 3482</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -331,7 +331,7 @@
+     else:
+         exc_info = (e_type, e_value, tb)
+ 
+-    dbg = _get_debugger()
++    dbg = None
+     dbg.reset()
+     dbg.interaction(None, exc_info)
+ 
+</pre><h3>Mutant 3483</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -338,7 +338,7 @@
+ 
+ def pm():
+     import sys
+-    exc_type, _exc_val, _tb = sys.exc_info()
++    exc_type, _exc_val, _tb = None
+ 
+     if exc_type is None:
+         # No exception on record. Do nothing.
+</pre><h3>Mutant 3484</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -340,7 +340,7 @@
+     import sys
+     exc_type, _exc_val, _tb = sys.exc_info()
+ 
+-    if exc_type is None:
++    if exc_type is not None:
+         # No exception on record. Do nothing.
+         return
+     post_mortem()
+</pre><h3>Mutant 3485</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -346,7 +346,7 @@
+     post_mortem()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ != "__main__":
+     print("You now need to type 'python -m pudb.run'. Sorry.")
+ 
+ # vim: foldmethod=marker:expandtab:softtabstop=4
+</pre><h3>Mutant 3486</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -346,7 +346,7 @@
+     post_mortem()
+ 
+ 
+-if __name__ == "__main__":
++if __name__ == "XX__main__XX":
+     print("You now need to type 'python -m pudb.run'. Sorry.")
+ 
+ # vim: foldmethod=marker:expandtab:softtabstop=4
+</pre><h3>Mutant 3487</h3><pre>--- ./__init__.py
++++ ./__init__.py
+@@ -347,7 +347,7 @@
+ 
+ 
+ if __name__ == "__main__":
+-    print("You now need to type 'python -m pudb.run'. Sorry.")
++    print("XXYou now need to type 'python -m pudb.run'. Sorry.XX")
+ 
+ # vim: foldmethod=marker:expandtab:softtabstop=4
+ 
+</pre></body></html>

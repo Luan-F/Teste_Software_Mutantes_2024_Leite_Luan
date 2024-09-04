@@ -1,0 +1,3129 @@
+<html><body><h1>./theme.py</h1>Killed 0 out of 269 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3488</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -35,8 +35,6 @@
+     reset_inheritance_overrides,
+ )
+ 
+-
+-@dataclass
+ class PaletteEntry:
+     name: str
+     foreground: str = "default"
+</pre><h3>Mutant 3489</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -39,7 +39,7 @@
+ @dataclass
+ class PaletteEntry:
+     name: str
+-    foreground: str = "default"
++    foreground: str = "XXdefaultXX"
+     background: str = "default"
+     mono: Optional[str] = None
+     foreground_high: Optional[str] = None
+</pre><h3>Mutant 3490</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -39,7 +39,7 @@
+ @dataclass
+ class PaletteEntry:
+     name: str
+-    foreground: str = "default"
++    foreground: str = None
+     background: str = "default"
+     mono: Optional[str] = None
+     foreground_high: Optional[str] = None
+</pre><h3>Mutant 3491</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -40,7 +40,7 @@
+ class PaletteEntry:
+     name: str
+     foreground: str = "default"
+-    background: str = "default"
++    background: str = "XXdefaultXX"
+     mono: Optional[str] = None
+     foreground_high: Optional[str] = None
+     background_high: Optional[str] = None
+</pre><h3>Mutant 3492</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -40,7 +40,7 @@
+ class PaletteEntry:
+     name: str
+     foreground: str = "default"
+-    background: str = "default"
++    background: str = None
+     mono: Optional[str] = None
+     foreground_high: Optional[str] = None
+     background_high: Optional[str] = None
+</pre><h3>Mutant 3493</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -41,7 +41,7 @@
+     name: str
+     foreground: str = "default"
+     background: str = "default"
+-    mono: Optional[str] = None
++    mono: Optional[str] = ""
+     foreground_high: Optional[str] = None
+     background_high: Optional[str] = None
+ 
+</pre><h3>Mutant 3494</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -42,7 +42,7 @@
+     foreground: str = "default"
+     background: str = "default"
+     mono: Optional[str] = None
+-    foreground_high: Optional[str] = None
++    foreground_high: Optional[str] = ""
+     background_high: Optional[str] = None
+ 
+     def handle_256_colors(self):
+</pre><h3>Mutant 3495</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -43,7 +43,7 @@
+     background: str = "default"
+     mono: Optional[str] = None
+     foreground_high: Optional[str] = None
+-    background_high: Optional[str] = None
++    background_high: Optional[str] = ""
+ 
+     def handle_256_colors(self):
+         if self.foreground.lower().strip().startswith("h"):
+</pre><h3>Mutant 3496</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -46,7 +46,7 @@
+     background_high: Optional[str] = None
+ 
+     def handle_256_colors(self):
+-        if self.foreground.lower().strip().startswith("h"):
++        if self.foreground.lower().strip().startswith("XXhXX"):
+             self.foreground_high = self.foreground
+             self.foreground = "default"
+         if self.background.lower().strip().startswith("h"):
+</pre><h3>Mutant 3497</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -47,7 +47,7 @@
+ 
+     def handle_256_colors(self):
+         if self.foreground.lower().strip().startswith("h"):
+-            self.foreground_high = self.foreground
++            self.foreground_high = None
+             self.foreground = "default"
+         if self.background.lower().strip().startswith("h"):
+             self.background_high = self.background
+</pre><h3>Mutant 3498</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -48,7 +48,7 @@
+     def handle_256_colors(self):
+         if self.foreground.lower().strip().startswith("h"):
+             self.foreground_high = self.foreground
+-            self.foreground = "default"
++            self.foreground = "XXdefaultXX"
+         if self.background.lower().strip().startswith("h"):
+             self.background_high = self.background
+             self.background = "default"
+</pre><h3>Mutant 3499</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -48,7 +48,7 @@
+     def handle_256_colors(self):
+         if self.foreground.lower().strip().startswith("h"):
+             self.foreground_high = self.foreground
+-            self.foreground = "default"
++            self.foreground = None
+         if self.background.lower().strip().startswith("h"):
+             self.background_high = self.background
+             self.background = "default"
+</pre><h3>Mutant 3500</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -49,7 +49,7 @@
+         if self.foreground.lower().strip().startswith("h"):
+             self.foreground_high = self.foreground
+             self.foreground = "default"
+-        if self.background.lower().strip().startswith("h"):
++        if self.background.lower().strip().startswith("XXhXX"):
+             self.background_high = self.background
+             self.background = "default"
+ 
+</pre><h3>Mutant 3501</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -50,7 +50,7 @@
+             self.foreground_high = self.foreground
+             self.foreground = "default"
+         if self.background.lower().strip().startswith("h"):
+-            self.background_high = self.background
++            self.background_high = None
+             self.background = "default"
+ 
+ 
+</pre><h3>Mutant 3502</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -51,7 +51,7 @@
+             self.foreground = "default"
+         if self.background.lower().strip().startswith("h"):
+             self.background_high = self.background
+-            self.background = "default"
++            self.background = "XXdefaultXX"
+ 
+ 
+ # ------------------------------------------------------------------------------
+</pre><h3>Mutant 3503</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -51,7 +51,7 @@
+             self.foreground = "default"
+         if self.background.lower().strip().startswith("h"):
+             self.background_high = self.background
+-            self.background = "default"
++            self.background = None
+ 
+ 
+ # ------------------------------------------------------------------------------
+</pre><h3>Mutant 3504</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -76,7 +76,7 @@
+ 
+ # {{{ style inheritance
+ BASE_STYLES = {
+-    "background": None,
++    "XXbackgroundXX": None,
+     "selectable": None,
+     "focused selectable": None,
+     "highlighted": None,
+</pre><h3>Mutant 3505</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -77,7 +77,7 @@
+ # {{{ style inheritance
+ BASE_STYLES = {
+     "background": None,
+-    "selectable": None,
++    "XXselectableXX": None,
+     "focused selectable": None,
+     "highlighted": None,
+     "hotkey": None,
+</pre><h3>Mutant 3506</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -78,7 +78,7 @@
+ BASE_STYLES = {
+     "background": None,
+     "selectable": None,
+-    "focused selectable": None,
++    "XXfocused selectableXX": None,
+     "highlighted": None,
+     "hotkey": None,
+ }
+</pre><h3>Mutant 3507</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -79,7 +79,7 @@
+     "background": None,
+     "selectable": None,
+     "focused selectable": None,
+-    "highlighted": None,
++    "XXhighlightedXX": None,
+     "hotkey": None,
+ }
+ 
+</pre><h3>Mutant 3508</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -80,7 +80,7 @@
+     "selectable": None,
+     "focused selectable": None,
+     "highlighted": None,
+-    "hotkey": None,
++    "XXhotkeyXX": None,
+ }
+ 
+ 
+</pre><h3>Mutant 3509</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -75,13 +75,7 @@
+ 
+ 
+ # {{{ style inheritance
+-BASE_STYLES = {
+-    "background": None,
+-    "selectable": None,
+-    "focused selectable": None,
+-    "highlighted": None,
+-    "hotkey": None,
+-}
++BASE_STYLES = None
+ 
+ 
+ # Map styles to their parent. If a style is not defined, use the parent style
+</pre><h3>Mutant 3510</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -89,7 +89,7 @@
+ # focused > highlighted > current > breakpoint line/disabled breakpoint
+ INHERITANCE_MAP = {
+     # {{{ general ui
+-    "label": "background",
++    "XXlabelXX": "background",
+     "header": "background",
+     "dialog title": "header",
+     "group head": "header",
+</pre><h3>Mutant 3511</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -89,7 +89,7 @@
+ # focused > highlighted > current > breakpoint line/disabled breakpoint
+ INHERITANCE_MAP = {
+     # {{{ general ui
+-    "label": "background",
++    "label": "XXbackgroundXX",
+     "header": "background",
+     "dialog title": "header",
+     "group head": "header",
+</pre><h3>Mutant 3512</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -90,7 +90,7 @@
+ INHERITANCE_MAP = {
+     # {{{ general ui
+     "label": "background",
+-    "header": "background",
++    "XXheaderXX": "background",
+     "dialog title": "header",
+     "group head": "header",
+     "focused sidebar": "header",
+</pre><h3>Mutant 3513</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -90,7 +90,7 @@
+ INHERITANCE_MAP = {
+     # {{{ general ui
+     "label": "background",
+-    "header": "background",
++    "header": "XXbackgroundXX",
+     "dialog title": "header",
+     "group head": "header",
+     "focused sidebar": "header",
+</pre><h3>Mutant 3514</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -91,7 +91,7 @@
+     # {{{ general ui
+     "label": "background",
+     "header": "background",
+-    "dialog title": "header",
++    "XXdialog titleXX": "header",
+     "group head": "header",
+     "focused sidebar": "header",
+ 
+</pre><h3>Mutant 3515</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -91,7 +91,7 @@
+     # {{{ general ui
+     "label": "background",
+     "header": "background",
+-    "dialog title": "header",
++    "dialog title": "XXheaderXX",
+     "group head": "header",
+     "focused sidebar": "header",
+ 
+</pre><h3>Mutant 3516</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -92,7 +92,7 @@
+     "label": "background",
+     "header": "background",
+     "dialog title": "header",
+-    "group head": "header",
++    "XXgroup headXX": "header",
+     "focused sidebar": "header",
+ 
+     "input": "selectable",
+</pre><h3>Mutant 3517</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -92,7 +92,7 @@
+     "label": "background",
+     "header": "background",
+     "dialog title": "header",
+-    "group head": "header",
++    "group head": "XXheaderXX",
+     "focused sidebar": "header",
+ 
+     "input": "selectable",
+</pre><h3>Mutant 3518</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -93,7 +93,7 @@
+     "header": "background",
+     "dialog title": "header",
+     "group head": "header",
+-    "focused sidebar": "header",
++    "XXfocused sidebarXX": "header",
+ 
+     "input": "selectable",
+     "focused input": "focused selectable",
+</pre><h3>Mutant 3519</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -93,7 +93,7 @@
+     "header": "background",
+     "dialog title": "header",
+     "group head": "header",
+-    "focused sidebar": "header",
++    "focused sidebar": "XXheaderXX",
+ 
+     "input": "selectable",
+     "focused input": "focused selectable",
+</pre><h3>Mutant 3520</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -95,7 +95,7 @@
+     "group head": "header",
+     "focused sidebar": "header",
+ 
+-    "input": "selectable",
++    "XXinputXX": "selectable",
+     "focused input": "focused selectable",
+     "button": "input",
+     "focused button": "focused input",
+</pre><h3>Mutant 3521</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -95,7 +95,7 @@
+     "group head": "header",
+     "focused sidebar": "header",
+ 
+-    "input": "selectable",
++    "input": "XXselectableXX",
+     "focused input": "focused selectable",
+     "button": "input",
+     "focused button": "focused input",
+</pre><h3>Mutant 3522</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -96,7 +96,7 @@
+     "focused sidebar": "header",
+ 
+     "input": "selectable",
+-    "focused input": "focused selectable",
++    "XXfocused inputXX": "focused selectable",
+     "button": "input",
+     "focused button": "focused input",
+     "value": "input",
+</pre><h3>Mutant 3523</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -96,7 +96,7 @@
+     "focused sidebar": "header",
+ 
+     "input": "selectable",
+-    "focused input": "focused selectable",
++    "focused input": "XXfocused selectableXX",
+     "button": "input",
+     "focused button": "focused input",
+     "value": "input",
+</pre><h3>Mutant 3524</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -97,7 +97,7 @@
+ 
+     "input": "selectable",
+     "focused input": "focused selectable",
+-    "button": "input",
++    "XXbuttonXX": "input",
+     "focused button": "focused input",
+     "value": "input",
+     "fixed value": "label",
+</pre><h3>Mutant 3525</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -97,7 +97,7 @@
+ 
+     "input": "selectable",
+     "focused input": "focused selectable",
+-    "button": "input",
++    "button": "XXinputXX",
+     "focused button": "focused input",
+     "value": "input",
+     "fixed value": "label",
+</pre><h3>Mutant 3526</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -98,7 +98,7 @@
+     "input": "selectable",
+     "focused input": "focused selectable",
+     "button": "input",
+-    "focused button": "focused input",
++    "XXfocused buttonXX": "focused input",
+     "value": "input",
+     "fixed value": "label",
+ 
+</pre><h3>Mutant 3527</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -98,7 +98,7 @@
+     "input": "selectable",
+     "focused input": "focused selectable",
+     "button": "input",
+-    "focused button": "focused input",
++    "focused button": "XXfocused inputXX",
+     "value": "input",
+     "fixed value": "label",
+ 
+</pre><h3>Mutant 3528</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -99,7 +99,7 @@
+     "focused input": "focused selectable",
+     "button": "input",
+     "focused button": "focused input",
+-    "value": "input",
++    "XXvalueXX": "input",
+     "fixed value": "label",
+ 
+     "warning": "highlighted",
+</pre><h3>Mutant 3529</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -99,7 +99,7 @@
+     "focused input": "focused selectable",
+     "button": "input",
+     "focused button": "focused input",
+-    "value": "input",
++    "value": "XXinputXX",
+     "fixed value": "label",
+ 
+     "warning": "highlighted",
+</pre><h3>Mutant 3530</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -100,7 +100,7 @@
+     "button": "input",
+     "focused button": "focused input",
+     "value": "input",
+-    "fixed value": "label",
++    "XXfixed valueXX": "label",
+ 
+     "warning": "highlighted",
+     "header warning": "warning",
+</pre><h3>Mutant 3531</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -100,7 +100,7 @@
+     "button": "input",
+     "focused button": "focused input",
+     "value": "input",
+-    "fixed value": "label",
++    "fixed value": "XXlabelXX",
+ 
+     "warning": "highlighted",
+     "header warning": "warning",
+</pre><h3>Mutant 3532</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -102,7 +102,7 @@
+     "value": "input",
+     "fixed value": "label",
+ 
+-    "warning": "highlighted",
++    "XXwarningXX": "highlighted",
+     "header warning": "warning",
+     "search box": "focused input",
+     "search not found": "warning",
+</pre><h3>Mutant 3533</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -102,7 +102,7 @@
+     "value": "input",
+     "fixed value": "label",
+ 
+-    "warning": "highlighted",
++    "warning": "XXhighlightedXX",
+     "header warning": "warning",
+     "search box": "focused input",
+     "search not found": "warning",
+</pre><h3>Mutant 3534</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -103,7 +103,7 @@
+     "fixed value": "label",
+ 
+     "warning": "highlighted",
+-    "header warning": "warning",
++    "XXheader warningXX": "warning",
+     "search box": "focused input",
+     "search not found": "warning",
+     # }}}
+</pre><h3>Mutant 3535</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -103,7 +103,7 @@
+     "fixed value": "label",
+ 
+     "warning": "highlighted",
+-    "header warning": "warning",
++    "header warning": "XXwarningXX",
+     "search box": "focused input",
+     "search not found": "warning",
+     # }}}
+</pre><h3>Mutant 3536</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -104,7 +104,7 @@
+ 
+     "warning": "highlighted",
+     "header warning": "warning",
+-    "search box": "focused input",
++    "XXsearch boxXX": "focused input",
+     "search not found": "warning",
+     # }}}
+ 
+</pre><h3>Mutant 3537</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -104,7 +104,7 @@
+ 
+     "warning": "highlighted",
+     "header warning": "warning",
+-    "search box": "focused input",
++    "search box": "XXfocused inputXX",
+     "search not found": "warning",
+     # }}}
+ 
+</pre><h3>Mutant 3538</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -105,7 +105,7 @@
+     "warning": "highlighted",
+     "header warning": "warning",
+     "search box": "focused input",
+-    "search not found": "warning",
++    "XXsearch not foundXX": "warning",
+     # }}}
+ 
+     # {{{ source view
+</pre><h3>Mutant 3539</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -105,7 +105,7 @@
+     "warning": "highlighted",
+     "header warning": "warning",
+     "search box": "focused input",
+-    "search not found": "warning",
++    "search not found": "XXwarningXX",
+     # }}}
+ 
+     # {{{ source view
+</pre><h3>Mutant 3540</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -109,7 +109,7 @@
+     # }}}
+ 
+     # {{{ source view
+-    "source": "selectable",
++    "XXsourceXX": "selectable",
+     "focused source": "focused selectable",
+     "highlighted source": "highlighted",
+ 
+</pre><h3>Mutant 3541</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -109,7 +109,7 @@
+     # }}}
+ 
+     # {{{ source view
+-    "source": "selectable",
++    "source": "XXselectableXX",
+     "focused source": "focused selectable",
+     "highlighted source": "highlighted",
+ 
+</pre><h3>Mutant 3542</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -110,7 +110,7 @@
+ 
+     # {{{ source view
+     "source": "selectable",
+-    "focused source": "focused selectable",
++    "XXfocused sourceXX": "focused selectable",
+     "highlighted source": "highlighted",
+ 
+     "current source": "source",
+</pre><h3>Mutant 3543</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -110,7 +110,7 @@
+ 
+     # {{{ source view
+     "source": "selectable",
+-    "focused source": "focused selectable",
++    "focused source": "XXfocused selectableXX",
+     "highlighted source": "highlighted",
+ 
+     "current source": "source",
+</pre><h3>Mutant 3544</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -111,7 +111,7 @@
+     # {{{ source view
+     "source": "selectable",
+     "focused source": "focused selectable",
+-    "highlighted source": "highlighted",
++    "XXhighlighted sourceXX": "highlighted",
+ 
+     "current source": "source",
+     "current focused source": "focused source",
+</pre><h3>Mutant 3545</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -111,7 +111,7 @@
+     # {{{ source view
+     "source": "selectable",
+     "focused source": "focused selectable",
+-    "highlighted source": "highlighted",
++    "highlighted source": "XXhighlightedXX",
+ 
+     "current source": "source",
+     "current focused source": "focused source",
+</pre><h3>Mutant 3546</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -113,7 +113,7 @@
+     "focused source": "focused selectable",
+     "highlighted source": "highlighted",
+ 
+-    "current source": "source",
++    "XXcurrent sourceXX": "source",
+     "current focused source": "focused source",
+     "current highlighted source": "current source",
+ 
+</pre><h3>Mutant 3547</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -113,7 +113,7 @@
+     "focused source": "focused selectable",
+     "highlighted source": "highlighted",
+ 
+-    "current source": "source",
++    "current source": "XXsourceXX",
+     "current focused source": "focused source",
+     "current highlighted source": "current source",
+ 
+</pre><h3>Mutant 3548</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -114,7 +114,7 @@
+     "highlighted source": "highlighted",
+ 
+     "current source": "source",
+-    "current focused source": "focused source",
++    "XXcurrent focused sourceXX": "focused source",
+     "current highlighted source": "current source",
+ 
+     "breakpoint source": "source",
+</pre><h3>Mutant 3549</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -114,7 +114,7 @@
+     "highlighted source": "highlighted",
+ 
+     "current source": "source",
+-    "current focused source": "focused source",
++    "current focused source": "XXfocused sourceXX",
+     "current highlighted source": "current source",
+ 
+     "breakpoint source": "source",
+</pre><h3>Mutant 3550</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -115,7 +115,7 @@
+ 
+     "current source": "source",
+     "current focused source": "focused source",
+-    "current highlighted source": "current source",
++    "XXcurrent highlighted sourceXX": "current source",
+ 
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+</pre><h3>Mutant 3551</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -115,7 +115,7 @@
+ 
+     "current source": "source",
+     "current focused source": "focused source",
+-    "current highlighted source": "current source",
++    "current highlighted source": "XXcurrent sourceXX",
+ 
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+</pre><h3>Mutant 3552</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -117,7 +117,7 @@
+     "current focused source": "focused source",
+     "current highlighted source": "current source",
+ 
+-    "breakpoint source": "source",
++    "XXbreakpoint sourceXX": "source",
+     "breakpoint focused source": "focused source",
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+</pre><h3>Mutant 3553</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -117,7 +117,7 @@
+     "current focused source": "focused source",
+     "current highlighted source": "current source",
+ 
+-    "breakpoint source": "source",
++    "breakpoint source": "XXsourceXX",
+     "breakpoint focused source": "focused source",
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+</pre><h3>Mutant 3554</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -118,7 +118,7 @@
+     "current highlighted source": "current source",
+ 
+     "breakpoint source": "source",
+-    "breakpoint focused source": "focused source",
++    "XXbreakpoint focused sourceXX": "focused source",
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+ 
+</pre><h3>Mutant 3555</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -118,7 +118,7 @@
+     "current highlighted source": "current source",
+ 
+     "breakpoint source": "source",
+-    "breakpoint focused source": "focused source",
++    "breakpoint focused source": "XXfocused sourceXX",
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+ 
+</pre><h3>Mutant 3556</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -119,7 +119,7 @@
+ 
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+-    "current breakpoint source": "current source",
++    "XXcurrent breakpoint sourceXX": "current source",
+     "current breakpoint focused source": "current focused source",
+ 
+     "line number": "source",
+</pre><h3>Mutant 3557</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -119,7 +119,7 @@
+ 
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+-    "current breakpoint source": "current source",
++    "current breakpoint source": "XXcurrent sourceXX",
+     "current breakpoint focused source": "current focused source",
+ 
+     "line number": "source",
+</pre><h3>Mutant 3558</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -120,7 +120,7 @@
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+     "current breakpoint source": "current source",
+-    "current breakpoint focused source": "current focused source",
++    "XXcurrent breakpoint focused sourceXX": "current focused source",
+ 
+     "line number": "source",
+     "breakpoint marker": "line number",
+</pre><h3>Mutant 3559</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -120,7 +120,7 @@
+     "breakpoint source": "source",
+     "breakpoint focused source": "focused source",
+     "current breakpoint source": "current source",
+-    "current breakpoint focused source": "current focused source",
++    "current breakpoint focused source": "XXcurrent focused sourceXX",
+ 
+     "line number": "source",
+     "breakpoint marker": "line number",
+</pre><h3>Mutant 3560</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -122,7 +122,7 @@
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+ 
+-    "line number": "source",
++    "XXline numberXX": "source",
+     "breakpoint marker": "line number",
+     "current line marker": "breakpoint marker",
+     # }}}
+</pre><h3>Mutant 3561</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -122,7 +122,7 @@
+     "current breakpoint source": "current source",
+     "current breakpoint focused source": "current focused source",
+ 
+-    "line number": "source",
++    "line number": "XXsourceXX",
+     "breakpoint marker": "line number",
+     "current line marker": "breakpoint marker",
+     # }}}
+</pre><h3>Mutant 3562</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -123,7 +123,7 @@
+     "current breakpoint focused source": "current focused source",
+ 
+     "line number": "source",
+-    "breakpoint marker": "line number",
++    "XXbreakpoint markerXX": "line number",
+     "current line marker": "breakpoint marker",
+     # }}}
+ 
+</pre><h3>Mutant 3563</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -123,7 +123,7 @@
+     "current breakpoint focused source": "current focused source",
+ 
+     "line number": "source",
+-    "breakpoint marker": "line number",
++    "breakpoint marker": "XXline numberXX",
+     "current line marker": "breakpoint marker",
+     # }}}
+ 
+</pre><h3>Mutant 3564</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -124,7 +124,7 @@
+ 
+     "line number": "source",
+     "breakpoint marker": "line number",
+-    "current line marker": "breakpoint marker",
++    "XXcurrent line markerXX": "breakpoint marker",
+     # }}}
+ 
+     # {{{ sidebar
+</pre><h3>Mutant 3565</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -124,7 +124,7 @@
+ 
+     "line number": "source",
+     "breakpoint marker": "line number",
+-    "current line marker": "breakpoint marker",
++    "current line marker": "XXbreakpoint markerXX",
+     # }}}
+ 
+     # {{{ sidebar
+</pre><h3>Mutant 3566</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -128,7 +128,7 @@
+     # }}}
+ 
+     # {{{ sidebar
+-    "sidebar one": "selectable",
++    "XXsidebar oneXX": "selectable",
+     "sidebar two": "selectable",
+     "sidebar three": "selectable",
+ 
+</pre><h3>Mutant 3567</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -128,7 +128,7 @@
+     # }}}
+ 
+     # {{{ sidebar
+-    "sidebar one": "selectable",
++    "sidebar one": "XXselectableXX",
+     "sidebar two": "selectable",
+     "sidebar three": "selectable",
+ 
+</pre><h3>Mutant 3568</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -129,7 +129,7 @@
+ 
+     # {{{ sidebar
+     "sidebar one": "selectable",
+-    "sidebar two": "selectable",
++    "XXsidebar twoXX": "selectable",
+     "sidebar three": "selectable",
+ 
+     "focused sidebar one": "focused selectable",
+</pre><h3>Mutant 3569</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -129,7 +129,7 @@
+ 
+     # {{{ sidebar
+     "sidebar one": "selectable",
+-    "sidebar two": "selectable",
++    "sidebar two": "XXselectableXX",
+     "sidebar three": "selectable",
+ 
+     "focused sidebar one": "focused selectable",
+</pre><h3>Mutant 3570</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -130,7 +130,7 @@
+     # {{{ sidebar
+     "sidebar one": "selectable",
+     "sidebar two": "selectable",
+-    "sidebar three": "selectable",
++    "XXsidebar threeXX": "selectable",
+ 
+     "focused sidebar one": "focused selectable",
+     "focused sidebar two": "focused selectable",
+</pre><h3>Mutant 3571</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -130,7 +130,7 @@
+     # {{{ sidebar
+     "sidebar one": "selectable",
+     "sidebar two": "selectable",
+-    "sidebar three": "selectable",
++    "sidebar three": "XXselectableXX",
+ 
+     "focused sidebar one": "focused selectable",
+     "focused sidebar two": "focused selectable",
+</pre><h3>Mutant 3572</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -132,7 +132,7 @@
+     "sidebar two": "selectable",
+     "sidebar three": "selectable",
+ 
+-    "focused sidebar one": "focused selectable",
++    "XXfocused sidebar oneXX": "focused selectable",
+     "focused sidebar two": "focused selectable",
+     "focused sidebar three": "focused selectable",
+     # }}}
+</pre><h3>Mutant 3573</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -132,7 +132,7 @@
+     "sidebar two": "selectable",
+     "sidebar three": "selectable",
+ 
+-    "focused sidebar one": "focused selectable",
++    "focused sidebar one": "XXfocused selectableXX",
+     "focused sidebar two": "focused selectable",
+     "focused sidebar three": "focused selectable",
+     # }}}
+</pre><h3>Mutant 3574</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -133,7 +133,7 @@
+     "sidebar three": "selectable",
+ 
+     "focused sidebar one": "focused selectable",
+-    "focused sidebar two": "focused selectable",
++    "XXfocused sidebar twoXX": "focused selectable",
+     "focused sidebar three": "focused selectable",
+     # }}}
+ 
+</pre><h3>Mutant 3575</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -133,7 +133,7 @@
+     "sidebar three": "selectable",
+ 
+     "focused sidebar one": "focused selectable",
+-    "focused sidebar two": "focused selectable",
++    "focused sidebar two": "XXfocused selectableXX",
+     "focused sidebar three": "focused selectable",
+     # }}}
+ 
+</pre><h3>Mutant 3576</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -134,7 +134,7 @@
+ 
+     "focused sidebar one": "focused selectable",
+     "focused sidebar two": "focused selectable",
+-    "focused sidebar three": "focused selectable",
++    "XXfocused sidebar threeXX": "focused selectable",
+     # }}}
+ 
+     # {{{ variables view
+</pre><h3>Mutant 3577</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -134,7 +134,7 @@
+ 
+     "focused sidebar one": "focused selectable",
+     "focused sidebar two": "focused selectable",
+-    "focused sidebar three": "focused selectable",
++    "focused sidebar three": "XXfocused selectableXX",
+     # }}}
+ 
+     # {{{ variables view
+</pre><h3>Mutant 3578</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -138,7 +138,7 @@
+     # }}}
+ 
+     # {{{ variables view
+-    "variables": "selectable",
++    "XXvariablesXX": "selectable",
+     "variable separator": "background",
+ 
+     "var value": "sidebar one",
+</pre><h3>Mutant 3579</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -138,7 +138,7 @@
+     # }}}
+ 
+     # {{{ variables view
+-    "variables": "selectable",
++    "variables": "XXselectableXX",
+     "variable separator": "background",
+ 
+     "var value": "sidebar one",
+</pre><h3>Mutant 3580</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -139,7 +139,7 @@
+ 
+     # {{{ variables view
+     "variables": "selectable",
+-    "variable separator": "background",
++    "XXvariable separatorXX": "background",
+ 
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+</pre><h3>Mutant 3581</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -139,7 +139,7 @@
+ 
+     # {{{ variables view
+     "variables": "selectable",
+-    "variable separator": "background",
++    "variable separator": "XXbackgroundXX",
+ 
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+</pre><h3>Mutant 3582</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -141,7 +141,7 @@
+     "variables": "selectable",
+     "variable separator": "background",
+ 
+-    "var value": "sidebar one",
++    "XXvar valueXX": "sidebar one",
+     "var label": "sidebar two",
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+</pre><h3>Mutant 3583</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -141,7 +141,7 @@
+     "variables": "selectable",
+     "variable separator": "background",
+ 
+-    "var value": "sidebar one",
++    "var value": "XXsidebar oneXX",
+     "var label": "sidebar two",
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+</pre><h3>Mutant 3584</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -142,7 +142,7 @@
+     "variable separator": "background",
+ 
+     "var value": "sidebar one",
+-    "var label": "sidebar two",
++    "XXvar labelXX": "sidebar two",
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+ 
+</pre><h3>Mutant 3585</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -142,7 +142,7 @@
+     "variable separator": "background",
+ 
+     "var value": "sidebar one",
+-    "var label": "sidebar two",
++    "var label": "XXsidebar twoXX",
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+ 
+</pre><h3>Mutant 3586</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -143,7 +143,7 @@
+ 
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+-    "focused var value": "focused sidebar one",
++    "XXfocused var valueXX": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+ 
+     "highlighted var label": "highlighted",
+</pre><h3>Mutant 3587</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -143,7 +143,7 @@
+ 
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+-    "focused var value": "focused sidebar one",
++    "focused var value": "XXfocused sidebar oneXX",
+     "focused var label": "focused sidebar two",
+ 
+     "highlighted var label": "highlighted",
+</pre><h3>Mutant 3588</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -144,7 +144,7 @@
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+     "focused var value": "focused sidebar one",
+-    "focused var label": "focused sidebar two",
++    "XXfocused var labelXX": "focused sidebar two",
+ 
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+</pre><h3>Mutant 3589</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -144,7 +144,7 @@
+     "var value": "sidebar one",
+     "var label": "sidebar two",
+     "focused var value": "focused sidebar one",
+-    "focused var label": "focused sidebar two",
++    "focused var label": "XXfocused sidebar twoXX",
+ 
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+</pre><h3>Mutant 3590</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -146,7 +146,7 @@
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+ 
+-    "highlighted var label": "highlighted",
++    "XXhighlighted var labelXX": "highlighted",
+     "highlighted var value": "highlighted",
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+</pre><h3>Mutant 3591</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -146,7 +146,7 @@
+     "focused var value": "focused sidebar one",
+     "focused var label": "focused sidebar two",
+ 
+-    "highlighted var label": "highlighted",
++    "highlighted var label": "XXhighlightedXX",
+     "highlighted var value": "highlighted",
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+</pre><h3>Mutant 3592</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -147,7 +147,7 @@
+     "focused var label": "focused sidebar two",
+ 
+     "highlighted var label": "highlighted",
+-    "highlighted var value": "highlighted",
++    "XXhighlighted var valueXX": "highlighted",
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+ 
+</pre><h3>Mutant 3593</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -147,7 +147,7 @@
+     "focused var label": "focused sidebar two",
+ 
+     "highlighted var label": "highlighted",
+-    "highlighted var value": "highlighted",
++    "highlighted var value": "XXhighlightedXX",
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+ 
+</pre><h3>Mutant 3594</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -148,7 +148,7 @@
+ 
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+-    "focused highlighted var label": "focused var label",
++    "XXfocused highlighted var labelXX": "focused var label",
+     "focused highlighted var value": "focused var value",
+ 
+     "return label": "var label",
+</pre><h3>Mutant 3595</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -148,7 +148,7 @@
+ 
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+-    "focused highlighted var label": "focused var label",
++    "focused highlighted var label": "XXfocused var labelXX",
+     "focused highlighted var value": "focused var value",
+ 
+     "return label": "var label",
+</pre><h3>Mutant 3596</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -149,7 +149,7 @@
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+     "focused highlighted var label": "focused var label",
+-    "focused highlighted var value": "focused var value",
++    "XXfocused highlighted var valueXX": "focused var value",
+ 
+     "return label": "var label",
+     "return value": "var value",
+</pre><h3>Mutant 3597</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -149,7 +149,7 @@
+     "highlighted var label": "highlighted",
+     "highlighted var value": "highlighted",
+     "focused highlighted var label": "focused var label",
+-    "focused highlighted var value": "focused var value",
++    "focused highlighted var value": "XXfocused var valueXX",
+ 
+     "return label": "var label",
+     "return value": "var value",
+</pre><h3>Mutant 3598</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -151,7 +151,7 @@
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+ 
+-    "return label": "var label",
++    "XXreturn labelXX": "var label",
+     "return value": "var value",
+     "focused return label": "focused var label",
+     "focused return value": "focused var value",
+</pre><h3>Mutant 3599</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -151,7 +151,7 @@
+     "focused highlighted var label": "focused var label",
+     "focused highlighted var value": "focused var value",
+ 
+-    "return label": "var label",
++    "return label": "XXvar labelXX",
+     "return value": "var value",
+     "focused return label": "focused var label",
+     "focused return value": "focused var value",
+</pre><h3>Mutant 3600</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -152,7 +152,7 @@
+     "focused highlighted var value": "focused var value",
+ 
+     "return label": "var label",
+-    "return value": "var value",
++    "XXreturn valueXX": "var value",
+     "focused return label": "focused var label",
+     "focused return value": "focused var value",
+     # }}}
+</pre><h3>Mutant 3601</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -152,7 +152,7 @@
+     "focused highlighted var value": "focused var value",
+ 
+     "return label": "var label",
+-    "return value": "var value",
++    "return value": "XXvar valueXX",
+     "focused return label": "focused var label",
+     "focused return value": "focused var value",
+     # }}}
+</pre><h3>Mutant 3602</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -153,7 +153,7 @@
+ 
+     "return label": "var label",
+     "return value": "var value",
+-    "focused return label": "focused var label",
++    "XXfocused return labelXX": "focused var label",
+     "focused return value": "focused var value",
+     # }}}
+ 
+</pre><h3>Mutant 3603</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -153,7 +153,7 @@
+ 
+     "return label": "var label",
+     "return value": "var value",
+-    "focused return label": "focused var label",
++    "focused return label": "XXfocused var labelXX",
+     "focused return value": "focused var value",
+     # }}}
+ 
+</pre><h3>Mutant 3604</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -154,7 +154,7 @@
+     "return label": "var label",
+     "return value": "var value",
+     "focused return label": "focused var label",
+-    "focused return value": "focused var value",
++    "XXfocused return valueXX": "focused var value",
+     # }}}
+ 
+     # {{{ stack
+</pre><h3>Mutant 3605</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -154,7 +154,7 @@
+     "return label": "var label",
+     "return value": "var value",
+     "focused return label": "focused var label",
+-    "focused return value": "focused var value",
++    "focused return value": "XXfocused var valueXX",
+     # }}}
+ 
+     # {{{ stack
+</pre><h3>Mutant 3606</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -158,7 +158,7 @@
+     # }}}
+ 
+     # {{{ stack
+-    "stack": "selectable",
++    "XXstackXX": "selectable",
+ 
+     "frame name": "sidebar one",
+     "frame class": "sidebar two",
+</pre><h3>Mutant 3607</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -158,7 +158,7 @@
+     # }}}
+ 
+     # {{{ stack
+-    "stack": "selectable",
++    "stack": "XXselectableXX",
+ 
+     "frame name": "sidebar one",
+     "frame class": "sidebar two",
+</pre><h3>Mutant 3608</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -160,7 +160,7 @@
+     # {{{ stack
+     "stack": "selectable",
+ 
+-    "frame name": "sidebar one",
++    "XXframe nameXX": "sidebar one",
+     "frame class": "sidebar two",
+     "frame location": "sidebar three",
+ 
+</pre><h3>Mutant 3609</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -160,7 +160,7 @@
+     # {{{ stack
+     "stack": "selectable",
+ 
+-    "frame name": "sidebar one",
++    "frame name": "XXsidebar oneXX",
+     "frame class": "sidebar two",
+     "frame location": "sidebar three",
+ 
+</pre><h3>Mutant 3610</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -161,7 +161,7 @@
+     "stack": "selectable",
+ 
+     "frame name": "sidebar one",
+-    "frame class": "sidebar two",
++    "XXframe classXX": "sidebar two",
+     "frame location": "sidebar three",
+ 
+     "focused frame name": "focused sidebar one",
+</pre><h3>Mutant 3611</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -161,7 +161,7 @@
+     "stack": "selectable",
+ 
+     "frame name": "sidebar one",
+-    "frame class": "sidebar two",
++    "frame class": "XXsidebar twoXX",
+     "frame location": "sidebar three",
+ 
+     "focused frame name": "focused sidebar one",
+</pre><h3>Mutant 3612</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -162,7 +162,7 @@
+ 
+     "frame name": "sidebar one",
+     "frame class": "sidebar two",
+-    "frame location": "sidebar three",
++    "XXframe locationXX": "sidebar three",
+ 
+     "focused frame name": "focused sidebar one",
+     "focused frame class": "focused sidebar two",
+</pre><h3>Mutant 3613</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -162,7 +162,7 @@
+ 
+     "frame name": "sidebar one",
+     "frame class": "sidebar two",
+-    "frame location": "sidebar three",
++    "frame location": "XXsidebar threeXX",
+ 
+     "focused frame name": "focused sidebar one",
+     "focused frame class": "focused sidebar two",
+</pre><h3>Mutant 3614</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -164,7 +164,7 @@
+     "frame class": "sidebar two",
+     "frame location": "sidebar three",
+ 
+-    "focused frame name": "focused sidebar one",
++    "XXfocused frame nameXX": "focused sidebar one",
+     "focused frame class": "focused sidebar two",
+     "focused frame location": "focused sidebar three",
+ 
+</pre><h3>Mutant 3615</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -164,7 +164,7 @@
+     "frame class": "sidebar two",
+     "frame location": "sidebar three",
+ 
+-    "focused frame name": "focused sidebar one",
++    "focused frame name": "XXfocused sidebar oneXX",
+     "focused frame class": "focused sidebar two",
+     "focused frame location": "focused sidebar three",
+ 
+</pre><h3>Mutant 3616</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -165,7 +165,7 @@
+     "frame location": "sidebar three",
+ 
+     "focused frame name": "focused sidebar one",
+-    "focused frame class": "focused sidebar two",
++    "XXfocused frame classXX": "focused sidebar two",
+     "focused frame location": "focused sidebar three",
+ 
+     "current frame name": "frame name",
+</pre><h3>Mutant 3617</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -165,7 +165,7 @@
+     "frame location": "sidebar three",
+ 
+     "focused frame name": "focused sidebar one",
+-    "focused frame class": "focused sidebar two",
++    "focused frame class": "XXfocused sidebar twoXX",
+     "focused frame location": "focused sidebar three",
+ 
+     "current frame name": "frame name",
+</pre><h3>Mutant 3618</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -166,7 +166,7 @@
+ 
+     "focused frame name": "focused sidebar one",
+     "focused frame class": "focused sidebar two",
+-    "focused frame location": "focused sidebar three",
++    "XXfocused frame locationXX": "focused sidebar three",
+ 
+     "current frame name": "frame name",
+     "current frame class": "frame class",
+</pre><h3>Mutant 3619</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -166,7 +166,7 @@
+ 
+     "focused frame name": "focused sidebar one",
+     "focused frame class": "focused sidebar two",
+-    "focused frame location": "focused sidebar three",
++    "focused frame location": "XXfocused sidebar threeXX",
+ 
+     "current frame name": "frame name",
+     "current frame class": "frame class",
+</pre><h3>Mutant 3620</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -168,7 +168,7 @@
+     "focused frame class": "focused sidebar two",
+     "focused frame location": "focused sidebar three",
+ 
+-    "current frame name": "frame name",
++    "XXcurrent frame nameXX": "frame name",
+     "current frame class": "frame class",
+     "current frame location": "frame location",
+ 
+</pre><h3>Mutant 3621</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -168,7 +168,7 @@
+     "focused frame class": "focused sidebar two",
+     "focused frame location": "focused sidebar three",
+ 
+-    "current frame name": "frame name",
++    "current frame name": "XXframe nameXX",
+     "current frame class": "frame class",
+     "current frame location": "frame location",
+ 
+</pre><h3>Mutant 3622</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -169,7 +169,7 @@
+     "focused frame location": "focused sidebar three",
+ 
+     "current frame name": "frame name",
+-    "current frame class": "frame class",
++    "XXcurrent frame classXX": "frame class",
+     "current frame location": "frame location",
+ 
+     "focused current frame name": "focused frame name",
+</pre><h3>Mutant 3623</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -169,7 +169,7 @@
+     "focused frame location": "focused sidebar three",
+ 
+     "current frame name": "frame name",
+-    "current frame class": "frame class",
++    "current frame class": "XXframe classXX",
+     "current frame location": "frame location",
+ 
+     "focused current frame name": "focused frame name",
+</pre><h3>Mutant 3624</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -170,7 +170,7 @@
+ 
+     "current frame name": "frame name",
+     "current frame class": "frame class",
+-    "current frame location": "frame location",
++    "XXcurrent frame locationXX": "frame location",
+ 
+     "focused current frame name": "focused frame name",
+     "focused current frame class": "focused frame class",
+</pre><h3>Mutant 3625</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -170,7 +170,7 @@
+ 
+     "current frame name": "frame name",
+     "current frame class": "frame class",
+-    "current frame location": "frame location",
++    "current frame location": "XXframe locationXX",
+ 
+     "focused current frame name": "focused frame name",
+     "focused current frame class": "focused frame class",
+</pre><h3>Mutant 3626</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -172,7 +172,7 @@
+     "current frame class": "frame class",
+     "current frame location": "frame location",
+ 
+-    "focused current frame name": "focused frame name",
++    "XXfocused current frame nameXX": "focused frame name",
+     "focused current frame class": "focused frame class",
+     "focused current frame location": "focused frame location",
+     # }}}
+</pre><h3>Mutant 3627</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -172,7 +172,7 @@
+     "current frame class": "frame class",
+     "current frame location": "frame location",
+ 
+-    "focused current frame name": "focused frame name",
++    "focused current frame name": "XXfocused frame nameXX",
+     "focused current frame class": "focused frame class",
+     "focused current frame location": "focused frame location",
+     # }}}
+</pre><h3>Mutant 3628</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -173,7 +173,7 @@
+     "current frame location": "frame location",
+ 
+     "focused current frame name": "focused frame name",
+-    "focused current frame class": "focused frame class",
++    "XXfocused current frame classXX": "focused frame class",
+     "focused current frame location": "focused frame location",
+     # }}}
+ 
+</pre><h3>Mutant 3629</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -173,7 +173,7 @@
+     "current frame location": "frame location",
+ 
+     "focused current frame name": "focused frame name",
+-    "focused current frame class": "focused frame class",
++    "focused current frame class": "XXfocused frame classXX",
+     "focused current frame location": "focused frame location",
+     # }}}
+ 
+</pre><h3>Mutant 3630</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -174,7 +174,7 @@
+ 
+     "focused current frame name": "focused frame name",
+     "focused current frame class": "focused frame class",
+-    "focused current frame location": "focused frame location",
++    "XXfocused current frame locationXX": "focused frame location",
+     # }}}
+ 
+     # {{{ breakpoints view
+</pre><h3>Mutant 3631</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -174,7 +174,7 @@
+ 
+     "focused current frame name": "focused frame name",
+     "focused current frame class": "focused frame class",
+-    "focused current frame location": "focused frame location",
++    "focused current frame location": "XXfocused frame locationXX",
+     # }}}
+ 
+     # {{{ breakpoints view
+</pre><h3>Mutant 3632</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -178,7 +178,7 @@
+     # }}}
+ 
+     # {{{ breakpoints view
+-    "breakpoint": "sidebar two",
++    "XXbreakpointXX": "sidebar two",
+     "disabled breakpoint": "sidebar three",
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+</pre><h3>Mutant 3633</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -178,7 +178,7 @@
+     # }}}
+ 
+     # {{{ breakpoints view
+-    "breakpoint": "sidebar two",
++    "breakpoint": "XXsidebar twoXX",
+     "disabled breakpoint": "sidebar three",
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+</pre><h3>Mutant 3634</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -179,7 +179,7 @@
+ 
+     # {{{ breakpoints view
+     "breakpoint": "sidebar two",
+-    "disabled breakpoint": "sidebar three",
++    "XXdisabled breakpointXX": "sidebar three",
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+</pre><h3>Mutant 3635</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -179,7 +179,7 @@
+ 
+     # {{{ breakpoints view
+     "breakpoint": "sidebar two",
+-    "disabled breakpoint": "sidebar three",
++    "disabled breakpoint": "XXsidebar threeXX",
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+</pre><h3>Mutant 3636</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -180,7 +180,7 @@
+     # {{{ breakpoints view
+     "breakpoint": "sidebar two",
+     "disabled breakpoint": "sidebar three",
+-    "current breakpoint": "breakpoint",
++    "XXcurrent breakpointXX": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+     "focused breakpoint": "focused sidebar two",
+</pre><h3>Mutant 3637</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -180,7 +180,7 @@
+     # {{{ breakpoints view
+     "breakpoint": "sidebar two",
+     "disabled breakpoint": "sidebar three",
+-    "current breakpoint": "breakpoint",
++    "current breakpoint": "XXbreakpointXX",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+     "focused breakpoint": "focused sidebar two",
+</pre><h3>Mutant 3638</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -181,7 +181,7 @@
+     "breakpoint": "sidebar two",
+     "disabled breakpoint": "sidebar three",
+     "current breakpoint": "breakpoint",
+-    "disabled current breakpoint": "disabled breakpoint",
++    "XXdisabled current breakpointXX": "disabled breakpoint",
+ 
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+</pre><h3>Mutant 3639</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -181,7 +181,7 @@
+     "breakpoint": "sidebar two",
+     "disabled breakpoint": "sidebar three",
+     "current breakpoint": "breakpoint",
+-    "disabled current breakpoint": "disabled breakpoint",
++    "disabled current breakpoint": "XXdisabled breakpointXX",
+ 
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+</pre><h3>Mutant 3640</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -183,7 +183,7 @@
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+-    "focused breakpoint": "focused sidebar two",
++    "XXfocused breakpointXX": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+     "focused disabled breakpoint": "focused sidebar three",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+</pre><h3>Mutant 3641</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -183,7 +183,7 @@
+     "current breakpoint": "breakpoint",
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+-    "focused breakpoint": "focused sidebar two",
++    "focused breakpoint": "XXfocused sidebar twoXX",
+     "focused current breakpoint": "focused breakpoint",
+     "focused disabled breakpoint": "focused sidebar three",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+</pre><h3>Mutant 3642</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -184,7 +184,7 @@
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+     "focused breakpoint": "focused sidebar two",
+-    "focused current breakpoint": "focused breakpoint",
++    "XXfocused current breakpointXX": "focused breakpoint",
+     "focused disabled breakpoint": "focused sidebar three",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+     # }}}
+</pre><h3>Mutant 3643</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -184,7 +184,7 @@
+     "disabled current breakpoint": "disabled breakpoint",
+ 
+     "focused breakpoint": "focused sidebar two",
+-    "focused current breakpoint": "focused breakpoint",
++    "focused current breakpoint": "XXfocused breakpointXX",
+     "focused disabled breakpoint": "focused sidebar three",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+     # }}}
+</pre><h3>Mutant 3644</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -185,7 +185,7 @@
+ 
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+-    "focused disabled breakpoint": "focused sidebar three",
++    "XXfocused disabled breakpointXX": "focused sidebar three",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+     # }}}
+ 
+</pre><h3>Mutant 3645</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -185,7 +185,7 @@
+ 
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+-    "focused disabled breakpoint": "focused sidebar three",
++    "focused disabled breakpoint": "XXfocused sidebar threeXX",
+     "focused disabled current breakpoint": "focused disabled breakpoint",
+     # }}}
+ 
+</pre><h3>Mutant 3646</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -186,7 +186,7 @@
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+     "focused disabled breakpoint": "focused sidebar three",
+-    "focused disabled current breakpoint": "focused disabled breakpoint",
++    "XXfocused disabled current breakpointXX": "focused disabled breakpoint",
+     # }}}
+ 
+     # {{{ shell
+</pre><h3>Mutant 3647</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -186,7 +186,7 @@
+     "focused breakpoint": "focused sidebar two",
+     "focused current breakpoint": "focused breakpoint",
+     "focused disabled breakpoint": "focused sidebar three",
+-    "focused disabled current breakpoint": "focused disabled breakpoint",
++    "focused disabled current breakpoint": "XXfocused disabled breakpointXX",
+     # }}}
+ 
+     # {{{ shell
+</pre><h3>Mutant 3648</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -190,7 +190,7 @@
+     # }}}
+ 
+     # {{{ shell
+-    "command line edit": "source",
++    "XXcommand line editXX": "source",
+     "command line output": "source",
+     "command line prompt": "source",
+     "command line input": "source",
+</pre><h3>Mutant 3649</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -190,7 +190,7 @@
+     # }}}
+ 
+     # {{{ shell
+-    "command line edit": "source",
++    "command line edit": "XXsourceXX",
+     "command line output": "source",
+     "command line prompt": "source",
+     "command line input": "source",
+</pre><h3>Mutant 3650</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -191,7 +191,7 @@
+ 
+     # {{{ shell
+     "command line edit": "source",
+-    "command line output": "source",
++    "XXcommand line outputXX": "source",
+     "command line prompt": "source",
+     "command line input": "source",
+     "command line error": "warning",
+</pre><h3>Mutant 3651</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -191,7 +191,7 @@
+ 
+     # {{{ shell
+     "command line edit": "source",
+-    "command line output": "source",
++    "command line output": "XXsourceXX",
+     "command line prompt": "source",
+     "command line input": "source",
+     "command line error": "warning",
+</pre><h3>Mutant 3652</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -192,7 +192,7 @@
+     # {{{ shell
+     "command line edit": "source",
+     "command line output": "source",
+-    "command line prompt": "source",
++    "XXcommand line promptXX": "source",
+     "command line input": "source",
+     "command line error": "warning",
+ 
+</pre><h3>Mutant 3653</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -192,7 +192,7 @@
+     # {{{ shell
+     "command line edit": "source",
+     "command line output": "source",
+-    "command line prompt": "source",
++    "command line prompt": "XXsourceXX",
+     "command line input": "source",
+     "command line error": "warning",
+ 
+</pre><h3>Mutant 3654</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -193,7 +193,7 @@
+     "command line edit": "source",
+     "command line output": "source",
+     "command line prompt": "source",
+-    "command line input": "source",
++    "XXcommand line inputXX": "source",
+     "command line error": "warning",
+ 
+     "focused command line output": "focused source",
+</pre><h3>Mutant 3655</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -193,7 +193,7 @@
+     "command line edit": "source",
+     "command line output": "source",
+     "command line prompt": "source",
+-    "command line input": "source",
++    "command line input": "XXsourceXX",
+     "command line error": "warning",
+ 
+     "focused command line output": "focused source",
+</pre><h3>Mutant 3656</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -194,7 +194,7 @@
+     "command line output": "source",
+     "command line prompt": "source",
+     "command line input": "source",
+-    "command line error": "warning",
++    "XXcommand line errorXX": "warning",
+ 
+     "focused command line output": "focused source",
+     "focused command line input": "focused source",
+</pre><h3>Mutant 3657</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -194,7 +194,7 @@
+     "command line output": "source",
+     "command line prompt": "source",
+     "command line input": "source",
+-    "command line error": "warning",
++    "command line error": "XXwarningXX",
+ 
+     "focused command line output": "focused source",
+     "focused command line input": "focused source",
+</pre><h3>Mutant 3658</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -196,7 +196,7 @@
+     "command line input": "source",
+     "command line error": "warning",
+ 
+-    "focused command line output": "focused source",
++    "XXfocused command line outputXX": "focused source",
+     "focused command line input": "focused source",
+     "focused command line error": "focused source",
+ 
+</pre><h3>Mutant 3659</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -196,7 +196,7 @@
+     "command line input": "source",
+     "command line error": "warning",
+ 
+-    "focused command line output": "focused source",
++    "focused command line output": "XXfocused sourceXX",
+     "focused command line input": "focused source",
+     "focused command line error": "focused source",
+ 
+</pre><h3>Mutant 3660</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -197,7 +197,7 @@
+     "command line error": "warning",
+ 
+     "focused command line output": "focused source",
+-    "focused command line input": "focused source",
++    "XXfocused command line inputXX": "focused source",
+     "focused command line error": "focused source",
+ 
+     "command line clear button": "button",
+</pre><h3>Mutant 3661</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -197,7 +197,7 @@
+     "command line error": "warning",
+ 
+     "focused command line output": "focused source",
+-    "focused command line input": "focused source",
++    "focused command line input": "XXfocused sourceXX",
+     "focused command line error": "focused source",
+ 
+     "command line clear button": "button",
+</pre><h3>Mutant 3662</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -198,7 +198,7 @@
+ 
+     "focused command line output": "focused source",
+     "focused command line input": "focused source",
+-    "focused command line error": "focused source",
++    "XXfocused command line errorXX": "focused source",
+ 
+     "command line clear button": "button",
+     "command line focused button": "focused button",
+</pre><h3>Mutant 3663</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -198,7 +198,7 @@
+ 
+     "focused command line output": "focused source",
+     "focused command line input": "focused source",
+-    "focused command line error": "focused source",
++    "focused command line error": "XXfocused sourceXX",
+ 
+     "command line clear button": "button",
+     "command line focused button": "focused button",
+</pre><h3>Mutant 3664</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -200,7 +200,7 @@
+     "focused command line input": "focused source",
+     "focused command line error": "focused source",
+ 
+-    "command line clear button": "button",
++    "XXcommand line clear buttonXX": "button",
+     "command line focused button": "focused button",
+     # }}}
+ 
+</pre><h3>Mutant 3665</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -200,7 +200,7 @@
+     "focused command line input": "focused source",
+     "focused command line error": "focused source",
+ 
+-    "command line clear button": "button",
++    "command line clear button": "XXbuttonXX",
+     "command line focused button": "focused button",
+     # }}}
+ 
+</pre><h3>Mutant 3666</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -201,7 +201,7 @@
+     "focused command line error": "focused source",
+ 
+     "command line clear button": "button",
+-    "command line focused button": "focused button",
++    "XXcommand line focused buttonXX": "focused button",
+     # }}}
+ 
+     # {{{ Code syntax
+</pre><h3>Mutant 3667</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -201,7 +201,7 @@
+     "focused command line error": "focused source",
+ 
+     "command line clear button": "button",
+-    "command line focused button": "focused button",
++    "command line focused button": "XXfocused buttonXX",
+     # }}}
+ 
+     # {{{ Code syntax
+</pre><h3>Mutant 3668</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -205,7 +205,7 @@
+     # }}}
+ 
+     # {{{ Code syntax
+-    "comment":      "source",
++    "XXcommentXX":      "source",
+     "keyword":      "source",
+     "literal":      "source",
+     "name":         "source",
+</pre><h3>Mutant 3669</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -205,7 +205,7 @@
+     # }}}
+ 
+     # {{{ Code syntax
+-    "comment":      "source",
++    "comment":      "XXsourceXX",
+     "keyword":      "source",
+     "literal":      "source",
+     "name":         "source",
+</pre><h3>Mutant 3670</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -206,7 +206,7 @@
+ 
+     # {{{ Code syntax
+     "comment":      "source",
+-    "keyword":      "source",
++    "XXkeywordXX":      "source",
+     "literal":      "source",
+     "name":         "source",
+     "operator":     "source",
+</pre><h3>Mutant 3671</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -206,7 +206,7 @@
+ 
+     # {{{ Code syntax
+     "comment":      "source",
+-    "keyword":      "source",
++    "keyword":      "XXsourceXX",
+     "literal":      "source",
+     "name":         "source",
+     "operator":     "source",
+</pre><h3>Mutant 3672</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -207,7 +207,7 @@
+     # {{{ Code syntax
+     "comment":      "source",
+     "keyword":      "source",
+-    "literal":      "source",
++    "XXliteralXX":      "source",
+     "name":         "source",
+     "operator":     "source",
+     "punctuation":  "source",
+</pre><h3>Mutant 3673</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -207,7 +207,7 @@
+     # {{{ Code syntax
+     "comment":      "source",
+     "keyword":      "source",
+-    "literal":      "source",
++    "literal":      "XXsourceXX",
+     "name":         "source",
+     "operator":     "source",
+     "punctuation":  "source",
+</pre><h3>Mutant 3674</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -208,7 +208,7 @@
+     "comment":      "source",
+     "keyword":      "source",
+     "literal":      "source",
+-    "name":         "source",
++    "XXnameXX":         "source",
+     "operator":     "source",
+     "punctuation":  "source",
+     "argument":     "name",
+</pre><h3>Mutant 3675</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -208,7 +208,7 @@
+     "comment":      "source",
+     "keyword":      "source",
+     "literal":      "source",
+-    "name":         "source",
++    "name":         "XXsourceXX",
+     "operator":     "source",
+     "punctuation":  "source",
+     "argument":     "name",
+</pre><h3>Mutant 3676</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -209,7 +209,7 @@
+     "keyword":      "source",
+     "literal":      "source",
+     "name":         "source",
+-    "operator":     "source",
++    "XXoperatorXX":     "source",
+     "punctuation":  "source",
+     "argument":     "name",
+     "builtin":      "name",
+</pre><h3>Mutant 3677</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -209,7 +209,7 @@
+     "keyword":      "source",
+     "literal":      "source",
+     "name":         "source",
+-    "operator":     "source",
++    "operator":     "XXsourceXX",
+     "punctuation":  "source",
+     "argument":     "name",
+     "builtin":      "name",
+</pre><h3>Mutant 3678</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -210,7 +210,7 @@
+     "literal":      "source",
+     "name":         "source",
+     "operator":     "source",
+-    "punctuation":  "source",
++    "XXpunctuationXX":  "source",
+     "argument":     "name",
+     "builtin":      "name",
+     "exception":    "name",
+</pre><h3>Mutant 3679</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -210,7 +210,7 @@
+     "literal":      "source",
+     "name":         "source",
+     "operator":     "source",
+-    "punctuation":  "source",
++    "punctuation":  "XXsourceXX",
+     "argument":     "name",
+     "builtin":      "name",
+     "exception":    "name",
+</pre><h3>Mutant 3680</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -211,7 +211,7 @@
+     "name":         "source",
+     "operator":     "source",
+     "punctuation":  "source",
+-    "argument":     "name",
++    "XXargumentXX":     "name",
+     "builtin":      "name",
+     "exception":    "name",
+     "function":     "name",
+</pre><h3>Mutant 3681</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -211,7 +211,7 @@
+     "name":         "source",
+     "operator":     "source",
+     "punctuation":  "source",
+-    "argument":     "name",
++    "argument":     "XXnameXX",
+     "builtin":      "name",
+     "exception":    "name",
+     "function":     "name",
+</pre><h3>Mutant 3682</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -212,7 +212,7 @@
+     "operator":     "source",
+     "punctuation":  "source",
+     "argument":     "name",
+-    "builtin":      "name",
++    "XXbuiltinXX":      "name",
+     "exception":    "name",
+     "function":     "name",
+     "pseudo":       "builtin",
+</pre><h3>Mutant 3683</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -212,7 +212,7 @@
+     "operator":     "source",
+     "punctuation":  "source",
+     "argument":     "name",
+-    "builtin":      "name",
++    "builtin":      "XXnameXX",
+     "exception":    "name",
+     "function":     "name",
+     "pseudo":       "builtin",
+</pre><h3>Mutant 3684</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -213,7 +213,7 @@
+     "punctuation":  "source",
+     "argument":     "name",
+     "builtin":      "name",
+-    "exception":    "name",
++    "XXexceptionXX":    "name",
+     "function":     "name",
+     "pseudo":       "builtin",
+     "class":        "function",
+</pre><h3>Mutant 3685</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -213,7 +213,7 @@
+     "punctuation":  "source",
+     "argument":     "name",
+     "builtin":      "name",
+-    "exception":    "name",
++    "exception":    "XXnameXX",
+     "function":     "name",
+     "pseudo":       "builtin",
+     "class":        "function",
+</pre><h3>Mutant 3686</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -214,7 +214,7 @@
+     "argument":     "name",
+     "builtin":      "name",
+     "exception":    "name",
+-    "function":     "name",
++    "XXfunctionXX":     "name",
+     "pseudo":       "builtin",
+     "class":        "function",
+     "dunder":       "function",
+</pre><h3>Mutant 3687</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -214,7 +214,7 @@
+     "argument":     "name",
+     "builtin":      "name",
+     "exception":    "name",
+-    "function":     "name",
++    "function":     "XXnameXX",
+     "pseudo":       "builtin",
+     "class":        "function",
+     "dunder":       "function",
+</pre><h3>Mutant 3688</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -215,7 +215,7 @@
+     "builtin":      "name",
+     "exception":    "name",
+     "function":     "name",
+-    "pseudo":       "builtin",
++    "XXpseudoXX":       "builtin",
+     "class":        "function",
+     "dunder":       "function",
+     "magic":        "dunder",
+</pre><h3>Mutant 3689</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -215,7 +215,7 @@
+     "builtin":      "name",
+     "exception":    "name",
+     "function":     "name",
+-    "pseudo":       "builtin",
++    "pseudo":       "XXbuiltinXX",
+     "class":        "function",
+     "dunder":       "function",
+     "magic":        "dunder",
+</pre><h3>Mutant 3690</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -216,7 +216,7 @@
+     "exception":    "name",
+     "function":     "name",
+     "pseudo":       "builtin",
+-    "class":        "function",
++    "XXclassXX":        "function",
+     "dunder":       "function",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+</pre><h3>Mutant 3691</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -216,7 +216,7 @@
+     "exception":    "name",
+     "function":     "name",
+     "pseudo":       "builtin",
+-    "class":        "function",
++    "class":        "XXfunctionXX",
+     "dunder":       "function",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+</pre><h3>Mutant 3692</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -217,7 +217,7 @@
+     "function":     "name",
+     "pseudo":       "builtin",
+     "class":        "function",
+-    "dunder":       "function",
++    "XXdunderXX":       "function",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+</pre><h3>Mutant 3693</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -217,7 +217,7 @@
+     "function":     "name",
+     "pseudo":       "builtin",
+     "class":        "function",
+-    "dunder":       "function",
++    "dunder":       "XXfunctionXX",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+</pre><h3>Mutant 3694</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -218,7 +218,7 @@
+     "pseudo":       "builtin",
+     "class":        "function",
+     "dunder":       "function",
+-    "magic":        "dunder",
++    "XXmagicXX":        "dunder",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+     "string":       "literal",
+</pre><h3>Mutant 3695</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -218,7 +218,7 @@
+     "pseudo":       "builtin",
+     "class":        "function",
+     "dunder":       "function",
+-    "magic":        "dunder",
++    "magic":        "XXdunderXX",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+     "string":       "literal",
+</pre><h3>Mutant 3696</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -219,7 +219,7 @@
+     "class":        "function",
+     "dunder":       "function",
+     "magic":        "dunder",
+-    "namespace":    "keyword",
++    "XXnamespaceXX":    "keyword",
+     "keyword2":     "keyword",
+     "string":       "literal",
+     "doublestring": "string",
+</pre><h3>Mutant 3697</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -219,7 +219,7 @@
+     "class":        "function",
+     "dunder":       "function",
+     "magic":        "dunder",
+-    "namespace":    "keyword",
++    "namespace":    "XXkeywordXX",
+     "keyword2":     "keyword",
+     "string":       "literal",
+     "doublestring": "string",
+</pre><h3>Mutant 3698</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -220,7 +220,7 @@
+     "dunder":       "function",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+-    "keyword2":     "keyword",
++    "XXkeyword2XX":     "keyword",
+     "string":       "literal",
+     "doublestring": "string",
+     "singlestring": "string",
+</pre><h3>Mutant 3699</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -220,7 +220,7 @@
+     "dunder":       "function",
+     "magic":        "dunder",
+     "namespace":    "keyword",
+-    "keyword2":     "keyword",
++    "keyword2":     "XXkeywordXX",
+     "string":       "literal",
+     "doublestring": "string",
+     "singlestring": "string",
+</pre><h3>Mutant 3700</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -221,7 +221,7 @@
+     "magic":        "dunder",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+-    "string":       "literal",
++    "XXstringXX":       "literal",
+     "doublestring": "string",
+     "singlestring": "string",
+     "docstring":    "string",
+</pre><h3>Mutant 3701</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -221,7 +221,7 @@
+     "magic":        "dunder",
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+-    "string":       "literal",
++    "string":       "XXliteralXX",
+     "doublestring": "string",
+     "singlestring": "string",
+     "docstring":    "string",
+</pre><h3>Mutant 3702</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -222,7 +222,7 @@
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+     "string":       "literal",
+-    "doublestring": "string",
++    "XXdoublestringXX": "string",
+     "singlestring": "string",
+     "docstring":    "string",
+     "backtick":     "string",
+</pre><h3>Mutant 3703</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -222,7 +222,7 @@
+     "namespace":    "keyword",
+     "keyword2":     "keyword",
+     "string":       "literal",
+-    "doublestring": "string",
++    "doublestring": "XXstringXX",
+     "singlestring": "string",
+     "docstring":    "string",
+     "backtick":     "string",
+</pre><h3>Mutant 3704</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -223,7 +223,7 @@
+     "keyword2":     "keyword",
+     "string":       "literal",
+     "doublestring": "string",
+-    "singlestring": "string",
++    "XXsinglestringXX": "string",
+     "docstring":    "string",
+     "backtick":     "string",
+     # }}}
+</pre><h3>Mutant 3705</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -223,7 +223,7 @@
+     "keyword2":     "keyword",
+     "string":       "literal",
+     "doublestring": "string",
+-    "singlestring": "string",
++    "singlestring": "XXstringXX",
+     "docstring":    "string",
+     "backtick":     "string",
+     # }}}
+</pre><h3>Mutant 3706</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -224,7 +224,7 @@
+     "string":       "literal",
+     "doublestring": "string",
+     "singlestring": "string",
+-    "docstring":    "string",
++    "XXdocstringXX":    "string",
+     "backtick":     "string",
+     # }}}
+ }
+</pre><h3>Mutant 3707</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -224,7 +224,7 @@
+     "string":       "literal",
+     "doublestring": "string",
+     "singlestring": "string",
+-    "docstring":    "string",
++    "docstring":    "XXstringXX",
+     "backtick":     "string",
+     # }}}
+ }
+</pre><h3>Mutant 3708</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -225,7 +225,7 @@
+     "doublestring": "string",
+     "singlestring": "string",
+     "docstring":    "string",
+-    "backtick":     "string",
++    "XXbacktickXX":     "string",
+     # }}}
+ }
+ 
+</pre><h3>Mutant 3709</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -225,7 +225,7 @@
+     "doublestring": "string",
+     "singlestring": "string",
+     "docstring":    "string",
+-    "backtick":     "string",
++    "backtick":     "XXstringXX",
+     # }}}
+ }
+ 
+</pre><h3>Mutant 3710</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -87,147 +87,7 @@
+ # Map styles to their parent. If a style is not defined, use the parent style
+ # recursively.
+ # focused > highlighted > current > breakpoint line/disabled breakpoint
+-INHERITANCE_MAP = {
+-    # {{{ general ui
+-    "label": "background",
+-    "header": "background",
+-    "dialog title": "header",
+-    "group head": "header",
+-    "focused sidebar": "header",
+-
+-    "input": "selectable",
+-    "focused input": "focused selectable",
+-    "button": "input",
+-    "focused button": "focused input",
+-    "value": "input",
+-    "fixed value": "label",
+-
+-    "warning": "highlighted",
+-    "header warning": "warning",
+-    "search box": "focused input",
+-    "search not found": "warning",
+-    # }}}
+-
+-    # {{{ source view
+-    "source": "selectable",
+-    "focused source": "focused selectable",
+-    "highlighted source": "highlighted",
+-
+-    "current source": "source",
+-    "current focused source": "focused source",
+-    "current highlighted source": "current source",
+-
+-    "breakpoint source": "source",
+-    "breakpoint focused source": "focused source",
+-    "current breakpoint source": "current source",
+-    "current breakpoint focused source": "current focused source",
+-
+-    "line number": "source",
+-    "breakpoint marker": "line number",
+-    "current line marker": "breakpoint marker",
+-    # }}}
+-
+-    # {{{ sidebar
+-    "sidebar one": "selectable",
+-    "sidebar two": "selectable",
+-    "sidebar three": "selectable",
+-
+-    "focused sidebar one": "focused selectable",
+-    "focused sidebar two": "focused selectable",
+-    "focused sidebar three": "focused selectable",
+-    # }}}
+-
+-    # {{{ variables view
+-    "variables": "selectable",
+-    "variable separator": "background",
+-
+-    "var value": "sidebar one",
+-    "var label": "sidebar two",
+-    "focused var value": "focused sidebar one",
+-    "focused var label": "focused sidebar two",
+-
+-    "highlighted var label": "highlighted",
+-    "highlighted var value": "highlighted",
+-    "focused highlighted var label": "focused var label",
+-    "focused highlighted var value": "focused var value",
+-
+-    "return label": "var label",
+-    "return value": "var value",
+-    "focused return label": "focused var label",
+-    "focused return value": "focused var value",
+-    # }}}
+-
+-    # {{{ stack
+-    "stack": "selectable",
+-
+-    "frame name": "sidebar one",
+-    "frame class": "sidebar two",
+-    "frame location": "sidebar three",
+-
+-    "focused frame name": "focused sidebar one",
+-    "focused frame class": "focused sidebar two",
+-    "focused frame location": "focused sidebar three",
+-
+-    "current frame name": "frame name",
+-    "current frame class": "frame class",
+-    "current frame location": "frame location",
+-
+-    "focused current frame name": "focused frame name",
+-    "focused current frame class": "focused frame class",
+-    "focused current frame location": "focused frame location",
+-    # }}}
+-
+-    # {{{ breakpoints view
+-    "breakpoint": "sidebar two",
+-    "disabled breakpoint": "sidebar three",
+-    "current breakpoint": "breakpoint",
+-    "disabled current breakpoint": "disabled breakpoint",
+-
+-    "focused breakpoint": "focused sidebar two",
+-    "focused current breakpoint": "focused breakpoint",
+-    "focused disabled breakpoint": "focused sidebar three",
+-    "focused disabled current breakpoint": "focused disabled breakpoint",
+-    # }}}
+-
+-    # {{{ shell
+-    "command line edit": "source",
+-    "command line output": "source",
+-    "command line prompt": "source",
+-    "command line input": "source",
+-    "command line error": "warning",
+-
+-    "focused command line output": "focused source",
+-    "focused command line input": "focused source",
+-    "focused command line error": "focused source",
+-
+-    "command line clear button": "button",
+-    "command line focused button": "focused button",
+-    # }}}
+-
+-    # {{{ Code syntax
+-    "comment":      "source",
+-    "keyword":      "source",
+-    "literal":      "source",
+-    "name":         "source",
+-    "operator":     "source",
+-    "punctuation":  "source",
+-    "argument":     "name",
+-    "builtin":      "name",
+-    "exception":    "name",
+-    "function":     "name",
+-    "pseudo":       "builtin",
+-    "class":        "function",
+-    "dunder":       "function",
+-    "magic":        "dunder",
+-    "namespace":    "keyword",
+-    "keyword2":     "keyword",
+-    "string":       "literal",
+-    "doublestring": "string",
+-    "singlestring": "string",
+-    "docstring":    "string",
+-    "backtick":     "string",
+-    # }}}
+-}
++INHERITANCE_MAP = None
+ 
+ 
+ def set_style(palette_dict: dict, style_name: str,
+</pre><h3>Mutant 3711</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -237,7 +237,7 @@
+     been defined, and add it to the palette_dict under the given style_name.
+     """
+     try:
+-        style = palette_dict[style_name]
++        style = None
+         if not isinstance(style, PaletteEntry):
+             style = PaletteEntry(style_name, *style)
+             style.handle_256_colors()
+</pre><h3>Mutant 3712</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -238,7 +238,7 @@
+     """
+     try:
+         style = palette_dict[style_name]
+-        if not isinstance(style, PaletteEntry):
++        if  isinstance(style, PaletteEntry):
+             style = PaletteEntry(style_name, *style)
+             style.handle_256_colors()
+             palette_dict[style_name] = style
+</pre><h3>Mutant 3713</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -239,7 +239,7 @@
+     try:
+         style = palette_dict[style_name]
+         if not isinstance(style, PaletteEntry):
+-            style = PaletteEntry(style_name, *style)
++            style = None
+             style.handle_256_colors()
+             palette_dict[style_name] = style
+         return style
+</pre><h3>Mutant 3714</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -241,7 +241,7 @@
+         if not isinstance(style, PaletteEntry):
+             style = PaletteEntry(style_name, *style)
+             style.handle_256_colors()
+-            palette_dict[style_name] = style
++            palette_dict[style_name] = None
+         return style
+     except KeyError:
+         parent_name = inheritance_overrides.get(
+</pre><h3>Mutant 3715</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -244,10 +244,7 @@
+             palette_dict[style_name] = style
+         return style
+     except KeyError:
+-        parent_name = inheritance_overrides.get(
+-            style_name,
+-            INHERITANCE_MAP[style_name],
+-        )
++        parent_name = None
+         style = replace(
+             set_style(palette_dict, parent_name, inheritance_overrides),
+             name=style_name
+</pre><h3>Mutant 3716</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -248,10 +248,7 @@
+             style_name,
+             INHERITANCE_MAP[style_name],
+         )
+-        style = replace(
+-            set_style(palette_dict, parent_name, inheritance_overrides),
+-            name=style_name
+-        )
++        style = None
+         palette_dict[style_name] = style
+         return style
+ 
+</pre><h3>Mutant 3717</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -252,7 +252,7 @@
+             set_style(palette_dict, parent_name, inheritance_overrides),
+             name=style_name
+         )
+-        palette_dict[style_name] = style
++        palette_dict[style_name] = None
+         return style
+ 
+ # }}}
+</pre><h3>Mutant 3718</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -260,7 +260,7 @@
+ 
+ # {{{ get palette
+ 
+-def get_palette(may_use_fancy_formats: bool, theme: str = "classic") -> list:
++def get_palette(may_use_fancy_formats: bool, theme: str = "XXclassicXX") -> list:
+     """
+     Load the requested theme and return a list containing all palette entries
+     needed to highlight the debugger UI, including syntax highlighting.
+</pre><h3>Mutant 3719</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -268,7 +268,7 @@
+     reset_inheritance_overrides()
+ 
+     try:
+-        palette_dict = THEMES[theme]
++        palette_dict = None
+     except KeyError:
+         # {{{ custom
+         try:
+</pre><h3>Mutant 3720</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -274,7 +274,7 @@
+         try:
+             # {{{ base styles
+             palette_dict = {
+-                "background": ("black", "light gray"),
++                "XXbackgroundXX": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+</pre><h3>Mutant 3721</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -274,7 +274,7 @@
+         try:
+             # {{{ base styles
+             palette_dict = {
+-                "background": ("black", "light gray"),
++                "background": ("XXblackXX", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+</pre><h3>Mutant 3722</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -274,7 +274,7 @@
+         try:
+             # {{{ base styles
+             palette_dict = {
+-                "background": ("black", "light gray"),
++                "background": ("black", "XXlight grayXX"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+</pre><h3>Mutant 3723</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -275,7 +275,7 @@
+             # {{{ base styles
+             palette_dict = {
+                 "background": ("black", "light gray"),
+-                "hotkey": (add_setting("black", "underline"), "light gray"),
++                "XXhotkeyXX": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+</pre><h3>Mutant 3724</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -275,7 +275,7 @@
+             # {{{ base styles
+             palette_dict = {
+                 "background": ("black", "light gray"),
+-                "hotkey": (add_setting("black", "underline"), "light gray"),
++                "hotkey": (add_setting("XXblackXX", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+</pre><h3>Mutant 3725</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -275,7 +275,7 @@
+             # {{{ base styles
+             palette_dict = {
+                 "background": ("black", "light gray"),
+-                "hotkey": (add_setting("black", "underline"), "light gray"),
++                "hotkey": (add_setting("black", "XXunderlineXX"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+</pre><h3>Mutant 3726</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -275,7 +275,7 @@
+             # {{{ base styles
+             palette_dict = {
+                 "background": ("black", "light gray"),
+-                "hotkey": (add_setting("black", "underline"), "light gray"),
++                "hotkey": (add_setting("black", "underline"), "XXlight grayXX"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+</pre><h3>Mutant 3727</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -276,7 +276,7 @@
+             palette_dict = {
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+-                "selectable": ("black", "dark cyan"),
++                "XXselectableXX": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+</pre><h3>Mutant 3728</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -276,7 +276,7 @@
+             palette_dict = {
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+-                "selectable": ("black", "dark cyan"),
++                "selectable": ("XXblackXX", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+</pre><h3>Mutant 3729</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -276,7 +276,7 @@
+             palette_dict = {
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+-                "selectable": ("black", "dark cyan"),
++                "selectable": ("black", "XXdark cyanXX"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+</pre><h3>Mutant 3730</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -277,7 +277,7 @@
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+-                "focused selectable": ("black", "dark green"),
++                "XXfocused selectableXX": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+</pre><h3>Mutant 3731</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -277,7 +277,7 @@
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+-                "focused selectable": ("black", "dark green"),
++                "focused selectable": ("XXblackXX", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+</pre><h3>Mutant 3732</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -277,7 +277,7 @@
+                 "background": ("black", "light gray"),
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+-                "focused selectable": ("black", "dark green"),
++                "focused selectable": ("black", "XXdark greenXX"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+</pre><h3>Mutant 3733</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -278,7 +278,7 @@
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+-                "input": (add_setting("yellow", "bold"), "dark blue"),
++                "XXinputXX": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+</pre><h3>Mutant 3734</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -278,7 +278,7 @@
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+-                "input": (add_setting("yellow", "bold"), "dark blue"),
++                "input": (add_setting("XXyellowXX", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+</pre><h3>Mutant 3735</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -278,7 +278,7 @@
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+-                "input": (add_setting("yellow", "bold"), "dark blue"),
++                "input": (add_setting("yellow", "XXboldXX"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+</pre><h3>Mutant 3736</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -278,7 +278,7 @@
+                 "hotkey": (add_setting("black", "underline"), "light gray"),
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+-                "input": (add_setting("yellow", "bold"), "dark blue"),
++                "input": (add_setting("yellow", "bold"), "XXdark blueXX"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+</pre><h3>Mutant 3737</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -279,7 +279,7 @@
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+-                "warning": (add_setting("white", "bold"), "dark red"),
++                "XXwarningXX": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+</pre><h3>Mutant 3738</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -279,7 +279,7 @@
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+-                "warning": (add_setting("white", "bold"), "dark red"),
++                "warning": (add_setting("XXwhiteXX", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+</pre><h3>Mutant 3739</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -279,7 +279,7 @@
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+-                "warning": (add_setting("white", "bold"), "dark red"),
++                "warning": (add_setting("white", "XXboldXX"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+</pre><h3>Mutant 3740</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -279,7 +279,7 @@
+                 "selectable": ("black", "dark cyan"),
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+-                "warning": (add_setting("white", "bold"), "dark red"),
++                "warning": (add_setting("white", "bold"), "XXdark redXX"),
+                 "highlighted": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+</pre><h3>Mutant 3741</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -280,7 +280,7 @@
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+-                "highlighted": ("white", "dark cyan"),
++                "XXhighlightedXX": ("white", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+             # }}}
+</pre><h3>Mutant 3742</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -280,7 +280,7 @@
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+-                "highlighted": ("white", "dark cyan"),
++                "highlighted": ("XXwhiteXX", "dark cyan"),
+                 "source": ("white", "dark blue"),
+             }
+             # }}}
+</pre><h3>Mutant 3743</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -280,7 +280,7 @@
+                 "focused selectable": ("black", "dark green"),
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+-                "highlighted": ("white", "dark cyan"),
++                "highlighted": ("white", "XXdark cyanXX"),
+                 "source": ("white", "dark blue"),
+             }
+             # }}}
+</pre><h3>Mutant 3744</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -281,7 +281,7 @@
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+-                "source": ("white", "dark blue"),
++                "XXsourceXX": ("white", "dark blue"),
+             }
+             # }}}
+ 
+</pre><h3>Mutant 3745</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -281,7 +281,7 @@
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+-                "source": ("white", "dark blue"),
++                "source": ("XXwhiteXX", "dark blue"),
+             }
+             # }}}
+ 
+</pre><h3>Mutant 3746</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -281,7 +281,7 @@
+                 "input": (add_setting("yellow", "bold"), "dark blue"),
+                 "warning": (add_setting("white", "bold"), "dark red"),
+                 "highlighted": ("white", "dark cyan"),
+-                "source": ("white", "dark blue"),
++                "source": ("white", "XXdark blueXX"),
+             }
+             # }}}
+ 
+</pre><h3>Mutant 3747</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -273,16 +273,7 @@
+         # {{{ custom
+         try:
+             # {{{ base styles
+-            palette_dict = {
+-                "background": ("black", "light gray"),
+-                "hotkey": (add_setting("black", "underline"), "light gray"),
+-                "selectable": ("black", "dark cyan"),
+-                "focused selectable": ("black", "dark green"),
+-                "input": (add_setting("yellow", "bold"), "dark blue"),
+-                "warning": (add_setting("white", "bold"), "dark red"),
+-                "highlighted": ("white", "dark cyan"),
+-                "source": ("white", "dark blue"),
+-            }
++            palette_dict = None
+             # }}}
+ 
+             symbols = {
+</pre><h3>Mutant 3748</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -286,7 +286,7 @@
+             # }}}
+ 
+             symbols = {
+-                "palette": palette_dict,
++                "XXpaletteXX": palette_dict,
+                 "add_setting": add_setting,
+                 "link": link,
+             }
+</pre><h3>Mutant 3749</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -287,7 +287,7 @@
+ 
+             symbols = {
+                 "palette": palette_dict,
+-                "add_setting": add_setting,
++                "XXadd_settingXX": add_setting,
+                 "link": link,
+             }
+ 
+</pre><h3>Mutant 3750</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -288,7 +288,7 @@
+             symbols = {
+                 "palette": palette_dict,
+                 "add_setting": add_setting,
+-                "link": link,
++                "XXlinkXX": link,
+             }
+ 
+             from os.path import expanduser, expandvars
+</pre><h3>Mutant 3751</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -285,11 +285,7 @@
+             }
+             # }}}
+ 
+-            symbols = {
+-                "palette": palette_dict,
+-                "add_setting": add_setting,
+-                "link": link,
+-            }
++            symbols = None
+ 
+             from os.path import expanduser, expandvars
+             fname = expanduser(expandvars(theme))
+</pre><h3>Mutant 3752</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -292,7 +292,7 @@
+             }
+ 
+             from os.path import expanduser, expandvars
+-            fname = expanduser(expandvars(theme))
++            fname = None
+             with open(fname) as inf:
+                 exec(compile(inf.read(), fname, "exec"), symbols)
+         except FileNotFoundError:
+</pre><h3>Mutant 3753</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -294,7 +294,7 @@
+             from os.path import expanduser, expandvars
+             fname = expanduser(expandvars(theme))
+             with open(fname) as inf:
+-                exec(compile(inf.read(), fname, "exec"), symbols)
++                exec(compile(inf.read(), fname, "XXexecXX"), symbols)
+         except FileNotFoundError:
+             ui_log.error("Unable to locate custom theme file {!r}"
+                          .format(theme))
+</pre><h3>Mutant 3754</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -296,7 +296,7 @@
+             with open(fname) as inf:
+                 exec(compile(inf.read(), fname, "exec"), symbols)
+         except FileNotFoundError:
+-            ui_log.error("Unable to locate custom theme file {!r}"
++            ui_log.error("XXUnable to locate custom theme file {!r}XX"
+                          .format(theme))
+             return None
+         except Exception:
+</pre><h3>Mutant 3755</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -300,7 +300,7 @@
+                          .format(theme))
+             return None
+         except Exception:
+-            ui_log.exception("Error when importing theme:")
++            ui_log.exception("XXError when importing theme:XX")
+             return None
+         # }}}
+ 
+</pre><h3>Mutant 3756</h3><pre>--- ./theme.py
++++ ./theme.py
+@@ -308,11 +308,7 @@
+     for style_name in set(INHERITANCE_MAP.keys()).union(BASE_STYLES.keys()):
+         set_style(palette_dict, style_name, inheritance_overrides)
+ 
+-    palette_list = [
+-        astuple(entry)
+-        for entry in palette_dict.values()
+-        if isinstance(entry, PaletteEntry)
+-    ]
++    palette_list = None
+ 
+     return palette_list
+ 
+</pre></body></html>

@@ -1,0 +1,67 @@
+<html><body><h1>./themes/utils.py</h1>Killed 0 out of 6 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 5210</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -1,7 +1,7 @@
+ import urwid
+ 
+ 
+-may_use_fancy_formats = not hasattr(urwid.escape, "_fg_attr_xterm")
++may_use_fancy_formats =  hasattr(urwid.escape, "_fg_attr_xterm")
+ 
+ 
+ def add_setting(color, setting):
+</pre><h3>Mutant 5211</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -1,7 +1,7 @@
+ import urwid
+ 
+ 
+-may_use_fancy_formats = not hasattr(urwid.escape, "_fg_attr_xterm")
++may_use_fancy_formats = not hasattr(urwid.escape, "XX_fg_attr_xtermXX")
+ 
+ 
+ def add_setting(color, setting):
+</pre><h3>Mutant 5212</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -1,7 +1,7 @@
+ import urwid
+ 
+ 
+-may_use_fancy_formats = not hasattr(urwid.escape, "_fg_attr_xterm")
++may_use_fancy_formats = None
+ 
+ 
+ def add_setting(color, setting):
+</pre><h3>Mutant 5213</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -6,7 +6,7 @@
+ 
+ def add_setting(color, setting):
+     if may_use_fancy_formats:
+-        return f"{color}, {setting}"
++        return f"XX{color}, {setting}XX"
+     return color
+ 
+ 
+</pre><h3>Mutant 5214</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -10,7 +10,7 @@
+     return color
+ 
+ 
+-inheritance_overrides = {}
++inheritance_overrides = None
+ 
+ 
+ def link(child: str, parent: str):
+</pre><h3>Mutant 5215</h3><pre>--- ./themes/utils.py
++++ ./themes/utils.py
+@@ -14,7 +14,7 @@
+ 
+ 
+ def link(child: str, parent: str):
+-    inheritance_overrides[child] = parent
++    inheritance_overrides[child] = None
+ 
+ 
+ def reset_inheritance_overrides():
+</pre></body></html>

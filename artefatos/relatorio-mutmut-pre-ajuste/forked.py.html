@@ -1,0 +1,221 @@
+<html><body><h1>./forked.py</h1>Killed 0 out of 20 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 1029</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -4,7 +4,7 @@
+ from pudb.debugger import Debugger
+ 
+ 
+-def set_trace(paused=True, frame=None, term_size=None):
++def set_trace(paused=False, frame=None, term_size=None):
+     """Set a breakpoint in a forked process on Unix system, e.g. Linux & MacOS.
+     In- and output will be redirected to /dev/stdin & /dev/stdout.
+     You can call pudb.forked.set_trace() directly or
+</pre><h3>Mutant 1030</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -11,7 +11,7 @@
+     use it with python's built-in breakpoint():
+     PYTHONBREAKPOINT=pudb.forked.set_trace python …
+     """
+-    if frame is None:
++    if frame is not None:
+         frame = sys._getframe().f_back
+     if term_size is None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+</pre><h3>Mutant 1031</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -12,7 +12,7 @@
+     PYTHONBREAKPOINT=pudb.forked.set_trace python …
+     """
+     if frame is None:
+-        frame = sys._getframe().f_back
++        frame = None
+     if term_size is None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+</pre><h3>Mutant 1032</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -13,7 +13,7 @@
+     """
+     if frame is None:
+         frame = sys._getframe().f_back
+-    if term_size is None:
++    if term_size is not None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+</pre><h3>Mutant 1033</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -14,7 +14,7 @@
+     if frame is None:
+         frame = sys._getframe().f_back
+     if term_size is None:
+-        term_size = os.environ.get("PUDB_TERM_SIZE")
++        term_size = os.environ.get("XXPUDB_TERM_SIZEXX")
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+             if len(term_size) != 2:
+</pre><h3>Mutant 1034</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -14,7 +14,7 @@
+     if frame is None:
+         frame = sys._getframe().f_back
+     if term_size is None:
+-        term_size = os.environ.get("PUDB_TERM_SIZE")
++        term_size = None
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+             if len(term_size) != 2:
+</pre><h3>Mutant 1035</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -15,7 +15,7 @@
+         frame = sys._getframe().f_back
+     if term_size is None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+-        if term_size is not None:
++        if term_size is  None:
+             term_size = tuple(map(int, term_size.split("x")))
+             if len(term_size) != 2:
+                 raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+</pre><h3>Mutant 1036</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -16,7 +16,7 @@
+     if term_size is None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+-            term_size = tuple(map(int, term_size.split("x")))
++            term_size = tuple(map(int, term_size.split("XXxXX")))
+             if len(term_size) != 2:
+                 raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+         else:
+</pre><h3>Mutant 1037</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -16,7 +16,7 @@
+     if term_size is None:
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+-            term_size = tuple(map(int, term_size.split("x")))
++            term_size = None
+             if len(term_size) != 2:
+                 raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+         else:
+</pre><h3>Mutant 1038</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -17,7 +17,7 @@
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+-            if len(term_size) != 2:
++            if len(term_size) == 2:
+                 raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+         else:
+             try:
+</pre><h3>Mutant 1039</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -17,7 +17,7 @@
+         term_size = os.environ.get("PUDB_TERM_SIZE")
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+-            if len(term_size) != 2:
++            if len(term_size) != 3:
+                 raise ValueError("PUDB_TERM_SIZE should have two dimensions")
+         else:
+             try:
+</pre><h3>Mutant 1040</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -18,7 +18,7 @@
+         if term_size is not None:
+             term_size = tuple(map(int, term_size.split("x")))
+             if len(term_size) != 2:
+-                raise ValueError("PUDB_TERM_SIZE should have two dimensions")
++                raise ValueError("XXPUDB_TERM_SIZE should have two dimensionsXX")
+         else:
+             try:
+                 # Getting terminal size
+</pre><h3>Mutant 1041</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -22,7 +22,7 @@
+         else:
+             try:
+                 # Getting terminal size
+-                s = os.get_terminal_size()
++                s = None
+                 term_size = (s.columns, s.lines)
+             except Exception:
+                 term_size = (80, 24)
+</pre><h3>Mutant 1042</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -23,7 +23,7 @@
+             try:
+                 # Getting terminal size
+                 s = os.get_terminal_size()
+-                term_size = (s.columns, s.lines)
++                term_size = None
+             except Exception:
+                 term_size = (80, 24)
+ 
+</pre><h3>Mutant 1043</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -25,7 +25,7 @@
+                 s = os.get_terminal_size()
+                 term_size = (s.columns, s.lines)
+             except Exception:
+-                term_size = (80, 24)
++                term_size = (81, 24)
+ 
+     Debugger(
+         stdin=open("/dev/stdin"),
+</pre><h3>Mutant 1044</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -25,7 +25,7 @@
+                 s = os.get_terminal_size()
+                 term_size = (s.columns, s.lines)
+             except Exception:
+-                term_size = (80, 24)
++                term_size = (80, 25)
+ 
+     Debugger(
+         stdin=open("/dev/stdin"),
+</pre><h3>Mutant 1045</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -25,7 +25,7 @@
+                 s = os.get_terminal_size()
+                 term_size = (s.columns, s.lines)
+             except Exception:
+-                term_size = (80, 24)
++                term_size = None
+ 
+     Debugger(
+         stdin=open("/dev/stdin"),
+</pre><h3>Mutant 1046</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -28,7 +28,7 @@
+                 term_size = (80, 24)
+ 
+     Debugger(
+-        stdin=open("/dev/stdin"),
++        stdin=open("XX/dev/stdinXX"),
+         stdout=open("/dev/stdout", "w"),
+         term_size=term_size,
+     ).set_trace(frame, paused=paused)
+</pre><h3>Mutant 1047</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -29,7 +29,7 @@
+ 
+     Debugger(
+         stdin=open("/dev/stdin"),
+-        stdout=open("/dev/stdout", "w"),
++        stdout=open("XX/dev/stdoutXX", "w"),
+         term_size=term_size,
+     ).set_trace(frame, paused=paused)
+ 
+</pre><h3>Mutant 1048</h3><pre>--- ./forked.py
++++ ./forked.py
+@@ -29,7 +29,7 @@
+ 
+     Debugger(
+         stdin=open("/dev/stdin"),
+-        stdout=open("/dev/stdout", "w"),
++        stdout=open("/dev/stdout", "XXwXX"),
+         term_size=term_size,
+     ).set_trace(frame, paused=paused)
+ 
+</pre></body></html>
