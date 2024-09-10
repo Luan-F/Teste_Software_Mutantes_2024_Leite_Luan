@@ -11,7 +11,8 @@ def test_singleton_constructor():
     with pytest.raises(ValueError) as err:
         db = Debugger()
         db.__del__()
-        assert err.value == "a Debugger instance already exists"
+
+    assert str(err.value) == "a Debugger instance already exists"
     reset_debugger()
 
 def test_ui_should_not_be_none():
@@ -47,5 +48,5 @@ def test_steal_output():
     with pytest.raises(NotImplementedError) as err:
         db = Debugger(steal_output=True)
         assert db.steal_output == True
-        assert err == "output stealing"
+    assert str(err.value) == "output stealing"
     reset_debugger()
