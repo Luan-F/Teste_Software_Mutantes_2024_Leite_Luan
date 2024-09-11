@@ -1,4 +1,4 @@
-<html><body><h1>debugger.py</h1>Killed 63 out of 1840 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- debugger.py
+<html><body><h1>debugger.py</h1>Killed 67 out of 1840 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 3</h3><pre>--- debugger.py
 +++ debugger.py
 @@ -42,9 +42,7 @@
  CONFIG = load_config()
@@ -212,28 +212,6 @@
  
  
  # {{{ debugger interface
-</pre><h3>Mutant 21</h3><pre>--- debugger.py
-+++ debugger.py
-@@ -190,7 +190,7 @@
-                  _continue_at_start=False, tty_file=None, **kwargs):
- 
-         if Debugger._current_debugger:
--            raise ValueError("a Debugger instance already exists")
-+            raise ValueError("XXa Debugger instance already existsXX")
- 
-         # Pass remaining kwargs to python debugger framework
-         bdb.Bdb.__init__(self, **kwargs)
-</pre><h3>Mutant 22</h3><pre>--- debugger.py
-+++ debugger.py
-@@ -194,7 +194,7 @@
- 
-         # Pass remaining kwargs to python debugger framework
-         bdb.Bdb.__init__(self, **kwargs)
--        self.ui = DebuggerUI(self, stdin=stdin, stdout=stdout, term_size=term_size)
-+        self.ui = None
-         self.steal_output = steal_output
-         self._continue_at_start__setting = _continue_at_start
-         self._tty_file = tty_file
 </pre><h3>Mutant 25</h3><pre>--- debugger.py
 +++ debugger.py
 @@ -197,7 +197,7 @@
@@ -245,17 +223,6 @@
  
          self.setup_state()
  
-</pre><h3>Mutant 26</h3><pre>--- debugger.py
-+++ debugger.py
-@@ -202,7 +202,7 @@
-         self.setup_state()
- 
-         if steal_output:
--            raise NotImplementedError("output stealing")
-+            raise NotImplementedError("XXoutput stealingXX")
-             from io import StringIO
-             self.stolen_output = sys.stderr = sys.stdout = StringIO()
-             sys.stdin = StringIO("")  # avoid spurious hangs
 </pre><h3>Mutant 27</h3><pre>--- debugger.py
 +++ debugger.py
 @@ -204,7 +204,7 @@
@@ -289,17 +256,6 @@
  
          from pudb.settings import load_breakpoints
          for bpoint_descr in load_breakpoints():
-</pre><h3>Mutant 30</h3><pre>--- debugger.py
-+++ debugger.py
-@@ -221,7 +221,7 @@
-         # collector *might* call it, so it should tolerate being called twice.
- 
-         if self._current_debugger:
--            assert self._current_debugger == [self]
-+            assert self._current_debugger != [self]
-             self._current_debugger.pop()
-         if self._tty_file:
-             self._tty_file.close()
 </pre><h3>Mutant 31</h3><pre>--- debugger.py
 +++ debugger.py
 @@ -225,7 +225,7 @@
